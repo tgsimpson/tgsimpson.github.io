@@ -11,32 +11,26 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-<div id="wrapper">
-  <header id="header">
-    <h1>Todd G. Simpson: Books</h1>
-    <nav class="navigation">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./books.html">Books</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-    <div id="content" class="clearfix">
-      <section id="left-sidebar">
-        <p>Left Sidebar Content Goes Here</p>
-      </section>
-             
-      <section id="right">
-        <p>Right Side Content Goes Here</p>
-      </section>
+ 
+
+ <body onload="Init()">
+  <div id="wrapper" style="max-width: 800px; margin:auto">
+    <header id="blog_header"></header>
+
+    <div id="content">
+      <p>You can grab my first (light) SciFi book <a href="https://www.amazon.com/Tilt-Upside-Down-Todd-Simpson/dp/1973459175/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=">here</a></p>
+      <p>Consider it a 'beta'; I'm working with an editor to refine it.</p>
+      <p>If you do read it, and enjoy it, please give a review on Amazon.  If you don't like, don't bother with the review :-) </p>
     </div>
-         
-    <footer>
-      <p>Some copyright and legal notices gere. May be use the © symbol a bit.</p>
-    </footer>
   </div>
 </body>
+
+<script type="text/javascript" src="./blog_code.js"></script>
+<script> 
+function Init() {
+  document.getElementById('blog_header').innerHTML = blog_header; 
+}
+</script>
+
+
 </html>

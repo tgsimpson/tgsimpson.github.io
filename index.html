@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Todd G. Simpson</title>
@@ -10,36 +10,30 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-<div id="wrapper">
-  <header id="header">
-    <h1>Todd G. Simpson</h1>
-    <nav class="navigation">
-      <hr>
-      <p>
-        <a href="./index.html">Home</a> &nbsp&nbsp
-        <a href="./books.html">Books</a>&nbsp&nbsp
-        <a href="./blog.html">Blog</a>&nbsp&nbsp
-        <a href="./contact.html">Contact</a>&nbsp&nbsp
-      </p>
-      <hr>
-    </nav>
-  </header>
-    <div id="content" class="clearfix">
-      <section id="left-sidebar">
-        <p>Left Sidebar Content Goes Here</p>
-      </section>
-             
-      <section id="right">
-        <p>Right Side Content Goes Here</p>
-      </section>
+</head>
+
+
+<body onload="Init()">
+  <div id="wrapper" style="max-width: 800px; margin:auto">
+    <header id="blog_header"></header>
+
+    <div id="content">
+      <p> My recent activities are focused on: </p>
+      <ul>
+        <li> Figuring out if the blockchain, and associated technologies, are a flash in the pan, or real progress towards a more balanced centralized / decentralized world.  You can read my thoughts on the <a href="./blog.html">blog</a> tab. <p></p></li>
+        <li> Working as a Venture Parther at <a href="http://inovia.vc">iNovia</a>, a great Canadian Venture Capital firm.<p></p></li>
+        <li> Writing some light-hearted SciFi - see the <a href="./books.html">books</a> tab. </li>
+      </ul>
     </div>
-         
-    <footer>
-      <p>Some copyright and legal notices gere. May be use the © symbol a bit.</p>
-    </footer>
   </div>
 </body>
+
+<script type="text/javascript" src="./blog_code.js"></script>
+<script> 
+function Init() {
+  document.getElementById('blog_header').innerHTML = blog_header; 
+}
+</script>
+
 </html>
 
