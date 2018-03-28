@@ -6,9 +6,9 @@ var blog_header =
    '<nav class="navigation">'+
       // '<hr>'+
       '<p>'+
-        '&nbsp&nbsp<a href="./index.html">Home</a> &nbsp&nbsp'+
-        '<a href="./books.html">Books</a> &nbsp&nbsp'+
-        '<a href="./blog.html">Blog</a> &nbsp&nbsp'+
+        '&nbsp&nbsp<a href="./index.html">Home</a> &nbsp/&nbsp'+
+        '<a href="./books.html">Books</a> &nbsp/&nbsp'+
+        '<a href="./blog.html">Blog</a> &nbsp/&nbsp'+
         '<a href="./contact.html">Contact</a> &nbsp&nbsp'+
       '</p>'+
       '<hr>'+
