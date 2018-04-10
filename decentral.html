@@ -4,12 +4,6 @@
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Todd G. Simpson</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css" />
   </head>
 
 
@@ -38,12 +32,12 @@
         Sometimes a framework, in which the variables can be plotted, can help to visualize these abstract concepts. That is the goal of our blog series, which is linked to here:
         </p>
         <ul>
-        <li><a href="https://blog.inovia.vc/the-center-cannot-hold-1343628f9f50">The Center Cannot Hold</a></li>
-        <li><a href="https://medium.com/@todd.4.simpson/democracy-decentralization-and-well-being-3c9dc466618">Democracy, Decentralization, and Well-Being</a></li>
-        <li><a href="https://blog.inovia.vc/strategy-frameworks-and-decentralization-958334e283fb">Strategy Frameworks and Decentralization</a></li>
-        <li><a href="https://blog.inovia.vc/meaningful-icos-c22925f13413">Meaningful ICO’s</a></li>
-        <li><a href="https://blog.inovia.vc/the-advent-of-decentralized-transportation-systems-d62a83d3903b">The Advent of Decentralized Transportation Systems</a></li>
-        <li><a href="https://blog.inovia.vc/systems-of-participation-f5448848e122">Systems of Participation </a></li>
+        <li><a href="https://blog.inovia.vc/the-center-cannot-hold-1343628f9f50" target="_blank">The Center Cannot Hold</a></li>
+        <li><a href="https://medium.com/@todd.4.simpson/democracy-decentralization-and-well-being-3c9dc466618" target="_blank">Democracy, Decentralization, and Well-Being</a></li>
+        <li><a href="https://blog.inovia.vc/strategy-frameworks-and-decentralization-958334e283fb" target="_blank">Strategy Frameworks and Decentralization</a></li>
+        <li><a href="https://blog.inovia.vc/meaningful-icos-c22925f13413" target="_blank">Meaningful ICO’s</a></li>
+        <li><a href="https://blog.inovia.vc/the-advent-of-decentralized-transportation-systems-d62a83d3903b" target="_blank">The Advent of Decentralized Transportation Systems</a></li>
+        <li><a href="https://blog.inovia.vc/systems-of-participation-f5448848e122" target="_blank">Systems of Participation </a></li>
         </ul>
 
 
@@ -188,10 +182,10 @@ function Init() {
         var t2a = (Math.min.apply(null,tmp2));
         var t2b = (Math.max.apply(null,tmp2));
         if (titles[aaa] == "D-Index") {
-         dir = -1;
-         t1a = 0;
-         t1b = 10;
-      }
+           dir = -1;
+           t1a = 0;
+           t1b = 10;
+        }
 
       console.log(t1a,t1b,t2a,t2b);
 
@@ -214,7 +208,7 @@ function Init() {
       var chart = new google.visualization.ScatterChart(document.getElementById('chart_div2'));
       chart.draw(dataTable, options);
     }
-    
+
 
     function handleSampleDataQueryResponse(response) {
       if (response.isError()) {
