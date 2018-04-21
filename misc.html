@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Todd G. Simpson</title>
+</head>
+
+
+<body onload="Init()">
+  <div id="wrapper" style="max-width: 800px; margin:auto">
+    <header id="blog_header"></header>
+
+    <div id="content" align='center'>
+      <h3>Paintings</h3>
+      <p> This one is actually rectangular, but 24' long, so hard to get a photo </p>
+      <img src='./Images/TreesPano.jpg' alt='' align='middle' style='height: 100%; width: 100%; object-fit: contain'>
+      <p> A flattened perspective of SF to fit both bridges; before the Salesforce Tower </p>
+      <img src='./Images/SF.jpg' alt='' align='middle' style='height: 100%; width: 100%; object-fit: contain'>
+      <p> One of a bunch I've done that show a piece of a famous album cover; this one is easy to guess </p>
+      <img src='./Images/Beatles.jpg' alt='' align='middle' style='height: 100%; width: 100%; object-fit: contain'>
+      <hr>
+      <h3>Landscaping</h3>
+      <p> Fountain, concrete work, and columns added to house in Saratoga </p>
+      <img src='./Images/QuitoFountain.jpg' alt='' align='middle' style='height: 70%; width: 70%; object-fit: contain'>
+      <hr>
+      <h3>Pottery</h3>
+      <img src='./Images/Platter.jpg' alt='' align='middle' style='height: 25%; width: 25%; object-fit: contain'>
+      <img src='./Images/bowl.jpg' alt='' align='middle' style='height: 43%; width: 43%; object-fit: contain'>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="./blog_code.js"></script>
+<script> 
+function Init() {
+  document.getElementById('blog_header').innerHTML = blog_header; 
+}
+</script>
+
+</html>
