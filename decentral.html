@@ -267,8 +267,9 @@ function Init() {
        var csel = document.getElementById("countries");
        for (var i = 0; i<data.og.length; i++) {
         var option = document.createElement('option');
+        option.value     = data.og[i]["c"][0]["v"];
         option.innerHTML = data.og[i]["c"][0]["v"];
-        option.value = data.og[i]["c"][0]["v"];
+        option.style.color = data.og[i]["c"][1]["v"]
         csel.append(option);
        }
 
