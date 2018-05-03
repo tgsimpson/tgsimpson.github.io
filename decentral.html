@@ -76,9 +76,9 @@
                   <option value="5">5</option>
               </select> <br />
             </td></tr>
-          <tr><td>Highlight a country</td>
+          <tr><td>Highlight countries</td>
             <td>
-              <select style="width:150px" id="countries" onchange="newcountry();doTheTable2();">
+              <select multiple style="width:150px" id="countries" onchange="newcountry();doTheTable2();">
                 <option selected="" value="None">None</option>
               </select>
             </td></tr>
@@ -129,10 +129,21 @@ function Init() {
          doTheTable2();
     }
 
+    function getSelVal(select) {
+        var ret = [];
+        if (select.selectedOptions != undefined) {
+            for (var i=0; i < select.selectedOptions.length; i++) { ret.push(select.selectedOptions[i].value); }
+        } else {
+            for (var i=0; i < select.options.length; i++) {
+                if (select.options[i].selected) { ret.push(select.options[i].value); }
+            }
+        }
+        return ret;
+    };
+
     function newcountry() {
-      var e = document.getElementById("countries");
-      ccc = e.options[e.selectedIndex].value;
-      console.log("Country is now",ccc);
+      ccc = getSelVal(document.getElementById("countries"))
+      console.log("all values",ccc)
     }
 
     var data = [];
@@ -144,9 +155,8 @@ function Init() {
         var r = d[x]["c"];
         if (r[a] && r[b]) {  // not null
          // console.log("compare",r[0]["v"],c);
-         if (r[0]["v"] === c) {  // highlight country
+         if (c.includes(r[0]["v"])) { // highlight country
             rows.push([ r[a]["v"], r[b]["v"], r[0]["v"], "point {size:12 ; fill-color:".concat(r[1]["v"]).concat("}")]);
-            console.log("BIG MATCH")
          }
          else {
             rows.push([ r[a]["v"], r[b]["v"], r[0]["v"], "point {fill-color:".concat(r[1]["v"]).concat("}")]);
