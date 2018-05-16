@@ -65,6 +65,7 @@
           <tr><th>Variable</th><th>Setting</th><th>Source</th></tr>
           <tr><td>X axis</td><td><select style="width:150px" id="sellistaaa" onchange="abSelect();"> </select> </td><td><u id="link1">One</u></td></tr>
           <tr><td>Y axis</td><td><select style="width:150px" id="sellistbbb" onchange="abSelect();"> </select> </td><td><u id="link2">Two</u></td></tr>
+          <tr><td>Correlation</td><td><small id="corr11"></small></td></tr>
           <tr><td>Log scale on Y axis</td><td><input style="width:150px" id="logselect" onchange="abSelect();" type="checkbox"> </td></tr>
           <tr><td>Trendline polynomic degree</td>
             <td>
@@ -130,7 +131,7 @@ function Init() {
          poly = e.options[e.selectedIndex].value;
          thelogscale = "linear"
          if (document.getElementById("logselect").checked) {thelogscale="log";}
-         console.log("logscale",thelogscale);
+         // console.log("logscale",thelogscale);
          doTheTable2();
     }
 
@@ -168,7 +169,8 @@ function Init() {
          }
         }
        }
-       console.log("rows");
+       // console.log("rows",rows,Correlation(rows));
+       document.getElementById("corr11").innerHTML = ""+Correlation(rows);
        return rows
     }
 
@@ -259,10 +261,10 @@ function Init() {
        links.push(words[words.length-1])
        //titles.push(data.ng[i]["label"])
       }
-      console.log("titles");
-      console.log(titles);
-      console.log("links");
-      console.log(links)
+      //console.log("titles");
+      //console.log(titles);
+      //console.log("links");
+      //console.log(links)
 
       // Put titles, after D-Index into dropdown list
        var asel = document.getElementById("sellistaaa");
@@ -292,6 +294,38 @@ function Init() {
       abSelect();
       //doTheTable2();
     }
+
+    function Correlation(rows) {
+    //TODO: check here that arrays are not null, of the same length etc
+
+        var sx = 0.0;
+        var sy = 0.0;
+        var sxx = 0.0;
+        var syy = 0.0;
+        var sxy = 0.0;
+        var n = rows.length;
+
+        for(i = 0; i < n; i++) {
+          var x = rows[i][0];
+          var y = rows[i][1];
+
+          sx += x;
+          sy += y;
+          sxx += x * x;
+          syy += y * y;
+          sxy += x * y;
+        }
+
+        // covariation
+        var cov = sxy / n - sx * sy / n / n;
+        // standard error of x
+        var sigmax = Math.sqrt(sxx / n -  sx * sx / n / n);
+        // standard error of y
+        var sigmay = Math.sqrt(syy / n -  sy * sy / n / n);
+
+        // correlation is just a normalized covariation
+        return cov / sigmax / sigmay;
+      }
 
 </script>
 
