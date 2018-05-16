@@ -169,9 +169,9 @@ function Init() {
 
     function drawSheetName() {
       var queryString = encodeURIComponent('SELECT *');
-      // retrieve first tab
+
       var query = new google.visualization.Query(
-         'https://docs.google.com/spreadsheets/d/1qOAQSGMsyhO8zXUGx1htaqrpDPAQldibMdZpNegMaWg/gviz/tq?sheet=Sheet1&headers=2&tq=' + queryString);
+         'https://docs.google.com/spreadsheets/d/1qOAQSGMsyhO8zXUGx1htaqrpDPAQldibMdZpNegMaWg/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
          // 'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
       query.send(handleSampleDataQueryResponse);
     }
@@ -232,7 +232,6 @@ function Init() {
     }
 
 
-    // First Tab of spreadsheet
     function handleSampleDataQueryResponse(response) {
       if (response.isError()) {
         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
