@@ -62,9 +62,9 @@
         <br />
         <div>
         <table align="center">
-          <tr><th>Variable</th><th>Setting</th></tr>
-          <tr><td>X axis</td><td><select style="width:150px" id="sellistaaa" onchange="abSelect();"> </select> </td></tr>
-          <tr><td>Y axis</td><td><select style="width:150px" id="sellistbbb" onchange="abSelect();"> </select> </td></tr>
+          <tr><th>Variable</th><th>Setting</th><th>Source</th></tr>
+          <tr><td>X axis</td><td><select style="width:150px" id="sellistaaa" onchange="abSelect();"> </select> </td><td><u id="link1">One</u></td></tr>
+          <tr><td>Y axis</td><td><select style="width:150px" id="sellistbbb" onchange="abSelect();"> </select> </td><td><u id="link2">Two</u></td></tr>
           <tr><td>Log scale on Y axis</td><td><input style="width:150px" id="logselect" onchange="abSelect();" type="checkbox"> </td></tr>
           <tr><td>Trendline polynomic degree</td>
             <td>
@@ -117,10 +117,15 @@ function Init() {
  var ccc = "None";
 
     function abSelect() {
+         // xaxis
          var e = document.getElementById("sellistaaa");
          aaa = titles.indexOf(e.options[e.selectedIndex].value);
+         document.getElementById("link1").innerHTML="<a href=\'"+links[aaa]+"\'>"+e.options[e.selectedIndex].value+"</a>"
+
          var e = document.getElementById("sellistbbb");
          bbb = titles.indexOf(e.options[e.selectedIndex].value);
+         document.getElementById("link2").innerHTML="<a href=\'"+links[bbb]+"\'>"+e.options[e.selectedIndex].value+"</a>"
+
          var e = document.getElementById("polyd");
          poly = e.options[e.selectedIndex].value;
          thelogscale = "linear"
@@ -178,6 +183,8 @@ function Init() {
 
 
     function doTheTable2() {
+
+      // abSelect();
       
       var rows = extract(aaa,bbb,ccc,data.og);
 
@@ -242,12 +249,20 @@ function Init() {
       data = response.getDataTable();
       console.log(data);
 
+      // titles are of the form "name"+"url" where name might have spaces in it.
+      // so, need to grab the last word as url
       titles = []
+      links = []
       for (i = 0; i < data.ng.length; i++) {
-       titles.push(data.ng[i]["label"])
+       words = data.ng[i]["label"].split(" ")
+       titles.push(words.slice(0,words.length-1).join(" "))
+       links.push(words[words.length-1])
+       //titles.push(data.ng[i]["label"])
       }
       console.log("titles");
       console.log(titles);
+      console.log("links");
+      console.log(links)
 
       // Put titles, after D-Index into dropdown list
        var asel = document.getElementById("sellistaaa");
@@ -274,7 +289,8 @@ function Init() {
         csel.append(option);
        }
 
-      doTheTable2();
+      abSelect();
+      //doTheTable2();
     }
 
 </script>
