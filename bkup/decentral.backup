@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Todd G. Simpson</title>
+  </head>
+
+
+  <body onload="Init()">
+  <div id="wrapper" style="max-width: 800px; margin:auto">
+    <header id="blog_header"></header>
+
+    <div id="content">
+      <h3>A Framework for Evaluating Decentralization</h3>
+
+        <p> Here is an iNovia blog series I've written outlining a high level view of decentralization. 
+
+        <h4> Blog Series: </h4>
+
+        <ul>
+        <li><a href="https://blog.inovia.vc/the-center-cannot-hold-1343628f9f50" target="_blank">The Center Cannot Hold</a></li>
+        <li><a href="https://medium.com/@todd.4.simpson/democracy-decentralization-and-well-being-3c9dc466618" target="_blank">Democracy, Decentralization, and Well-Being</a></li>
+        <li><a href="https://blog.inovia.vc/strategy-frameworks-and-decentralization-958334e283fb" target="_blank">Strategy Frameworks and Decentralization</a></li>
+        <li><a href="https://blog.inovia.vc/meaningful-icos-c22925f13413" target="_blank">Meaningful ICO’s</a></li>
+        <li><a href="https://blog.inovia.vc/the-advent-of-decentralized-transportation-systems-d62a83d3903b" target="_blank">The Advent of Decentralized Transportation Systems</a></li>
+        <li><a href="https://blog.inovia.vc/systems-of-participation-f5448848e122" target="_blank">Systems of Participation </a></li>
+        </ul>
+
+        <hr>
+
+        <h4> Motivation: </h4>
+
+        <p>The hype around cryptocurrencies and ICO’s over the last year has generated renewed interest in ‘decentralized’ systems. However, there is a lot of confusing and contradictory definitions of decentralization, and it can be difficult to form a clear picture of what it all means.
+        </p>
+        <p>
+        Over the last year iNovia has developed a framework that helps to put some of the discussion in context. As we see it, decentralization is a much broader discussion than just cryptocurrencies, although blockchain as well as recent advances in artificial intelligence, machine learning and a host of other technologies promise new hope that some more decentralized systems can be built and sustained.
+        </p>
+        <p>
+        In general, decentralization is based around the goal of more personal control and authority; less risk that centralized entities make decisions for you or limit your rights and freedoms. However centralized structures have provided humanity with more efficient, and safer, ways to live and interact. So, while thinking about the extremes of centralized systems (autocracy) and decentralized systems (anarchy) is useful, what is more meaningful is to look at how these systems can be balanced. The proper mix of systems — strong enough centralized structures to provide for law and order, safety and efficiency, but with decentralized applications on top — may be ideal. Canada, with its fully functioning democracy, is ideally placed to experiment with these ideas.
+        </p>
+        <p>
+        From a venture capital, or private equity, perspective, more decentralized systems provide both challenges and opportunities. In addition to investing in traditional “firms,” which is a well understood space, we also need to look at more recent “ecosystems.” In an ecosystem the distinction between labor and capital, between employee and customer, starts to break down, with the intent that a more meritocratic / participatory model can be realized. With the advent of blockchains it is possible to put business models behind ecosystems, and realize both financial and social gains by participating (Bitcoin and Ethereum are two of many examples). In many ways ecosystems operate more like democratic countries, but within areas of interest that are not defined by geo-political boundaries. This requires a different mindset and approach.
+        </p>
+        <p>
+        Particularly in this frothy ICO market, understanding which decentralized projects are truly important, and which ones actually rely on decentralized infrastructure is important. The underlying technologies are agnostic — they can be used to push systems in any direction — so it is up to us to decide which directions we should support.
+        </p>
+        <p>
+        Sometimes a framework, in which the variables can be plotted, can help to visualize these abstract concepts. That is the goal of our blog series, which is linked to above.
+        </p>
+       
+
+        <hr>
+
+        <h4> Comparing country level data with the Economist's Democracy (decentralization) Index (D-Index) </h4>
+
+        <p>
+          The second post, above, uses a lot of macro level data comparing democracy/decentralization to other country level metrics. Below is an interactive graph that allows you to play with that data set.
+        </p>
+
+
+        <br />
+        <div>
+        <table align="center">
+          <tr><th>Variable</th><th>Setting</th></tr>
+          <tr><td>X axis</td><td><select style="width:150px" id="sellistaaa" onchange="abSelect();"> </select> </td></tr>
+          <tr><td>Y axis</td><td><select style="width:150px" id="sellistbbb" onchange="abSelect();"> </select> </td></tr>
+          <tr><td>Log scale on Y axis</td><td><input style="width:150px" id="logselect" onchange="abSelect();" type="checkbox"> </td></tr>
+          <tr><td>Trendline polynomic degree</td>
+            <td>
+              <select style="width:150px" id="polyd" onchange="abSelect();">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option selected="" value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+              </select> <br />
+            </td></tr>
+          <tr><td>Highlight countries</td>
+            <td>
+              <select multiple style="width:150px" id="countries" onchange="newcountry();doTheTable2();">
+                <option selected="" value="None">None</option>
+              </select>
+            </td></tr>
+          </table>
+        </div>
+        <div id="chart_div2" style="height: 500px; width: 100%;"> </div>
+
+        <hr><hr>
+
+        </div>
+      </div>
+
+
+
+<script type="text/javascript" src="./blog_code.js"></script>
+<script> 
+function Init() {
+  document.getElementById('blog_header').innerHTML = blog_header; 
+}
+</script>
+
+
+<script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+<script>
+ google.charts.load('current', {'packages':['corechart']});
+ google.charts.setOnLoadCallback(drawSheetName);
+
+ console.log("What");
+
+ var aaa = 2;
+ var bbb = 3;
+
+ var poly = 3;
+ var thelogscale = false;
+
+ var ccc = "None";
+
+    function abSelect() {
+         var e = document.getElementById("sellistaaa");
+         aaa = titles.indexOf(e.options[e.selectedIndex].value);
+         var e = document.getElementById("sellistbbb");
+         bbb = titles.indexOf(e.options[e.selectedIndex].value);
+         var e = document.getElementById("polyd");
+         poly = e.options[e.selectedIndex].value;
+         thelogscale = "linear"
+         if (document.getElementById("logselect").checked) {thelogscale="log";}
+         console.log("logscale",thelogscale);
+         doTheTable2();
+    }
+
+    function getSelVal(select) {
+        var ret = [];
+        if (select.selectedOptions != undefined) {
+            for (var i=0; i < select.selectedOptions.length; i++) { ret.push(select.selectedOptions[i].value); }
+        } else {
+            for (var i=0; i < select.options.length; i++) {
+                if (select.options[i].selected) { ret.push(select.options[i].value); }
+            }
+        }
+        return ret;
+    };
+
+    function newcountry() {
+      ccc = getSelVal(document.getElementById("countries"))
+      console.log("all values",ccc)
+    }
+
+    var data = [];
+    var titles = [];
+
+    function extract(a,b,c,d) {
+       rows = []
+       for (var x=0; x < d.length; x++) {
+        var r = d[x]["c"];
+        if (r[a] && r[b]) {  // not null
+         // console.log("compare",r[0]["v"],c);
+         if (c.includes(r[0]["v"])) { // highlight country
+            rows.push([ r[a]["v"], r[b]["v"], r[0]["v"], "point {size:12 ; fill-color:".concat(r[1]["v"]).concat("}")]);
+         }
+         else {
+            rows.push([ r[a]["v"], r[b]["v"], r[0]["v"], "point {fill-color:".concat(r[1]["v"]).concat("}")]);
+         }
+        }
+       }
+       console.log("rows");
+       return rows
+    }
+
+    function drawSheetName() {
+      var queryString = encodeURIComponent('SELECT *');
+
+      var query = new google.visualization.Query(
+         'https://docs.google.com/spreadsheets/d/1qOAQSGMsyhO8zXUGx1htaqrpDPAQldibMdZpNegMaWg/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
+         // 'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
+      query.send(handleSampleDataQueryResponse);
+    }
+
+
+    function doTheTable2() {
+      
+      var rows = extract(aaa,bbb,ccc,data.og);
+
+      var dir = 1;
+      //rows.unshift(["A","B"]);
+      // var chdata = google.visualization.arrayToDataTable(rows);
+
+      var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('number', 'A');
+        dataTable.addColumn('number', titles[aaa].concat(" and ").concat(titles[bbb]));
+        // A column for custom tooltip content
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+        dataTable.addColumn({'type': 'string', 'role': 'style'});
+        dataTable.addRows(rows);
+
+        var tmp1 = rows.map(x => x[0]);
+        var tmp2 = rows.map(x => x[1]);
+        //var t1a = Math.floor(Math.min.apply(null,tmp1));
+        //var t1b = Math.ceil(Math.max.apply(null,tmp1));
+        //var t2a = Math.floor(Math.min.apply(null,tmp2));
+        //var t2b = Math.ceil(Math.max.apply(null,tmp2));
+        var t1a = (Math.min.apply(null,tmp1));
+        var t1b = (Math.max.apply(null,tmp1));
+        var t2a = (Math.min.apply(null,tmp2));
+        var t2b = (Math.max.apply(null,tmp2));
+        if (titles[aaa] == "D-Index") {
+           dir = -1;
+           t1a = 0;
+           t1b = 10;
+        }
+
+      console.log(t1a,t1b,t2a,t2b);
+
+      var options = {
+          legend: 'none',
+          width: 800,
+          height: 500,
+              // title: titles[aaa].concat(" vs ").concat(titles[bbb]),
+              hAxis: {title: titles[aaa], direction:dir, viewWindowMode:'explicit',viewWindow:{max:t1b,min:t1a}},
+              vAxis: {title: titles[bbb], viewWindowMode:'explicit',viewWindow:{max:t2b,min:t2a},scaleType:thelogscale},
+              // legend: 'none',
+              trendlines: { 0: {type: "polynomial", degree: poly,
+                      labelInLegend: 'Trendline',
+                      showR2: true, visibleInLegend: false} 
+                   } 
+            }
+
+      // options["trendlines"]["0"]["labelinLegend"] = "WHAT ".concat(options["trendlines"]["0"]["labelinLegend"]);
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('chart_div2'));
+      chart.draw(dataTable, options);
+    }
+
+
+    function handleSampleDataQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+      data = response.getDataTable();
+      console.log(data);
+
+      titles = []
+      for (i = 0; i < data.ng.length; i++) {
+       titles.push(data.ng[i]["label"])
+      }
+      console.log("titles");
+      console.log(titles);
+
+      // Put titles, after D-Index into dropdown list
+       var asel = document.getElementById("sellistaaa");
+       var bsel = document.getElementById("sellistbbb");
+       for (var prop = 2; prop < titles.length; prop++) {
+          var option2 = document.createElement('option');
+          // console.log("Title has URL?", titles[prop]);
+          option2.innerHTML = titles[prop];
+          option2.value = titles[prop];
+          asel.append(option2);
+          var option3 = document.createElement('option');
+          option3.innerHTML = titles[prop];
+          option3.value = titles[prop];
+          bsel.append(option3);
+       }
+       bsel.selectedIndex = 1;
+
+       var csel = document.getElementById("countries");
+       for (var i = 0; i<data.og.length; i++) {
+        var option = document.createElement('option');
+        option.value     = data.og[i]["c"][0]["v"];
+        option.innerHTML = data.og[i]["c"][0]["v"];
+        option.style.color = data.og[i]["c"][1]["v"]
+        csel.append(option);
+       }
+
+      doTheTable2();
+    }
+
+</script>
+
+</body>
+
+</html>
