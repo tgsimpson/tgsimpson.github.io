@@ -156,7 +156,7 @@ function Init() {
     var titles = [];
 
     function hcorrelate(){
-      var d = data.xg
+      var d = data.wg
       for (var i = 2;i<titles.length;i++) {
         for (var j = i+1; j<titles.length;j++) {
           var rows = []
@@ -204,7 +204,7 @@ function Init() {
 
       // abSelect();
       
-      var rows = extract(aaa,bbb,ccc,data.xg);
+      var rows = extract(aaa,bbb,ccc,data.wg);
 
       var dir = 1;
       //rows.unshift(["A","B"]);
@@ -271,8 +271,8 @@ function Init() {
       // so, need to grab the last word as url
       titles = []
       links = []
-      for (i = 0; i < data.wg.length; i++) {
-       words = data.wg[i]["label"].split(" ")
+      for (i = 0; i < data.vg.length; i++) {
+       words = data.vg[i]["label"].split(" ")
        titles.push(words.slice(0,words.length-1).join(" "))
        links.push(words[words.length-1])
        //titles.push(data.ng[i]["label"])
@@ -299,11 +299,11 @@ function Init() {
        bsel.selectedIndex = 1;
 
        var csel = document.getElementById("countries");
-       for (var i = 0; i<data.xg.length; i++) {
+       for (var i = 0; i<data.wg.length; i++) {
         var option = document.createElement('option');
-        option.value     = data.xg[i]["c"][0]["v"];
-        option.innerHTML = data.xg[i]["c"][0]["v"];
-        option.style.color = data.xg[i]["c"][1]["v"]
+        option.value     = data.wg[i]["c"][0]["v"];
+        option.innerHTML = data.wg[i]["c"][0]["v"];
+        option.style.color = data.wg[i]["c"][1]["v"]
         csel.append(option);
        }
 
