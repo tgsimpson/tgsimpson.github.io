@@ -175,6 +175,7 @@ function Init() {
 
     function extract(a,b,c,d) {
        rows = []
+       console.log("Extract",a,b,c,d)
        for (var x=0; x < d.length; x++) {
         var r = d[x]["c"];
         if (r[a] && r[b]) {  // not null
