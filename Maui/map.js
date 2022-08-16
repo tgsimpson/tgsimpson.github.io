@@ -30,6 +30,26 @@ function init2() {
       query.send(handleSSData);
     }
 
+function add_map_point(lat, lng) {
+      var vectorLayer = new ol.layer.Vector({
+        source:new ol.source.Vector({
+          features: [new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+            })]
+        }),
+        style: new ol.style.Style({
+          image: new ol.style.Icon({
+            anchor: [0.5, 0.5],
+            anchorXUnits: "fraction",
+            anchorYUnits: "fraction",
+            src: "https://upload.wikimedia.org/wikipedia/commons/e/ec/RedDot.svg"
+          })
+        })
+      });
+
+      map.addLayer(vectorLayer); 
+    }
+
 function handleSSData(response) {
      if (response.isError()) {
         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
@@ -38,4 +58,5 @@ function handleSSData(response) {
 
       data = response.getDataTable();
       console.log("AND WE HAVE:",data);
+      add_map_point(20.8,-156.4);
 }
