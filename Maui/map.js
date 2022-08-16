@@ -31,6 +31,7 @@ function init2() {
     }
 
 function add_map_point(lat, lng) {
+      console.log("Adding point with lat",lat," and long",lng);
       var vectorLayer = new ol.layer.Vector({
         source:new ol.source.Vector({
           features: [new ol.Feature({
