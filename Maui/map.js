@@ -48,6 +48,7 @@ function add_map_point(lat, lng) {
         })
       });
 
+      vectorLayer.features[0].on(ʻsingleclickʻ,function(e) {console.log("CLICKKKKK")});
       map.addLayer(vectorLayer); 
     }
 
