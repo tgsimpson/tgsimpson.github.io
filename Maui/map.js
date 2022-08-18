@@ -51,7 +51,7 @@ function init2() {
      console.log("Sent query")
     }
 
-var fakeData = {Wf:[{c:[0,0,0,0,20.8,-156.4]}]}
+var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
 
 function handleSSData(response) {
      if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
@@ -60,7 +60,7 @@ function handleSSData(response) {
      console.log("AND WE HAVE:",data);
      console.log("Wf",data.Wf);
      data.Wf.forEach(
-        p => AddPoint(MarkerLayer,p.c[4].v,p.c[5].v)
+        p => {console.log("Adding",p.c,p.c[4].v,p.c[5].v); AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);}
      )
 }
 
