@@ -48,16 +48,17 @@ function init2() {
      var query = new google.visualization.Query(
        'https://docs.google.com/spreadsheets/d/1Gpi7Xzp1FaHeNFsyAli3iVcG4GOq3Aa4MCng9FoudIM/gviz/tq?sheet=Beaches&headers=1&tq=' + queryString);
      query.send(handleSSData);
+     console.log("Sent query")
     }
 
 function handleSSData(response) {
      if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
-      data = response.getDataTable();
-      console.log("AND WE HAVE:",data.WF,data.WF[0].c);
-      data.Wf.forEach(
+     console.log("Have data")
+     data = response.getDataTable();
+     console.log("AND WE HAVE:",data.WF,data.WF[0].c);
+     data.Wf.forEach(
         v => AddPoint(MarkerLayer,v.c[4],v.c[5])
-      )
-
+     )
 }
 
 //===== do something usefull
