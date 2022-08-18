@@ -59,9 +59,11 @@ function handleSSData(response) {
      data = response.getDataTable();
      console.log("AND WE HAVE:",data);
      console.log("Wf",data.Wf);
-     data.Wf.forEach(
-        p => {console.log("Adding",p.c,p.c[4].v,p.c[5].v); AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);}
-     )
+     for (var i = 0, len = data.Wf.length; i < len; i++) {
+        var p = data.Wf[i];
+        console.log("Adding",p.c,p.c[4].v,p.c[5].v); 
+        AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);
+      }
 }
 
 //===== do something usefull
