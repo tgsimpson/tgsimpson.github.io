@@ -55,7 +55,7 @@ var fakeData = {Wf:[{c:[0,0,0,0,20.8,-156.4]}]}
 
 function handleSSData(response) {
      if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
-     console.log("Have data")
+     console.log("Have data",response)
      data = response.getDataTable();
      console.log("AND WE HAVE:",data);
      console.log("Wf",data.Wf);
