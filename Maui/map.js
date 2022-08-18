@@ -53,9 +53,9 @@ function init2() {
 function handleSSData(response) {
      if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
       data = response.getDataTable();
-      console.log("AND WE HAVE:",data);
+      console.log("AND WE HAVE:",data.WF,data.WF[0].c);
       data.Wf.forEach(
-        (i,v)=>AddPoint(MarkerLayer,v.c[4],v.c[5])
+        v => AddPoint(MarkerLayer,v.c[4],v.c[5])
       )
 
 }
