@@ -37,8 +37,8 @@ map.on("click",function(evt) {
 document.addEventListener('DOMContentLoaded', init)
  
 function init() {
-      bypass();
-      return;
+//      bypass();
+//      return;
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(init2);
     }
