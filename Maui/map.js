@@ -60,7 +60,7 @@ function handleSSData(response) {
      console.log("AND WE HAVE:",data);
      console.log("Wf",data.Wf);
      data.Wf.forEach(
-        v => AddPoint(MarkerLayer,v.c[4],v.c[5])
+        p => AddPoint(MarkerLayer,p.c[4].v,p.c[5].v)
      )
 }
 
