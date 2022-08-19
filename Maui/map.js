@@ -2,7 +2,8 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
+var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}],
+                bf:[{Label:"name"},{Label:"Been to?"},{Label:"Lat/Lng"},{Label:"Lat"},{Label:"Lng"},]}
 
 //===== MAP
 var map = new ol.Map({
@@ -60,11 +61,19 @@ function handleSSData(response) {
      }
      else {data = response;}
      console.log("data is",data)
+
+     // Parse headings
+     nameIndex = data.bf.findIndex(e=>e.Label=="Name");
+     latIndex = data.bf.findIndex(e=>e.Label=="Lat");
+     lngIndex = data.bf.findIndex(e=>e.Label=="Lng");
+
+     console.log ("LL",latIndex,lngIndex);
+     // Parse data
      for (var i = 0, len = data.Wf.length; i < len; i++) {
          try{
              var p = data.Wf[i];
              //console.log("Adding",i,p.c); 
-             AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);
+             AddPoint(MarkerLayer,p.c[latIndex].v,p.c[lngIndex].v);
          } catch(err) {console.log("ERROR element ",i,err)}
       }
 }
