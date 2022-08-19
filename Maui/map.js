@@ -55,14 +55,13 @@ var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
 
 function handleSSData(response) {
      if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
-     console.log("Have data",response)
      data = response.getDataTable();
-     console.log("AND WE HAVE:",data);
-     console.log("Wf",data.Wf);
      for (var i = 0, len = data.Wf.length; i < len; i++) {
-        var p = data.Wf[i];
-        console.log("Adding",i,p.c); 
-        AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);
+         try{
+             var p = data.Wf[i];
+             console.log("Adding",i,p.c); 
+             AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);
+         } catch(err) {console.log("ERROR element ",i,err)}
       }
 }
 
