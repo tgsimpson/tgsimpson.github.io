@@ -1,6 +1,7 @@
 
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
-var SERVER = false
+var SERVER = true;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {SERVER = false}
 var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
 
 //===== MAP
