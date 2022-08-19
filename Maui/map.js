@@ -1,6 +1,6 @@
 
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
-var SERVER = true
+var SERVER = false
 var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
 
 //===== MAP
@@ -27,7 +27,7 @@ map.addLayer(MarkerLayer)
 map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
   var match = PointList.findIndex(f => f===feature);
-  if (!match) return;
+  if (match <0) return;
   console.log("And match is",match);
 })
 
@@ -58,11 +58,11 @@ function handleSSData(response) {
        data = response.getDataTable();
      }
      else {data = response;}
-
+     console.log("data is",data)
      for (var i = 0, len = data.Wf.length; i < len; i++) {
          try{
              var p = data.Wf[i];
-             console.log("Adding",i,p.c); 
+             //console.log("Adding",i,p.c); 
              AddPoint(MarkerLayer,p.c[4].v,p.c[5].v);
          } catch(err) {console.log("ERROR element ",i,err)}
       }
