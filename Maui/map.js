@@ -2,8 +2,8 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}],
-                bf:[{Label:"name"},{Label:"Been to?"},{Label:"Lat/Lng"},{Label:"Lat"},{Label:"Lng"},]}
+var fakeData = {Wf:[{c:[0,0,0,{v:20.8},{v:-156.4}]}],
+                bf:[{label:"name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},]}
 
 //===== MAP
 var map = new ol.Map({
@@ -54,7 +54,7 @@ function init2() {
      console.log("Sent query")
     }
 
-function Label2v(data,index,name) {return data.wF[i].c[data.bf.findIndex(e=>e.Label==name)].v;}
+function Label2v(data,index,name) {return data.wF[index].c[data.bf.findIndex(e=>e.label==name)].v;}
 
 function handleSSData(response) {
      if (SERVER) {
@@ -65,9 +65,9 @@ function handleSSData(response) {
      console.log("data is",data)
 
      // Parse headings
-     nameIndex = data.bf.findIndex(e=>e.Label=="Name");
-     latIndex = data.bf.findIndex(e=>e.Label=="Lat");
-     lngIndex = data.bf.findIndex(e=>e.Label=="Lng");
+     nameIndex = data.bf.findIndex(e=>e.label=="Name");
+     latIndex = data.bf.findIndex(e=>e.label=="Lat");
+     lngIndex = data.bf.findIndex(e=>e.label=="Lng");
 
      console.log ("LL",latIndex,lngIndex);
      // Parse data
