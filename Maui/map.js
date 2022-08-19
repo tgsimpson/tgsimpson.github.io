@@ -15,8 +15,8 @@ var map = new ol.Map({
 var PointList = []
 function AddPoint(layer, lat, lng) {
     var newPoint = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857'))});
-    PointList.push(newPoint)
     MarkerLayer.getSource().addFeature(newPoint);
+    PointList.push(newPoint)
 }
 
 var IconStyle = new ol.style.Icon({
@@ -53,6 +53,8 @@ function init2() {
      query.send(handleSSData);
      console.log("Sent query")
     }
+
+function Label2v(data,index,name) {return data.wF[i].c[data.bf.findIndex(e=>e.Label==name)].v;}
 
 function handleSSData(response) {
      if (SERVER) {
