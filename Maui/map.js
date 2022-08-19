@@ -2,8 +2,8 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[0,0,0,{v:20.8},{v:-156.4}]}],
-                bf:[{label:"name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},]}
+var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4}]}],
+                bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},]}
 
 //===== MAP
 var map = new ol.Map({
@@ -13,10 +13,20 @@ var map = new ol.Map({
 });
 
 var PointList = []
-function AddPoint(layer, lat, lng) {
+//function AddPoint(layer, lat, lng) {
+//    var newPoint = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857'))});
+//    MarkerLayer.getSource().addFeature(newPoint);
+//    PointList.push(newPoint)
+//}
+function AddPoint(data,index) {
+    var lat = Label2v(data,index,"Lat");
+    var lng = Label2v(data,index,"Lng");
     var newPoint = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857'))});
     MarkerLayer.getSource().addFeature(newPoint);
-    PointList.push(newPoint)
+
+    var point = {marker:newPoint,name:Label2v(data,index,"Name")}
+    PointList.push(point)
+    console.log(PointList)
 }
 
 var IconStyle = new ol.style.Icon({
@@ -28,9 +38,9 @@ map.addLayer(MarkerLayer)
 
 map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
-  var match = PointList.findIndex(f => f===feature);
-  if (match <0) return;
-  console.log("And match is",match);
+  var match = PointList.findIndex(f => f.marker===feature);
+  if (match <0) {return;}
+  console.log("And match is",match,PointList[match].name);
 })
 
 
@@ -54,7 +64,7 @@ function init2() {
      console.log("Sent query")
     }
 
-function Label2v(data,index,name) {return data.wF[index].c[data.bf.findIndex(e=>e.label==name)].v;}
+function Label2v(data,index,name) {return data.Wf[index].c[data.bf.findIndex(e=>e.label==name)].v;}
 
 function handleSSData(response) {
      if (SERVER) {
@@ -64,19 +74,10 @@ function handleSSData(response) {
      else {data = response;}
      console.log("data is",data)
 
-     // Parse headings
-     nameIndex = data.bf.findIndex(e=>e.label=="Name");
-     latIndex = data.bf.findIndex(e=>e.label=="Lat");
-     lngIndex = data.bf.findIndex(e=>e.label=="Lng");
-
-     console.log ("LL",latIndex,lngIndex);
-     // Parse data
+     // Parse markers data
      for (var i = 0, len = data.Wf.length; i < len; i++) {
-         try{
-             var p = data.Wf[i];
-             //console.log("Adding",i,p.c); 
-             AddPoint(MarkerLayer,p.c[latIndex].v,p.c[lngIndex].v);
-         } catch(err) {console.log("ERROR element ",i,err)}
+         try        {AddPoint(data,i)}
+         catch(err) {console.log("ERROR element ",i,err)}
       }
 }
 
