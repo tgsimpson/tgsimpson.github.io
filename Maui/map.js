@@ -1,5 +1,9 @@
-//===== MAP
 
+// if SERVER, use spreadseet; otherwise fake data (to get around CORS)
+var SERVER = true
+var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
+
+//===== MAP
 var map = new ol.Map({
    target: 'map',
    layers:[new ol.layer.Tile({source: new ol.source.OSM()}),],
@@ -20,14 +24,9 @@ var MarkerLayer = new ol.layer.Vector({source: new ol.source.Vector({features:[]
 map.addLayer(MarkerLayer)
 
 
-function bypass() {
-  AddPoint(MarkerLayer,20.8,-156.4)
-  // MarkerLayer.getSource().addFeature(SamplePoint);
-}
-
 map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
-  var match = PointList.find(f => f===feature);
+  var match = PointList.findIndex(f => f===feature);
   if (!match) return;
   console.log("And match is",match);
 })
@@ -37,11 +36,13 @@ map.on("click",function(evt) {
 document.addEventListener('DOMContentLoaded', init)
  
 function init() {
-//      bypass();
-//      return;
+  if (SERVER) {
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(init2);
+      return;
     }
+  handleSSData(fakeData)
+}
 
 function init2() {
      var queryString = encodeURIComponent('SELECT *');
@@ -51,11 +52,13 @@ function init2() {
      console.log("Sent query")
     }
 
-var fakeData = {Wf:[{c:[0,0,0,0,{v:20.8},{v:-156.4}]}]}
-
 function handleSSData(response) {
-     if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
-     data = response.getDataTable();
+     if (SERVER) {
+       if (response.isError()) {alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); return;}
+       data = response.getDataTable();
+     }
+     else {data = response;}
+
      for (var i = 0, len = data.Wf.length; i < len; i++) {
          try{
              var p = data.Wf[i];
