@@ -2,8 +2,8 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4}]}],
-                bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},]}
+var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://photos.app.goo.gl/Er1Aasnjo215irwQA"}]}],
+                bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},{label:"Pics"}]}
 
 //===== MAP
 var map = new ol.Map({
@@ -11,6 +11,15 @@ var map = new ol.Map({
    layers:[new ol.layer.Tile({source: new ol.source.OSM()}),],
    view: new ol.View({center: ol.proj.fromLonLat([-156.4,20.8]),zoom: 10})
 });
+
+const MapUp = document.getElementById('mapup');
+
+const MapUpOverlay = new ol.Overlay({
+  element: MapUp,
+  positioning: 'bottom-center',
+  stopEvent: false,
+});
+map.addOverlay(MapUpOverlay);
 
 var PointList = []
 //function AddPoint(layer, lat, lng) {
@@ -24,7 +33,7 @@ function AddPoint(data,index) {
     var newPoint = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857'))});
     MarkerLayer.getSource().addFeature(newPoint);
 
-    var point = {marker:newPoint,name:Label2v(data,index,"Name")}
+    var point = {marker:newPoint,name:Label2v(data,index,"Name"),pics:Label2v(data,index,"Pics")}
     PointList.push(point)
     console.log(PointList)
 }
@@ -39,8 +48,10 @@ map.addLayer(MarkerLayer)
 map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
   var match = PointList.findIndex(f => f.marker===feature);
-  if (match <0) {return;}
+  if (match <0) {MapUp.innerHTML = ""; return;}
   console.log("And match is",match,PointList[match].name);
+  MapUpOverlay.setPosition(evt.coordinate)
+  MapUp.innerHTML = "<p>"+PointList[match].name+"</p><img src="+PointList[match].pics+">" 
 })
 
 
