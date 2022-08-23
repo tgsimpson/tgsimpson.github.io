@@ -75,7 +75,7 @@ function init2() {
      console.log("Sent query")
     }
 
-function Label2v(data,index,name) {return data.Wf[index].c[data.bf.findIndex(e=>e.label==name)].v;}
+function Label2v(data,index,name) {try{return data.Wf[index].c[data.bf.findIndex(e=>e.label==name)].v;} catch {return null;}}
 
 function handleSSData(response) {
      if (SERVER) {
