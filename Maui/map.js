@@ -2,7 +2,7 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://photos.app.goo.gl/Er1Aasnjo215irwQA"}]}],
+var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://photos.app.goo.gl/zjGZfcDDT4dofpTq9"}]}],
                 bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},{label:"Pics"}]}
 
 //===== MAP
@@ -51,7 +51,10 @@ map.on("click",function(evt) {
   if (match <0) {MapUp.innerHTML = ""; return;}
   console.log("And match is",match,PointList[match].name,evt.coordinate);
   MapUpOverlay.setPosition(evt.coordinate)
-  MapUp.innerHTML = "<p>"+PointList[match].name+"</p><img src="+PointList[match].pics+">"  
+  if (PointList[match].pics != null) {
+    MapUp.innerHTML = "<p>"+PointList[match].name+"</p>"+
+                      "<img src="+PointList[match].pics+" referrerpolicy=ʻno-referrerʻ>"}
+  else {MapUp.innerHTML = "<p>"+PointList[match].name+"</p>"}
 })
 
 
