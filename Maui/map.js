@@ -49,7 +49,7 @@ map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
   var match = PointList.findIndex(f => f.marker===feature);
   if (match <0) {MapUp.innerHTML = ""; return;}
-  console.log("And match is",match,PointList[match].name);
+  console.log("And match is",match,PointList[match].name,evt.coordinate);
   MapUpOverlay.setPosition(evt.coordinate)
   MapUp.innerHTML = "<p>"+PointList[match].name+"</p><img src="+PointList[match].pics+">"  
 })
