@@ -51,7 +51,7 @@ map.on("click",function(evt) {
   if (match <0) {MapUp.innerHTML = ""; return;}
   console.log("And match is",match,PointList[match].name);
   MapUpOverlay.setPosition(evt.coordinate)
-  MapUp.innerHTML = "<p>"+PointList[match].name+"</p><img src="+PointList[match].pics+">" 
+  MapUp.innerHTML = "<p>"+PointList[match].name+"</p><img src="+PointList[match].pics+">"  
 })
 
 
