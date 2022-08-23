@@ -35,7 +35,7 @@ function AddPoint(data,index) {
 
     var point = {marker:newPoint,name:Label2v(data,index,"Name"),pics:Label2v(data,index,"Pics")}
     PointList.push(point)
-    console.log(PointList)
+//    console.log(PointList)
 }
 
 var IconStyle = new ol.style.Icon({
