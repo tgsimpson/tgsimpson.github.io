@@ -2,7 +2,7 @@
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
 var SERVER = true;
 if (location.origin === "file://") {SERVER = false}
-var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://photos.app.goo.gl/zjGZfcDDT4dofpTq9"}]}],
+var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}]}],
                 bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},{label:"Pics"}]}
 
 //===== MAP
@@ -53,7 +53,7 @@ map.on("click",function(evt) {
   MapUpOverlay.setPosition(evt.coordinate)
   if (PointList[match].pics != null) {
     MapUp.innerHTML = "<p>"+PointList[match].name+"</p>"+
-                      "<img src="+PointList[match].pics+" referrerpolicy=ʻno-referrerʻ>"}
+                      "<img width=90% src="+PointList[match].pics+" referrerpolicy=ʻno-referrerʻ>"}
   else {MapUp.innerHTML = "<p>"+PointList[match].name+"</p>"}
 })
 
