@@ -1,7 +1,8 @@
 
 // if SERVER, use spreadseet; otherwise fake data (to get around CORS)
-var SERVER = true;
-if (location.origin === "file://") {SERVER = false}
+//var SERVER = true;
+//if (location.origin === "file://") {SERVER = false}
+var SERVER = !(location.origin === "file://")
 var fakeData = {Wf:[{c:[{v:"haha"},0,0,{v:20.8},{v:-156.4},{v:"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}]}],
                 bf:[{label:"Name"},{label:"Been to?"},{label:"Lat/Lng"},{label:"Lat"},{label:"Lng"},{label:"Pics"}]}
 
@@ -72,7 +73,7 @@ function init() {
 }
 
 function init2() {
-     var queryString = encodeURIComponent('SELECT *');
+     var queryString = encodeURIComponent('SELECT * options no_format');
      var query = new google.visualization.Query(
        'https://docs.google.com/spreadsheets/d/1Gpi7Xzp1FaHeNFsyAli3iVcG4GOq3Aa4MCng9FoudIM/gviz/tq?sheet=Beaches&headers=1&tq=' + queryString);
      query.send(handleSSData);
