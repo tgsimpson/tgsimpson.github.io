@@ -34,6 +34,7 @@ function AddPoint(data,index) {
     MarkerLayer.getSource().addFeature(newPoint);
 
     var point = {marker:newPoint,name:Label2v(data,index,"Name"),pics:Label2v(data,index,"Pics")}
+    console.log("THIS IS WHAT I FOUND",point.pics)
     PointList.push(point)
 //    console.log(PointList)
 }
@@ -49,7 +50,7 @@ map.on("click",function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
   var match = PointList.findIndex(f => f.marker===feature);
   if (match <0) {MapUp.innerHTML = ""; return;}
-  console.log("And match is",match,PointList[match].name,evt.coordinate);
+  console.log("And match is",match,PointList[match],PointList[match].name,evt.coordinate);
   MapUpOverlay.setPosition(evt.coordinate)
   if (PointList[match].pics != null) {
     MapUp.innerHTML = "<p>"+PointList[match].name+"</p>"+
