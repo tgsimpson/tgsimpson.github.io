@@ -1,0 +1,457 @@
+[
+ {
+   "Name": "Kanaha",
+   "Lat": 20.903017,
+   "Lng": -156.438845
+   "Note": "The airport beach"
+   "Pics": [
+      {"Notes":"./Data/beaches/kanaha.html", img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}
+   ]
+},
+ {
+   "Name": "VOR",
+   "Lat": 20.910302,
+   "Lng": -156.423677
+},
+ {
+   "Name": "Spreckelsville",
+   "Lat": 20.913349,
+   "Lng": -156.413377
+},
+ {
+   "Name": "Baby Beach (Spreckelsville)",
+   "Lat": 20.913669,
+   "Lng": -156.407069
+},
+ {
+   "Name": "Baldwin",
+   "Lat": 20.91321,
+   "Lng": -156.39305
+},
+ {
+   "Name": "Pāʻia Secret",
+   "Lat": 20.915994,
+   "Lng": -156.388444
+},
+ {
+   "Name": "Kaulahao",
+   "Lat": 20.922536,
+   "Lng": -156.375527
+},
+ {
+   "Name": "Kuau Cove (Mamaʻs Fish House)",
+   "Lat": 20.929374,
+   "Lng": -156.367835
+},
+ {
+   "Name": "Hoʻokipa",
+   "Lat": 20.933347,
+   "Lng": -156.359509
+},
+ {
+   "Name": "Peahi",
+   "Lat": 20.94262,
+   "Lng": -156.297713
+},
+ {
+   "Name": "Honumanu",
+   "Lat": 20.86101,
+   "Lng": -156.165289
+},
+ {
+   "Name": "Paʻlloa",
+   "Lat": 20.792049,
+   "Lng": -156.006864
+},
+ {
+   "Name": "Black Sand (Waiʻānapanapa)",
+   "Lat": 20.7891,
+   "Lng": -156.00525
+},
+ {
+   "Name": "Hāna Bay",
+   "Lat": 20.7553,
+   "Lng": -155.983824
+},
+ {
+   "Name": "Kaihalulu",
+   "Lat": 20.753402,
+   "Lng": -155.980259
+},
+ {
+   "Name": "Koki",
+   "Lat": 20.728546,
+   "Lng": -155.985827
+},
+ {
+   "Name": "Hamoa",
+   "Lat": 20.719645,
+   "Lng": -155.989008
+},
+ {
+   "Name": "Mokolau",
+   "Lat": 20.642965,
+   "Lng": -156.116157
+},
+ {
+   "Name": "Waipu",
+   "Lat": 20.628561,
+   "Lng": -156.149431
+},
+ {
+   "Name": "Kanaio (Kingʻs Highway)",
+   "Lat": 20.583092,
+   "Lng": -156.391964
+},
+ {
+   "Name": "Makena Cove",
+   "Lat": 20.627103,
+   "Lng": -156.444273
+},
+ {
+   "Name": "Makena  (Big Beach)",
+   "Lat": 20.63185,
+   "Lng": -156.44588
+},
+ {
+   "Name": "Puu Olai (Little Beach)",
+   "Lat": 20.63796,
+   "Lng": -156.4549
+},
+ {
+   "Name": "Oneuli",
+   "Lat": 20.639698,
+   "Lng": -156.447976
+},
+ {
+   "Name": "Maluaka",
+   "Lat": 20.646171,
+   "Lng": -156.443137
+},
+ {
+   "Name": "Makena Landing",
+   "Lat": 20.654016,
+   "Lng": -156.441016
+},
+ {
+   "Name": "Poʻolenalena (Changʻs)",
+   "Lat": 20.661338,
+   "Lng": -156.441791
+},
+ {
+   "Name": "PoʻOlenalena  ",
+   "Lat": 20.665126,
+   "Lng": -156.44
+},
+ {
+   "Name": "Palauea",
+   "Lat": 20.67074,
+   "Lng": -156.44326
+},
+ {
+   "Name": "Polo",
+   "Lat": 20.674648,
+   "Lng": -156.444237
+},
+ {
+   "Name": "Wailea",
+   "Lat": 20.68257,
+   "Lng": -156.44382
+},
+ {
+   "Name": "Ulua",
+   "Lat": 20.69047,
+   "Lng": -156.44405
+},
+ {
+   "Name": "Mōkapu",
+   "Lat": 20.692903,
+   "Lng": -156.444975
+},
+ {
+   "Name": "Keawakapu",
+   "Lat": 20.704288,
+   "Lng": -156.447008
+},
+ {
+   "Name": "Kamaole III",
+   "Lat": 20.712937,
+   "Lng": 156.446229
+},
+ {
+   "Name": "Kamaole II ",
+   "Lat": 20.716366,
+   "Lng": -156.447189
+},
+ {
+   "Name": "Kamaole I  ",
+   "Lat": 20.722384,
+   "Lng": -156.448524
+},
+ {
+   "Name": "Charley Young",
+   "Lat": 20.724837,
+   "Lng": -156.44958
+},
+ {
+   "Name": "Cove Beach Park",
+   "Lat": 20.72747,
+   "Lng": -156.45062
+},
+ {
+   "Name": "Kalama",
+   "Lat": 20.73144,
+   "Lng": -156.45302
+},
+ {
+   "Name": "TBD (Halama)",
+   "Lat": 20.73643,
+   "Lng": -156.4564
+},
+ {
+   "Name": "TBD (Welakahao, Kihei)",
+   "Lat": 20.739717,
+   "Lng": -156.456651
+},
+ {
+   "Name": "TBD (Waiohuli, Kihei)",
+   "Lat": 20.743534,
+   "Lng": -156.457467
+},
+ {
+   "Name": "Lipoa",
+   "Lat": 20.747305,
+   "Lng": -156.457824
+},
+ {
+   "Name": "Laie",
+   "Lat": 20.750929,
+   "Lng": -156.460736
+},
+ {
+   "Name": "Waipuilani",
+   "Lat": 20.756858,
+   "Lng": -156.45919
+},
+ {
+   "Name": "Keaka ",
+   "Lat": 20.76194,
+   "Lng": -156.45943
+},
+ {
+   "Name": "Kalepolepo (Fishpond)",
+   "Lat": 20.764273,
+   "Lng": -156.459153
+},
+ {
+   "Name": "Kaipukaihina",
+   "Lat": 20.772012,
+   "Lng": 156.459903
+},
+ {
+   "Name": "Mai Poina",
+   "Lat": 20.774577,
+   "Lng": -156.460672
+},
+ {
+   "Name": "Kenolio",
+   "Lat": 20.780683,
+   "Lng": -156.462557
+},
+ {
+   "Name": "Sugar",
+   "Lat": 20.78548,
+   "Lng": -156.46837
+},
+ {
+   "Name": "Maalaea",
+   "Lat": 20.793959,
+   "Lng": -156.482869
+},
+ {
+   "Name": "Haycraft",
+   "Lat": 20.79662,
+   "Lng": -156.50322
+},
+ {
+   "Name": "Pāpalaua",
+   "Lat": 20.79305,
+   "Lng": -156.57182
+},
+ {
+   "Name": "Ukumehame",
+   "Lat": 20.795711,
+   "Lng": -156.585243
+},
+ {
+   "Name": "Olowalu",
+   "Lat": 20.809067,
+   "Lng": -156.615868
+},
+ {
+   "Name": "Awalua",
+   "Lat": 20.828315,
+   "Lng": -156.635579
+},
+ {
+   "Name": "Launiupoko",
+   "Lat": 20.842513,
+   "Lng": -156.652798
+},
+ {
+   "Name": "Kamehamea Iki",
+   "Lat": 20.86836,
+   "Lng": -156.6765
+},
+ {
+   "Name": "Emilyʻs",
+   "Lat": 20.86984,
+   "Lng": -156.67742
+},
+ {
+   "Name": "Puuno (Baby Beach Lahaina)",
+   "Lat": 20.88288,
+   "Lng": -156.68776
+},
+ {
+   "Name": "TBD (btw Lahaina and Kanapali)",
+   "Lat": 20.90362,
+   "Lng": -156.68547
+},
+ {
+   "Name": "Hanakaoʻo",
+   "Lat": 20.90959,
+   "Lng": -156.68877
+},
+ {
+   "Name": "Kaanapali",
+   "Lat": 20.91789,
+   "Lng": -156.69679
+},
+ {
+   "Name": "Black Rock",
+   "Lat": 20.92676,
+   "Lng": -156.69581
+},
+ {
+   "Name": "Mayʻs",
+   "Lat": 20.92891,
+   "Lng": -156.69473
+},
+ {
+   "Name": "Beckoʻs Island",
+   "Lat": 20.93294,
+   "Lng": -156.69306
+},
+ {
+   "Name": "Kahekili",
+   "Lat": 20.93701,
+   "Lng": -156.69283
+},
+ {
+   "Name": "Willʻs",
+   "Lat": 20.9416,
+   "Lng": -156.6925
+},
+ {
+   "Name": "Honokōwai",
+   "Lat": 20.95468,
+   "Lng": -156.68677
+},
+ {
+   "Name": "Pohaku",
+   "Lat": 20.968074,
+   "Lng": -156.681281
+},
+ {
+   "Name": "TBD",
+   "Lat": 20.97745,
+   "Lng": -156.67792
+},
+ {
+   "Name": "TBD",
+   "Lat": 20.97906,
+   "Lng": -156.67575
+},
+ {
+   "Name": "Kaʻopala",
+   "Lat": 20.982207,
+   "Lng": -156.673388
+},
+ {
+   "Name": "Kahana Sunset",
+   "Lat": 20.98496,
+   "Lng": -156.67226
+},
+ {
+   "Name": "Napili Bay",
+   "Lat": 20.99546,
+   "Lng": -156.66649
+},
+ {
+   "Name": "Kapalua Bay",
+   "Lat": 20.99953,
+   "Lng": -156.66645
+},
+ {
+   "Name": "Oneloa",
+   "Lat": 21.0041,
+   "Lng": -156.65895
+},
+ {
+   "Name": "Fleming ",
+   "Lat": 21.00461,
+   "Lng": -156.65239
+},
+ {
+   "Name": "Slaughterhouse",
+   "Lat": 21.011259,
+   "Lng": -156.642011
+},
+ {
+   "Name": "Punalau",
+   "Lat": 21.0223,
+   "Lng": -156.62575
+},
+ {
+   "Name": "TBD",
+   "Lat": 21.02116,
+   "Lng": -156.60961
+},
+ {
+   "Name": "Kahakuloa",
+   "Lat": 20.99787,
+   "Lng": -156.5504
+},
+ {
+   "Name": "Waihee",
+   "Lat": 20.9323,
+   "Lng": -156.498764
+},
+ {
+   "Name": "Waiehu",
+   "Lat": 20.92305,
+   "Lng": -156.49284
+},
+ {
+   "Name": "Paukukala",
+   "Lat": 20.91062,
+   "Lng": -156.48527
+},
+ {
+   "Name": "Kahalui",
+   "Lat": 20.896052,
+   "Lng": -156.479046
+},
+ {
+   "Name": "Hoʻaloha",
+   "Lat": 20.89229,
+   "Lng": -156.46939
+},
+ {
+   "Name": "Kite",
+   "Lat": 20.89679,
+   "Lng": -156.4502
+}
+]

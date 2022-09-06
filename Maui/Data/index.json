@@ -1,0 +1,10 @@
+[
+{
+	"type":"beaches",
+	"file":"./Data/beaches.json"
+},
+{
+	"type":"trail"
+	"file":".Data/trails.json"
+}
+]
