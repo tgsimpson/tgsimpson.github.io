@@ -131,7 +131,15 @@ var AllData =
  {
    "Name": "Oneuli",
    "Lat": 20.639698,
-   "Lng": -156.447976
+   "Lng": -156.447976,
+   "Tags": ["Beach"],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVcD2nQjhAERYscKupbQZsSCwTFpglpMhyhDr5NeSG8fBnnw4Yb9wHDVa2Ubu-_kLDbG8DHLvyx8EeNGnan7em7gGeH_wVB_lnHUzzmG3JFtttPUnWp1DAEsA0YOccYsVwhSadFcCvBCmPH_ovHWnfhsg=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXsmBoyt9_u-t9z4wCxScbM8Npug6y-BBRAcJt2ZEi1sg3cvinBABPvYicSBehfCkVsY-tHmQyUyMaJTvpAsvJ2LC8DxtaVPOIMJaOETjbQfGE83QtzX0p4S4cF-O_tlk2A0uoAS95iu6k2nM9tFLpkng=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV1KvHePI4R0pgXlm184DZTXBLjJyhgFaTzRh7oe0RmX_9tY5s60kfD9DJm16pUIGMIHXtPnxjqskcTwi87-K2Rv5iZ3lUEi5L3G7usxtbAKOH4Axz4A_q8EZq2R8fTb3GxqYjKJfYk_FUwSir_q1PkHg=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWugHRk4OD_cVI9kSqzcokj27-BOEZpyHpzTBajFsfSy6bwBl871PVfGBeaq7wkAh-AfskZh2vqyVa5BuClQd-Cn1vb1swnIJPRqrQaEIe1VRCZmA417bZFv9-579Cf25SJg19t48F8M_ebZV9D2eBhDw=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Maluaka",
