@@ -115,21 +115,36 @@ var AllData =
 },
  {
    "Name": "Makena Cove",
-   "Lat": 20.627103,
-   "Lng": -156.444273
+   "Lat": 20.62695,
+   "Lng": -156.44313
 },
  {
    "Name": "Makena  (Big Beach)",
    "Lat": 20.63185,
-   "Lng": -156.44588
+   "Lng": -156.44588,
+   "Tags": ["Beach"],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUWfxToSqh77mB_Z1EJ323Vf_oj2aY8_jEy5MWgmKgBPw0PxgqwRuEdefBG45nAsoZdba3n0eMq2pSKgEjGYxgIKpEM0M6uRz0WcgQxkSpPXK1jxhNCs19WlKUu1BRJCACCEwkiD8Nf6ygrbdZb0UXzLQ=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXq9b5D1vDU29zlD276P4OIZyw_smmbr_vBbfOu986oZ10QiMPgVNQ0RnI51iXAtEyS029DzT7tRJKFvnEeNKGgam016_qlFC7TnPCyTfLefLMSR0jilWnaqW0-xPoeGllhnXrohEx6P0Vp-B3D_rpclQ=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVu4Fne7_m2GRa516qtVVQPR9XGdli2W-MdwxxocBhSfQmrwngPWP1-LHHZ34-PhLVAmnAUPy_n08OHoJ2y5StRHDPIe7_hgokb_CNUJGfsHhUR3oexR-aqQGjGNaxgVglOlOeVCHyikLpTBezXckNi5A=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXq9b5D1vDU29zlD276P4OIZyw_smmbr_vBbfOu986oZ10QiMPgVNQ0RnI51iXAtEyS029DzT7tRJKFvnEeNKGgam016_qlFC7TnPCyTfLefLMSR0jilWnaqW0-xPoeGllhnXrohEx6P0Vp-B3D_rpclQ=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Puu Olai (Little Beach)",
-   "Lat": 20.63796,
-   "Lng": -156.4549
+   "Lat": 20.63483,
+   "Lng": -156.45180,
+   "Tags": ["Beach"],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWGx2LH51fytUkTO99u_8qAhm9T41Xw1Cy0RIRpS9QBCFn__Wtv4PzmCcQqeHqKIvkbz-lP3SQdipsMyBKY37e3F4Qau_2oTgKVVZkNIIvo4BNgM2afbBZsG2mT4UNRuC7izxGVIY0rQ66v2NK-xyTFhg=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXPVlMLnB-M6eQpoviRn7vaWyZ1rKRGZ8uaG-E10N7VeffZbaErUqsG31PhabEUBb8PPZlxg7PIa7YyxIF5W6WTG19GpbRt_hIcAGMf-sGkMbT7U7XVme-FNF2Kvccq5TWCPnMDgsQw7o5b-Se5FziYgQ=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWRxTeFM7LYPeRuuojZ1dRQPGsQqRMH-8EuwzLNWmdyY_I4khlFn7rfM7kOM_52yx2dtJhBh0QNbiM4ZHJuUIO_jGYIhFy8EZ4aKryiDteawps5z7Y0CWYpkguNDymzOcElf1mKJ4Xlhg2T6GWhRY-epg=w2108-h1580-no"},
+   ]
 },
  {
-   "Name": "Oneuli",
+   "Name": "Oneʻuli",
    "Lat": 20.639698,
    "Lng": -156.447976,
    "Tags": ["Beach"],
