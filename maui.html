@@ -8,37 +8,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css">
 
   <style>
-      .map {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-      }
-      .fulls {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: none;
-        z-index: 1;
-        background-color: black;
-      }
+      .map {position: absolute;height: 100%;width: 100%;}
+      .fulls {position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: none;z-index: 1;background-color: black;}
       .wrapperDiv {position: fixed; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; top: 0; left: 0;}
       .mySlides {justify-content: center; display: flex; height: 100%; object-fit: scale-down; z-index: 2}
       .fillImage img {justify-content: center; align-items: center; display: flex; max-width:100%; max-height:100%; object-fit: scale-down;}
+      .descPage {display:none; height:100%;width:100%;background-color:rgba(255,255,255,0.92);position:absolute;z-index:4;}
       .prev,.next,.hide,.desc {
         cursor: pointer; transition: 0.6s ease; user-select: none;
         position: absolute; width: auto; margin-top: -22px; padding: 16px; border-radius: 0 3px 3px 0;
         color: white; background-color: rgba(0,0,0,0.3); font-weight: bold; font-size: 18px; z-index:2;}
       .prev {left: 0;  top: 50%;}
       .next {right: 0; top: 50%;}
-      .hide {left: 0;  top: 5%; }
-      .desc {right: 0; top: 5%;}
-      .prev:hover, .next:hover, .hide:hover, .desc:hover {background-color: rgba(0,0,0,0.9);}
-      .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;}
-      .numbertext {color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
-      .dot {cursor: pointer; height: 15px; width: 15px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
-      .active, .dot:hover {background-color: #717171;}
+      .hide {right: 0;  top: 5%; z-index:4;}
+      .desc {left: 0; top: 5%;}
+      .prev:hover, .next:hover, .hide:hover, .desc:hover { color: green; background-color: gray;}
+      .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;background-color:rgba(0,0,0,0.3);}
   </style>
 
 </head>
@@ -48,12 +33,13 @@
   <div id="PicShow" class="fulls">
     <div class="mySlides">
       <img id="PicElement" src="" class="fullImage">
-<!--      <div id="PicDesc" display="none" height="100%" width="100%" background-color="green" z-index=3>No Desc</div> -->
+      <div id="PicDesc" class="descPage"></div> 
     </div>
-    <a id="prevButton" class="prev">&#10094;</a>
-    <a id="nextButton" class="next">&#10095;</a>
-    <a id="hideButton" class="hide">&#10540;</a>
-    <a id="descButton" class="desc">ABC</a>
+    <div id="prevButton" class="prev">&#10094;</div>
+    <div id="nextButton" class="next">&#10095;</div>
+    <div id="hideButton" class="hide">&#10540;</div>
+    <div id="descButton" class="desc">&#128172;</div>
+    <div id="captionSpot" class="text"></div>
   </div>
   <div id="map" class="map"><div id="mapup"></div></div>
 </body>

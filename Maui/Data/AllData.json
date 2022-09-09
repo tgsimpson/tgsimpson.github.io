@@ -7,7 +7,7 @@ var AllData =
    "Lng": -156.438845,
    "Note": "The airport beach",
    "Pics": [
-      {"notes":"./Maui/Data/beaches/kanaha.html", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"},
+      {"page":"./Maui/Data/beaches/kanaha.html", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}
    ],
 },
@@ -101,13 +101,27 @@ var AllData =
    "Lat": 20.628561,
    "Lng": -156.149431
 },
+{
+   "Name": "20.58,-156.39 (Unnamed Beach)",
+   "Lat":20.57973,
+   "Lng":-156.39149,
+   "Tags": ["Beach","Story"],
+   "Page": "./Maui/Data/beaches/KHstory.html",
+   "Status": {"visited":true},
+   "Pics": [
+      {"caption":"ATV out here??","img":"https://lh3.googleusercontent.com/pw/AL9nZEWSC0AiYPQBpnj0pWnI2rDbui093sg8aAMozNGw7QLqwUoNNzNce8wM5BFXPUKePz3oK1Zh_HqVf43v0cEzJfZzSKbp4jVN4wxHoJ3QJxU0HRMjnAhe893jr7fcts-WJHfSEc-eOyHWLRMVPCDYScxESQ=w2108-h1580-no"},
+      {"caption":"Looking North towards Kanaio Beach","img":"https://lh3.googleusercontent.com/pw/AL9nZEU2P5dLPF8_sSriuPTHfT3GTWYxKntezsYycvQu0W4C6XMRVP6Pt9NsaVWLG5YPirb84wFDCL5EFKWGpkW3Hc-fYl65oGzF6-x7PCTu63F3L1xUgz48j1deQRZP4D24bCUO2nk44MtsNvv0ZV--tbwftg=w2108-h1580-no"},
+      {"caption":"White coral in sea of black lava","img":"https://lh3.googleusercontent.com/pw/AL9nZEUb98ctvDGopkn0wW7oclKwFw6GJrTy28-JbOP5UBwV5o82ocYyOexYKQKg_c1h4_5Fyy6sVrLaHIZMSvgmvg-ciICU4FZEirTEAz73vuFIvsl3hcHeupBEiUeqiJiXUbK58s17l0KKTaBONomQ1EQLVg=w2108-h1580-no"},
+   ]
+},
  {
    "Name": "Kanaio (Kingʻs Highway)",
-   "Lat": 20.583092,
-   "Lng": -156.391964,
+   "Lat": 20.58215,
+   "Lng": -156.39802,
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Pics": [
+      {"caption":"Looking NW towards Lanai","img":"https://lh3.googleusercontent.com/pw/AL9nZEV_vh6QVHz1LaRlDzstV2wIPnrZAcMs1ZaAjGfqyRgEpBWZcVwZQZNOBJZNf47hwGwcPn2twLmanjVW8ogGIuq7D3dU5E31BFG6OzniQaahpD6xDjc24ZFwumqyyxpkUZ8M9EfIOwGcRUYe21Vuo_gYxg=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWQQqR8Ph_h2XzDJgvDZETs6TTA-QEs4gBnJmqP2a_LJy366SbmllPktR60Sb-XYy35zFKuXmQR476i8-9KbghFGzEb9QdCQbNJNAKNOa-uVWaQ1YbO0A8WSqI36mTQQyqOakquQzOBFiVQLLxPIsNMvg=w1186-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXNHiJNEB2LA9ro5VQcCrf0cxw9DYQ4N0GbyvHDMfdrO3c7n1D1yOO-H_2za0_1wWq5Y21nkkCTNvgvOwjOlf9RqlaPTu8KpJjRqgp2qJE89reesY_MMxq9x7VtgFtPAEAbc78c6GQhXOS4J5PtimacSw=w1186-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWi0otkg6CyIqrh2ZliO2NH-X_XL_5wji8rJ7iGGHSjFUD1ijEpzaEg86IQB_HlND9vG-wNTUpHBH6EBXGZeR8QnuRPUHU7SoIzhMErd10em6OhyRaOZJRaGnkuKV5S-rB68b-8kudUZobZJjgwUgtiqQ=w1186-h1580-no"},
@@ -136,11 +150,12 @@ var AllData =
    "Lat": 20.63483,
    "Lng": -156.45180,
    "Tags": ["Beach"],
+   "Page": "./Maui/Data/beaches/puuolai.html",
    "Status": {"visited":true},
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWGx2LH51fytUkTO99u_8qAhm9T41Xw1Cy0RIRpS9QBCFn__Wtv4PzmCcQqeHqKIvkbz-lP3SQdipsMyBKY37e3F4Qau_2oTgKVVZkNIIvo4BNgM2afbBZsG2mT4UNRuC7izxGVIY0rQ66v2NK-xyTFhg=w2108-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXPVlMLnB-M6eQpoviRn7vaWyZ1rKRGZ8uaG-E10N7VeffZbaErUqsG31PhabEUBb8PPZlxg7PIa7YyxIF5W6WTG19GpbRt_hIcAGMf-sGkMbT7U7XVme-FNF2Kvccq5TWCPnMDgsQw7o5b-Se5FziYgQ=w2108-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWRxTeFM7LYPeRuuojZ1dRQPGsQqRMH-8EuwzLNWmdyY_I4khlFn7rfM7kOM_52yx2dtJhBh0QNbiM4ZHJuUIO_jGYIhFy8EZ4aKryiDteawps5z7Y0CWYpkguNDymzOcElf1mKJ4Xlhg2T6GWhRY-epg=w2108-h1580-no"},
+      {"caption":"Looking North", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWGx2LH51fytUkTO99u_8qAhm9T41Xw1Cy0RIRpS9QBCFn__Wtv4PzmCcQqeHqKIvkbz-lP3SQdipsMyBKY37e3F4Qau_2oTgKVVZkNIIvo4BNgM2afbBZsG2mT4UNRuC7izxGVIY0rQ66v2NK-xyTFhg=w2108-h1580-no"},
+      {"caption":"Coral Cairn", "img":"https://lh3.googleusercontent.com/pw/AL9nZEXPVlMLnB-M6eQpoviRn7vaWyZ1rKRGZ8uaG-E10N7VeffZbaErUqsG31PhabEUBb8PPZlxg7PIa7YyxIF5W6WTG19GpbRt_hIcAGMf-sGkMbT7U7XVme-FNF2Kvccq5TWCPnMDgsQw7o5b-Se5FziYgQ=w2108-h1580-no"},
+      {"caption":"Looking South", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWRxTeFM7LYPeRuuojZ1dRQPGsQqRMH-8EuwzLNWmdyY_I4khlFn7rfM7kOM_52yx2dtJhBh0QNbiM4ZHJuUIO_jGYIhFy8EZ4aKryiDteawps5z7Y0CWYpkguNDymzOcElf1mKJ4Xlhg2T6GWhRY-epg=w2108-h1580-no"},
    ]
 },
  {
