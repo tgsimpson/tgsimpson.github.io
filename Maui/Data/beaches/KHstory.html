@@ -37,7 +37,28 @@
 	<p>Iʻll update here once I make the trek. </p> 
   </div>
 </body>
+
+<!-- Load the data for this beach; when on server, should use parent window to get AllData instead of re-loading the file -->
 <script>
-	console.log("Is AllData available in this iframe?",window.parent.AllData)
+  const queryString = window.location.search;
+  const ADIndex = parseInt(queryString.substring(5))
+  var LocalData = null
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {  // On Localhost
+    console.log("Localhost");
+    const script = document.createElement('script')
+    script.src = '../AllData.json'
+    document.body.appendChild(script)
+    LocalData = AllData[ADIndex]
+  }
+  else {  // on Server
+  	LocalData = window.parent.AllData[ADIndex]
+  }
+  console.log("LocalData is", LocalData)
+
+
+
+
+//	console.log("Is AllData available in this iframe?",window.parent.AllData)
+
 	</script>
 </html>

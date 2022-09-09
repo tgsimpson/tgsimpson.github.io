@@ -35,7 +35,7 @@ class PicShow {
 	showDesc(b)	  {if (!b) {this.picD.style.display = "none"; return;};
 		// if Page is on main record, use it... otherwise use page (lower case) on image specific one.
 				   if ("Page" in AllData[this.DIndex]) {
-				   	 this.picD.innerHTML = "<iframe src="+AllData[this.DIndex].Page+" width=\"100%\" height=\"100%\"/>"
+				   	 this.picD.innerHTML = "<iframe src="+AllData[this.DIndex].Page+"?idx="+this.DIndex+" width=\"100%\" height=\"100%\"/>"
 				   	 this.picD.style.display = "flex";				   	
 				   }
 				   if ("page" in this.pics[this.PIndex]) {
