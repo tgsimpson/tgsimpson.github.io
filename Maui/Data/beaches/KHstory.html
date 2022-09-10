@@ -38,27 +38,34 @@
   </div>
 </body>
 
-<!-- Load the data for this beach; when on server, should use parent window to get AllData instead of re-loading the file -->
-<script>
-  const queryString = window.location.search;
-  const ADIndex = parseInt(queryString.substring(5))
-  var LocalData = null
-  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {  // On Localhost
-    console.log("Localhost");
-    const script = document.createElement('script')
-    script.src = '../AllData.json'
-    document.body.appendChild(script)
-    LocalData = AllData[ADIndex]
-  }
-  else {  // on Server
-  	LocalData = window.parent.AllData[ADIndex]
-  }
-  console.log("LocalData is", LocalData)
+<!-- Load the data for this beach; when on server, should use parent window to get AllData instead of re-loading the file 
+<script src="../AllData.json"></script> 
 
+<script src="./LoadData.js"></script>-->
 
-
-
-//	console.log("Is AllData available in this iframe?",window.parent.AllData)
-
-	</script>
+<script> 
+var ThisIndex = parseInt(window.location.search.substring(5));
+try {var AllData = window.parent.AllData[0]; console.log("SERVER SERVER")}
+catch {
+	console.log("LOCALHOST LOCALHOST")
+	var waitvar = false
+	function loadScript () {
+    	return new Promise((resolve, reject) => {
+      	const script = document.createElement('script')
+      	script.type = 'text/javascript'
+      	script.async = true
+      	script.src = `../AllData.json`
+      	document.head.append(script);
+      	script.addEventListener('load',()=>{waitvar = true; resolve(script)})
+      	script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})
+	})}
+    async function doLoad() {
+    	const result = await loadScript();
+    	var LocalData = AllData[ThisIndex];
+    	console.log("LocalData is here",LocalData)
+    	// ALL OTHER  CODE  FOR THIS WEBPAGE  HERE
+    }
+   doLoad();
+}
+</script>
 </html>
