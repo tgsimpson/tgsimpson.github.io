@@ -44,8 +44,13 @@
 <script src="./LoadData.js"></script>-->
 
 <script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+var LocalData = {}
 var ThisIndex = parseInt(window.location.search.substring(5));
-try {var AllData = window.parent.AllData[0]; console.log("SERVER SERVER")}
+try {LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
 catch {
 	console.log("LOCALHOST LOCALHOST")
 	var waitvar = false
@@ -61,9 +66,8 @@ catch {
 	})}
     async function doLoad() {
     	const result = await loadScript();
-    	var LocalData = AllData[ThisIndex];
-    	console.log("LocalData is here",LocalData)
-    	// ALL OTHER  CODE  FOR THIS WEBPAGE  HERE
+    	LocalData = AllData[ThisIndex];
+    	AllJS()
     }
    doLoad();
 }
