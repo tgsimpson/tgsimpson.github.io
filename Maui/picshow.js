@@ -33,21 +33,32 @@ class PicShow {
 	}
 
 	showDesc(b)	  {if (!b) {this.picD.style.display = "none"; return;};
-		// if Page is on main record, use it... otherwise use page (lower case) on image specific one.
-				   if ("Page" in AllData[this.DIndex]) {
-				   	 this.picD.innerHTML = "<iframe src="+AllData[this.DIndex].Page+"?idx="+this.DIndex+" width=\"100%\" height=\"100%\"/>"
-				   	 this.picD.style.display = "flex";				   	
-				   }
-				   if ("page" in this.pics[this.PIndex]) {
-				   	 this.picD.innerHTML = "<iframe src="+this.pics[this.PIndex].page+" width=\"100%\" height=\"100%\"/>"
+				   if ("Page" in AllData[this.DIndex]) this.descOnly(AllData[this.DIndex].Page);
+				   if ("page" in this.pics[this.PIndex]) this.descOnly(this.pics[this.PIndex].page);
+				  }
+
+	descOnly(d)   { this.picD.innerHTML = "<iframe src="+d+"?idx="+this.DIndex+" width=\"100%\" height=\"100%\"/>"
 				   	 this.picD.style.display = "flex";
-				    }
+				   	 this.div.style.display = "block";
+				   	 console.log("showing desc",document.getElementById("selectBox").style.display);
+				   	 document.getElementById("selectBox").style.display = "none"
+				   	 console.log("showing desc",document.getElementById("selectBox").style.display);
 				  }
 	
 
 	hidePane()    {// handle both desc iframe and picture block; check desc first
-			       if (this.picD.style.display != "none") {this.picD.style.display="none";return}
+				   console.log("Hide Panel")
+			       if (this.picD.style.display != "none") {
+			       	  this.picD.style.display="none";
+			       	  if (this.DIndex === -1) 
+			       	    {console.log("Dindex is -1; removing pic element")
+			       	     this.div.style.display="none"; // no point chosen right now
+			       	     document.getElementById("selectBox").style.display = "block";
+			       	    }
+			       	  return
+			       	}
 			       this.div.style.display="none";
+			       document.getElementById("selectBox").style.display = "block";
 				  }
 
 	move(n)		  {this.PIndex += n;
@@ -59,16 +70,24 @@ class PicShow {
 
 	setImg()	  {try {this.picE.src = this.pics[this.PIndex].img;
 						let nms = " "+(this.PIndex+1).toString()+"/"+this.PLength.toString();
-						if ("caption" in this.pics[this.PIndex]) {this.caption.innerHTML = AllData[this.DIndex].Name+": "+this.pics[this.PIndex].caption+" "+nms;}
+						if ("caption" in this.pics[this.PIndex]) 
+							{this.caption.innerHTML = AllData[this.DIndex].Name+": "+this.pics[this.PIndex].caption+" "+nms;}
 						else {this.caption.innerHTML = AllData[this.DIndex].Name+" "+nms;}
 						if ("page" in this.pics[this.PIndex] || "Page" in AllData[this.DIndex]) 
-							{this.descBut.style.display = "block";} else {this.descBut.style.display = "none";}
-					   }
+							{this.descBut.innerHTML="Note"; this.descBut.style.display = "block";} 
+						else {this.descBut.style.display = "none";}
+						if ("Page" in AllData[this.DIndex]) {
+							this.descBut.innerHTML="<span style=\"color: #00ff00\">&#128214;</span>";
+							this.descBut.style.display = "block";}
+			  			document.getElementById("selectBox").style.display = "none"
+					 }
 				   catch {this.hidePane()};
 				  }
 }
 
 const PShow = new PicShow()
+//console.log("showing welcome?")
+PShow.descOnly("./Maui/Data/welcome.html")
 
 //let PS = new PicShow("PicShow");
 //PS.setPics(["./one.png","./two.png","./three.png","./four.png"]);

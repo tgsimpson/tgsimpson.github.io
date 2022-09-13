@@ -111,7 +111,6 @@ var AllData =
    "Page": "./Maui/Data/beaches/KHstory.html",
    "Status": {"visited":true},
    "Pics": [
-      {"caption":"ATV out here??","img":"https://lh3.googleusercontent.com/pw/AL9nZEWSC0AiYPQBpnj0pWnI2rDbui093sg8aAMozNGw7QLqwUoNNzNce8wM5BFXPUKePz3oK1Zh_HqVf43v0cEzJfZzSKbp4jVN4wxHoJ3QJxU0HRMjnAhe893jr7fcts-WJHfSEc-eOyHWLRMVPCDYScxESQ=w2108-h1580-no"},
       {"caption":"Looking North towards Kanaio Beach","img":"https://lh3.googleusercontent.com/pw/AL9nZEU2P5dLPF8_sSriuPTHfT3GTWYxKntezsYycvQu0W4C6XMRVP6Pt9NsaVWLG5YPirb84wFDCL5EFKWGpkW3Hc-fYl65oGzF6-x7PCTu63F3L1xUgz48j1deQRZP4D24bCUO2nk44MtsNvv0ZV--tbwftg=w2108-h1580-no"},
       {"caption":"White coral in sea of black lava","img":"https://lh3.googleusercontent.com/pw/AL9nZEUb98ctvDGopkn0wW7oclKwFw6GJrTy28-JbOP5UBwV5o82ocYyOexYKQKg_c1h4_5Fyy6sVrLaHIZMSvgmvg-ciICU4FZEirTEAz73vuFIvsl3hcHeupBEiUeqiJiXUbK58s17l0KKTaBONomQ1EQLVg=w2108-h1580-no"},
    ]

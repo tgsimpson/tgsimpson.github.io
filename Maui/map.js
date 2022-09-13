@@ -11,10 +11,11 @@ map.addOverlay(MapUpOverlay);
 
 var PointList = []
 function AddAPoint(i) {
-
     var clr = new ol.color.asArray([255,0,0,0.66]);
+    var bor = new ol.color.asArray([255,255,255,1]);
     try{
-      if (AllData[i].Status.visited) {clr = new ol.color.asArray([50,255,50,0.66])}
+      if (AllData[i].Status.visited) {clr = new ol.color.asArray([150,255,150,0.8])}
+      if ("Page" in AllData[i]) {clr = new ol.color.asArray([50,255,50,0.9])}
     }
     catch {}
     // figure out color based on something.
@@ -28,13 +29,7 @@ function AddAPoint(i) {
     return (p);
 }
 
-//var IconStyle = new ol.style.Icon({
-//      anchor: [0.5, 0.5],  anchorXUnits: "fraction",  anchorYUnits: "fraction",
-//      src: "https://upload.wikimedia.org/wikipedia/commons/e/ec/RedDot.svg"   });
-var MarkerLayer = new ol.layer.Vector({
-  source: new ol.source.Vector({features:[]}),
-  //style: new ol.style.Style({image: IconStyle})
-  });
+var MarkerLayer = new ol.layer.Vector({source: new ol.source.Vector({features:[]}),});
 map.addLayer(MarkerLayer)
 
 
@@ -55,6 +50,11 @@ function init() {
      try {PointList[i]=AddAPoint(i)}
      catch (err) {PointList[i]=null;console.log("issue with element",i,err)}
    }
+   document.getElementById("selectBox").addEventListener("click", () => filterPoints());
+}
+
+function filterPoints() {
+  console.log("Do your filtering magic here")
 }
  
 

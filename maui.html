@@ -14,15 +14,16 @@
       .mySlides {justify-content: center; display: flex; height: 100%; object-fit: scale-down; z-index: 2}
       .fillImage img {justify-content: center; align-items: center; display: flex; max-width:100%; max-height:100%; object-fit: scale-down;}
       .descPage {display:none; height:100%;width:100%;background-color:rgba(255,255,255,0.92);position:absolute;z-index:4;}
-      .prev,.next,.hide,.desc {
+      .prev,.next,.hide,.desc,.sele {
         cursor: pointer; transition: 0.6s ease; user-select: none;
-        position: absolute; width: auto; margin-top: -22px; padding: 16px; border-radius: 0 3px 3px 0;
-        color: white; background-color: rgba(0,0,0,0.3); font-weight: bold; font-size: 18px; z-index:2;}
+        position: absolute; width: auto; margin-top: -22px; padding: 6px; border-radius: 0 3px 3px 0;
+        color: white; background-color: rgba(0,0,0,0.3); font-weight: bold; font-size: 24px; z-index:2;}
       .prev {left: 0;  top: 50%;}
       .next {right: 0; top: 50%;}
       .hide {right: 0;  top: 5%; z-index:4;}
-      .desc {left: 0; top: 5%;}
-      .prev:hover, .next:hover, .hide:hover, .desc:hover { color: green; background-color: gray;}
+      .desc {left: ; top: 5%;background-color:rgba(180,255,180,0.92);}
+      .sele {top: 5%; right: 0;display:block;background-color:rgba(255,255,255,0.4);}
+      .prev:hover, .next:hover, .hide:hover, .desc:hover, .sele:hover { color: green; background-color: gray;}
       .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;background-color:rgba(0,0,0,0.3);}
   </style>
 
@@ -38,10 +39,12 @@
     <div id="prevButton" class="prev">&#10094;</div>
     <div id="nextButton" class="next">&#10095;</div>
     <div id="hideButton" class="hide">&#10540;</div>
-    <div id="descButton" class="desc">&#128172;</div>
+    <div id="descButton" class="desc">&#128214;</div>
     <div id="captionSpot" class="text"></div>
   </div>
   <div id="map" class="map"><div id="mapup"></div></div>
+  <div id="selectBox" class="sele">&#128269;</div> <!--&#x25BC;</div> -->
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.js"></script>
