@@ -276,13 +276,23 @@ var AllData =
    "Name": "Wailea",
    "Tags": ["Beach"],
    "Lat": 20.68257,
-   "Lng": -156.44382
+   "Lng": -156.44382,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWrXifIg2_hAfWwnqCCCHF3DKwGKdi0igGfiypu4qYzq5F8J9FhluHGqdzhD_ljGit0zc37n8Hs-R-ekYnh0YlqXDkMjBD1pANGyz51fYe-bI1z-C65MwnVrpAYAtvP0h-AG-QBocIokR7Pyc1PFjRVqg=w2108-h1580-no"},
+    ]
 },
  {
    "Name": "Ulua",
    "Tags": ["Beach"],
    "Lat": 20.69047,
-   "Lng": -156.44405
+   "Lng": -156.44405,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXyNwCHGxGQ9vjkv5-tD8TUsgkHThvWFG6uP-xlHKcXYsdNMa3e9waacmxxokjz5yzuY6InAVTHT_Ourp6Xb40RSzgVCQiiSHlVXNe1jthLwcsJ1CCmdlW96dWsl2-ZSLEtsRkjWZsCTBKg9lDqQb16ag=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW5XKLMMLg_PK2X54v3RIFdFWBfpAoHQDWkHbdfA8rbTVhjr-aPJAzIW7WaILH7ZGP9uXBoYOIhtjWMn1D3R2zZ3PpoQy8F_guVtBqD5AkySGWUMZ3C1VXQqKaLuM1pZ8rIU7EOCQARdFzbx2IvlLGSFw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVSHBjjTa6tVYcuzbpJkSA-xxnYgxrwbutMcuNLqBQoDtPKK56XfWCAvPS5EGWvHTQjVgkzZU4BBnLEmT9bZrTP2dceMSrXrFJPmMSvfPGsrdho1WeYTNaFnxrb2nalveIl_9geyk3OaKVl3AmLWR8lLA=w2808-h1580-no"},
+   ]
 },
  {
    "Name": "Mōkapu",
@@ -294,7 +304,14 @@ var AllData =
    "Name": "Keawakapu",
    "Tags": ["Beach"],
    "Lat": 20.704288,
-   "Lng": -156.447008
+   "Lng": -156.447008,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWH_YUMuLX-cgn3zCK3Zh5uUKWxUFWp-12fCpqxhy_HpGC_PC98HvJMRgXKXCeJrSSizUtZI3DALij1N0ZY2Wi-kx_FuY9T7x19AYsZEEN6P1PdVLKAVdHkYCnOZYmUmkOpm7zU3ozS9dTkEuYQfkQXoA=w1186-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmBhFvno7C73v5FF8kfWcrbTICOTwwznOPanaAHUozPgvOfLzH7FX1HgkpFv1HRBEUNrz4enNIrtAeYcJCHdg6EYZai5CW01A08ic5BtQf2W-raaGOF3zVNZxrCRZakx17ZlyqKCZwkb1SXHqy8iFriw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXjuV74-uRBVDNAlnvmukNeSYKA3D__bb2H5XOigovKOJaQG1F-l2uAn4lJHTNMzRihfBDuzYyrclt9ms6OjjgVpUfZJ0KV8S3Syup78qUS1nxGqgYbYNNgfWE-bST7m8mEQa5WOIFYzojN6b3A9oUEPA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVMw-k4zZis_psnQk5jHRC9L-6PPVwORCR0e-n2YVtbLcIXj2dJ7l_yk16sGllG2Ty5JbhBLB7rcXU3A7cUwHrEYFi9EqI4hU5nBzo3eRYhTn7MrX5-xxI9GbJnjexq6VAkU3rFA5QryQgeUq52hy7Zxw=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Kamaole III",
