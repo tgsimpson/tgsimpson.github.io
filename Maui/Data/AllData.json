@@ -370,32 +370,63 @@ var AllData =
  {
    "Name": "Lipoa",
    "Tags": ["Beach"],
-   "Lat": 20.747305,
-   "Lng": -156.457824
+   "Lat": 20.74971,
+   "Lng": -156.45886,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV7qjLVxf3tdRGTQyugkl3-KttqzmPoVM84K80bzccnfRZ9abOTPu5EGXuNXKaPzJIjJN1hXAcKVLM49ff3sMTV8m9tcmzU1Iuww4PmnNbHl8vZJ4qtPv1n8diflqgXb4DFygGDxfoU7diENxSYBU3-Og=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWZptes9lNNBjlbH60r7iOC1u0fYdYolh7mfEF_q9C9A06TnBGxsH899cBtI_lGoVY0MGbOiqQZaGbW5SuEDOrbbyk06FmM6b4hb3ZlunCJfxOhb1mYIgm3Qaa4bc4KOJzmnnmJ9hv69in49Xa4l8Sdjw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIYFOd1GuP0Ce3KLSQDIQJb2TLvOZCQVhxZxeD5uHSRSphYtxcGTDCgIyPRsZPcc6IsaAg70SLZMuTZ1xIAMUurP6_Bu-N8k4LWrbhZ4U0H-2QrJ_1cbQ-0a4plrOtdYkrHy9UVxMyh0kQhGv4_eqMhw=w2108-h1580-no"},
+      {"caption":"Snowflake eel waiting for a wave","img":"https://lh3.googleusercontent.com/pw/AL9nZEVKF5EFZSoWc2EW8DiYxf1P5pEcblx9TJeuD6zNxYgzsJ5_gy5iyDC5CPAAgLs1iR1YGJ6b9wkTscOb-v8RjDRIEsBd5tSiMPGzZX18uaQVUGnn1D4viGUe7d1syB3-DaeXcPXVgB2r5CJKgIqCx09RyQ=w2108-h1580-no"},
+      {"caption":"Lots of turtles around here","img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXJVbh5Vgseq34hxQ5bkBjLrFSdW0JoAta9A04PGXkV3uMKnbt4W7LzmogicJjqPNjFQkFL2N85XlKtDBhUidZ8lMQcE6_c6V-9gts5kTOCiZXRghvGt2s8uXL-1b8fXaQ3NeZlG2NdvtkQPEgKl6kQ=w1983-h1580-no"},
+   ]
 },
  {
    "Name": "Laie",
    "Tags": ["Beach"],
-   "Lat": 20.750929,
-   "Lng": -156.460736
+   "Lat": 20.75272,
+   "Lng": -156.46037,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUpkWjYeT1MqoPtywwQwd_1I5gUEiowh1WLL31IAHTE2ooHzcZLWrP1bTFU7WhwlxaT-kAFSVokSNdRPa7nTeEdCDVPlpYTDB6B3Qnm0BLk_olk8YJ_yifERo5qeqZ1AyvqONSOcd6LdsD4NfME5ukTaw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX-l_iUakB4yL720aLQylmFd6edNqAS7N-szeBOXc8LKFG7G7QIxzg-Yl7HIIE5_kyLhWM0NLWhqzMBnqBesy_SXGuvBzVNXltXtSYKSf-aGGh7iC2YRG2QTvHQkw9WbTPZ2aD-JZN0C-9l92qf9hjn2g=w1186-h1580-no"},
+      {"caption":"Seeing refuse is rare in Maui","img":"https://lh3.googleusercontent.com/pw/AL9nZEXWUuf9cozX-KvMZms1SpDCftj0xn4rSjuzJTmBFfCLqcIxByLk8pRatZfU9oPZRXGRTB9O6YLXaVEkH-jqPP1xYasseikOdqRixPx6hrJennTEAH3makM0KL2iv32MSquuwoOl33wwbMYlfFmFtjlaSA=w2108-h1580-no"},
+      {"caption":"sunrise","img":"https://lh3.googleusercontent.com/pw/AL9nZEXp8TW5Wr83g9Rh9op25DUtCSPdM4pnW_8VfeMBemwTVkmXS65BpDJsG2SCiZejclESxLkFMXjiDpZnaekmT79h5pQn-Yfy0jpjCEHA5G_rVAg1ZtHZsMkXHJpzRIt1KZlsprmsAtENs7r_CCj8ZVn9ig=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Waipuilani",
    "Tags": ["Beach"],
-   "Lat": 20.756858,
-   "Lng": -156.45919
+   "Lat": 20.75769,
+   "Lng": -156.45986,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWpCrd8gbfv6RkjQ-Uqjtr0tlXF6-4bPPLBA7eqShX1QXJd7hGAT8XwIS8bNFruNn9O86jcMLtkrkCSpKxLe8GvERGayfSJBT8agivlIYkzmkVDBbVW6HFZiBg1yWPN8DuiUIRD8dAZamQNHFCzYg1sVw=w2108-h1580-no"},
+   ]
 },
  {
-   "Name": "Keaka ",
+   "Name": "Keaka",
    "Tags": ["Beach"],
    "Lat": 20.76194,
-   "Lng": -156.45943
+   "Lng": -156.45943,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVbX0Bo8eAAxu6-0BFvnB7QjqMf0AfPCa03NfBcOm-GdSxUkIgkrBndMIMjgyK1LvEukRaXUvDVUrsEIWxUouqBiJQPm_OHlSQr_-qye_UpoIBx-zy9BSjj4PdU9zBsrP7CdebLnIYbVsBvac5tgEEqiA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV9sFqRZZ3Al8fMr2xMDyr07nDAkjXoO1fJOJ_WXHhT8FEC3gJJ0HWoKtm9xZzazzZfhdEad-CFa4Nnfw7hl_hkEowcQbbR06ek7n_UJuS5x15OndZegPbuYo7bSGgWx8ivC8ScUBvYMv_iozPrVIpIKg=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Kalepolepo (Fishpond)",
    "Tags": ["Beach"],
    "Lat": 20.764273,
-   "Lng": -156.459153
+   "Lng": -156.459153,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUkPuym5kiL28vkkJ5XCZ05hWWWH9PQIs9_c1bGIwxL7h72ZD6THqc66TJqZ2C6R0CsZJHUgfZ6exgCFcr7tSuA6WXISkHM-Uw4gCzMvI39owiMxScMDAcK_o6sgj2PfdWn_UvGby8flDlz6bur9aEabw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWS-jW_FI008fdDSsSwoEAQYYBFIV4_HvEukD-y0Prdyat-Wy5Mt_Pxaf-k5KJDuM9uNXQ6P2KplUD0oNEowNdLjXJqIsADcYcwEmuotEYjlXP6OIejLoHVKUcmfJQBNhjet9GJCuTpgV49b2p-zr1YpA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWdtDPdsZQ1IOhJhb2hdmc9AsaDncsqVoe6X3ZiJQLMf0Yn13YhsCzcOEJtyBBqpEwjXIJjtBziDt7ccyB9acVBgQvUYM4nsDpSwWNu9iy_CpMQWutmgIW0fhZ45ZjRJbPm2mUVt_sVjs0AOAufXHeYkA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUkvSNvgNIWEw8M5OekiV6FXEpatsxvX0V-p5v6Qc-Kwe6FlRQ9i34dl5MY811Q2e6hu3olxrJrX45w6WFQglk0CEay9OsKQv2KmrsVLjKCN9e6yELfrx6xyuRLQ7ItqOIeRJmMhdMZlaXiTTdo0kvOwQ=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Kaipukaihina",
