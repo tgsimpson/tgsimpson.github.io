@@ -3,12 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Yet another Beach</title>
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
 </head>
-<body>
-	<h1> Puu Olai </h1>
-	<p> "Little Beach", as Puu Olai is best known, is famous for being "clothing optional".</p>
-	<p> Itʻs often hard to get pictures of popular beaches without people on them, and doubly so for this one, as I didnʻt want any (even marginal) adult content on the site.</p>
-	<p> You get to Puu Olai by going to the north end of Big Beach and climbing over a small rise. This beach is quite small, and very well worn. On busy days it can be covered with people doing all manner of things. </p>
-</body>
+<body><div class="Story">
+  <h1> Puu Olai </h1>
+  <p> WHAAT! "Little Beach", as Puu Olai is best known, is famous for being "clothing optional". Kaihalulu Beach, in Hana, is the other spot for those who don't like clothes. It's illegal in Hawaii to bare your genitals at state beaches, but women  going topless is widely allowed, although not widely practiced.</p>
+  <p> It's often hard to get pictures of popular beaches without people on them, and doubly so for this one; there are usually people camped out at all hours of the day. I took some pictures at 6am (sunrise), and by 6:15 people had started to arrive with their beach chairs and packs.</p>
+  <p> You get to Puu Olai by going to the north end of Big Beach and climbing over a small rise. This beach is quite small, and very well worn. On busy days it can be covered with people doing all manner of things. </p>
+
+  <img class="Nimg" src="https://i0.wp.com/bigislandgazette.com/wp-content/uploads/2021/03/Little-Beach.png?w=1139&ssl=1">
+
+  <p>Native Hawaiians were comfortable living, fishing, and surfing largely unclothed and did not sexualize the body. All that changed with the arrival of European and North American missionaries in the early 1800's who brought their "civilized" ways with them. Of course these same missionaries and their descendents essentially robbed the natives of their wealth (land) in a typical colonization story. </p>
+
+  <p>There is a group, <a href="https://www.littlebeachmaui.org/">The Friends of Little Beach</a>, which is working to retain it's "naked" status, but also has some interesting anecdotes from the past. The one below is directly from the site. </p>
+
+  <hr>
+  <p>
+  [Little Beach notoriety] began in 1969, when the hippies began showing up on Maui to create a handful of settlements with colorful names such as Banana Patch, Soul Acres and Trouble Gulch.</p><p>
+​At Makena, a shantytown was carved into the thick kiawe forest on the edge of Oneloa Beach, commonly called Big Beach, and at several neighboring beaches. In those days, nudity was the norm. </p><p>
+​Off the beach, the strange newcomers clashed with the establishment and were accused of freeloading and stealing. Mayor Elmer Cravalho scolded both sides at a Kihei Community Association meeting in March 1970.</p><p>
+​To those who didn't like the newcomers, Cravalho said that his own grandfather might have been called a hippie and shipped back to Portugal if he had been judged on his appearance when he first came to Hawai'i.</p><p>
+To the hippies, he said hiding in the "boondocks at Makena'' was cowardly and that they should get involved in the community.</p><p>
+​By late 1969, the police were raiding the place on a regular basis, looking for runaways, draft-dodgers and nude sunbathers.</p><p>
+​U.S. Marshal Howard Tagomori, a former Maui Police Department vice officer, remembers driving on the dirt road to Makena in the early 1970s with a handful of officers to make busts.</p><p>
+​"We were friends with most of the guys,'' recalled Tagomori, who later became Maui's police chief. "It was like a game. We would talk story with them."</p><p>
+The Makena colony grew to 300 to 400 people before it was largely evicted in 1972.</p><p>
+But nude sunbathing persisted at Makena's more remote beach, Little Beach, which is tucked behind Pu'u Ola'i and separated from Big Beach by a 30-foot bluff.</p>
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
 </html>

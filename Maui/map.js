@@ -11,16 +11,20 @@ map.addOverlay(MapUpOverlay);
 
 var PointList = []
 function AddAPoint(i) {
-    var clr = new ol.color.asArray([255,0,0,0.66]);
-    var bor = new ol.color.asArray([255,255,255,1]);
+    var clr = new ol.color.asArray([255,0,0,0.5]);
+    var bor = new ol.color.asArray([150,150,150,1]);
+    var rad = 4;
+    var bwd = 1;
     try{
-      if (AllData[i].Status.visited) {clr = new ol.color.asArray([150,255,150,0.8])}
-      if ("Page" in AllData[i]) {clr = new ol.color.asArray([50,255,50,0.9])}
+      if (AllData[i].Status.visited) {clr = new ol.color.asArray([0,0,255,0.6]); rad = 7}
+      if ("Page" in AllData[i]) {clr = new ol.color.asArray([50,255,50,0.9]); bor = new ol.color.asArray([0,255,0,1.0]); rad = 8}
+      if (AllData[i].Status.revisit) {bor = new ol.color.asArray([0,255,255,1.0]) ; bwd = 2}
+      if (AllData[i].Status.planning) {clr = new ol.color.asArray([255,255,0,1.0]);bor = new ol.color.asArray([0,0,255,1.0]); rad=5}
     }
     catch {}
     // figure out color based on something.
     const pointStyle = new ol.style.Style({
-       image: new ol.style.Circle({radius: 7,fill: new ol.style.Fill({color: clr}),stroke: new ol.style.Stroke({color: 'white',width: 1,})}),
+       image: new ol.style.Circle({radius: rad,fill: new ol.style.Fill({color: clr}),stroke: new ol.style.Stroke({color: bor,width: bwd,})}),
     });
 
     var p = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(AllData[i].Lng), parseFloat(AllData[i].Lat)], 'EPSG:4326', 'EPSG:3857'))});
@@ -55,6 +59,7 @@ function init() {
 
 function filterPoints() {
   console.log("Do your filtering magic here")
+  alert("Search / Filter coming soon.")
 }
  
 

@@ -70,9 +70,11 @@ class PicShow {
 
 	setImg()	  {try {this.picE.src = this.pics[this.PIndex].img;
 						let nms = " "+(this.PIndex+1).toString()+"/"+this.PLength.toString();
+						let tag = ""
+						try {tag = AllData[this.DIndex].Tags[0]} catch {}
 						if ("caption" in this.pics[this.PIndex]) 
-							{this.caption.innerHTML = AllData[this.DIndex].Name+": "+this.pics[this.PIndex].caption+" "+nms;}
-						else {this.caption.innerHTML = AllData[this.DIndex].Name+" "+nms;}
+							{this.caption.innerHTML = AllData[this.DIndex].Name+" "+tag+": "+this.pics[this.PIndex].caption+" "+nms;}
+						else {this.caption.innerHTML = AllData[this.DIndex].Name+" "+tag+" "+nms;}
 						if ("page" in this.pics[this.PIndex] || "Page" in AllData[this.DIndex]) 
 							{this.descBut.innerHTML="Note"; this.descBut.style.display = "block";} 
 						else {this.descBut.style.display = "none";}
@@ -86,10 +88,7 @@ class PicShow {
 }
 
 const PShow = new PicShow()
-//console.log("showing welcome?")
+
 PShow.descOnly("./Maui/Data/welcome.html")
 
-//let PS = new PicShow("PicShow");
-//PS.setPics(["./one.png","./two.png","./three.png","./four.png"]);
-//PS.setDiv();
-//PS.visible(true)
+
