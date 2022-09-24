@@ -1,4 +1,5 @@
 console.log("Loading ALLDATA")
+StoryInNote = "<element onclick=\"document.getElementById('descButton').click();document.getElementById('notesSpot').style.display='none'\">&#128214;</element>"
 
 var AllData = 
 [
@@ -13,7 +14,8 @@ var AllData =
    "Note": "The airport beach",
    "Pics": [
       {"page":"./Maui/Data/beaches/kanaha.html", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"}
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no",
+       "note":"<p>This</p> <p>is HTML</p> <p>This</p> <p>is HTML</p> <p>This</p> <p>is HTML</p> <p>This</p> <p>is HTML</p> <p>This</p> <p>is HTML</p> "},
    ],
 },
  {
@@ -150,11 +152,12 @@ var AllData =
    "Lat":20.57973,
    "Lng":-156.39149,
    "Tags": ["Beach","Story"],
-   "Page": "./Maui/Data/beaches/KHstory.html",
+   "Page": {"url":"./Maui/Data/beaches/KHstory.html","display":true},
    "Status": {"visited":true,"revisit":true},
    "Pics": [
       {"caption":"White coral in sea of black lava","img":"https://lh3.googleusercontent.com/pw/AL9nZEUb98ctvDGopkn0wW7oclKwFw6GJrTy28-JbOP5UBwV5o82ocYyOexYKQKg_c1h4_5Fyy6sVrLaHIZMSvgmvg-ciICU4FZEirTEAz73vuFIvsl3hcHeupBEiUeqiJiXUbK58s17l0KKTaBONomQ1EQLVg=w2108-h1580-no"},
-      {"caption":"Looking North towards Kanaio Beach","img":"https://lh3.googleusercontent.com/pw/AL9nZEU2P5dLPF8_sSriuPTHfT3GTWYxKntezsYycvQu0W4C6XMRVP6Pt9NsaVWLG5YPirb84wFDCL5EFKWGpkW3Hc-fYl65oGzF6-x7PCTu63F3L1xUgz48j1deQRZP4D24bCUO2nk44MtsNvv0ZV--tbwftg=w2108-h1580-no"},
+      {"caption":"Looking North towards Kanaio Beach","img":"https://lh3.googleusercontent.com/pw/AL9nZEU2P5dLPF8_sSriuPTHfT3GTWYxKntezsYycvQu0W4C6XMRVP6Pt9NsaVWLG5YPirb84wFDCL5EFKWGpkW3Hc-fYl65oGzF6-x7PCTu63F3L1xUgz48j1deQRZP4D24bCUO2nk44MtsNvv0ZV--tbwftg=w2108-h1580-no",
+       "note":"Oh, look. ATV tracks. Perhaps you should read the write-up "+StoryInNote+"."},
    ]
 },
  {
@@ -210,7 +213,7 @@ var AllData =
    "Lat": 20.63483,
    "Lng": -156.45180,
    "Tags": ["Beach"],
-   "Page": "./Maui/Data/beaches/puuolai.html",
+   "Page": {"url":"./Maui/Data/beaches/puuolai.html",},
    "Status": {"visited":true},
    "Pics": [
       {"caption":"Looking North", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWGx2LH51fytUkTO99u_8qAhm9T41Xw1Cy0RIRpS9QBCFn__Wtv4PzmCcQqeHqKIvkbz-lP3SQdipsMyBKY37e3F4Qau_2oTgKVVZkNIIvo4BNgM2afbBZsG2mT4UNRuC7izxGVIY0rQ66v2NK-xyTFhg=w2108-h1580-no"},
@@ -244,13 +247,13 @@ var AllData =
    "Lng": -156.441016
 },
  {
-   "Name": "Poʻolenalena (Changʻs)",
+   "Name": "Changʻs",
    "Tags": ["Beach"],
    "Lat": 20.661338,
    "Lng": -156.441791
 },
  {
-   "Name": "PoʻOlenalena  ",
+   "Name": "Poʻolenalena",
    "Tags": ["Beach"],
    "Lat": 20.665126,
    "Lng": -156.44
@@ -259,7 +262,13 @@ var AllData =
    "Name": "Palauea",
    "Tags": ["Beach"],
    "Lat": 20.67074,
-   "Lng": -156.44326
+   "Lng": -156.44326,
+   "Status": {"visited":true,},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUYtcw9pS7ycmpbG193sj_hOGBgHsJsNK3RiuUjO1TOxg1P5_TDFjcAQvzGBDI56PJW548EJqzID5ZTEMfL44alx7iwgRA1prY1-ZLv9h5wHnOD2_YkRugYknKwcb-2eYFtqhd8-nr1bcfUPvY2qm-ZKA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXSbbbIi0Ald-DL5fTTeMZ5hDbFvmTd24I40tt7EQNSX-A7SEFANnc0rP8D3Xex49wSw8rnWRM2VhMtGcApGKVOp3YCsbNMu3PQYN4pW6xwnD-YtNnn2sIf4n4kmJ9qO0f6iHzL_SKcUg-RwvaQf6OEag=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVtFSJ1q-p6Mx1NKI2j9ajwlf5lYDeNp9MY99am-T_WNrcx_4v2DYxX2aQhszpz67KyUO5IUUbYbNp5XHdSQwlx-4__KO2vsgy16b8MKcp5xKDhi0iSWjE6wMgktpCMPmEc9xRUW6kDcjo__SsMuwQyMw=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Polo",
@@ -317,16 +326,16 @@ var AllData =
    "Name": "Kamaole III",
    "Tags": ["Beach"],
    "Lat": 20.712937,
-   "Lng": 156.446229
+   "Lng": -156.446229
 },
  {
-   "Name": "Kamaole II ",
+   "Name": "Kamaole II",
    "Tags": ["Beach"],
    "Lat": 20.716366,
    "Lng": -156.447189
 },
  {
-   "Name": "Kamaole I  ",
+   "Name": "Kamaole I",
    "Tags": ["Beach"],
    "Lat": 20.722384,
    "Lng": -156.448524
@@ -341,31 +350,65 @@ var AllData =
    "Name": "Cove Beach Park",
    "Tags": ["Beach"],
    "Lat": 20.72747,
-   "Lng": -156.45062
+   "Lng": -156.45062,
+   "Status":{"visited":true},
+   "Pics":[
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVKv6LP-iqO-K6pqrJZRE6SeRWhvXRuOhyK37yeVOx5s07Ow7TyBoOK0WuaywfAH17gzGLdxjOFG-Y3Qb4OvlcTVSjJ6D78dwL6KMwncDyFXnPQihdGqfhZNEwrKh1QEryS39tad3nfS0-sRPqLCXzTig=w2107-h1580-no"},
+    ]
 },
  {
    "Name": "Kalama",
    "Tags": ["Beach"],
    "Lat": 20.73144,
-   "Lng": -156.45302
+   "Lng": -156.45302,
+   "Status":{"visited":true},
+   "Pics":[
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXrEFAdI4XsdX-_uboDCSyIGcT_zcBYj4Zh2MjyQvYX5cIGkniolscqtAdMC5KS02D_hto4hxgxaYYDF6U6DvcU-yoKcTTc4ix8zjkGc6owbf0fmjDxh_gPlNrTCLGtWgKiceiZQdX-mpAc49KM2qA0nQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV3aPVIIi8IaAgW8YAUm69s26qCK8bn_JmgaghRNRNbsFq9Ymug4WSGV08UFAOC4X88CTzbP311lZVuKg5I7H928x2_IXdcBTY-WWN03Vs2IdtbUHPHxMhYWCXkG2-U6Fd99EAzHlvT8hxbZsdFV0yu4A=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWdLHf2L27EZ7r4afPLXmK-YOWllWXAoX_onku7SieNs6HV1SGW2FI102qV1dVNXW9m9PfuWeFHqeHXzzqzSsGX0pJ9_0hu3I_BXbTKh_h6G0EPmTw_HDR0l8WXwoCZqDrGfqy60vqvCX5EXXjNOL9oqQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVuSoRj4Qcz1rZg1G_WUfxxhAFw2wGVVAzIv1bIW1tOoxwA131B9O8za3xj_xRE4b674IsHHSGh1k6SUbk4a86enpFFjfLUkzY7Wg2Yk2Ohu1BdpKKmnVL0MwXGGg5befc3TTolHLAM7h9aKelpNSQYSA=w2107-h1580-no"},
+    ]
 },
  {
-   "Name": "TBD (Halama)",
+   "Name": "Halama",
    "Tags": ["Beach"],
    "Lat": 20.73643,
-   "Lng": -156.4564
+   "Lng": -156.4564,
+   "Status":{"visited":true},
+   "Pics":[
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVgbPdTmnQsZqe8-KUc2-W6AXn3Q9dsyg0Kxu-Fa7aU5Vf5jaaMPLEpALfNcDHfPB5smYibN1_EwqXjvqHfl9GgwH4AEMhtZgM2Uf3ucqIpP8zaxyk1TfJs5Ez_4o98pHyXQLGbwUL8Sq0U7Sk1uWW4eQ=w1187-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUUxRNcC6XDtXZvWEBjI0fsrHrNyJ3ppC1METsI-MpY9riqoFcgMI959zSN6-p__5BCrPIyuF4_HSynLyLv65-uixBlrvO3Kw5JTfvhgwYcW_h1Us9iItriztzt6gJSSfj9oiTRPs-fl-8FwR6BAhhQ6Q=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDdgyQSGzrIIemIG9xI-u1B2cr1-LGokPIRvhep9tYEuI4Lo0O6vteaYBsWU0NP7YI7NAeMoRP3nbFaCGHAmgeesrh1cff4FvAC4ymZjVdsJH1Qz-6yKhngA2sLx3n0fcGQeAjHmFEQ9YPpzu_QZd31g=w1187-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV1QaXxGK4P8L1UnCVZPshwDMB0JPi0NK-ylzdz2LVgjFwdFQLup1ywGsPxImZ0jTMbu2OXH-dwu0nEwJPDujPzI7hM2k57JX8A-tduQ_KrQ3-NqSW2mA2lO85vAyD2G4tng-1V2wv--PTWkrOpDPpkEw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXUBHqS5QFIzYNDwsrCpW7LLYA_i2c_rJoNHj1CsOv9S78v5o0cqfnuIYk-GbSVopshH58WplYDcabuarNlvTgL98ISd3b9MRjeueTsVxSqfgdNGaQCVZU3YvZ9KkTnlK3_HVmpWutYRRwyUL9YLdfePA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXluQCRzzttM6LWx9ZUC13Ks_STYIdpVnvCesY4HBjNyCvzIAPxzWsPBgBRn0444VTzss_J2p7sTMQ9UApQdt3fUPPpA0WJngdJurGfUnQEkROAAFGp53BPv9fvqu33t0ZMYXHhFFsdEPq7migjqBGBKw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVC_Z7SMnDy0tt4-LCFDwSibmdy3T5XQ0rNFBnjpGNA3WRy8SpjwWfOi-dzC74_zSDFQwe7XgpQ_ydMBk0ILrvX-XSktXPWAA7CZGD3ZCjQoRHJIB8Utl2JFkIdU3SOjdkOUmmWdpFiWVQL3wORg6q6Ng=w2107-h1580-no"},
+   ]
 },
  {
-   "Name": "TBD (Welakahao, Kihei)",
+   "Name": "Welakahao",
    "Tags": ["Beach"],
    "Lat": 20.739717,
-   "Lng": -156.456651
+   "Lng": -156.456651,
+   "Status":{"visited":true},
+   "Pics":[
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDIgRQO-pnXLdh-h3PEOhJxC8Q-WFeok_4t9GkMTlXae1ZDSUmS833KN4MH4f3-alMXvHQJnAiulJVkmZghaH3PFOM0TXwCSCrm8qOHtAq5qd0P7MkuTaLDMjVgmwHCTmuC4HUIy7NK_R-3vM8GtWz8w=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU-666DHIt0wX-lvNnp4P0zzXv8OeKlJvvzrnR7hGAa6u28brm5egLA2FBuWnM-EBxVwaGzHwZyLoQV932rmyQz2Uu68NqlcHtacs6pFd8A1ztiU_rWpVAKJstQmM__IzOdRoWbbbjze0lAO3jcHC3LKA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUiGZhSs3NiJE2eDx8lIRC7omGL_yDDrqk6YqG0OYZKZ23uW-TuIhVJg4iIV9JLAD7f0uYLNMgpIWcTzBJk76EaTY_kABLwXrvZwLeARZ_cMLZMxRRxP8r61hBz62gLnCHy8hvjNzvjXj1-4OBjS1TMmg=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "TBD (Waiohuli, Kihei)",
    "Tags": ["Beach"],
    "Lat": 20.743534,
-   "Lng": -156.457467
+   "Lng": -156.457467,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUJixrk5f2fps_MXq4TGYPYJG5Phor1As7AvDUahxBHuuWWd4tiCiCVd-uYF7w28sm4UXiyJgsVXsHZC-Puqc9-IylnEdkY14eUzr81B7txS1jB-IZk_986TdkjwVE5ftFrj0jokhbqDX0GUndwaAuMBA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWPJaPU_E95tQkYZdwLDQF5HNibzwUwnYU-QeCen-1hFjI9TUXUFWj0s25QN_Lq9XLveC0Hnt0eBTAgJWzeCFN6pKN_XwvrnPPs-Qnt1VSogBDiI3jVksKtK0AmbYZ1cfRXANHKrTEBw-d0JxEbNFQq5Q=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX9ekJx8gn0tew3wokYwav6Zu56TjOUvjjCuLlWH03ru6EmiNWLScd0aDdNuEESrlVWWbcMFuppQoeoPueJIoJ4wkfunVr3KzC-Nb9Y9NtlqjB2WhZiSQNztvhI-x8HmB1IyN4PKbdeedX09WwZmSM1fA=w2108-h1580-no",
+       "note":"Sometimes I just have fun standing things up; got some funny looks today."}
+   ]
 },
  {
    "Name": "Lipoa",
@@ -376,7 +419,8 @@ var AllData =
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV7qjLVxf3tdRGTQyugkl3-KttqzmPoVM84K80bzccnfRZ9abOTPu5EGXuNXKaPzJIjJN1hXAcKVLM49ff3sMTV8m9tcmzU1Iuww4PmnNbHl8vZJ4qtPv1n8diflqgXb4DFygGDxfoU7diENxSYBU3-Og=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWZptes9lNNBjlbH60r7iOC1u0fYdYolh7mfEF_q9C9A06TnBGxsH899cBtI_lGoVY0MGbOiqQZaGbW5SuEDOrbbyk06FmM6b4hb3ZlunCJfxOhb1mYIgm3Qaa4bc4KOJzmnnmJ9hv69in49Xa4l8Sdjw=w2108-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIYFOd1GuP0Ce3KLSQDIQJb2TLvOZCQVhxZxeD5uHSRSphYtxcGTDCgIyPRsZPcc6IsaAg70SLZMuTZ1xIAMUurP6_Bu-N8k4LWrbhZ4U0H-2QrJ_1cbQ-0a4plrOtdYkrHy9UVxMyh0kQhGv4_eqMhw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIYFOd1GuP0Ce3KLSQDIQJb2TLvOZCQVhxZxeD5uHSRSphYtxcGTDCgIyPRsZPcc6IsaAg70SLZMuTZ1xIAMUurP6_Bu-N8k4LWrbhZ4U0H-2QrJ_1cbQ-0a4plrOtdYkrHy9UVxMyh0kQhGv4_eqMhw=w2108-h1580-no",
+       "note":"<p>On the weekends you might find some local fishermen here. I asked one group what they would catch in this area. \"Anything in the Jack family, 2,3, maybe 4 pounds\" was the reply.</p><img style=\"margin:auto; width:30%\" src=\"https://www.floridasportsman.com/magazine/img/fs/fish/species-lg-jack-crevalle.jpg\">"},
       {"caption":"Snowflake eel waiting for a wave","img":"https://lh3.googleusercontent.com/pw/AL9nZEVKF5EFZSoWc2EW8DiYxf1P5pEcblx9TJeuD6zNxYgzsJ5_gy5iyDC5CPAAgLs1iR1YGJ6b9wkTscOb-v8RjDRIEsBd5tSiMPGzZX18uaQVUGnn1D4viGUe7d1syB3-DaeXcPXVgB2r5CJKgIqCx09RyQ=w2108-h1580-no"},
       {"caption":"Lots of turtles around here","img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXJVbh5Vgseq34hxQ5bkBjLrFSdW0JoAta9A04PGXkV3uMKnbt4W7LzmogicJjqPNjFQkFL2N85XlKtDBhUidZ8lMQcE6_c6V-9gts5kTOCiZXRghvGt2s8uXL-1b8fXaQ3NeZlG2NdvtkQPEgKl6kQ=w1983-h1580-no"},
    ]
@@ -402,6 +446,8 @@ var AllData =
    "Status": {"visited":true},
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWpCrd8gbfv6RkjQ-Uqjtr0tlXF6-4bPPLBA7eqShX1QXJd7hGAT8XwIS8bNFruNn9O86jcMLtkrkCSpKxLe8GvERGayfSJBT8agivlIYkzmkVDBbVW6HFZiBg1yWPN8DuiUIRD8dAZamQNHFCzYg1sVw=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWPsF3lCtnCbymNz9O8gKo8Z5Tfhxc4SPTzToI3xF2yHqehryvJEgHuiM0YOVmC7doEKo9G6nXkJ6veKQdNlkKz6Up7wuH5ThK7eqBFOsn0Ce5F2lxitylKEEFZm17ePBQatiLqVJ_0aVr7qGqfMCq_bg=w1186-h1580-no",
+       "caption":"Pincushion Sea Urchin", "note":"<p>Although not obvious, still covered with spines; don't touch these.</p><p>Beautiful enchinoderm with five-sided symmetry.</p><p>Lots more info <a href=\"https://dtmag.com/thelibrary/sea-urchins-mother-oceans-pincushions/\">here</a></p>" },
    ]
 },
  {
@@ -450,7 +496,12 @@ var AllData =
    "Name": "Sugar",
    "Tags": ["Beach"],
    "Lat": 20.78548,
-   "Lng": -156.46837
+   "Lng": -156.46837,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXJbhay0Pe_8tB5tkpJn_k5ACw_3cEouWvEuazWKWMG6aTHo2y7e3o_KjfLdqOzwv-ZRyaWjtsbtZhsKDRWL1hJaydgvCHjV0q6tkIllRXASLuDVmE4eloGLJPSFfDaN1DeROH4F8rGe7kY6GAK_g-oUQ=w2808-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX8JKMN-Aqzt4XhOoRKISVihts26LfFZZu2IVNoXNcgfUlG1ayn-a_jrjslUeLI_Tot6derzdjKxpIgQJhNN0krZkVuVYq_2owh9NlvdCNP9tx-7PCT8bWO4-FbzUQxwO9OsnHkaSDULVTqVineGnztDA=w2108-h1580-no"},
+   ]
 },
  {
    "Name": "Maalaea",
@@ -685,14 +736,79 @@ var AllData =
 
 {
    "Name": "Kaupo Gap",
-   Tags: ["Trail"],
+   "Tags": ["Trail"],
    "Lat": 20.64881,
    "Lng":-156.13807,
    "Status": {"planning":true},
-   "Page": "./Maui/Data/trails/kaupogap.html", 
+   "Page": {"url":"./Maui/Data/trails/kaupogap.html",},
    "Pics": [
-      {"img":"https://www.halfwayanywhere.com/wp-content/uploads/2014/03/Kaupo-Gap-Trail-Marker-Brush.jpg"}
+      {"img":"https://www.halfwayanywhere.com/wp-content/uploads/2014/03/Kaupo-Gap-Trail-Marker-Brush.jpg",
+       "note":"Not my picture...yet. Working up to doing Kaupo to Summit."}
+   ],
+},
+{
+   "Name": "Auwahi Windmills",
+   "Tags": ["Trail"],
+   "Lat": 20.59912,
+   "Lng":-156.31793,
+   "Status": {"planning":true},
+//   "Page": "./Maui/Data/trails/kaupogap.html", 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXM4uh21EVs4toLEHi4Xj6eu8XNyiaJHGEL5pnqvM_yG_3CB-d-xvalLJrNUaIyRc9AucPt7TsuUwdEgzzOVCbnAfwBF2fINcWjDEn39qU-GLijUiQ_dKY-s907TW5kljA9NMwtnJ4r6n_aWp0gbN36PQ=w2108-h1580-no",
+       "note":"Placeholder to plan a hike, in from above, to the windmills."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUoag-aEA-ZxYJzQacTeklGz-S2yWJS4vPFqtnZAuDDTeoUr9d9IYUicdvPmD5iXWZQwOfkOulWkhMZ2J232bIPlkN63jOx5_dlCQ0QF1C5QmH66zysVRnAXQICELJLr-0vsS8Uzw9i3aBqgoct7x0S8w=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXlmw1tby3pdpVlLx_7pKuIC85Kp-gbIUyswBfKPpKxHCi5eoDYyhV1nJV8Ca2U3sOL1FpWVerRt2bAxrwaiIlVuwZJBvK3X61nIaSivs-Ib9ocjmtkif8cQeNGfIzfRheM_6c1Gcedd-_hnPl6UFsrew=w2108-h1580-no"},
+   ],
+},
+{
+   "Name": "Windmill Ridge",
+   "Tags": ["Trail"],
+   "Lat": 20.83265,
+   "Lng":-156.55633,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/windmillridge.html", "display":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVEAqY-LiB03vEdks-ydMo8wIJ7RZD2T1SH5q_ud4tjv0A4zXXLscWGvBFdwf8smJe_7JQq9Hocop3gYtItImDHNhOuGHnTtr-e-p6mZpqTVQoIN_hDOBh4ghsyZp1CcYDCEKlcqexECAndyIt9B642qA=w2868-h884-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW6ZWGE6nByQVGxUEXX9qkf3DtK9rq-f2Qm6ocmmZDMP512Jhn7Vs4qH4d2jIPQhhUAPbHbGbX0G7vk5iuDAhlslbUiFYx0yjWkOUqM525z9wv0pG4TmIMD6dRHbSlVXygpoyRIgrOe0jFVd-PMhrlVqw=w2868-h884-no"},
+   ],
+},
+{
+   "Name": "The Tree",
+   "Tags": ["Trail"],
+   "Lat": 20.64948738986722, 
+   "Lng":-156.36898974253617,
+   "Status": {"planning":true},
+   "Page": {"url":"./Maui/Data/trails/thetree.html"}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDIPL-esQLKqbcYrcA6OKF-Y-fdM3Bwq253o0nAY9OR7gKZWUnWxNMhgX8j_JkGmlh_6GPTpiZbAMV_qLKWXAiCpFoqm1yvM0QZvhYFFxRHKLgIm2_oSBd6jE7VTbQ3vLhHG2aGCqtA7t3p3ihCNvIFg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVhU8gUvqcDwHpkzXSqoC3oAVa1kuHZlKnp14zfWlHL1FGyL7Bwn6SF_DTaS6f_gBvtYolPZZ7cYKs_TZPkZzVHcoc3QEdfhBetpOJE8Zyr5cEhrZuI_LGM77QhoBlBd63anESBFE1M3MEvtf26vxr6pg=w2108-h1580-no",
+       "note":"Got to figure out a way to walk to 'The Tree' :)"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXpCUCIO9P4VYk7DYMBVD-m5kDlIL66sFXZIwEyKpNNyCwZrM8InoWoJLJ5FofkSKMvTvXNPHv5ni1olqu-qolg3aZDJRiL29XCJkB2f8lcyBv04WcHq4MOLpTIKIsP8Pcy8CM2LAfFbck-aaM5aZSliQ=w2108-h1580-no"},
+      {"caption":"From Maui Brewing","img":"https://lh3.googleusercontent.com/pw/AL9nZEXtwXuKSFSfMV69bL5C_3ZkX3V4oNN5jfjHsWHyIe8Y5sM4b2ado2wFwXKrnpRdm-A37MOH9p5gZMF7hCuVDwHR1EnrmndlsPhxxklMvqOqok-b44BrWOZC2kOnUO9AK-B0TKj1b0M5XASVzurQdiST4w=w2386-h1580-no"},
+   ],
+},
+{
+   "Name": "Pu'u Kukui",
+   "Tags": ["Trail"],
+   "Lat": 20.89426, 
+   "Lng":-156.58944,
+   "Status": {"planning":true},
+   "Page": {"url":"./Maui/Data/trails/puukukui.html", "display":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
    ],
 },
 
+// PLACES of Interest
+{
+   "Name":"Hokulani",
+   "Tags": ["Place"],
+   "Lat": 20.75151,
+   "Lng": -156.44469,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU7S6X8SotVPTcAuRDpQSK-T-vzArF6J6IwAs-bJb1TZLovLNaP2mzpCXjvpkiLOBpQELCG_W1FAujMUzvKR6HdejFeCztEmFD40MSPZDMDVyqQuYesQb0hBB1eIurnbzC7XRLrXCnjgFjtA26r6FTVuw=w1186-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUJbzRtdTmwf1uKXipKvGSenCfAaOuIz5GqjabgCFf8ok1FWdUbz1kNrUyNTfDaPwR5ZBy_2Xc9noH-zIuRARv15XyrqJgfKVNB17gMChUBmo3dFM-6JHkOZuNLksf3P_uQPB5Wci8mOV7bF-IidXyUzg=w2108-h1580-no"},
+   ]
+}
 ]
