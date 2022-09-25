@@ -101,6 +101,6 @@ class PicShow {
 
 const PShow = new PicShow()
 
-// PShow.descOnly("./Maui/Data/welcome.html")
+PShow.descOnly("./Maui/Data/welcome.html")
 
 
