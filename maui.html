@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css">
 
   <style>
+      *{ box-sizing: border-box }
       .map {position: absolute;height: 100%;width: 100%;}
       .fulls {position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: none;z-index: 1;background-color: black;}
       .mySlides {justify-content: center; display: flex; width:100%; height: 100%; object-fit: contain; z-index: 2}
@@ -20,11 +21,12 @@
       .prev {left: 0;  top: 50%;}
       .next {right: 0; top: 50%;}
       .hide {right: 0;  top: 5%; z-index:4;}
+      .hide3 {right: 0; top 5%; z-index:3;}
       .desc {left: ; top: 5%;background-color:rgba(180,255,180,0.92);}
       .sele {top: 5%; right: 0;display:block;background-color:rgba(255,255,255,0.4);}
       .prev:hover, .next:hover, .hide:hover, .desc:hover, .sele:hover { color: green; background-color: gray;}
-      .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;background-color:rgba(0,0,0,0.5);}
-      .notes {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; left: 10%; bottom: 10%; width: 80%; text-align: center;background-color:rgba(0,0,0,0.7);}
+      .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;background-color:rgba(0,0,0,0.5);z-index:2;}
+      .notes {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; left: 10%; bottom: 10%; width: 80%; text-align: center;background-color:rgba(0,0,0,0.7);z-index:2;}
   </style>
 
 </head>
@@ -41,7 +43,7 @@
     <div id="descButton" class="desc">&#128214;</div>
     <div id="captionSpot" class="text"></div>
     <div id="notesSpot" class="notes">
-      <div id="closeNotes" class="hide">&#10540;</div>
+      <div id="closeNotes" class="hide3">&#10540;</div>
     </div>
   </div>
   <div id="map" class="map"><div id="mapup"></div></div>

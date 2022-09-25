@@ -238,25 +238,44 @@ var AllData =
    "Name": "Maluaka",
    "Tags": ["Beach"],
    "Lat": 20.646171,
-   "Lng": -156.443137
+   "Lng": -156.443137,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWxxwpxiaelapeJWkR71blbt-Wc4Ot4Gk5nw3H0aoqpSrXBW2EjsnXG6g8_j1yh8Orgd26kelOK8VuitZkDKmfC5OHhUK2l8Bpu9PxGjzW5qCQFc-6K2Z4hOQHRM3sIbMMO8-D2Hkf69nIyg4tjqmKR9Q=w1187-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWkz7KOoINZJFsDtG5awlk9oLN5tBFyjsyIVhoq7q4rqtxCTdprP1DFkDDFhdi3Kd9RzXJkGyY1tD1pmZTL8BUSuJxHhZa_7yH5MDOvwS83Gn0IMUYK0ptkj6Cz-Mk8xsHBzdE37yqflNH6UtE0jgEIHQ=w2107-h1580-no"}
+   ]
 },
  {
    "Name": "Makena Landing",
    "Tags": ["Beach"],
    "Lat": 20.654016,
-   "Lng": -156.441016
+   "Lng": -156.441016,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXeRShZhaA3RfVLYqY51ZoIHUf3cUFdYuXxkOGxTg3RKExA208tc5Rmggim3Yd8B67QZeDwk-EMSqFimggQ-yg8S1fORJYjC86-D-LlKuv3MHGRAmBSBETD7---ZSp93Lxwh4Wfl2NxFcF8qiPks8jwVA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW5h5pmhUf9V71gYi5SjYmmU7nYBQxEJf67zJ1y6iEQHCl5CekudYfvu9_Dwv8NXyb2DctJa45eTl13wOIR517dS9q5NPyemeOhQ1diQ6Sggop6pUe-cbFDSAzaqHbxLlQI1ATYf5Hxgp2Ub5BrnJ-KSg=w1187-h1580-no"},
+   ]
 },
  {
    "Name": "Changʻs",
    "Tags": ["Beach"],
    "Lat": 20.661338,
-   "Lng": -156.441791
+   "Lng": -156.441791,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXfdID0dJgCVhLEwn6t-pq0as2JQKDtKIycMN-NeUVPrpYsFCc53unWD1ViblelXfPErlYFqADgncCgQJZDZhajfebAsreFIIzAT5XfOZXLt6VQXOiz_tPwOXKnr9nDZ-KXhZ0fXlCCM5tw7MLJOKNTyQ=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Poʻolenalena",
    "Tags": ["Beach"],
-   "Lat": 20.665126,
-   "Lng": -156.44
+   "Lat": 20.66547,
+   "Lng": -156.44220,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWDnZaQ6ORJx4wTaA-Hzz2p06PpsnHXy95zuteMUwrq64h3fugs_JWfAP3fK3i596OqiXEkl4u7iw2ETNzuRbv9aBBUT6FXcnZMmU5vFCJ6MvIrLcauuiXgke_tahtr_z44y5S8zSs8vmjfkIm5Z-6Kgw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX9ITBxnwQ_KeBQ4tI83nrAIrjv7N5V92VYrQ8fIbuISVt_ka8p4bN_XyVuVDVikQaLIbNeOE7li2t3-xB4Zk6O25ba0XG2JLRqIaWMcAT41Z9VaUDsKNKcs81ssJi7r2ROv51Pyk2DtvBu7Io_Tcv5bg=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Palauea",
@@ -323,28 +342,62 @@ var AllData =
    ]
 },
  {
+   "Name": "Kihei Boat Ramp",
+   "Tags": ["Beach"],
+   "Lat": 20.70781,
+   "Lng": -156.44623,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXdFM50llw_BF84iJQyxFlwwbihXmBFnEsI-98f9ZNYAP_0JSDQwOtYbJ1idWqG_vRk90mUhNDmuYShvKwZ_QvCPCvFmebT9GDTJpe8JAs-v17ijkMB51XYYeVgWcWGE6pd6LrT6Zken-gd-S39lg51Jw=w2107-h1580-no",
+       "note":"Whatever beach this was has been cut in three by the boat ramp and the levy. Lots of activity in the morning, and not the best beach, regardless."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVJXJYR5bjQKTyDBlifkqtgez7HlX7S9I4Uu1NAWx8z63fMTdgnt_-bqY8h6OLQEYEKway9GMf4mBBrnQZ8htK2PYMbNtnSUTEnatVuKwJCWl3t6f5TN6MqyBnrjnarSx2HzLxd18R2OUu0hgjwIo_TEg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWWHid0chEOH1uL0HykZvfm43FKBRAoey_aeqwPB9VfEnTmaV8EOhl5Y7jvTBV88EROPgdrgP6-K-NRjyDIdpqsxDZbXpyMcTsHBgUDwz-0s6LSeSNNKlgcVWe1VYs1niF0N3HGc9_miE520rQsHGaWHg=w2107-h1580-no"},
+   ]
+},
+ {
    "Name": "Kamaole III",
    "Tags": ["Beach"],
    "Lat": 20.712937,
-   "Lng": -156.446229
+   "Lng": -156.446229,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVXU9fcQWseZfQ9OiebzyD2hAEsWcNn6fPgc5diHu_QykjbRW5WbsTjqWt-kCd0hCfjlp0tyRM2e7SlgBRWl3IRx9THuuywbT90bz9uSWVzB-XgMl-esCEHrOdiOBbSRqo0016WRrZldibv6PHDlLGXDA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUnjSUx5Xs5H2N0CUgHhEMrroeyqDdtJh20Z1NBsWx0sDuoUmUMlPpg3IsGfrbWlw_c-Fot2i3rkhl0DyRpTTxXigvheYgtkeye-xe6umYFTzSiExOQ_zt3r8EOonyGuwf_adsWnA5q_JodGm1lNdT09g=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Kamaole II",
    "Tags": ["Beach"],
    "Lat": 20.716366,
-   "Lng": -156.447189
+   "Lng": -156.447189,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWK6mhC13U2GrPkbSRHYGiHW-jRJiZF34BNcaaOOGk2A0vqy42YDHKN1ClqWGq-TIqSfO16xuhqVX8-O9Auc4qJFWffvEPYuMJTnO_U-AHjlDT6W-g-3vJ1ZuzrjH1joLXFrX2zacm6Q3PnxxPEukpmRw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVHNeAvULDUTFfxLPD4mms5l2pIXm5ES2s9-ReNUeHjrVHe5gOUnOrKCOkYbon06frZ-QVV3lp7Tje3gw10ilxBG_WJIyxYSJAzZjaq7-RMm1Xsebz4K0CFELWRnloIVLvvntzVochHKW1twbKwP_cNLw=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Kamaole I",
    "Tags": ["Beach"],
    "Lat": 20.722384,
-   "Lng": -156.448524
+   "Lng": -156.448524,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXOPY71FkDC5re0iMvl6cyUuGYcf7KWWcsTRuuqDxKXiOvr714uSy4p7Xx5L8Fq464LViMEmTGPmUbLN_GzFh8H9ktUFvxQPCxyuMGOSI5Cj-VoTGYmItVU_Ox6tnv5V6enjSMzBuq52Pqj4mi3-9GcBw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWgQoMjL0RbKwbOVajcmxmlZOcO5zZRF97g-2yR3EQPmN0YPtBlEDT-QKYlejmSBPhTqAW_6PPkDixWdZnquhKA_XeI1EwSsD6ch_s8iq9wXmS0tFiTF8jrlbe8ODLmKn81RtQjtnfGKSs4ng3JMgftqA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUi69MnwCJIRzOkkOAphTdUZ0SMKFpEXtnqG3huVFCMIshmEKsNh4dFHZ6aRByzNrowZXy8_z7MVEk3tD6rE0-vASWjoS7H3CBnEmL9i3NU5RJM7Wz6eFdszYXm5kkCpczDkZIS2b3YMHXENk_SJx04EA=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Charley Young",
    "Tags": ["Beach"],
    "Lat": 20.724837,
-   "Lng": -156.44958
+   "Lng": -156.44958,
+   "Status":{"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXUuG5dr9CY5vW9sm3RbpEqk91zMLnhVlg9XVhwr86BKGFok_5qpsC9GCTYlUhssxwDY9SWK-raHFcwFdB8fLy0yChK1MSTPsyOeqC-_PZXjSBTON205wouCYjLZkQ8GVS9b0ygiVV9Bz60k0Yvi33lcw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWqBUFmTa-CNhTeLEnbVQM6mJkj8293M1ceELDxhrv4Mhb7hXgH2b-_ICsIUrTeo_VOH5IZhVnPZk9kmoiRgMlZtS26PfWy7EYVp5XYIGprWdeIyWuU5VN-eN3qA-LuQxKp1S5_nRgFkjmUjyKwzwH_tw=w1187-h1580-no"},
+   ]
 },
  {
    "Name": "Cove Beach Park",
@@ -780,9 +833,10 @@ var AllData =
    "Status": {"planning":true},
    "Page": {"url":"./Maui/Data/trails/thetree.html"}, 
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDIPL-esQLKqbcYrcA6OKF-Y-fdM3Bwq253o0nAY9OR7gKZWUnWxNMhgX8j_JkGmlh_6GPTpiZbAMV_qLKWXAiCpFoqm1yvM0QZvhYFFxRHKLgIm2_oSBd6jE7VTbQ3vLhHG2aGCqtA7t3p3ihCNvIFg=w2107-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVhU8gUvqcDwHpkzXSqoC3oAVa1kuHZlKnp14zfWlHL1FGyL7Bwn6SF_DTaS6f_gBvtYolPZZ7cYKs_TZPkZzVHcoc3QEdfhBetpOJE8Zyr5cEhrZuI_LGM77QhoBlBd63anESBFE1M3MEvtf26vxr6pg=w2108-h1580-no",
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUixp-80vhr2fNscQDGd9YbJNuvgWqrbt8PN2wdrUiSer8etAyafJwOcKMay7RD2U7ZDKieBJmrBWK9JMF_hLw-EXb5cJbE4BWOyiKcy_Z_CAK_Uwma5x4OI3K8bxIXRs-cD_YZjsGnw9OfFebhU3VI0A=w2107-h1580-no",
        "note":"Got to figure out a way to walk to 'The Tree' :)"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDIPL-esQLKqbcYrcA6OKF-Y-fdM3Bwq253o0nAY9OR7gKZWUnWxNMhgX8j_JkGmlh_6GPTpiZbAMV_qLKWXAiCpFoqm1yvM0QZvhYFFxRHKLgIm2_oSBd6jE7VTbQ3vLhHG2aGCqtA7t3p3ihCNvIFg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVhU8gUvqcDwHpkzXSqoC3oAVa1kuHZlKnp14zfWlHL1FGyL7Bwn6SF_DTaS6f_gBvtYolPZZ7cYKs_TZPkZzVHcoc3QEdfhBetpOJE8Zyr5cEhrZuI_LGM77QhoBlBd63anESBFE1M3MEvtf26vxr6pg=w2108-h1580-no",},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXpCUCIO9P4VYk7DYMBVD-m5kDlIL66sFXZIwEyKpNNyCwZrM8InoWoJLJ5FofkSKMvTvXNPHv5ni1olqu-qolg3aZDJRiL29XCJkB2f8lcyBv04WcHq4MOLpTIKIsP8Pcy8CM2LAfFbck-aaM5aZSliQ=w2108-h1580-no"},
       {"caption":"From Maui Brewing","img":"https://lh3.googleusercontent.com/pw/AL9nZEXtwXuKSFSfMV69bL5C_3ZkX3V4oNN5jfjHsWHyIe8Y5sM4b2ado2wFwXKrnpRdm-A37MOH9p5gZMF7hCuVDwHR1EnrmndlsPhxxklMvqOqok-b44BrWOZC2kOnUO9AK-B0TKj1b0M5XASVzurQdiST4w=w2386-h1580-no"},
    ],
@@ -798,6 +852,36 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
    ],
 },
+{
+   "Name": "Kahakapao",
+   "Tags": ["Trail"],
+   "Lat": 20.82775, 
+   "Lng":-156.27675,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/kahakapao.html", "display":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXA1-g-5SyWowZ8blbVCWkzOQSdPKlvoPVeFJU2PObvcEgg7-Bjjg0AmESTC1V1eS6TVKObj9Z7qFH3Mb6mujRDhppjblAsE_mNgAqIWVxgAGZXgVtNDyk9mGy1eDPqd7VsABoFwsItiYko_GFPc_4DUw=w2107-h1580-no"},
+   ],
+},
+{
+   "Name": "Thompson Road",
+   "Tags": ["Trail"],
+   "Lat": 20.69459, 
+   "Lng":-156.36457,
+   "Status": {"visited":true},
+ //  "Page": {"url":"./Maui/Data/trails/kahakapao.html", "display":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUrzhPdj1nV0BX-8iyGeB7zPZhaRM1KLMlx1FH-GqZ6PZtI3EuMaqtk4CUhoBQxyxS3ML-iEvMAvbsZyqbN2UTepADscU4ldZKyRYCLNVRtgj4wmzxKnBS1WD40B3NAlteOSNV8YzVIyPlWnkbxCQPpiQ=w2107-h1580-no",
+       "note":"At about 3000', this short walk (1.5m to Oprah's house; 1.9m to top of Kamaole Road) can be a cooler and refreshing change from the coast. Views are extraordinary, both up and down the mountain. The hillside may remind you of Scotland."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX85DIOQywJkFebqI4TH5AYIruIWtvX0FuOCXWFo-0pPDyAlHogCQPemM1Bt5v-T5lhBmBOGIaShDdEbEBCJKSLusT_iiRuB3RbNDyJAKhm2hNzPI_5joIyquzEM99ELh6t495YEWtjW5VLjQgezp8Tgg=w1187-h1580-no"},
+      {"caption":"Oprah's house","img":"https://lh3.googleusercontent.com/pw/AL9nZEViiq7hfJrZyhaJqvsxoIrcHFzcZyTWdgxfq1HlroybXJi1nd64_es-24q8KF5scroAZf8IXKQ_9Ficvp3wk9rNvNcSimWE03T6k2aEwdgFnb3oidBXnhZLn2LYa9olii_EWD4l5YlZBkAVzLeR87Ur6A=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWxufv-FFrXmMAdc35dCVyiEz1qLTm-Kf-TxfZ9N9TpWeoLv_1s2ivN4Wz3ZQlzwr4vxP8BqoH1_JpBdd2glCEa5akiDJf6rRA8PXcL-E_y1gJG4ZnSY_XYjfIE5f7wSeAmiNM1pG2urPYHkkBDep4wGA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUhiNoCx403c0ybxeKPmBtESHZdmzH_76gP2iFhto7V5eYdq-g9f0NQvfpYiGQsjmcD-NAD_cTbP0fcvLpJoUmpGplqRoHBmpHTqPCOujXmQBGKPfP_X3vxWnc0ytkuzPbnonAZ2xffT7yUCJ1K-YHw4Q=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVjr9eL39ZGbqcre7dQnNQ40gav5phFKQGWQI0dn1RSZj1jaASOzOmxcKRcsjTW4DkzK4EoU28LCt5gyNtEEG39WmAqAm8_OywzlFzUjTzEW5FpGArSeeoHeK_vm1E7oBttlzB42HpAOPQLRc45qOgZoA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXLzq8Zv77JMizbuge2JJgdEDlggeKqBvfxvca8T9hFplkb-WfwisuXLAhu_L2Psl7u89APkEoZCWdGCHyal29NeD46ddgGfzZXqZ00IBQncu_Vqlkevt5Z8rdEn_0idPY_bHlxQjJCZRSU5213Yklkzg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUf1OgI7LRGUk0ZbqlHe5p8TS7P2ujEheDDXNtIjLfgsfTJj5_HN3CC93-Vvja4L4wkurn53RbCp9DdF2HcsiwE4scXtUhVe-CToJr1XI1XrDryXmS8bxQfnKHG6_-h0tgaM_LtqFyDug8yBK-ORPPSBw=w2107-h1580-no"},
+   ],
+},
 
 // PLACES of Interest
 {
@@ -810,5 +894,18 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU7S6X8SotVPTcAuRDpQSK-T-vzArF6J6IwAs-bJb1TZLovLNaP2mzpCXjvpkiLOBpQELCG_W1FAujMUzvKR6HdejFeCztEmFD40MSPZDMDVyqQuYesQb0hBB1eIurnbzC7XRLrXCnjgFjtA26r6FTVuw=w1186-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUJbzRtdTmwf1uKXipKvGSenCfAaOuIz5GqjabgCFf8ok1FWdUbz1kNrUyNTfDaPwR5ZBy_2Xc9noH-zIuRARv15XyrqJgfKVNB17gMChUBmo3dFM-6JHkOZuNLksf3P_uQPB5Wci8mOV7bF-IidXyUzg=w2108-h1580-no"},
    ]
-}
+},
+{
+   "Name":"(Upper) Kanaio Road",
+   "Tags": ["Place"],
+   "Lat": 20.63194,
+   "Lng": -156.37894,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUkTeXrUJCNt-D_d05B-R4Mp5sAxrbjoHKxBAMLyCj88u17D0lqDQl0u2tokQDYUYK2rMctMene7jhl5PNrBO_a4pqQozg4sfMATp8j5oCEIkbp59F1nDTcJElhw1O-9XC7T-ETsKSM2iWwMLQpP4S3NA=w2107-h1580-no",
+       "note":"Drove this road looking for a trail to 'the tree.' First, there is no trail. Second, the road is a fun drive, but ultimately not worth it. Can get the same views from more accessible places."},
+      {"caption":"The tree is over that ridge...somewhere","img":"https://lh3.googleusercontent.com/pw/AL9nZEWWrItG1NfJOuL5cTlLDhvBtbCJi1ytMWBgicAYGKpzWzstFBhoZyIl1QPZuMcMW3yxwcGtZgv_h4BspbOZvuN0t7K5LOxXzYT9YtcxvXKVK8YaPCftOKwPx6JLHa__nxPBQVL41onMz4_SyBvV6146Ng=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV1GDpqEjrqLc2thRwxm-DWU5AOKSCqg1zdIHekwntJWFVjAoHUGcOEK_9tz-oDa_UgCcHz8XRZiGZAU9rVtf9IiHPCnng4kLmXb_j0-i17TiKpsvk0mRH-yGCh8mlPesaFnFwATX6YiohlsOgoFg8G1w=w2107-h1580-no"},
+   ]
+},
 ]

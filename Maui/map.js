@@ -9,11 +9,13 @@ const MapUp = document.getElementById('mapup');
 const MapUpOverlay = new ol.Overlay({element: MapUp,positioning: 'bottom-center',stopEvent: false,});
 map.addOverlay(MapUpOverlay);
 
+const baseRadius = 3.4;
+
 var PointList = []
 function AddAPoint(i) {
     var clr = new ol.color.asArray([255,0,0,0.5]);
     var bor = new ol.color.asArray([150,150,150,1]);
-    var rad = 4;
+    var rad = baseRadius;
     var bwd = 1;
     try{
       if (AllData[i].Status.visited) {clr = new ol.color.asArray([0,0,255,0.6]); rad = rad * 1.3}
@@ -65,6 +67,37 @@ map.on("click",function(evt) {
 
 map.getView().on('change:resolution', (event) => {
     console.log("zoom changed",map.getView().getZoom());
+    var z = map.getView().getZoom();
+    // Zoom 10 - radius 3 to 5
+    // Zoom 11 - 4 to 6
+    // Zoom 12 - 5
+    // Zoom 13 - 6
+
+    // z = 11; current = 3  current+(z-10)
+    // z = 13; current
+    
+    var f = MarkerLayer.getSource().getFeatures();
+
+    for (i=0;i<f.length;i++) {
+      var s = f[i].getStyle();
+      var g = s[0].getImage();
+//      console.log(s,g,g.getRadius());
+      var r = g.getRadius();
+      var br = 10-baseRadius;
+
+      // base case, using 3.... r should be about (z-7).
+      // if r is bigger than that, then by what factor... bigger by r-(z-7)... lets say z is 10, normal is 3, r is 4 => 4-3 = 1/3 
+
+      var m = 1+(r-(z-br))/(z-br);
+      console.log("r.m",r,m)
+      // if originally 3, r is now bigger... r-3 is the diff
+      g.setRadius(((z-br)*m));
+    }
+  
+    // style.getImage().setRadius(r)
+    //f.foreach((x,i)=>{console.log(x,i);})
+
+    //f.foreach((x,i)=>{x.style.getImage.setRadius(z-7)})
 });
 
 //===== LOAD SPREADSHEET
