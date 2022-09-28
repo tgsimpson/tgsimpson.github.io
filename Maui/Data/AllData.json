@@ -273,8 +273,10 @@ var AllData =
    "Lng": -156.44220,
    "Status": {"visited":true},
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWDnZaQ6ORJx4wTaA-Hzz2p06PpsnHXy95zuteMUwrq64h3fugs_JWfAP3fK3i596OqiXEkl4u7iw2ETNzuRbv9aBBUT6FXcnZMmU5vFCJ6MvIrLcauuiXgke_tahtr_z44y5S8zSs8vmjfkIm5Z-6Kgw=w2107-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX9ITBxnwQ_KeBQ4tI83nrAIrjv7N5V92VYrQ8fIbuISVt_ka8p4bN_XyVuVDVikQaLIbNeOE7li2t3-xB4Zk6O25ba0XG2JLRqIaWMcAT41Z9VaUDsKNKcs81ssJi7r2ROv51Pyk2DtvBu7Io_Tcv5bg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWDnZaQ6ORJx4wTaA-Hzz2p06PpsnHXy95zuteMUwrq64h3fugs_JWfAP3fK3i596OqiXEkl4u7iw2ETNzuRbv9aBBUT6FXcnZMmU5vFCJ6MvIrLcauuiXgke_tahtr_z44y5S8zSs8vmjfkIm5Z-6Kgw=w2107-h1580-no",
+       "note":"Can be a lot of homeless / long term campers at this beach."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX9ITBxnwQ_KeBQ4tI83nrAIrjv7N5V92VYrQ8fIbuISVt_ka8p4bN_XyVuVDVikQaLIbNeOE7li2t3-xB4Zk6O25ba0XG2JLRqIaWMcAT41Z9VaUDsKNKcs81ssJi7r2ROv51Pyk2DtvBu7Io_Tcv5bg=w2107-h1580-no",
+       "note":"But...is also a favorite for wedding photos, even at dawn."},
    ]
 },
  {
@@ -854,7 +856,7 @@ var AllData =
 },
 {
    "Name": "Kahakapao",
-   "Tags": ["Trail"],
+   "Tags": ["Trail","Story"],
    "Lat": 20.82775, 
    "Lng":-156.27675,
    "Status": {"visited":true},

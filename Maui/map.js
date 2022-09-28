@@ -1,120 +1,171 @@
 
-//===== MAP
-var map = new ol.Map({
-  target: 'map',
-  layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
-  view: new ol.View({center: ol.proj.fromLonLat([-156.4,20.8]),zoom: 10}),
-  })
-const MapUp = document.getElementById('mapup');
-const MapUpOverlay = new ol.Overlay({element: MapUp,positioning: 'bottom-center',stopEvent: false,});
-map.addOverlay(MapUpOverlay);
+class MauiMap {
 
-const baseRadius = 3.4;
+    constructor() {
+      //===== MAP
+      this.map = new ol.Map({
+        target: 'map',
+        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
+        view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
+        })
+      this.MapUp = document.getElementById('mapup')
+      this.MapUpOverlay = new ol.Overlay({element: this.MapUp,positioning: 'bottom-center',stopEvent: false,});
+      this.map.addOverlay(this.MapUpOverlay);
+      this.MarkerLayer = new ol.layer.Vector({source: new ol.source.Vector({features:[]}),});
+      this.map.addLayer(this.MarkerLayer)
+      this.searchBox = document.getElementById('searchBox'); this.searchBox.style.display = "none"; 
+        
+      //==== Configs
+      this.baseRadius = 3;
 
-var PointList = []
-function AddAPoint(i) {
-    var clr = new ol.color.asArray([255,0,0,0.5]);
-    var bor = new ol.color.asArray([150,150,150,1]);
-    var rad = baseRadius;
-    var bwd = 1;
-    try{
-      if (AllData[i].Status.visited) {clr = new ol.color.asArray([0,0,255,0.6]); rad = rad * 1.3}
-      if ("Page" in AllData[i]) {clr = new ol.color.asArray([50,255,50,0.9]); bor = new ol.color.asArray([0,255,0,1.0]); rad = rad*1.35}
-      if (AllData[i].Status.revisit) {bor = new ol.color.asArray([0,255,255,1.0]) ; bwd = 2}
-      if (AllData[i].Status.planning) {clr = new ol.color.asArray([255,255,0,1.0]);bor = new ol.color.asArray([0,0,255,1.0]); rad = rad*1.1}
+      // Event handlers
+      document.getElementById("selectBox").addEventListener("click", () => this.filterPoints());
+      this.map.on("click",      function(evt) {var feature = this.eventSetUp(evt); PShow.setDIndex(feature.dataIndex)}.bind(this))
+      this.map.on("pointermove",function(evt) {this.eventSetUp(evt)}.bind(this))
+      this.map.getView().on('change:resolution', (event) => {
+          var zoom = this.map.getView().getZoom();   
+          var features = this.MarkerLayer.getSource().getFeatures();
+          var zscale = 1+(zoom-10)/3; if (zscale<1) zscale=1;
+
+          for (var i=0;i<features.length;i++) {
+            try { features[i].visibleStyle.getImage().setRadius(features[i].marker.circleRadius*features[i].marker.radiusScale*zscale);
+                  if (features[i].visible) features[i].setStyle(features[i].visibleStyle)
+
+
+              //var s = f[i].getStyle();
+              //    var g = s.getImage();
+               //   g.setRadius(f[i].marker.circleRadius*f[i].marker.radiusScale*zs);
+                } catch {console.log("not today")}
+          }
+       })
+
+       // tags
+       this.tags = []
+       for (var i=0;i<AllData.length;i++) {
+            try { for (var j=0;j<AllData[i].Tags.length;j++) {
+                     if (!(this.tags.includes(AllData[i].Tags[j]))) this.tags.push(AllData[i].Tags[j]) }
+                } catch {}
+        }
+
     }
-    catch {}
 
+    AddAPoint(i) {
+        var feature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(AllData[i].Lng), parseFloat(AllData[i].Lat)], 'EPSG:4326', 'EPSG:3857'))});
+        feature.marker = {}
+        feature.dataIndex = i
 
-//    const pointStyle = new ol.style.Style({
-//      image: new ol.style.Circle({radius: 5,fill: new ol.style.Fill({color: 'orange',}),}),
-//      geometry: function (feature) {return new ol.geom.MultiPoint([[[-5e6, 6e6], [-5e6, 8e6], [-3e6, 8e6],[-3e6, 6e6], [-5e6, 6e6]]]);},
-//    });
-    // experiments
-//const pS2 = new ol.style.Style({
-//  image: new ol.style.Icon({
-//    anchor: [0, 0],
-//    src: './Maui/Data/icons/beach.png',
-//    size: [12,12],
-//  })
-//});
+        // defaults
+        feature.marker.circleColor  = new ol.color.asArray([255,0,0,0.5]);
+        feature.marker.borderColor  = new ol.color.asArray([0,0,0,1]);
+        feature.marker.circleRadius = this.baseRadius;
+        feature.marker.radiusScale  = 1;
+        feature.marker.borderWidth  = 1;
+        // customize
+        try{
+          if (AllData[i].Status.visited) {  // Spot we have visited
+             feature.marker.circleColor = new ol.color.asArray([0,0,255,0.6]); 
+             feature.marker.radiusScale = 1.4
+           }
+          if ("Page" in AllData[i]) { // Story on this node
+             feature.marker.circleColor = new ol.color.asArray([50,255,50,0.9]); 
+             //feature.marker.borderColor = new ol.color.asArray([0,255,0,1.0]); 
+             feature.marker.radiusScale = 1.5
+           }
+          if (AllData[i].Status.revisit) { // been here, but want to revisit
+             feature.marker.borderColor = new ol.color.asArray([50,50,50,1.0]) ; 
+             feature.marker.borderWidth = 2
+           }
+          if (AllData[i].Status.planning) { // there's a plan for this one
+             feature.marker.circleColor = new ol.color.asArray([255,255,0,1.0]);
+             feature.marker.borderColor = new ol.color.asArray([0,0,255,1.0]); 
+             feature.marker.radiusSclae = 1.25
+           }
+        }
+        catch {}
 
-    // figure out color based on something.
-    const pointStyle = new ol.style.Style({
-       image: new ol.style.Circle({radius: rad,fill: new ol.style.Fill({color: clr}),stroke: new ol.style.Stroke({color: bor,width: bwd,})}),
- //      geometry: function (feature) {return new ol.geom.MultiPoint([[[-5e6, 6e6], [-5e6, 8e6], [-3e6, 8e6],[-3e6, 6e6], [-5e6, 6e6]]]);},
-    });
+        var style = new ol.style.Style({
+           image: new ol.style.Circle({radius: feature.marker.circleRadius*feature.marker.radiusScale,
+                                       fill: new ol.style.Fill({color: feature.marker.circleColor}),
+                                       stroke: new ol.style.Stroke({color: feature.marker.borderColor,width: feature.marker.borderWidth,})}),
+        });
+        feature.setStyle(style);
+        feature.visibleStyle = style;
+        feature.visible = true;
 
-    var p = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(AllData[i].Lng), parseFloat(AllData[i].Lat)], 'EPSG:4326', 'EPSG:3857'))});
-    p.setStyle([pointStyle]);
-//    p.setStyle([pS2]);
-    MarkerLayer.getSource().addFeature(p);
-    return (p);
-}
-
-var MarkerLayer = new ol.layer.Vector({source: new ol.source.Vector({features:[]}),});
-map.addLayer(MarkerLayer)
-
-
-map.on("click",function(evt) {
-  var feature = map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})  //get first feature to match
-  var match = PointList.findIndex(f => f===feature);
-  if (match <0 || AllData[match]==null) {console.log("No data for",match); MapUp.innerHTML = ""; return;}
-  console.log("And match is",match,AllData[match]);
-  MapUpOverlay.setPosition(evt.coordinate)
-  if (!PShow.setDIndex(match)) {MapUp.innerHTML = "<p>"+AllData[match].Name+"</p>";}
-})
-
-map.getView().on('change:resolution', (event) => {
-    console.log("zoom changed",map.getView().getZoom());
-    var z = map.getView().getZoom();
-    // Zoom 10 - radius 3 to 5
-    // Zoom 11 - 4 to 6
-    // Zoom 12 - 5
-    // Zoom 13 - 6
-
-    // z = 11; current = 3  current+(z-10)
-    // z = 13; current
-    
-    var f = MarkerLayer.getSource().getFeatures();
-
-    for (i=0;i<f.length;i++) {
-      var s = f[i].getStyle();
-      var g = s[0].getImage();
-//      console.log(s,g,g.getRadius());
-      var r = g.getRadius();
-      var br = 10-baseRadius;
-
-      // base case, using 3.... r should be about (z-7).
-      // if r is bigger than that, then by what factor... bigger by r-(z-7)... lets say z is 10, normal is 3, r is 4 => 4-3 = 1/3 
-
-      var m = 1+(r-(z-br))/(z-br);
-      console.log("r.m",r,m)
-      // if originally 3, r is now bigger... r-3 is the diff
-      g.setRadius(((z-br)*m));
+        return (feature);
     }
+
+    //===== common event handling
+    eventSetUp(evt) {
+        var feature = this.map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})
+        if (feature) {this.MapUp.innerHTML = "<p>"+AllData[feature.dataIndex].Name+"</p>"; 
+                      this.MapUpOverlay.setPosition(evt.coordinate)}
+        else this.MapUp.innerHTML = "";
+        return feature
+    }
+
+    showSB(b) {if (b) {this.searchBox.style.display="block";} 
+               else {this.searchBox.style.display = "none"}}
+
+    filterPoints() {
   
-    // style.getImage().setRadius(r)
-    //f.foreach((x,i)=>{console.log(x,i);})
+        var html = "<fieldset>"+
+                     "<legend>Types:</legend>"
+        for (var i=0;i<this.tags.length;i++) {
+          html = html+
+             "<div>"+
+             "<input type='checkbox' id='"+this.tags[i]+"Tag'"+" name='"+this.tags[i]+"' checked>"+
+             "<label for='"+this.tags[i]+"Tag'>"+this.tags[i]+"</label>"+
+             "</div>"
+        }
+        html = html+"</fieldset>"
+        html = html+"<input type='submit' id='applySearch' value='Apply'>"
 
-    //f.foreach((x,i)=>{x.style.getImage.setRadius(z-7)})
-});
+        this.searchBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
 
-//===== LOAD SPREADSHEET
-document.addEventListener('DOMContentLoaded', init)
-function init() {
-   // for now, assume everything is a Beach
-   for (var i=0, len = AllData.length; i<len; i++){
-     try {PointList[i]=AddAPoint(i)}
-     catch (err) {PointList[i]=null;console.log("issue with element",i,err)}
-   }
-   document.getElementById("selectBox").addEventListener("click", () => filterPoints());
+        // uncheck the boxes
+        for (var i=0;i<this.tags.length;i++) document.getElementById(this.tags[i]+"Tag").checked = false;
+
+        document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
+        document.getElementById('applySearch').addEventListener("click", function() {this.doSearch()}.bind(this));
+        this.showSB(true);
+    }
+
+    doSearch() {
+        this.showSB(false)
+        var features = this.MarkerLayer.getSource().getFeatures();
+// Filter on Features
+        var filters = [];
+        for (var i=0;i<this.tags.length;i++) {
+          var box = document.getElementById(this.tags[i]+"Tag")
+          if (box.checked) filters.push(box.name);
+        }
+        console.log("and our filter is",filters)
+
+        for (var i=0;i<features.length;i++) {
+          var intersect = filters.filter(x => AllData[features[i].dataIndex].Tags.includes(x))
+          if (intersect.length > 0) {features[i].setStyle(features[i].visibleStyle); features[i].visible=true;}
+          else {features[i].setStyle(new ol.style.Style({})); features[i].visible=false}
+        }
+    }
+
+    //===== INITIALIZE
+
+    init() {
+       for (var i=0, len = AllData.length; i<len; i++){
+         try {this.MarkerLayer.getSource().addFeature(this.AddAPoint(i));}
+         catch (err) {console.log("issue with element",i,err)}
+       }
+    }
+
 }
 
-function filterPoints() {
-  console.log("Do your filtering magic here")
-  alert("Search / Filter coming soon.")
-}
+document.addEventListener('DOMContentLoaded', ()=>{var MM = new MauiMap(); MM.init()})
+
+
+
+
+
  
 
 
