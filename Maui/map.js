@@ -1,14 +1,28 @@
 
+
+
 class MauiMap {
 
     constructor() {
       //===== MAP
+
+     this.BingLayer = new ol.layer.Tile({
+ //     visible: false,
+      preload: Infinity,
+      source: new ol.source.BingMaps({
+          key: 'AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC',
+          imagerySet: 'Road',
+          }),
+      });
+
       this.map = new ol.Map({
         target: 'map',
-        preload: ol.Infinity,
-        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
+        preload: Infinity,
+//        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
+        layers: [this.BingLayer],
         view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
         })
+
       this.MapUp = document.getElementById('mapup')
       this.MapUpOverlay = new ol.Overlay({element: this.MapUp,positioning: 'bottom-center',stopEvent: false,});
       this.map.addOverlay(this.MapUpOverlay);

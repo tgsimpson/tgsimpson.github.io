@@ -802,6 +802,18 @@ var AllData =
    ],
 },
 {
+   "Name": "Hanomanioa Light(house)",
+   "Tags": ["Trail"],
+   "Lat": 20.58322,
+   "Lng":-156.41197,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/hanomanioa.html","display":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXwCyjgFNhzX65SdZfH0o0_dMOac8KmwRduAE5_XTDNPlIUfavr2a8vhRwS5B-kwVdACrjY8rMcEXhzlauGhq4BZ9VvFVIiBff0pQGKqGGYGkOQ2-lksRVOLsmmjXTIp3PNdL6As7WHHIfzyDgMLM08Hg=w1790-h1238-no",
+       "note":"Stock Photo."}
+   ],
+},
+{
    "Name": "Auwahi Windmills",
    "Tags": ["Trail"],
    "Lat": 20.59912,
