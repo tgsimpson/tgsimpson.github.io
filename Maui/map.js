@@ -6,7 +6,7 @@ class MauiMap {
     constructor() {
       //===== MAP
 
-     this.BingLayer = new ol.layer.Tile({
+     this.BingRoad = new ol.layer.Tile({
  //     visible: false,
       preload: Infinity,
       source: new ol.source.BingMaps({
@@ -15,11 +15,22 @@ class MauiMap {
           }),
       });
 
+
+      this.BingAerial = new ol.layer.Tile({
+      visible: false,
+      preload: Infinity,
+      source: new ol.source.BingMaps({
+          key: 'AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC',
+          imagerySet: 'Aerial',
+          }),
+      });
+
+
       this.map = new ol.Map({
         target: 'map',
         preload: Infinity,
 //        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
-        layers: [this.BingLayer],
+        layers: [this.BingRoad,this.BingAerial],
         view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
         })
 
