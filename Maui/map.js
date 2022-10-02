@@ -5,6 +5,7 @@ class MauiMap {
       //===== MAP
       this.map = new ol.Map({
         target: 'map',
+        preload: ol.Infinity,
         layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
         view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
         })
@@ -109,22 +110,42 @@ class MauiMap {
 
     filterPoints() {
   
+        // tags
         var html = "<fieldset>"+
                      "<legend>Types:</legend>"
         for (var i=0;i<this.tags.length;i++) {
           html = html+
              "<div>"+
-             "<input type='checkbox' id='"+this.tags[i]+"Tag'"+" name='"+this.tags[i]+"' checked>"+
+             "<input type='checkbox' id='"+this.tags[i]+"Tag'"+" name='"+this.tags[i]+"'>"+
              "<label for='"+this.tags[i]+"Tag'>"+this.tags[i]+"</label>"+
              "</div>"
         }
         html = html+"</fieldset>"
+                // uncheck the boxes
+        // for (var i=0;i<this.tags.length;i++) document.getElementById(this.tags[i]+"Tag").checked = false;
+
+
+        // status
+        html = html+"<fieldset>"+
+                      "<legend>Status:</legend>"+
+                      "<div><input type='checkbox' id='visitedStatus' name='visitedStatus'>"+
+                      "<label for 'visitedStatus'>Visited</label>"+
+                      "<div><input type='checkbox' id='invisitedStatus' name='invisitedStatus'>"+
+                      "<label for 'invisitedStatus'>Not Visited</label>"+
+                      "<div><input type='checkbox' id='planningStatus' name='planningStatus'>"+
+                      "<label for 'planningStatus'>Planning</label>"+
+                    "</fieldset>"+
+                    "<br>"
+
+        //generic search
+
+        //
+        html = html+"<br>"
         html = html+"<input type='submit' id='applySearch' value='Apply'>"
+
 
         this.searchBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
 
-        // uncheck the boxes
-        for (var i=0;i<this.tags.length;i++) document.getElementById(this.tags[i]+"Tag").checked = false;
 
         document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
         document.getElementById('applySearch').addEventListener("click", function() {this.doSearch()}.bind(this));
