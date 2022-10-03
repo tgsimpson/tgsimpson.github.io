@@ -6,7 +6,8 @@ class MauiMap {
     constructor() {
       //===== MAP
 
-      // BING
+      // BING 
+/*
      this.BingRoad = new ol.layer.Tile({
  //     visible: false,
       preload: Infinity,
@@ -24,18 +25,20 @@ class MauiMap {
           imagerySet: 'Aerial',
           }),
       });
+*/ 
        // MAPBOX
+/*
       this.mbMap = new mapboxgl.Map({
         style: 'https://api.maptiler.com/maps/bright/style.json?key=' + "9LEIgEX7d31sdgw0Ybtk",
         attributionControl: false,
-        boxZoom: false,
+        boxZoom: true,
         center: [-156.345,20.8],
         container: 'map',
         doubleClickZoom: false,
         dragPan: false,
         dragRotate: false,
         interactive: true,
-        keyboard: false,
+        keyboard: true,
         pitchWithRotate: false,
         scrollZoom: true,
         touchZoomRotate: false,
@@ -89,16 +92,16 @@ class MauiMap {
       //   styleUrl: 'mapbox://styles/mapbox/bright-v9',
       //   accessToken:'6sSz9PnOXdILivnpz3Jy',
       //}),
-
+*/
 
       // AND FINALLY, THE MAP
 
       this.map = new ol.Map({
         target: 'map',
         preload: Infinity,
-//        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
+        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
 //        layers: [this.BingRoad,this.BingAerial],
-        layers: [this.mbLayer],
+//        layers: [this.mbLayer],
         view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
         })
 
@@ -114,15 +117,21 @@ class MauiMap {
 
       // Event handlers
       document.getElementById("selectBox").addEventListener("click", () => this.filterPoints());
-      this.map.on("click",      function(evt) {var feature = this.eventSetUp(evt); PShow.setDIndex(feature.dataIndex)}.bind(this))
+      this.map.on("click",      function(evt) {var feature = this.eventSetUp(evt); if (feature) PShow.setDIndex(feature.dataIndex)}.bind(this))
       this.map.on("pointermove",function(evt) {this.eventSetUp(evt)}.bind(this))
       this.map.getView().on('change:resolution', (event) => {
           var zoom = this.map.getView().getZoom();   
           var features = this.MarkerLayer.getSource().getFeatures();
-          var zscale = 1+(zoom-10)/3; if (zscale<1) zscale=1;
+          var zscale = 1+(zoom-10)/2; if (zscale<1) zscale=1;
 
           for (var i=0;i<features.length;i++) {
-            try { features[i].visibleStyle.getImage().setRadius(features[i].marker.circleRadius*features[i].marker.radiusScale*zscale);
+            try { 
+                  features[i].visibleStyle = new ol.style.Style({
+                             image: new ol.style.Circle({radius: features[i].marker.circleRadius*features[i].marker.radiusScale*zscale,
+                                                         fill: new ol.style.Fill({color: features[i].marker.circleColor}),
+                                                         stroke: new ol.style.Stroke({color: features[i].marker.borderColor,width: features[i].marker.borderWidth,})}),
+                          });
+              //features[i].visibleStyle.getImage().setRadius(features[i].marker.circleRadius*features[i].marker.radiusScale*zscale);
                   if (features[i].visible) features[i].setStyle(features[i].visibleStyle)
 
 
@@ -194,7 +203,7 @@ class MauiMap {
         var feature = this.map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})
         if (feature) {this.MapUp.innerHTML = "<p>"+AllData[feature.dataIndex].Name+"</p>"; 
                       this.MapUpOverlay.setPosition(evt.coordinate)}
-        else this.MapUp.innerHTML = "";
+        else {this.MapUp.innerHTML = "";};
         return feature
     }
 
