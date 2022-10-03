@@ -52,7 +52,7 @@ class MauiMap {
 
             //const visible = mbLayer.getVisible();
             //canvas.style.display = visible ? 'block' : 'none';
-            //canvas.style.position = 'absolute';
+            canvas.style.position = 'absolute';
 
             //const opacity = mbLayer.getOpacity();
             //canvas.style.opacity = opacity;
