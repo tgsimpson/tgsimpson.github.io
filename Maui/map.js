@@ -34,10 +34,10 @@ class MauiMap {
         doubleClickZoom: false,
         dragPan: false,
         dragRotate: false,
-        interactive: false,
+        interactive: true,
         keyboard: false,
         pitchWithRotate: false,
-        scrollZoom: false,
+        scrollZoom: true,
         touchZoomRotate: false,
       });
 
