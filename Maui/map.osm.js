@@ -1,21 +1,102 @@
 
-// Google maps api key:  AIzaSyDLlibEWsGms7qd_zmrSCZiNa-Ol61r99M
+
 
 class MauiMap {
 
     constructor() {
       //===== MAP
 
-      this.map = new google.maps.Map(document.getElementById("map"), 
-          {
-            zoom: 10,
-            center: {lng: -156.345, lat: 20.8},
-          });
+      // BING 
+/*
+     this.BingRoad = new ol.layer.Tile({
+ //     visible: false,
+      preload: Infinity,
+      source: new ol.source.BingMaps({
+          key: 'AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC',
+          imagerySet: 'Road',
+          }),
+      });
 
-      console.log("Created map?", this.map)
+      this.BingAerial = new ol.layer.Tile({
+      visible: false,
+      preload: Infinity,
+      source: new ol.source.BingMaps({
+          key: 'AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC',
+          imagerySet: 'Aerial',
+          }),
+      });
+*/ 
+       // MAPBOX
+/*
+      this.mbMap = new mapboxgl.Map({
+        style: 'https://api.maptiler.com/maps/bright/style.json?key=' + "9LEIgEX7d31sdgw0Ybtk",
+        attributionControl: false,
+        boxZoom: true,
+        center: [-156.345,20.8],
+        container: 'map',
+        doubleClickZoom: false,
+        dragPan: false,
+        dragRotate: false,
+        interactive: true,
+        keyboard: true,
+        pitchWithRotate: false,
+        scrollZoom: true,
+        touchZoomRotate: false,
+      });
 
-     }
-/*      this.map = new ol.Map({
+
+
+      this.mbLayer = new ol.layer.Layer({
+          render: function (frameState) {
+          //  console.log("mbMap",this.mbMap)
+            const canvas = this.mbMap.getCanvas();
+          //  console.log("canvas",canvas)
+            const viewState = frameState.viewState;
+
+            //const visible = mbLayer.getVisible();
+            //canvas.style.display = visible ? 'block' : 'none';
+            canvas.style.position = 'absolute';
+
+            //const opacity = mbLayer.getOpacity();
+            //canvas.style.opacity = opacity;
+
+            // adjust view parameters in mapbox
+            const rotation = viewState.rotation;
+            this.mbMap.jumpTo({
+              center: ol.proj.toLonLat(viewState.center),
+              zoom: viewState.zoom - 1,
+              bearing: (-rotation * 180) / Math.PI,
+              animate: false,
+            });
+
+            // cancel the scheduled update & trigger synchronous redraw
+            // see https://github.com/mapbox/mapbox-gl-js/issues/7893#issue-408992184
+            // NOTE: THIS MIGHT BREAK IF UPDATING THE MAPBOX VERSION
+            if (this.mbMap._frame) {
+              this.mbMap._frame.cancel();
+              this.mbMap._frame = null;
+            }
+            this.mbMap._render();
+
+            return canvas;
+          }.bind(this),
+          source: new ol.source.Source({
+            attributions: [
+              '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>',
+              '<a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+            ],
+          }),
+        });
+
+      //this.simpleMB = new ol.layer.MapboxVector({
+      //   styleUrl: 'mapbox://styles/mapbox/bright-v9',
+      //   accessToken:'6sSz9PnOXdILivnpz3Jy',
+      //}),
+*/
+
+      // AND FINALLY, THE MAP
+
+      this.map = new ol.Map({
         target: 'map',
         preload: Infinity,
         layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
@@ -70,18 +151,53 @@ class MauiMap {
         }
 
     }
-    */
 
     AddAPoint(i) {
-      
-      var p = new google.maps.Marker({
-        position: {lat: AllData[i].Lat, lng: AllData[i].Lng},
-        map: this.map,
-      });
+        var feature = new ol.Feature({geometry: new ol.geom.Point(ol.proj.transform([parseFloat(AllData[i].Lng), parseFloat(AllData[i].Lat)], 'EPSG:4326', 'EPSG:3857'))});
+        feature.marker = {}
+        feature.dataIndex = i
 
+        // defaults
+        feature.marker.circleColor  = new ol.color.asArray([255,0,0,0.5]);
+        feature.marker.borderColor  = new ol.color.asArray([0,0,0,1]);
+        feature.marker.circleRadius = this.baseRadius;
+        feature.marker.radiusScale  = 1;
+        feature.marker.borderWidth  = 1;
+        // customize
+        try{
+          if (AllData[i].Status.visited) {  // Spot we have visited
+             feature.marker.circleColor = new ol.color.asArray([0,0,255,0.6]); 
+             feature.marker.radiusScale = 1.4
+           }
+          if ("Page" in AllData[i]) { // Story on this node
+             feature.marker.circleColor = new ol.color.asArray([50,255,50,0.9]); 
+             //feature.marker.borderColor = new ol.color.asArray([0,255,0,1.0]); 
+             feature.marker.radiusScale = 1.5
+           }
+          if (AllData[i].Status.revisit) { // been here, but want to revisit
+             feature.marker.borderColor = new ol.color.asArray([50,50,50,1.0]) ; 
+             feature.marker.borderWidth = 2
+           }
+          if (AllData[i].Status.planning) { // there's a plan for this one
+             feature.marker.circleColor = new ol.color.asArray([255,255,0,1.0]);
+             feature.marker.borderColor = new ol.color.asArray([0,0,255,1.0]); 
+             feature.marker.radiusSclae = 1.25
+           }
+        }
+        catch {}
+
+        var style = new ol.style.Style({
+           image: new ol.style.Circle({radius: feature.marker.circleRadius*feature.marker.radiusScale,
+                                       fill: new ol.style.Fill({color: feature.marker.circleColor}),
+                                       stroke: new ol.style.Stroke({color: feature.marker.borderColor,width: feature.marker.borderWidth,})}),
+        });
+        feature.setStyle(style);
+        feature.visibleStyle = style;
+        feature.visible = true;
+
+        return (feature);
     }
 
-/*
     //===== common event handling
     eventSetUp(evt) {
         var feature = this.map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})
@@ -155,24 +271,17 @@ class MauiMap {
           else {features[i].setStyle(new ol.style.Style({})); features[i].visible=false}
         }
     }
-*/
+
     //===== INITIALIZE
 
     init() {
        for (var i=0, len = AllData.length; i<len; i++){
-         try {this.AddAPoint(i);}
+         try {this.MarkerLayer.getSource().addFeature(this.AddAPoint(i));}
          catch (err) {console.log("issue with element",i,err)}
        }
     }
 
 }
-
-function initMap() {
-  var MM = new MauiMap(); MM.init();
-}
-
-//window.initMap = initMap
-
 
 document.addEventListener('DOMContentLoaded', ()=>{var MM = new MauiMap(); MM.init()})
 

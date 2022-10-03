@@ -97,7 +97,7 @@ class PicShow {
 				  }
 }
 
-const PShow = new PicShow()
+// const PShow = new PicShow()
 
 // PShow.descOnly("./Maui/Data/welcome.html")
 
