@@ -14,23 +14,11 @@ class MauiMap {
 
       console.log("Created map?", this.map)
 
-     }
-/*      this.map = new ol.Map({
-        target: 'map',
-        preload: Infinity,
-        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
-//        layers: [this.BingRoad,this.BingAerial],
-//        layers: [this.mbLayer],
-        view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
-        })
+  //    this.searchBox = document.getElementById('searchBox'); this.searchBox.style.display = "none"; 
 
-      this.MapUp = document.getElementById('mapup')
-      this.MapUpOverlay = new ol.Overlay({element: this.MapUp,positioning: 'bottom-center',stopEvent: false,});
-      this.map.addOverlay(this.MapUpOverlay);
-      this.MarkerLayer = new ol.layer.Vector({source: new ol.source.Vector({features:[]}),});
-      this.map.addLayer(this.MarkerLayer)
-      this.searchBox = document.getElementById('searchBox'); this.searchBox.style.display = "none"; 
-        
+    }
+ 
+ /*       
       //==== Configs
       this.baseRadius = 3;
 
@@ -73,11 +61,30 @@ class MauiMap {
     */
 
     AddAPoint(i) {
-      
       var p = new google.maps.Marker({
         position: {lat: AllData[i].Lat, lng: AllData[i].Lng},
         map: this.map,
+//        label: AllData[i].Name,
+        title: AllData[i].Name,
+        icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 6,
+                fillColor: "#F00",
+                fillOpacity: 0.4,
+                strokeWeight: 0.4
+              },
       });
+
+      p["dataIndex"] = i;
+
+      console.log("Marker",p)
+
+      p.addListener("click", () => {
+        let d = AllData[p.dataIndex]
+        console.log("clicked",p.getPosition(),d.Name)
+        PShow.setDIndex(p.dataIndex)
+      });
+
 
     }
 
