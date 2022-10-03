@@ -6,6 +6,7 @@ class MauiMap {
     constructor() {
       //===== MAP
 
+      // BING
      this.BingRoad = new ol.layer.Tile({
  //     visible: false,
       preload: Infinity,
@@ -15,7 +16,6 @@ class MauiMap {
           }),
       });
 
-
       this.BingAerial = new ol.layer.Tile({
       visible: false,
       preload: Infinity,
@@ -24,13 +24,81 @@ class MauiMap {
           imagerySet: 'Aerial',
           }),
       });
+       // MAPBOX
+      this.mbMap = new mapboxgl.Map({
+        style: 'https://api.maptiler.com/maps/bright/style.json?key=' + "9LEIgEX7d31sdgw0Ybtk",
+        attributionControl: false,
+        boxZoom: false,
+        center: [-156.345,20.8],
+        container: 'map',
+        doubleClickZoom: false,
+        dragPan: false,
+        dragRotate: false,
+        interactive: false,
+        keyboard: false,
+        pitchWithRotate: false,
+        scrollZoom: false,
+        touchZoomRotate: false,
+      });
 
+
+
+      this.mbLayer = new ol.layer.Layer({
+          render: function (frameState) {
+          //  console.log("mbMap",this.mbMap)
+            const canvas = this.mbMap.getCanvas();
+          //  console.log("canvas",canvas)
+            const viewState = frameState.viewState;
+
+            //const visible = mbLayer.getVisible();
+            //canvas.style.display = visible ? 'block' : 'none';
+            //canvas.style.position = 'absolute';
+
+            //const opacity = mbLayer.getOpacity();
+            //canvas.style.opacity = opacity;
+
+            // adjust view parameters in mapbox
+            const rotation = viewState.rotation;
+            this.mbMap.jumpTo({
+              center: ol.proj.toLonLat(viewState.center),
+              zoom: viewState.zoom - 1,
+              bearing: (-rotation * 180) / Math.PI,
+              animate: false,
+            });
+
+            // cancel the scheduled update & trigger synchronous redraw
+            // see https://github.com/mapbox/mapbox-gl-js/issues/7893#issue-408992184
+            // NOTE: THIS MIGHT BREAK IF UPDATING THE MAPBOX VERSION
+            if (this.mbMap._frame) {
+              this.mbMap._frame.cancel();
+              this.mbMap._frame = null;
+            }
+            this.mbMap._render();
+
+            return canvas;
+          }.bind(this),
+          source: new ol.source.Source({
+            attributions: [
+              '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>',
+              '<a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+            ],
+          }),
+        });
+
+      //this.simpleMB = new ol.layer.MapboxVector({
+      //   styleUrl: 'mapbox://styles/mapbox/bright-v9',
+      //   accessToken:'6sSz9PnOXdILivnpz3Jy',
+      //}),
+
+
+      // AND FINALLY, THE MAP
 
       this.map = new ol.Map({
         target: 'map',
         preload: Infinity,
 //        layers:[new ol.layer.Tile({source: new ol.source.OSM()})],
-        layers: [this.BingRoad,this.BingAerial],
+//        layers: [this.BingRoad,this.BingAerial],
+        layers: [this.mbLayer],
         view: new ol.View({center: ol.proj.fromLonLat([-156.345,20.8]),zoom: 10.66}),
         })
 
