@@ -7,17 +7,19 @@ class MauiMap {
       var HideList = []
       for (var i=0;i<HideStuff.length;i++) HideList.push({featureType: HideStuff[i],stylers:[{visibility:"off"}]})
 
+      this.baseZoom = 10.5
       this.map = new google.maps.Map(document.getElementById("map"), 
           {
-            zoom: 10,
+            zoom: this.baseZoom,
             center: {lng: -156.345, lat: 20.8},
             styles: HideList,
+            gestureHandling: "greedy",
           });
 
       this.baseScale = 2
       this.map.addListener("zoom_changed", () => {
         var zz = this.map.getZoom();  // from 4 to 16 or something.  At 10, should be 1
-        var zzs = 1; if (zz>10) zzs = 1+(zz-10)/3; if (zz<10) zzs = 1-(10-zz)/3
+        var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/3; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/3
 
         for (var i=0;i<this.markers.length;i++) {
           var ci = this.markers[i].getIcon()
