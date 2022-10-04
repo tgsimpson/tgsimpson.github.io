@@ -26,11 +26,13 @@ class PicShow {
 			 this.pics = AllData[this.DIndex].Pics;
 			 this.PLength = this.pics.length;
 			 this.hasPics = (this.PLength >0);
-			 if (this.hasPics) this.PIndex = 0; // by default, first picture
-			 this.setImg();
-			 this.div.style.display = "block";
+			 if (this.hasPics) {
+			     this.PIndex = 0; // by default, first picture
+			     this.setImg();
+			     this.div.style.display = "block";
+			 }
 			 try {if (AllData[this.DIndex].Page.display) this.showDesc(true);}  
-			 catch {console.log("no Page",AllData[this.DIndex]);}
+			 catch {}
 			 return true;
 			}
 		catch {this.DIndex = -1; this.PIndex = -1; this.pics = []; this.PLength = 0; this.hidePane();return false;}

@@ -2,101 +2,71 @@
 // Google maps api key:  AIzaSyDLlibEWsGms7qd_zmrSCZiNa-Ol61r99M
 
 class MauiMap {
-
     constructor() {
-      //===== MAP
+      const HideStuff = ["poi","transit",]
+      var HideList = []
+      for (var i=0;i<HideStuff.length;i++) HideList.push({featureType: HideStuff[i],stylers:[{visibility:"off"}]})
 
       this.map = new google.maps.Map(document.getElementById("map"), 
           {
             zoom: 10,
             center: {lng: -156.345, lat: 20.8},
+            styles: HideList,
           });
 
-      console.log("Created map?", this.map)
+      this.baseScale = 2
+      this.map.addListener("zoom_changed", () => {
+        var zz = this.map.getZoom();  // from 4 to 16 or something.  At 10, should be 1
+        var zzs = 1; if (zz>10) zzs = 1+(zz-10)/3; if (zz<10) zzs = 1-(10-zz)/3
 
-  //    this.searchBox = document.getElementById('searchBox'); this.searchBox.style.display = "none"; 
-
-    }
- 
- /*       
-      //==== Configs
-      this.baseRadius = 3;
-
-      // Event handlers
-      document.getElementById("selectBox").addEventListener("click", () => this.filterPoints());
-      this.map.on("click",      function(evt) {var feature = this.eventSetUp(evt); if (feature) PShow.setDIndex(feature.dataIndex)}.bind(this))
-      this.map.on("pointermove",function(evt) {this.eventSetUp(evt)}.bind(this))
-      this.map.getView().on('change:resolution', (event) => {
-          var zoom = this.map.getView().getZoom();   
-          var features = this.MarkerLayer.getSource().getFeatures();
-          var zscale = 1+(zoom-10)/2; if (zscale<1) zscale=1;
-
-          for (var i=0;i<features.length;i++) {
-            try { 
-                  features[i].visibleStyle = new ol.style.Style({
-                             image: new ol.style.Circle({radius: features[i].marker.circleRadius*features[i].marker.radiusScale*zscale,
-                                                         fill: new ol.style.Fill({color: features[i].marker.circleColor}),
-                                                         stroke: new ol.style.Stroke({color: features[i].marker.borderColor,width: features[i].marker.borderWidth,})}),
-                          });
-              //features[i].visibleStyle.getImage().setRadius(features[i].marker.circleRadius*features[i].marker.radiusScale*zscale);
-                  if (features[i].visible) features[i].setStyle(features[i].visibleStyle)
-
-
-              //var s = f[i].getStyle();
-              //    var g = s.getImage();
-               //   g.setRadius(f[i].marker.circleRadius*f[i].marker.radiusScale*zs);
-                } catch {console.log("not today")}
-          }
-       })
-
-       // tags
-       this.tags = []
-       for (var i=0;i<AllData.length;i++) {
-            try { for (var j=0;j<AllData[i].Tags.length;j++) {
-                     if (!(this.tags.includes(AllData[i].Tags[j]))) this.tags.push(AllData[i].Tags[j]) }
-                } catch {}
+        for (var i=0;i<this.markers.length;i++) {
+          var ci = this.markers[i].getIcon()
+          ci.scale = this.baseScale*this.markers[i].scaler*zzs
+          this.markers[i].setIcon(ci)
         }
+      });
 
+      this.markers = []
     }
-    */
 
     AddAPoint(i) {
+      var ic = {path: google.maps.SymbolPath.CIRCLE,
+                scale: this.baseScale,
+                fillColor: "#F00",
+                fillOpacity: 0.8,
+                strokeWeight: 0.4,
+               }
+      var rs = 1.0 // rescale on zoom
+      try {
+            if (AllData[i].Status.visited) {
+              rs = 1.4
+              ic.fillColor ="#00F"
+            }
+            if ("Page" in AllData[i]) {
+              rs = 1.6
+              ic.fillColor = "#0F0"
+            }
+            if (AllData[i].Status.planning) {
+              ic.fillColor = "#FF0"
+            }
+            ic.scale = ic.scale*rs
+       } catch {}
+
       var p = new google.maps.Marker({
         position: {lat: AllData[i].Lat, lng: AllData[i].Lng},
         map: this.map,
-//        label: AllData[i].Name,
         title: AllData[i].Name,
-        icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 6,
-                fillColor: "#F00",
-                fillOpacity: 0.4,
-                strokeWeight: 0.4
-              },
+        icon: ic,
       });
 
       p["dataIndex"] = i;
+      p["scaler"] = rs;
+      this.markers.push(p)
 
-      console.log("Marker",p)
-
-      p.addListener("click", () => {
-        let d = AllData[p.dataIndex]
-        console.log("clicked",p.getPosition(),d.Name)
-        PShow.setDIndex(p.dataIndex)
-      });
-
-
+      p.addListener("click", () => {PShow.setDIndex(p.dataIndex)});
     }
 
 /*
-    //===== common event handling
-    eventSetUp(evt) {
-        var feature = this.map.forEachFeatureAtPixel(evt.pixel,function(feature){return feature})
-        if (feature) {this.MapUp.innerHTML = "<p>"+AllData[feature.dataIndex].Name+"</p>"; 
-                      this.MapUpOverlay.setPosition(evt.coordinate)}
-        else {this.MapUp.innerHTML = "";};
-        return feature
-    }
 
     showSB(b) {if (b) {this.searchBox.style.display="block";} 
                else {this.searchBox.style.display = "none"}}

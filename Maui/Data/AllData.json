@@ -809,8 +809,8 @@ var AllData =
    "Status": {"visited":true},
    "Page": {"url":"./Maui/Data/trails/hanomanioa.html","display":true},
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXwCyjgFNhzX65SdZfH0o0_dMOac8KmwRduAE5_XTDNPlIUfavr2a8vhRwS5B-kwVdACrjY8rMcEXhzlauGhq4BZ9VvFVIiBff0pQGKqGGYGkOQ2-lksRVOLsmmjXTIp3PNdL6As7WHHIfzyDgMLM08Hg=w1790-h1238-no",
-       "note":"Stock Photo."}
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXwCyjgFNhzX65SdZfH0o0_dMOac8KmwRduAE5_XTDNPlIUfavr2a8vhRwS5B-kwVdACrjY8rMcEXhzlauGhq4BZ9VvFVIiBff0pQGKqGGYGkOQ2-lksRVOLsmmjXTIp3PNdL6As7WHHIfzyDgMLM08Hg=w1790-h1238-no",
+//       "note":"Stock Photo."}
    ],
 },
 {
@@ -922,4 +922,17 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV1GDpqEjrqLc2thRwxm-DWU5AOKSCqg1zdIHekwntJWFVjAoHUGcOEK_9tz-oDa_UgCcHz8XRZiGZAU9rVtf9IiHPCnng4kLmXb_j0-i17TiKpsvk0mRH-yGCh8mlPesaFnFwATX6YiohlsOgoFg8G1w=w2107-h1580-no"},
    ]
 },
+// THINGS of Interest
+{
+   "Name":"Hihimanu Ray",
+   "Tags": ["Things"],
+   "Lat": 20.69581,
+   "Lng": -156.45,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+
 ]
