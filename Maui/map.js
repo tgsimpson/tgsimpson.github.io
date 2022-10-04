@@ -16,10 +16,11 @@ class MauiMap {
             gestureHandling: "greedy",
           });
 
+      // changes on Zoom
       this.baseScale = 2
       this.map.addListener("zoom_changed", () => {
         var zz = this.map.getZoom();  // from 4 to 16 or something.  At 10, should be 1
-        var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/3; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/3
+        var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/2; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/2
 
         for (var i=0;i<this.markers.length;i++) {
           var ci = this.markers[i].getIcon()
@@ -27,8 +28,18 @@ class MauiMap {
           this.markers[i].setIcon(ci)
         }
       });
-
       this.markers = []
+
+      // setup for filtering
+      this.selectBox = document.getElementById("selectBox")
+      this.selectBox.addEventListener("click", () => this.filterPoints());
+
+      this.tags = []
+      for (var i=0;i<AllData.length;i++) {
+            try { for (var j=0;j<AllData[i].Tags.length;j++) {
+                     if (!(this.tags.includes(AllData[i].Tags[j]))) this.tags.push(AllData[i].Tags[j]) }
+                } catch {}
+       }
     }
 
     AddAPoint(i) {
@@ -68,10 +79,10 @@ class MauiMap {
       p.addListener("click", () => {PShow.setDIndex(p.dataIndex)});
     }
 
-/*
 
-    showSB(b) {if (b) {this.searchBox.style.display="block";} 
-               else {this.searchBox.style.display = "none"}}
+
+    showSB(b) {if (b) {this.selectBox.style.display="block";} 
+               else {this.selectBox.style.display = "none"}}
 
     filterPoints() {
   
@@ -108,8 +119,7 @@ class MauiMap {
         html = html+"<br>"
         html = html+"<input type='submit' id='applySearch' value='Apply'>"
 
-
-        this.searchBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
+        this.selectBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
 
 
         document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
@@ -119,22 +129,19 @@ class MauiMap {
 
     doSearch() {
         this.showSB(false)
-        var features = this.MarkerLayer.getSource().getFeatures();
-// Filter on Features
-        var filters = [];
+       var filters = [];
         for (var i=0;i<this.tags.length;i++) {
           var box = document.getElementById(this.tags[i]+"Tag")
           if (box.checked) filters.push(box.name);
         }
         console.log("and our filter is",filters)
 
-        for (var i=0;i<features.length;i++) {
-          var intersect = filters.filter(x => AllData[features[i].dataIndex].Tags.includes(x))
-          if (intersect.length > 0) {features[i].setStyle(features[i].visibleStyle); features[i].visible=true;}
-          else {features[i].setStyle(new ol.style.Style({})); features[i].visible=false}
+        for (var i=0;i<this.markers.length;i++) {
+          var intersect = filters.filter(x => AllData[this.markers[i].dataIndex].Tags.includes(x))
+          if (intersect.length > 0) {this.markers[i].setMap(this.map)}
+          else {this.markers[i].setMap(null)}
         }
     }
-*/
     //===== INITIALIZE
 
     init() {
