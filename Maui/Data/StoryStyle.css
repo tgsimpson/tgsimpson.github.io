@@ -8,3 +8,4 @@
  .RimgS {width:35%;float:right;margin-left:10px;}
  .RimgT {width:20%;float:right;margin-left:10px;}
  figcaption{font-style: italic;text-align:center;}
+ caption{align-self:bottom;}
