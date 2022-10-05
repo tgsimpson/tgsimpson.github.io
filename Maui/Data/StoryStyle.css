@@ -1,11 +1,11 @@
  div {align-content: center; margin: 10% 10% 5% 5%;}
- .Nimg {width:60%;margin-left:auto;margin-right:auto;display:block;}
- .Wimg {width:100%;margin-left:auto;margin-right:auto;display:block;}
- .Limg {width:60%;float:left;margin-right:10px;}
- .LimgS {width:35%;float:left;margin-right:10px;}
- .LimgT {width:20%;float:left;margin-right:10px;}
- .Rimg {width:60%;float:right;margin-left:10px;}
- .RimgS {width:35%;float:right;margin-left:10px;}
- .RimgT {width:20%;float:right;margin-left:10px;}
+ .Nimg {width:60%;margin-left:auto;margin-right:auto;display:block;margin-top:5px;margin-bottom:5px;}
+ .Wimg {width:100%;margin-left:auto;margin-right:auto;display:block;margin-top:5px;margin-bottom:5px;}
+ .Limg {width:60%;float:left;margin-right:10px;margin-top:5px;margin-bottom:5px;}
+ .LimgS {width:35%;float:left;margin-right:10px;margin-top:5px;margin-bottom:5px;}
+ .LimgT {width:20%;float:left;margin-right:10px;margin-top:5px;margin-bottom:5px;}
+ .Rimg {width:60%;float:right;margin-left:10px;margin-top:5px;margin-bottom:5px;}
+ .RimgS {width:35%;float:right;margin-left:10px;margin-top:5px;margin-bottom:5px;}
+ .RimgT {width:20%;float:right;margin-left:10px;margin-top:5px;margin-bottom:5px;}
  figcaption{font-style: italic;text-align:center;}
  caption{align-self:bottom;}
