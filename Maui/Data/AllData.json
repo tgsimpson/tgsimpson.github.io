@@ -478,6 +478,7 @@ var AllData =
        "note":"<p>On the weekends you might find some local fishermen here. I asked one group what they would catch in this area. \"Anything in the Jack family, 2,3, maybe 4 pounds\" was the reply.</p><img style=\"margin:auto; width:30%\" src=\"https://www.floridasportsman.com/magazine/img/fs/fish/species-lg-jack-crevalle.jpg\">"},
       {"caption":"Snowflake eel waiting for a wave","img":"https://lh3.googleusercontent.com/pw/AL9nZEVKF5EFZSoWc2EW8DiYxf1P5pEcblx9TJeuD6zNxYgzsJ5_gy5iyDC5CPAAgLs1iR1YGJ6b9wkTscOb-v8RjDRIEsBd5tSiMPGzZX18uaQVUGnn1D4viGUe7d1syB3-DaeXcPXVgB2r5CJKgIqCx09RyQ=w2108-h1580-no"},
       {"caption":"Lots of turtles around here","img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXJVbh5Vgseq34hxQ5bkBjLrFSdW0JoAta9A04PGXkV3uMKnbt4W7LzmogicJjqPNjFQkFL2N85XlKtDBhUidZ8lMQcE6_c6V-9gts5kTOCiZXRghvGt2s8uXL-1b8fXaQ3NeZlG2NdvtkQPEgKl6kQ=w1983-h1580-no"},
+      {"caption":"Turtles come in late evening; low light making pictures tough.", "img":"https://lh3.googleusercontent.com/pw/AL9nZEXKOJW-86afHlJqwTVmg_By8NiVXu3BpPgkX6PTzxPtOaIjoAmYEZxPf9CsY8iQST0dEs6ye8OhDkTu7SRGoZzS_aiavZ8c6jeptAP0vIy1xBGNQYfSuHDbxnoL6McTAvK9BRmQmpZ_BgIokgLJRIaIag=w2492-h1580-no"},
    ]
 },
  {
@@ -907,6 +908,7 @@ var AllData =
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU7S6X8SotVPTcAuRDpQSK-T-vzArF6J6IwAs-bJb1TZLovLNaP2mzpCXjvpkiLOBpQELCG_W1FAujMUzvKR6HdejFeCztEmFD40MSPZDMDVyqQuYesQb0hBB1eIurnbzC7XRLrXCnjgFjtA26r6FTVuw=w1186-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUJbzRtdTmwf1uKXipKvGSenCfAaOuIz5GqjabgCFf8ok1FWdUbz1kNrUyNTfDaPwR5ZBy_2Xc9noH-zIuRARv15XyrqJgfKVNB17gMChUBmo3dFM-6JHkOZuNLksf3P_uQPB5Wci8mOV7bF-IidXyUzg=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWGnHmk-rGIJ7lrmQEH98ufBa9XD4V_TmpShH7rKH1MKSDWCqSVL4o8IqKDr9Zg4m5h2GClTIY2Hrj4DDBQEXeJCIjfIWmlvvAiiNSpTTLU6UzsQGrVAboM8ITyRpWk8YD2YrdhbfqoXlZRcGIA2YV5MQ=w2880-h1347-no"},
    ]
 },
 {
@@ -930,6 +932,17 @@ var AllData =
    "Lng": -156.45,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+{
+   "Name":"Sea Glass",
+   "Tags": ["Things"],
+   "Lat": 20.8822,
+   "Lng": -156.68868,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
    "Pics": [
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
