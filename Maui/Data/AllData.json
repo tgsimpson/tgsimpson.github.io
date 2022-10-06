@@ -212,7 +212,7 @@ var AllData =
    "Name": "Puu Olai (Little Beach)",
    "Lat": 20.63483,
    "Lng": -156.45180,
-   "Tags": ["Beach"],
+   "Tags": ["Beach","Story"],
    "Page": {"url":"./Maui/Data/beaches/puuolai.html",},
    "Status": {"visited":true},
    "Pics": [
@@ -804,11 +804,11 @@ var AllData =
 },
 {
    "Name": "Hanomanioa Light(house)",
-   "Tags": ["Trail"],
+   "Tags": ["Trail","Story"],
    "Lat": 20.58322,
    "Lng":-156.41197,
    "Status": {"visited":true},
-   "Page": {"url":"./Maui/Data/trails/hanomanioa.html","display":true},
+   "Page": {"url":"./Maui/Data/trails/hanomanioa.html","display":true,"proofed":true},
    "Pics": [
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXwCyjgFNhzX65SdZfH0o0_dMOac8KmwRduAE5_XTDNPlIUfavr2a8vhRwS5B-kwVdACrjY8rMcEXhzlauGhq4BZ9VvFVIiBff0pQGKqGGYGkOQ2-lksRVOLsmmjXTIp3PNdL6As7WHHIfzyDgMLM08Hg=w1790-h1238-no",
 //       "note":"Stock Photo."}
@@ -830,7 +830,7 @@ var AllData =
 },
 {
    "Name": "Windmill Ridge",
-   "Tags": ["Trail"],
+   "Tags": ["Trail","Story"],
    "Lat": 20.83265,
    "Lng":-156.55633,
    "Status": {"visited":true},
@@ -927,7 +927,7 @@ var AllData =
 // THINGS of Interest
 {
    "Name":"Hihimanu Ray",
-   "Tags": ["Things"],
+   "Tags": ["Misc.","Story"],
    "Lat": 20.69581,
    "Lng": -156.45,
    "Status": {},
@@ -938,9 +938,9 @@ var AllData =
 },
 {
    "Name":"Sea Glass",
-   "Tags": ["Things"],
+   "Tags": ["Misc.","Story"],
    "Lat": 20.8822,
-   "Lng": -156.68868,
+   "Lng": -156.695,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
    "Pics": [

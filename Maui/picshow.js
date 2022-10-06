@@ -23,6 +23,7 @@ class PicShow {
 
 	setDIndex(i) {
 		try {this.DIndex = i;
+			 this.hasPics = false;
 			 this.pics = AllData[this.DIndex].Pics;
 			 this.PLength = this.pics.length;
 			 this.hasPics = (this.PLength >0);
@@ -101,6 +102,6 @@ class PicShow {
 
 const PShow = new PicShow()
 
-// PShow.descOnly("./Maui/Data/welcome.html")
+PShow.descOnly("./Maui/Data/welcome.html")
 
 

@@ -32,13 +32,13 @@ key:  AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC
       .prev,.next,.hide,.desc,.sele {
         cursor: pointer; transition: 0.6s ease; user-select: none;
         position: absolute; width: auto; min-width:3%; margin-top: -22px; padding: 6px; border-radius: 0 3px 3px 0;
-        color: white; background-color: rgba(0,0,0,0.3); font-weight: bold; font-size: 24px; z-index:2;}
+        color: white; background-color: rgba(0,0,0,0.3); font-weight: bold; font-size: 30px; z-index:2;}
       .prev {left: 3%;  top: 50%;}
       .next {right: 3%; top: 50%;}
       .hide {right: 3%;  top: 5%; z-index:4;}
       .hide3 {right: 3%; top 5%; z-index:3;}
-      .desc {top: 5%;background-color:rgba(180,255,180,0.92);}
-      .sele {top: 5%; right: 0;display:block;background-color:rgba(255,255,255,0.4);}
+      .desc {left: 3%; top: 5%; background-color:rgba(0,0,0,0.3);}
+      .sele {top: 15%; right: 10px;display:block;background-color:rgba(255,255,255,0.4);}
       .prev:hover, .next:hover, .hide:hover, .desc:hover, .sele:hover { color: green; background-color: gray;}
       .text {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;background-color:rgba(0,0,0,0.5);z-index:2;}
       .notes {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; left: 10%; bottom: 10%; width: 80%; text-align: center;background-color:rgba(0,0,0,0.7);z-index:2;}
@@ -63,10 +63,8 @@ key:  AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC
       <div id="closeNotes" class="hide3">&#10540;</div>
     </div>
    </div>
-  <div id="map" class="map">
-    <!-- <div id="mapup"></div> -->
-    <div id="searchBox" class="searchbox" display="none"></div> 
-  </div>
+  <div id="map" class="map"></div>
+  <div id="searchBox" class="searchbox" display="none"></div> 
   <div id="selectBox" class="sele">&#128269;</div> 
 
 </body>

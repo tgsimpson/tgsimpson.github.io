@@ -31,13 +31,19 @@ class MauiMap {
       this.markers = []
 
       // setup for filtering
-      this.selectBox = document.getElementById("selectBox")
-      this.selectBox.addEventListener("click", () => this.filterPoints());
+      this.selectBox = document.getElementById('selectBox')
+      this.selectBox.addEventListener("click", () => {this.filterPoints();});
+
+      this.searchBox = document.getElementById("searchBox")
 
       this.tags = []
+      var tagsonly = []
       for (var i=0;i<AllData.length;i++) {
             try { for (var j=0;j<AllData[i].Tags.length;j++) {
-                     if (!(this.tags.includes(AllData[i].Tags[j]))) this.tags.push(AllData[i].Tags[j]) }
+                     if (!(tagsonly.includes(AllData[i].Tags[j]))) 
+                       {this.tags.push({"tag":AllData[i].Tags[j], "on":true})};
+                        tagsonly.push(AllData[i].Tags[j])
+                       }
                 } catch {}
        }
     }
@@ -50,20 +56,15 @@ class MauiMap {
                 strokeWeight: 0.4,
                }
       var rs = 1.0 // rescale on zoom
-      try {
-            if (AllData[i].Status.visited) {
-              rs = 1.4
-              ic.fillColor ="#00F"
-            }
-            if ("Page" in AllData[i]) {
-              rs = 1.6
-              ic.fillColor = "#0F0"
-            }
-            if (AllData[i].Status.planning) {
-              ic.fillColor = "#FF0"
-            }
-            ic.scale = ic.scale*rs
+      // color and size based on type
+      try { if (AllData[i].Status.visited)     {rs = 1.4; ic.fillColor = "#00F"}
+            if ("Page" in AllData[i])          {rs = 1.6; ic.fillColor = "#0F0"}
+            if (AllData[i].Status.planning)    {          ic.fillColor = "#FF0"}
+            else if (!AllData[i].Page.proofed) {          ic.strokeWeight = 0.8; ic.strokeColor = "#F80"}
+            if (AllData[i].Tags[0]=="Misc.")   {rs = 1.6; ic.fillColor = "#F0F"}
        } catch {}
+
+      ic.scale = ic.scale*rs
 
       var p = new google.maps.Marker({
         position: {lat: AllData[i].Lat, lng: AllData[i].Lng},
@@ -81,60 +82,72 @@ class MauiMap {
 
 
 
-    showSB(b) {if (b) {this.selectBox.style.display="block";} 
-               else {this.selectBox.style.display = "none"}}
+    showSB(b) {if (b) {this.searchBox.style.display="block";} 
+               else {this.searchBox.style.display = "none"}}
 
     filterPoints() {
-  
         // tags
-        var html = "<fieldset>"+
+        console.log(this.tags[0])
+        var html = "<fieldset align='left'>"+
                      "<legend>Types:</legend>"
         for (var i=0;i<this.tags.length;i++) {
           html = html+
              "<div>"+
-             "<input type='checkbox' id='"+this.tags[i]+"Tag'"+" name='"+this.tags[i]+"'>"+
-             "<label for='"+this.tags[i]+"Tag'>"+this.tags[i]+"</label>"+
+             "<input type='checkbox' id='"+this.tags[i].tag+"Tag'"+" name='"+this.tags[i]+"'>"+
+             "<label for='"+this.tags[i].tag+"Tag'>"+this.tags[i].tag+"</label>"+
              "</div>"
         }
-        html = html+"</fieldset>"
-                // uncheck the boxes
-        // for (var i=0;i<this.tags.length;i++) document.getElementById(this.tags[i]+"Tag").checked = false;
+        html = html+"</fieldset><br>"
 
-
+/*
         // status
-        html = html+"<fieldset>"+
+        html = html+"<fieldset align='left'>"+
                       "<legend>Status:</legend>"+
-                      "<div><input type='checkbox' id='visitedStatus' name='visitedStatus'>"+
+                      "<div><input type='checkbox' id='visitedStatus' name='visitedStatus' checked>"+
                       "<label for 'visitedStatus'>Visited</label>"+
-                      "<div><input type='checkbox' id='invisitedStatus' name='invisitedStatus'>"+
+                      "<div><input type='checkbox' id='invisitedStatus' name='invisitedStatus' checked>"+
                       "<label for 'invisitedStatus'>Not Visited</label>"+
-                      "<div><input type='checkbox' id='planningStatus' name='planningStatus'>"+
+                      "<div><input type='checkbox' id='planningStatus' name='planningStatus' checked>"+
                       "<label for 'planningStatus'>Planning</label>"+
                     "</fieldset>"+
                     "<br>"
 
         //generic search
+*/
 
         //
         html = html+"<br>"
         html = html+"<input type='submit' id='applySearch' value='Apply'>"
+        html = html+"<input type='submit' id='clearSearch' value='No Filters'>"
 
-        this.selectBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
+        this.searchBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
 
+                        // set the boxes
+        for (var i=0;i<this.tags.length;i++) 
+          document.getElementById(this.tags[i].tag+"Tag").checked = this.tags[i].on;
 
         document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
         document.getElementById('applySearch').addEventListener("click", function() {this.doSearch()}.bind(this));
+        document.getElementById('clearSearch').addEventListener("click", function() {this.clearSearch()}.bind(this));
+
         this.showSB(true);
+    }
+
+    clearSearch() {
+      this.showSB(false)
+      for (var i=0;i<this.markers.length;i++) this.markers[i].setMap(this.map)
+      for (var i=0;i<this.tags.length;i++) this.tags[i].on = true
     }
 
     doSearch() {
         this.showSB(false)
-       var filters = [];
+        // Tags
+        var filters = [];
         for (var i=0;i<this.tags.length;i++) {
-          var box = document.getElementById(this.tags[i]+"Tag")
-          if (box.checked) filters.push(box.name);
+          var box = document.getElementById(this.tags[i].tag+"Tag")
+          if (box.checked) {filters.push(this.tags[i].tag); this.tags[i].on = true;}
+          else this.tags[i].on = false;
         }
-        console.log("and our filter is",filters)
 
         for (var i=0;i<this.markers.length;i++) {
           var intersect = filters.filter(x => AllData[this.markers[i].dataIndex].Tags.includes(x))
