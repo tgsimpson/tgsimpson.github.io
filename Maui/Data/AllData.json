@@ -8,6 +8,7 @@ var AllData =
 
  {
    "Name": "Kanaha",
+   "Translation": "The Shattered [Thing]",
    "Tags": ["Beach"],
    "Lat": 20.903017,
    "Lng": -156.438845,
@@ -27,47 +28,61 @@ var AllData =
  {
    "Name": "Spreckelsville",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.913349,
    "Lng": -156.413377
 },
  {
    "Name": "Baby Beach (Spreckelsville)",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.913669,
    "Lng": -156.407069
 },
  {
    "Name": "Baldwin",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.91321,
    "Lng": -156.39305
 },
  {
    "Name": "Pāʻia Secret",
+   "Translation": "Noisy",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.915994,
-   "Lng": -156.388444
+   "Lng": -156.388444,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWQ5WZyb7Kv1pb3qcw18HFHavCT-Lvk2kN2nZjI8XjtcaohOWyTw6l_o84sY2Ps3_mgz6DlwdSRSzhi9fR1ZCtm9hGNullzhiaYQz_56Bz4E-oXyiDnRrThIL4uQ2k-ftmETtsQNeg4eCMO_NLqaveI5A=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Kaulahao",
+   "Translation": "News",
+   "Status": {"visited":true},
    "Tags": ["Beach"],
    "Lat": 20.922536,
    "Lng": -156.375527
 },
  {
-   "Name": "Kuau Cove (Mamaʻs Fish House)",
+   "Name": "Kuau Cove",
+   "Translation": "I'm sorry / handle",
    "Tags": ["Beach"],
    "Lat": 20.929374,
    "Lng": -156.367835
 },
  {
    "Name": "Hoʻokipa",
+   "Translation": "Welcome / Hospitality",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.933347,
    "Lng": -156.359509
 },
  {
    "Name": "Peahi",
+   "Translation": "Fan",
    "Tags": ["Beach"],
    "Lat": 20.94262,
    "Lng": -156.297713
@@ -121,6 +136,7 @@ var AllData =
 },
  {
    "Name": "Mokolau",
+   "Translation": "America",
    "Tags": ["Beach"],
    "Lat": 20.63838,
    "Lng": -156.11157,
@@ -152,7 +168,7 @@ var AllData =
    "Lat":20.57973,
    "Lng":-156.39149,
    "Tags": ["Beach","Story"],
-   "Page": {"url":"./Maui/Data/beaches/KHstory.html","display":true},
+   "Page": {"url":"./Maui/Data/beaches/KHstory.html","display":true,"proofed":true},
    "Status": {"visited":true,"revisit":true},
    "Pics": [
       {"caption":"White coral in sea of black lava","img":"https://lh3.googleusercontent.com/pw/AL9nZEUb98ctvDGopkn0wW7oclKwFw6GJrTy28-JbOP5UBwV5o82ocYyOexYKQKg_c1h4_5Fyy6sVrLaHIZMSvgmvg-ciICU4FZEirTEAz73vuFIvsl3hcHeupBEiUeqiJiXUbK58s17l0KKTaBONomQ1EQLVg=w2108-h1580-no"},
@@ -213,7 +229,7 @@ var AllData =
    "Lat": 20.63483,
    "Lng": -156.45180,
    "Tags": ["Beach","Story"],
-   "Page": {"url":"./Maui/Data/beaches/puuolai.html",},
+   "Page": {"url":"./Maui/Data/beaches/puuolai.html","display":true, "proofed":true},
    "Status": {"visited":true},
    "Pics": [
       {"caption":"Looking North", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWGx2LH51fytUkTO99u_8qAhm9T41Xw1Cy0RIRpS9QBCFn__Wtv4PzmCcQqeHqKIvkbz-lP3SQdipsMyBKY37e3F4Qau_2oTgKVVZkNIIvo4BNgM2afbBZsG2mT4UNRuC7izxGVIY0rQ66v2NK-xyTFhg=w2108-h1580-no"},
@@ -327,6 +343,7 @@ var AllData =
  {
    "Name": "Mōkapu",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.692903,
    "Lng": -156.444975
 },
@@ -533,18 +550,21 @@ var AllData =
  {
    "Name": "Kaipukaihina",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.772012,
    "Lng": 156.459903
 },
  {
    "Name": "Mai Poina",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.774577,
    "Lng": -156.460672
 },
  {
    "Name": "Kenolio",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.780683,
    "Lng": -156.462557
 },
@@ -562,110 +582,140 @@ var AllData =
  {
    "Name": "Maalaea",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.793959,
    "Lng": -156.482869
 },
  {
    "Name": "Haycraft",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.79662,
    "Lng": -156.50322
 },
  {
    "Name": "Pāpalaua",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.79305,
    "Lng": -156.57182
 },
  {
    "Name": "Ukumehame",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.795711,
    "Lng": -156.585243
 },
  {
    "Name": "Olowalu",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.809067,
    "Lng": -156.615868
 },
  {
    "Name": "Awalua",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.828315,
    "Lng": -156.635579
 },
  {
    "Name": "Launiupoko",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.842513,
    "Lng": -156.652798
 },
  {
    "Name": "Kamehamea Iki",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.86836,
    "Lng": -156.6765
 },
  {
    "Name": "Emilyʻs",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.86984,
-   "Lng": -156.67742
+   "Lng": -156.67742,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVnEcvmAIjL3BZF6TkgFoNpPRsFhLEysjHUyF1PGnfy61GA9ATqARjRB-T_t8pw8H-jpmGeb_V8WHPn3mvNf7OnxdbruU_mWdrQZyEr_kTVfEZxQ5ERxnzsTYS_P55pu1H1tueS8q_jkG_IycYLA5roGA=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Puuno (Baby Beach Lahaina)",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.88288,
    "Lng": -156.68776
 },
  {
    "Name": "TBD (btw Lahaina and Kanapali)",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.90362,
    "Lng": -156.68547
 },
  {
    "Name": "Hanakaoʻo",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.90959,
    "Lng": -156.68877
 },
  {
    "Name": "Kaanapali",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.91789,
-   "Lng": -156.69679
+   "Lng": -156.69679,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUkAGqNXqttXEI_JRBQoOPTvgISJ9F098l2EeovqMGopUsMd4dpTTCaKrrBXpQuaktWfbuxYxi-iIQDiu98RyQnxV6vvMFjCb4QTjnjxSh9PsWaPZXXcG_vd581mGQqiszPaEjozT8ZotzIxgV3mbvm5g=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmi-C8QrPAgJ-_h8Cj3CKOCeJY9zg6cE2VBWhjHJbbmGqekzALZRE5gCHaugIB7-bQWrcTMjKUshFlTuLEQoA6a32KjWJ5qo1BJeI6ZAaoy0xNGqBYsQ02LoR88ar8Qm5WU4pXY6Er60dyH5PjY1-YTA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW1JpS7afIxNec3cy0Mjh6rLdD7qDZdvzP1Uc6L2zOgJ5LeOhZ7ted64iQ3GC0x30EtACM05UHOmBFq52AzA7eu6AOelkpUnsXZvWBn3ze7xhB7NJHkKOQat7mNPUVVIlVb9nnBbbepddiXIF1E61fdwg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW1bU1ZZHB4l7TPSj5Fy51711D4kRXE3mBjkuQBjHP1rWpP0-lvfSD4bb0ElIIq1gnfReIocVMDeIX6m1jn6Qrk0IRzIt54BmpursQhFbCQ7xAvAVfBH-a0aoOT8b7N2qMezn5b42_lUQ3NVnjC_8Z48A=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Black Rock",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.92676,
    "Lng": -156.69581
 },
  {
    "Name": "Mayʻs",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.92891,
    "Lng": -156.69473
 },
  {
    "Name": "Beckoʻs Island",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.93294,
    "Lng": -156.69306
 },
  {
    "Name": "Kahekili",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.93701,
    "Lng": -156.69283
 },
  {
    "Name": "Willʻs",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.9416,
-   "Lng": -156.6925
+   "Lng": -156.6925,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUaDsB9FgnhoMuvVBoUmTrLIvxdeBALICUcarh1lqX5V4bQDzvRceqU20QUxbwCIGeSggqaplrqKVx7bJum2gLl9jJbb3Mnu35YSz9ze0Rz0iMKN2G_snHzj0heHybuFAOu4ljY20qPEIYDEVIBnd1_yg=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Honokōwai",
@@ -676,18 +726,21 @@ var AllData =
  {
    "Name": "Pohaku",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.968074,
    "Lng": -156.681281
 },
  {
    "Name": "TBD",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.97745,
    "Lng": -156.67792
 },
  {
    "Name": "TBD",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.97906,
    "Lng": -156.67575
 },
@@ -706,36 +759,42 @@ var AllData =
  {
    "Name": "Napili Bay",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.99546,
    "Lng": -156.66649
 },
  {
    "Name": "Kapalua Bay",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.99953,
    "Lng": -156.66645
 },
  {
    "Name": "Oneloa",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 21.0041,
    "Lng": -156.65895
 },
  {
    "Name": "Fleming ",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 21.00461,
    "Lng": -156.65239
 },
  {
    "Name": "Slaughterhouse",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 21.011259,
    "Lng": -156.642011
 },
  {
    "Name": "Punalau",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 21.0223,
    "Lng": -156.62575
 },
@@ -772,20 +831,27 @@ var AllData =
  {
    "Name": "Kahalui",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.896052,
    "Lng": -156.479046
 },
  {
    "Name": "Hoʻaloha",
+   "Translation": "Friend",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.89229,
    "Lng": -156.46939
 },
  {
    "Name": "Kite",
    "Tags": ["Beach"],
+   "Status": {"visited":true},
    "Lat": 20.89679,
-   "Lng": -156.4502
+   "Lng": -156.4502,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXcqXHdWdfr4IBcKywsWrLoCLWMPMBpDpBmbIHTs6kw94hiIaclfTJI5_whl9IklN2eA3DvVpdCb9A1EJTAUfO4k1xGAe3ZwgjnvjrRT3sk1YXo7fbZG2uMBwDp0uj1x74G9xiGzISwLMTE2m1BH9DeyQ=w2107-h1580-no"},
+   ]
 },
 
 // TRAILS
@@ -858,6 +924,7 @@ var AllData =
 },
 {
    "Name": "Pu'u Kukui",
+   "Translation": "Hill with Candlenut Tree / Hill Light,Lamp,Torch",
    "Tags": ["Trail"],
    "Lat": 20.89426, 
    "Lng":-156.58944,
@@ -897,10 +964,21 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUf1OgI7LRGUk0ZbqlHe5p8TS7P2ujEheDDXNtIjLfgsfTJj5_HN3CC93-Vvja4L4wkurn53RbCp9DdF2HcsiwE4scXtUhVe-CToJr1XI1XrDryXmS8bxQfnKHG6_-h0tgaM_LtqFyDug8yBK-ORPPSBw=w2107-h1580-no"},
    ],
 },
+{
+   "Name": "7 Mile Beach",
+   "Tags": ["Trail"],
+   "Lat": 20.79782, 
+   "Lng":-156.49744,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Pics": [
+   ],
+},
 
 // PLACES of Interest
 {
    "Name":"Hokulani",
+   "Translation": "Heavenly Star",
    "Tags": ["Place"],
    "Lat": 20.75151,
    "Lng": -156.44469,

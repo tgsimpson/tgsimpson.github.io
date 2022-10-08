@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
+</head>
+<body><div class="Story">
+
+	<h1> Seven Miles of Beach </h1>
+
+  <h3> Longest beach walk on Maui </h3>
+
+	<p> At low tide you can walk from Maalea Harbor to Waimahaihai almost completely on the beach. There are two spots where a tiny bit of land may be required, based on how low the tide is. The first is at the very beginning of the walk, right at Maalea Harbor (where you might have to 'trespass' on a couple of condo buildings seaside bluffs) and a small spot in front of the new Hilton Grand Vacations at Kaonoulu Street.</p>
+
+	<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEWPWTjEKxO_LfiFGNlYYQt8xrW3ZZ8-Hdgim0BYpk-vkgPgPNeogSf7xw4rL9F-outdSxNipU49EF0KmEtHqq8NenMyyKYXZH1Q6uUDiSdCUiOcYWxXWmg2am29KRHBTcDLvd7Of8docERg_cknCjPewg=w552-h582-no">
+
+  <p> This walk is beautiful at any time of the day, but per my usual habits I typically start just before dawn to avoid the sun. Jogging, with a few stops for pictures, this is probably a bit over an hour (depending on the beach slope), so you can be done before the sun peaks over Haleakala. </p>
+
+  <img class="Wimg" src="https://lh3.googleusercontent.com/pw/AL9nZEW6dOTqcr-G-Y8eh58OGSCjI3Cn3fSbb4t3sw7mjrL-JwxvgxyOEByiWwnqoM_9cnjHsRujihwmFkXhK9TilJQa8IDvY11MoB0yyevIPyd_cYMEzUAH4Ev0OR7qF7OaEfVE9qT_NXyn6f9Il3z526cS4g=w2880-h1256-no">
+
+  <p> As well as all the beaches (with pictures elsewhere), going south from Maalea gives you amazing views of the full scope of Haleakala, from Paia to Makena. There is something magical about a bi-furcated sunrise, wrapping around both edges of the mountain long before the top lightens completely. </p>
+
+  <img class="Wimg" src="https://lh3.googleusercontent.com/pw/AL9nZEUj50h50YVhqxsfUe-8A3BbypxtAcSdgeTQ1dj189nuQkDRZVc5fK2ljR3H0ZcGZHrNIeGEY91G4q9St4BRMPHYVlhw0SY2Ood3iHeebOSW9KXtC-Xs1nExuAKapmUjkXgJbvCPxo-TA0gEID07iv0CCg=w2880-h1087-no">
+
+  <p> It's also nice to have the Windmills behind you the entire way, so that you can ignore them. It's a bit more difficult to ignore 'the tree' :) </p>
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
+</html>
