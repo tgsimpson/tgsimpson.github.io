@@ -1015,6 +1015,21 @@ var AllData =
    ],
 },
 {
+   "Name": "Sliding Sands",
+   "Tags": ["Trail"],
+   "Lat": 20.71143, 
+   "Lng":-156.24901,
+   "Status": {"visited":true},
+ //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUvIIQ1ilKwVLKL3F92I4CFDPzmCK5X2rOBZM6GpMkOJgyCXpKmaX9Vkw2rzEG8i99_hxT6kW90hT2RshJQMSL44mdIxpiQ-_1G_lFnzQd9NfE3HkfwR-jGM-vl-kdzVURgeUj7UCZSw91vM3iBob-YnQ=w2107-h1580-no",
+       "note":"Need to come back here and get some better photos...but even with these you can see the otherwordly beauty of this place."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXALmGu5E9d-pfYKiKFXS6qbj0qrqOOxAz-49bkvxLZQHeBsSxndgNR3ImE34h-GtfIQzdmtAJlx_X4vEkzpcIOBI-AQ2HMGYuJm7AdeGezMa2QkF9vX6_UiyM7U-5Gev74n0fxx92vlwFJYkIv5pFAiw=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXsd4j-NBtN8JFZWNd7PL63WbD09YgrWpDCjKOFYQnuXs3amBMyJtcU_1LQmfJ4ehB0PH7VhC8iFQAaxGo0m3TPU64f1dLoi0HehTDv7Pt7XPeoYuGvayT723NwMvIZYMHqiQAQO5iPWKWku0xhpcy3nQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXDi26mfLItbRzPfMMbJkUDcXh51cIEcCrG2pWCwS7N7aXoxLFle2VxV4jge9CHJUQTR9-D7j3unei86hclNS_iEqfMScDk6dSnB-nxN_x8ORcbH5aE36dqbYgpRLWQJegQrNzypliX1c5vITk5YoRJTw=w2107-h1580-no"},
+   ],
+},
+{
    "Name": "Waihee Ridge",
    "Tags": ["Trail"],
    "Lat": 20.94719, 

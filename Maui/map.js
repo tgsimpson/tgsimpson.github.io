@@ -3,7 +3,7 @@
 
 class MauiMap {
     constructor() {
-      const HideStuff = ["poi","transit",]
+      const HideStuff = ["poi","transit","landscape.natural"]
       var HideList = []
       for (var i=0;i<HideStuff.length;i++) HideList.push({featureType: HideStuff[i],stylers:[{visibility:"off"}]})
 
@@ -14,6 +14,7 @@ class MauiMap {
             center: {lng: -156.345, lat: 20.8},
             styles: HideList,
             gestureHandling: "greedy",
+            mapTypeId: 'terrain',
           });
 
       // changes on Zoom
