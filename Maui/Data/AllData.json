@@ -552,21 +552,31 @@ var AllData =
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Lat": 20.772012,
-   "Lng": 156.459903
+   "Lng": -156.459903,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUmaorrZFAaZRpiJG3LTiqCpgte39D64i9KdLwrfkEnlotB99UMYA6idT3JKanEhc8vaiiZSBo9PqSYtBLxt6CT6zPtIOOuabXEkoPTzGvYIuR-mkwt_BJU8nMTzeGBUzNO1TNkiQWIFnPFLb_fDd7i8g=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Mai Poina",
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Lat": 20.774577,
-   "Lng": -156.460672
+   "Lng": -156.460672,
+   "Pics" : [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWXQCuBElAnYCvKgWxDYjqgfvgbZl3090L_mtXQM7tegWTwdOUL2GSiqq8TP-x_M5EiQaym0JeP6E5iLB7KjrIwGWRdcLVKYaIdxBxQeDuNiG0_cjt03WD9xBpSCHBhmwuD2CA76I1-QASir7r5taUFMg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU4Rfz3j3_JTlJ-4OBdwVAAkf87a5FYcvTjHQRcgC6G6wkCeWMxcafu2qU4wMXSOi2zahRU9X8asIVNfAQZErjW13bjeOkPF3ICkxS88Yh1bPadpNjg8vu-vSQgdVQnGuobiYSz9cJ1yqCDQM8ghnmkiw=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Kenolio",
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Lat": 20.780683,
-   "Lng": -156.462557
+   "Lng": -156.462557,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVtWxsbeeiruZahEMwwZDuvLOYUC0Al6N_rEl6eNcLpqag9ZKfgNwChNk0pgTdVmrr6zh9F5TNTZpqZrWeDyQo7lkMqMbvcY1zK1gbE-9gc9kQVPdHl6l1SMDPNtkb5BXs4akbuFETaJndjmKad7Jec-w=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Sugar",
@@ -577,6 +587,7 @@ var AllData =
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXJbhay0Pe_8tB5tkpJn_k5ACw_3cEouWvEuazWKWMG6aTHo2y7e3o_KjfLdqOzwv-ZRyaWjtsbtZhsKDRWL1hJaydgvCHjV0q6tkIllRXASLuDVmE4eloGLJPSFfDaN1DeROH4F8rGe7kY6GAK_g-oUQ=w2808-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX8JKMN-Aqzt4XhOoRKISVihts26LfFZZu2IVNoXNcgfUlG1ayn-a_jrjslUeLI_Tot6derzdjKxpIgQJhNN0krZkVuVYq_2owh9NlvdCNP9tx-7PCT8bWO4-FbzUQxwO9OsnHkaSDULVTqVineGnztDA=w2108-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWzzDYaIOuzBmZUJrJpiF-mKbzLkDoHmHt4h9FGyHLfgDW3QMhRYsbyFTQWz1Q8ME6miNibZsb81iX0JGAhr0JyzjDsb4MzrRpFwV-Brt9LYXpW9pEipuvlV24Wgrh1O5ZwKKGdPIP4o95s3vJE9xUPXw=w2107-h1580-no", "caption":"Launch spot for many rowing groups."},
    ]
 },
  {
@@ -584,14 +595,27 @@ var AllData =
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Lat": 20.793959,
-   "Lng": -156.482869
+   "Lng": -156.482869,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXGEumvX8JCnq-FfPc_QQ-WVKIcADg8dX5XsksaRzudnRDNDi51STZQvD2UcoJb_1bcbJudR_2KpH-3QHCYuJl27FusqNjvRQCji2UdIWbQiU4JHScNVNx9GO6K95dV9Rd_iszwpJKtlf7Kh3edlkEEzQ=w2880-h1507-no",
+       "caption": "Haleakala = house of the rising sun; now you know why :)"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV_E5e5Jpg1EQ4J184_vrcv_QV1jhV8qh0ALtRTwHufJe1R3WUIvtRc8srdx49Gs_nthBPoDeRmW2MDoi-kaXtVcfGrP96tm8EnLOftKsyCZPfOSsEzWUOAkYLbD4-w_tQduxuOXW_Y7Z_C6jKPFn-z3w=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU4PZhdgO06JMCjcxle2xv-Rbx3xpi91c76xS87Mg3VkO_Fu2zO3v1aJLy8qKWy_MK54e4Ua85WPSLEWlaj4ZqvxxVO08xAsgHTjSc0LQ7BwSNF-AQM0HYXGqUcFqXtZ3dMGwaiut5am_NG4aG7qF7TOA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVjvEjNfcaVyYTLZRlyBxQK4VgrxsFRhAvD4Dd8qhA_ZE5gTFFXdq8DRAYT29q3wNrirxacXrxuk7QPVtTVRFovdl_VXB-STueuMXtZnQG8mVEGzak-OLXbTy41BdMCOIivgKYAb5XrW3VP2Ru4BwPtnw=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Haycraft",
    "Tags": ["Beach"],
    "Status": {"visited":true},
    "Lat": 20.79662,
-   "Lng": -156.50322
+   "Lng": -156.50322,
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWr6Nz8FXuRmUZmWLz1OOPPQeBmU30YZeklZeQYOKNy9ev5ABhoJU_K87qq_a-NHLvAipELiRxGZMpgrPmYKl-8wzUcxdmApm2UkFX4VhlUzarP9kF1M5Fx8Qkuf3m5Kqnqe6ihoymoBwivpdetfiujmg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVo1BWRbHklKeOJrHVoYmhQjQhBEvnxVzFYI10ScZvYuHgsEFDOKaKA2fQd7u4O_6_Q5CPadKyFgzquKy331Kn3VJbHBCeRBlBRrJD6Z0NKhZNCPBBHD5V0MRRBUXKpgq-juOIO8v725z0tGAjXVT70UQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWM5rsowl5O0FVB1r4wSze7zbiKuZ_azTN0Xf16EiBDNgzVINUt6QSDpQJFBib66syW2lRafnEa5b9uG-MnGjFINb-Ae5p1ZFawn_rvjaCN1HlPJMRbEbROdqKgtI0eos8sgxGpkJqzHocyWMyZm9AWvA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUXZs4nFLKtFLa54D9d3Jw-SPqO6h3pCnocINVo-QIBJe00o5OWuRty9OW87SH9rpInbwANRZ6RGK3FIB3stmbqKEwPpM5KgAfI4urgXhcm7ZQAD81_FXAFbNOVxBAvY77RQaP52UMqc-IB_9XmHCHCeQ=w2107-h1580-no"},
+   ]
 },
  {
    "Name": "Pāpalaua",
@@ -974,7 +998,40 @@ var AllData =
    "Pics": [
    ],
 },
-
+{
+   "Name": "Waihou Spring",
+   "Tags": ["Trail"],
+   "Lat": 20.80670, 
+   "Lng":-156.27994,
+   "Status": {"visited":true},
+ //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWtFm7FSX0s9GKc8U3F77G5vux6gYPZghw_RdZ4QuGoH6I9ZoLW109F2z8zi48ibjcCLJC3PjJ3Jtr6ezEbRsaS9oRvsz-C87wbehlh9RiEp3F690qxiWaLb746sA-gvz5giUQD3iS5yhm1FZgaqlBXgA=w2107-h1580-no",
+       "note":"Beautiful, although very short, forest walk. Kehakapau is significantly better, ihmo."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX3Y98-KjOvN8N1RV0zWhDBM2UOxNT43Z2RqmmE8yXpxqQSwbF-VKvT6d2-yZGlpCsHMDo_U5CDlA3CUjLkGoPOND5DvLZFIjq86FU8F5FmYX6Wufq_E2sUt45l491MlZ3a7INEehLHFOMw6pdLGfLYog=w1187-h1580-no",
+       "caption":"The 'spring'? Very dry today."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXstBS3ylVVV32mEtjm-Clh8aD0qJ4gfvqHDuUu6P0ZASRYS_z1otAoZfCIMplsLpg2OdNLp96IQj1xuWjGdHvluPStN_Lx_OQKkVFLMSIdFV0KpxYJEAmNWu-hIZJYttQP3UdoOGQdj_-OJ8DqB81E8A=w1187-h1580-no",
+       "caption":"Not rainbow, but nicely colored eucalyptus"},
+   ],
+},
+{
+   "Name": "Waihee Ridge",
+   "Tags": ["Trail"],
+   "Lat": 20.94719, 
+   "Lng":-156.55162,
+   "Status": {"visited":true},
+ //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUFl9DrQNoRxoKqW4c51j3KTJ1h8SQfdVJJvY-AETZHnZfpkYpJly3VEZwUBiH6KbVM-05MZVav0hmwHW9R99LFsW6nA8hxDGjCkpZsdS4jZS21_Ge5rBgBm24cL9Gmlu1m6-SRvXER1MjzfO9IJrkWKg=w1187-h1580-no",
+       "note":"Beatutiful walk, as guide books say. One hour, round trip. Gates open automatically at 7AM."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX-63MxUm1l-EKypBUPpVIQsyUZ8ouUqnD-6kxizalYuxlF505RDtdSCl2ciqeA_H60qaD2hFx9tKNPCkwOtx1r7LNnCAXwcMT4gO4mew9vP9oe6W2jfY9fMm1YREdy0JE9Pka-SztH9MLnNxYo1pNDIg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVTQtKc_y0eCnYEYRxyN6IbrVkvB2pDKtC51ZbZ1UWVSREDYNbJB5pru5YyDmQW76CDR944-7Ln38N466Nnq9yhUw0XPosgEHdczWzCdvC-ZEVHquV3ZVFZLnlojZgnuXph0o6-u4Yn7WJiy3u9S50HvQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWoriC3RLFHnb1SH2My-KG6pSAL_Z073N1br_2VjcomxJuL_bwc5xmmfydcZuZqf-3DvoTNfFm2E9a1XAyJD4Cukqjph1GgutnMmHrly9AQVP3KBj-9wHEJKm6JW5DEIFJzIC-zh7T_0bTMAaY25Nn-mQ=w2876-h846-no",
+       "caption":"Top, looking north"},
+       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXp0QIhKu5bwZY-94AlHH9VxrzvDC8MSV7d41dc-t3zrIpn0V17TOkodgA9YCQPwiMb160-PHrqxTHlhtDfU3v_kXxDG3fphiKa5wcnQg4zWm2GYAuW4DRopB1qzBGjQZslOlIgm_XvHLbWTl8CjSTXGQ=w2856-h872-no",
+       "caption":"Top, looking south"}
+   ],
+},
 // PLACES of Interest
 {
    "Name":"Hokulani",
@@ -1002,6 +1059,22 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEV1GDpqEjrqLc2thRwxm-DWU5AOKSCqg1zdIHekwntJWFVjAoHUGcOEK_9tz-oDa_UgCcHz8XRZiGZAU9rVtf9IiHPCnng4kLmXb_j0-i17TiKpsvk0mRH-yGCh8mlPesaFnFwATX6YiohlsOgoFg8G1w=w2107-h1580-no"},
    ]
 },
+{
+   "Name":"Keālia Coastal Boardwalk",
+   "Tags": ["Place"],
+   "Lat": 20.79667,
+   "Lng": -156.48846,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU-0TtNqGQ0A9ThBCl8S-BJ39zsu6GM8LnnYl9nYlZVysUTrYdoQS2IWPdHHGj6F94MvCKk5jMYOyPnIy1WkBNPOpmJibj9EZduW_CryDs912hhptSg4ES9I0BQ-xzedEMFBnLHs_fd2DS4S799bc4woA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWU5sYRi17cNNDpCgjCaROkUs5dhYtxultZ1PtXUDn0fp-qA7Gq7aU9LP_f3cktX9JF246KqZr6YecbMRZ8cvx0e07sRzOjCUVik8Lcg3nh2-UEO_kjLzKG8UyvnF1uJmua9Xg1DCkbdFwOLp673MJ7iA=w2772-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXXhfQ5arJEzyn4MkYruOrTwduXsDVzj_rYJpL1tfP9jxmQntJu4hTA40LfX-uqfSv9SzkqlghCX6X73kGkALefXnf2pR2UP3W3bkynfO3f6jX5Jplfn3GLw3yJK2e-mU_djTU7gBNKHJ195hoAaypPNQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUEK_i6wU4m-BJOZuDxukB4ncj_sJgIRjAq2X58hoL9iYv71GpVqn0m_j1Y6jKOWGqtFTWq-CO-ALLEIetWZ5jE0INTxrTGuIgEnBsq5ybF2w4I9AVmQF10Sm_eG2u_ltb3a5EzhYP9rOtpDmr0NfX2BQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUN0K_Ut0wogXCUW1ndHPNHKAXcS_j0SXYc49BzVz3_Vi2y-OGXDm1uo3kuMwIu3hKirGoy2ndMz2Rb35vaGoJ8LOM4cpZc2YDF-gFbxY0AlJMxVEn_EWYZueV0KdTBAUjXCfB1msjJseHSd3hcE0BuEA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX_d8HfD98MA5YvqzErnQUoJYynRXC7iQ47-ow9VGNoD6QdnQoElM2UuUT9YeG7zNFI8WRKT1rBI72LaABLhwgVCQRZ-0RIirsMtfd2BLZcAuVLyH3Ck9sXGW3dgzkQKNOMpD2ukwP7dgkG-9MJ1ndwaA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX_2h5ri6UwzbZOdH9fNrrjkF3LrTQSqzf0MZIRW59C12FrBBMTdqqwhBq5rUF4wuhFS5UJxFgZD5RzI607tE2bPtpnS8Id8rh9XDROymK7qc0ZQ7sz_CoDCf9-Q6_sXtyyudlFuvfaYvm8cuoAFy9KfA=w2107-h1580-no"},
+    ]
+},
 // THINGS of Interest
 {
    "Name":"Hihimanu Ray",
@@ -1025,5 +1098,26 @@ var AllData =
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
 },
-
+{
+   "Name":"MECO Maalaea",
+   "Tags": ["Misc."],
+   "Lat": 20.80103,
+   "Lng": -156.49548,
+   "Status": {},
+//   "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWkWv6Tm8N4ia46NeCEMz7QroEPGHUEfQG9lsij20U7jH2K_U-JOYtxQecYlc_iQmCcSec0r-XaH2182e2A9lNuNykhRaRslOJWUIH9mISwCckLpmbVpcqYQXFh_Y9pX73kIloZLILw8l_yiqsURK7nlg=w2107-h1580-no",
+      "caption":"MECO power generation; worth some research....coming soon."},
+   ]
+},
+// Random....not really related to Maui at all
+{
+   "Name":"Six Word SciFi",
+   "Tags": ["Random","Story"],
+   "Lat": 20.729,
+   "Lng": -156.637,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/random/sixWordSciFi.html", "display": true},
+   "Pics": [   ]
+},
 ]

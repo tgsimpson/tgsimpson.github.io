@@ -22,21 +22,19 @@ class PicShow {
 	}
 
 	setDIndex(i) {
+		this.DIndex = -1; this.PIndex = -1; this.pics = []; this.PLength = 0; this.hidePane();
 		try {this.DIndex = i;
-			 this.hasPics = false;
-			 this.pics = AllData[this.DIndex].Pics;
-			 this.PLength = this.pics.length;
-			 this.hasPics = (this.PLength >0);
+			 var dd = AllData[this.DIndex]
+			 this.hasPics = ("Pics" in dd && dd.Pics.length>0);
 			 if (this.hasPics) {
-			     this.PIndex = 0; // by default, first picture
-			     this.setImg();
-			     this.div.style.display = "block";
+				 this.pics = dd.Pics; this.PLength = this.pics.length; this.PIndex = 0; 
+			     this.setImg(); this.div.style.display = "block";
 			 }
-			 try {if (AllData[this.DIndex].Page.display) this.showDesc(true);}  
-			 catch {}
+			 else {this.picD.style.display="none"; try{this.showDesc(true);} catch{}} // If no pics, try for Page, regardless
+			 try {if (dd.Page.display) {this.showDesc(true);}} catch {}				 // If pics, rely on display flag to decide if Page is shown
 			 return true;
 			}
-		catch {this.DIndex = -1; this.PIndex = -1; this.pics = []; this.PLength = 0; this.hidePane();return false;}
+		catch {this.DIndex = -1; this.PIndex = -1; this.pics = []; this.PLength = 0; this.hidePane(); return false;}
 	}
 
 	hideNotes()   {this.notes.style.display="none";}
@@ -68,7 +66,8 @@ class PicShow {
 				   this.setImg();
 				  }
 
-	setImg()	  {try {this.picE.src = this.pics[this.PIndex].img;
+	setImg()	  {console.log("Setting Image")
+				   try {this.picE.src = this.pics[this.PIndex].img;
 						var nms = " "+(this.PIndex+1).toString()+"/"+this.PLength.toString();
 						var tag = ""
 						try {tag = AllData[this.DIndex].Tags[0]} catch {}
