@@ -949,18 +949,6 @@ var AllData =
    ],
 },
 {
-   "Name": "Pu'u Kukui",
-   "Translation": "Hill with Candlenut Tree / Hill Light,Lamp,Torch",
-   "Tags": ["Trail"],
-   "Lat": 20.89426, 
-   "Lng":-156.58944,
-   "Status": {"planning":true},
-   "Page": {"url":"./Maui/Data/trails/puukukui.html", "display":true}, 
-   "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
-   ],
-},
-{
    "Name": "Kahakapao",
    "Tags": ["Trail","Story"],
    "Lat": 20.82775, 
@@ -1049,7 +1037,32 @@ var AllData =
        "caption":"Top, looking south"}
    ],
 },
-// PLACES of Interest
+// ========== Pu'u
+{
+   "Name": "Pu'u Olai",
+   "Tags": ["Puu"],
+   "Lat": 20.63629, 
+   "Lng":-156.44869,
+   "Status": {"visited":true},
+ //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIQAtopYoBaL9LYLri495FaV550o3sH7S_Y3cDIN5dnJZ6E9gptVbA7veStYcA38zG1zhoNhb7QY-UJI4418VTJtJQDKhzklmXeauKee0JrojTRJFUeG8Zj921dxTRBp87KtfnYKE6r84WS_kmVyAP6Q=w2107-h1580-no"},
+
+   ],
+},
+{
+   "Name": "Pu'u Kukui",
+   "Translation": "Hill with Candlenut Tree / Hill Light,Lamp,Torch",
+   "Tags": ["Puu"],
+   "Lat": 20.89426, 
+   "Lng":-156.58944,
+   "Status": {"planning":true},
+   "Page": {"url":"./Maui/Data/trails/puukukui.html", "display":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
+   ],
+},
+// ========== PLACES of Interest
 {
    "Name":"Hokulani",
    "Translation": "Heavenly Star",
