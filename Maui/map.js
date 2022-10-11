@@ -3,7 +3,11 @@
 
 class MauiMap {
     constructor() {
-      const HideStuff = ["poi","transit","landscape.natural"]
+      const HideStuff = [
+        "poi",
+        "transit",
+      //  "landscape.natural"
+        ]
       var HideList = []
       for (var i=0;i<HideStuff.length;i++) HideList.push({featureType: HideStuff[i],stylers:[{visibility:"off"}]})
 
@@ -60,6 +64,14 @@ class MauiMap {
     }
 
     AddAPoint(i) {
+
+      try {if (AllData[i].Status.hide) return;  // if marked to hide, or not on Maui proper, hide
+        if (AllData[i].Lat > 21.04) return;
+        if (AllData[i].Lat < 20.57) return;
+        if (AllData[i].Lng < -156.72) return;
+        if (AllData[i].Lng > -155.95) return;
+      } catch{} 
+
       var ic = {path: google.maps.SymbolPath.CIRCLE,
                 scale: this.baseScale,
                 fillColor: "#F00",
