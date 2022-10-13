@@ -81,7 +81,8 @@ class PicShow {
 					   } 
 				       else if ("vid" in this.pics[this.PIndex]) 
 				       {
-		   					this.vidE.innerHTML = "<source id=\"VidSrc\" src=\""+this.pics[this.PIndex].vid+"\" type=\"video/mp4\">"
+//		   					this.vidE.innerHTML = "<source id=\"VidSrc\" src=\""+this.pics[this.PIndex].vid+"\" type=\"video/mp4\">"
+							this.vidE.innerHTML = "<iframe src=\""+this.pics[this.PIndex].vid+"\" width=\"100%\" height=\"100%\" allow=\"autoplay\"></iframe>"
 		   					this.vidE.style.display="block"
 		   					this.picE.style.display = "none"		
 	   				   }
