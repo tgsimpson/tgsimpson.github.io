@@ -1135,10 +1135,10 @@ var AllData =
 
 
 {
-   "Name": " Red Hill ",
+   "Name": " Red Hill / Haleakala ",
    "Tags": ["Puʻu"],
-   "Lat": 20.4567 ,
-   "Lng": -155.9901 ,
+   "Lat": 20.70965 ,
+   "Lng": -156.25327 ,
    "Height": 10 ,
    "Status": {},
    "Pics": [],
@@ -1146,8 +1146,8 @@ var AllData =
 {
    "Name": " Kolekole ",
    "Tags": ["Puʻu"],
-   "Lat": 20.709 ,
-   "Lng": -156.2549 ,
+   "Lat": 20.70716,
+   "Lng": -156.25627 ,
    "Height": 10 ,
    "Status": {},
    "Pics": [],
@@ -1155,8 +1155,8 @@ var AllData =
 {
    "Name": " Magnetic Peak ",
    "Tags": ["Puʻu"],
-   "Lat": 20.7086 ,
-   "Lng": -156.2513 ,
+   "Lat": 20.70797,
+   "Lng": -156.25059 ,
    "Height": 10 ,
    "Status": {},
    "Pics": [],
@@ -1164,8 +1164,8 @@ var AllData =
 {
    "Name": " Pākaʻaoʻao ",
    "Tags": ["Puʻu"],
-   "Lat": 20.7126 ,
-   "Lng": -156.2505 ,
+   "Lat": 20.71361 ,
+   "Lng": -156.24998 ,
    "Height": 9 ,
    "Status": {},
    "Pics": [],
@@ -1173,8 +1173,8 @@ var AllData =
 {
    "Name": " Kilohana ",
    "Tags": ["Puʻu"],
-   "Lat": 20.7248 ,
-   "Lng": -156.2453 ,
+   "Lat": 20.72667 ,
+   "Lng": -156.24185,
    "Height": 9 ,
    "Status": {},
    "Pics": [],
@@ -1182,8 +1182,8 @@ var AllData =
 {
    "Name": " Haupaʻakea Peak ",
    "Tags": ["Puʻu"],
-   "Lat": 20.7004 ,
-   "Lng": -156.2302 ,
+   "Lat": 20.70078 ,
+   "Lng": -156.22490 ,
    "Height": 9 ,
    "Status": {},
    "Pics": [],
@@ -3561,10 +3561,10 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVp06MJb75AfmVGAXIUggXcgo3RwyhZ-4xtWya2KhhS-fQDRuAxeVNuLZtPtkmbIUUU-ThXHRIzcW0Xw0C7P5hBpaCkWr3zNbkF5NxFq0CoY6ti_zJ2UD8BFnlehr78omkSWoLLv5JgcJje7XDhbCJqoQ=w1187-h1580-no",
        "note":"This is a short hike from La Perouse Bay parking....but you need to skirt the Makena Stables which is private land. So, head out into the lava and fight you way uphill and then North to find the ATV trail that leads up the back of Puʻu o Kanaloa. This trail forks off of that ATV trail for the short hike to the top of this mound."},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXSANIRgCfsYcV3fYpamDZZ9MfRF3PROY3FTrC2abFpto8D_HvLvxIKxh35GG3Ud-sg3E6Cwxpc913xfJ9G1k8HggO88O_a_PTaj7ZImpRJmtpuBKYkeDB93mG_1qO-m574SZ5-rygKVvTKAdkMg0GTmA=w2107-h1580-no"},
-      {"img":"https://lh3.googleusercontent.com/s1vYYVt7ECuU5UET30PNFyKbTdpQfsBT9D2G3Im0Rwywum1qkEwJ5qDr_kFezY9Ee4yk3OH1hsAtuiSCNV3k6X1DO9H6ULuKMre8LI6qI5eK-1G6dQJAhU_OXGa_s_ywNtq4TCLIlljk4teUD9Cca1t5xVdzHna3"},
+//      {"img":"https://lh3.googleusercontent.com/s1vYYVt7ECuU5UET30PNFyKbTdpQfsBT9D2G3Im0Rwywum1qkEwJ5qDr_kFezY9Ee4yk3OH1hsAtuiSCNV3k6X1DO9H6ULuKMre8LI6qI5eK-1G6dQJAhU_OXGa_s_ywNtq4TCLIlljk4teUD9Cca1t5xVdzHna3"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXabChf_cZoaPg_LfZTv0maqbRUT2JRWDhhLVCeT2pP_Z-kzrNlD_SqPDU203KJX_eZPevDnXaygNOss2SuSS5JV-ZnjhZbj619_mmKBr_uCMbBPIi0S_TWoV-_Zd12Qhi7NO3r3ghIimsEFjHSEn8CrQ=w2107-h1580-no",
        "caption":"See the big island in the background? Very clear today."},
-      {"vid":"https://video-downloads.googleusercontent.com/AEwWKPzjZWYk4Z-h5cphIJ_vbfMKOgYxSjpCezZy3UJ7XRlkfxxNIfeP03jtPAbhsYL-4bbQIFfKatnc1GokQHC5LAvCaOda2rrJgV6OKvtYd2TPvccGF0SozlOibsp5rXADmWWcbOb9MA1ox8p8aiArvb60OhoIGJgwXja-R-0xwswxQmAwnxsM9Xv_jBM10keVNuJ4_Ip3n6rxjf-YP-g1Ew3QxxU6YH8XdX9KdI-6sQKMSEnV880"},
+      {"vid":"https://youtu.be/n_0cEB74gjA"},
    ],
 },
 {

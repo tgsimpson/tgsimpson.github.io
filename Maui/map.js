@@ -25,6 +25,7 @@ class MauiMap {
      // var res = window.screen.width * window.devicePixelRatio
      // console.log("res",res,window.screen.width,window.devicePixelRatio)
 
+     // macbook air is 2; high res phones are 3 to 4
       this.baseScale = 1 * window.devicePixelRatio
 
       this.map.addListener("zoom_changed", () => {
