@@ -1,0 +1,30 @@
+/*
+{	"date": "2022-10-12",
+	"desc": "",
+	"data": [],
+},
+
+&#699;   —   ʻokina or glottal stop
+&#256;   —   Ā
+&#257;   —   ā
+&#274;   —   Ē
+&#275;   —   ē
+&#298;   —   Ī
+&#299;   —   ī
+&#332;   —   Ō
+&#333;   —   ō
+&#362;   —   Ū
+&#363;   —   ū
+
+*/
+
+const LogBook = [
+{	"date": "2022-10-12",
+	"desc": "Up early and headed to La Perouse Bay. Walked up Puʻu o Kanaloa as well as Puʻu Kalua o lapa."+
+			"Beautiful morning, 76F. Surprise was the clear view of the Big Island from Kanaloa."+
+			"Start at La Perouse near the gate, head into the lava fields to avoid the 'private' Makena Trail Rides area."+
+			"Then, work your way back North until you hit a wide trail. This will take you to both Puʻu easily."+
+			"There are lots of dry creek crossings, so easy to confuse the trail with creekbeds.",
+	"data": [],
+},
+]

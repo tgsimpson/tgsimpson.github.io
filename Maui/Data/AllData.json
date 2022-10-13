@@ -1,4 +1,4 @@
-console.log("Loading ALLDATA")
+//console.log("Loading ALLDATA")
 StoryInNote = "<element onclick=\"document.getElementById('descButton').click();document.getElementById('notesSpot').style.display='none'\">&#128214;</element>"
 
 var AllData = 
@@ -225,7 +225,7 @@ var AllData =
    ]
 },
  {
-   "Name": "Puu Olai (Little Beach)",
+   "Name": "Puʻu Olai (Little Beach)",
    "Lat": 20.63483,
    "Lng": -156.45180,
    "Tags": ["Beach","Story"],
@@ -1117,6 +1117,7 @@ var AllData =
    ]
 },
 // Random....not really related to Maui at all
+/*
 {
    "Name":"Six Word SciFi",
    "Tags": ["Random","Story"],
@@ -1126,43 +1127,15 @@ var AllData =
    "Page": {"url":"./Maui/Data/random/sixWordSciFi.html", "display": true},
    "Pics": [   ]
 },
+*/
 
 // PUU
 // ========== Pu'u
-{
-   "Name": "Pu'u Kukui",
-   "Translation": "Hill with Candlenut Tree / Hill Light,Lamp,Torch",
-   "Tags": ["Puu"],
-   "Lat": 20.89426, 
-   "Lng":-156.58944,
-   "Status": {"planning":true},
-   "Page": {"url":"./Maui/Data/trails/puukukui.html", "display":true}, 
-   "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
-   ],
-},
+
 
 {
    "Name": " Red Hill ",
-   "Tags": ["Puu"],
-   "Lat": 20.4567 ,
-   "Lng": -155.9901 ,
-   "Height": 10 ,
-   "Status": {},
-   "Pics": [],
-},
-{
-   "Name": " Red Hill ",
-   "Tags": ["Puu"],
-   "Lat": 20.4567 ,
-   "Lng": -155.9901 ,
-   "Height": 10 ,
-   "Status": {},
-   "Pics": [],
-},
-{
-   "Name": " Red Hill ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.4567 ,
    "Lng": -155.9901 ,
    "Height": 10 ,
@@ -1171,7 +1144,7 @@ var AllData =
 },
 {
    "Name": " Kolekole ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.709 ,
    "Lng": -156.2549 ,
    "Height": 10 ,
@@ -1180,7 +1153,7 @@ var AllData =
 },
 {
    "Name": " Magnetic Peak ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7086 ,
    "Lng": -156.2513 ,
    "Height": 10 ,
@@ -1189,7 +1162,7 @@ var AllData =
 },
 {
    "Name": " Pākaʻaoʻao ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7126 ,
    "Lng": -156.2505 ,
    "Height": 9 ,
@@ -1198,7 +1171,7 @@ var AllData =
 },
 {
    "Name": " Kilohana ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7248 ,
    "Lng": -156.2453 ,
    "Height": 9 ,
@@ -1207,7 +1180,7 @@ var AllData =
 },
 {
    "Name": " Haupaʻakea Peak ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7004 ,
    "Lng": -156.2302 ,
    "Height": 9 ,
@@ -1216,7 +1189,7 @@ var AllData =
 },
 {
    "Name": " Kalepeamoa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6979 ,
    "Lng": -156.2807 ,
    "Height": 9 ,
@@ -1225,7 +1198,7 @@ var AllData =
 },
 {
    "Name": " Hanakauhi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.718 ,
    "Lng": -156.2007 ,
    "Height": 8 ,
@@ -1234,7 +1207,7 @@ var AllData =
 },
 {
    "Name": " Kanahau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6915 ,
    "Lng": -156.2908 ,
    "Height": 8 ,
@@ -1243,7 +1216,7 @@ var AllData =
 },
 {
    "Name": " 8432 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7015 ,
    "Lng": -156.1971 ,
    "Height": 8 ,
@@ -1252,7 +1225,7 @@ var AllData =
 },
 {
    "Name": " Kalapawili Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.734 ,
    "Lng": -156.1616 ,
    "Height": 8 ,
@@ -1261,7 +1234,7 @@ var AllData =
 },
 {
    "Name": " Lauʻulu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7318 ,
    "Lng": -156.1501 ,
    "Height": 8 ,
@@ -1270,7 +1243,7 @@ var AllData =
 },
 {
    "Name": " Haleakala ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7016 ,
    "Lng": -156.1748 ,
    "Height": 8 ,
@@ -1279,7 +1252,7 @@ var AllData =
 },
 {
    "Name": " Kamaʻoliʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7171 ,
    "Lng": -156.2296 ,
    "Height": 8 ,
@@ -1288,7 +1261,7 @@ var AllData =
 },
 {
    "Name": " Puʻuomāui ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7186 ,
    "Lng": -156.2225 ,
    "Height": 8 ,
@@ -1297,7 +1270,7 @@ var AllData =
 },
 {
    "Name": " Pōhakupālaha ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.731 ,
    "Lng": -156.1437 ,
    "Height": 8 ,
@@ -1306,7 +1279,7 @@ var AllData =
 },
 {
    "Name": " Puʻuopele ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7088 ,
    "Lng": -156.2222 ,
    "Height": 8 ,
@@ -1315,7 +1288,7 @@ var AllData =
 },
 {
    "Name": " Puʻualiʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6932 ,
    "Lng": -156.2287 ,
    "Height": 8 ,
@@ -1324,7 +1297,7 @@ var AllData =
 },
 {
    "Name": " Kumuiilahi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7021 ,
    "Lng": -156.2007 ,
    "Height": 7 ,
@@ -1333,7 +1306,7 @@ var AllData =
 },
 {
    "Name": " Kamoaopele ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7189 ,
    "Lng": -156.2087 ,
    "Height": 7 ,
@@ -1342,7 +1315,7 @@ var AllData =
 },
 {
    "Name": " Puʻunaue ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7209 ,
    "Lng": -156.1918 ,
    "Height": 7 ,
@@ -1351,7 +1324,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻalaea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7369 ,
    "Lng": -156.1443 ,
    "Height": 7 ,
@@ -1360,7 +1333,7 @@ var AllData =
 },
 {
    "Name": " Puʻukumu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7297 ,
    "Lng": -156.1873 ,
    "Height": 7 ,
@@ -1369,7 +1342,7 @@ var AllData =
 },
 {
    "Name": " Halāliʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7192 ,
    "Lng": -156.1968 ,
    "Height": 7 ,
@@ -1378,7 +1351,7 @@ var AllData =
 },
 {
    "Name": " Puʻumāmane ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7224 ,
    "Lng": -156.1888 ,
    "Height": 7 ,
@@ -1387,7 +1360,7 @@ var AllData =
 },
 {
    "Name": " Kalua Awa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7315 ,
    "Lng": -156.1668 ,
    "Height": 7 ,
@@ -1396,7 +1369,7 @@ var AllData =
 },
 {
    "Name": " Kuiki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7153 ,
    "Lng": -156.1363 ,
    "Height": 7 ,
@@ -1405,7 +1378,7 @@ var AllData =
 },
 {
    "Name": " Puʻumaile ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7121 ,
    "Lng": -156.186 ,
    "Height": 7 ,
@@ -1414,7 +1387,7 @@ var AllData =
 },
 {
    "Name": " Puʻunole ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7197 ,
    "Lng": -156.1896 ,
    "Height": 7 ,
@@ -1423,7 +1396,7 @@ var AllData =
 },
 {
    "Name": " Nāmanaokeakua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7192 ,
    "Lng": -156.1844 ,
    "Height": 7 ,
@@ -1432,7 +1405,7 @@ var AllData =
 },
 {
    "Name": " Puʻukauaua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7143 ,
    "Lng": -156.1904 ,
    "Height": 7 ,
@@ -1441,7 +1414,7 @@ var AllData =
 },
 {
    "Name": " Puʻuoili ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7545 ,
    "Lng": -156.2484 ,
    "Height": 7 ,
@@ -1450,7 +1423,7 @@ var AllData =
 },
 {
    "Name": " Honokahua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7234 ,
    "Lng": -156.1757 ,
    "Height": 7 ,
@@ -1459,7 +1432,7 @@ var AllData =
 },
 {
    "Name": " Kahua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6781 ,
    "Lng": -156.2732 ,
    "Height": 7 ,
@@ -1468,7 +1441,7 @@ var AllData =
 },
 {
    "Name": " Puʻukeōkea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6788 ,
    "Lng": -156.3214 ,
    "Height": 7 ,
@@ -1477,7 +1450,7 @@ var AllData =
 },
 {
    "Name": " ʻ&#332;ʻilipuʻu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7181 ,
    "Lng": -156.1601 ,
    "Height": 6 ,
@@ -1486,7 +1459,7 @@ var AllData =
 },
 {
    "Name": " Puʻunianiau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7696 ,
    "Lng": -156.243 ,
    "Height": 6 ,
@@ -1495,7 +1468,7 @@ var AllData =
 },
 {
    "Name": " Lāʻie Puʻu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7232 ,
    "Lng": -156.1568 ,
    "Height": 6 ,
@@ -1504,7 +1477,7 @@ var AllData =
 },
 {
    "Name": " Polipoli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6717 ,
    "Lng": -156.3326 ,
    "Height": 6 ,
@@ -1513,7 +1486,7 @@ var AllData =
 },
 {
    "Name": " Puʻupahu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7515 ,
    "Lng": -156.2692 ,
    "Height": 6 ,
@@ -1522,7 +1495,7 @@ var AllData =
 },
 {
    "Name": " Puʻuluʻau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7792 ,
    "Lng": -156.232 ,
    "Height": 6 ,
@@ -1530,17 +1503,21 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kukui ",
-   "Tags": ["Puu"],
-   "Lat": 20.845 ,
-   "Lng": -156.4657 ,
-   "Height": 5 ,
-   "Status": {},
-   "Pics": [],
+   "Name": "Pu'u Kukui",
+   "Translation": "Hill with Candlenut Tree / Hill Light,Lamp,Torch",
+   "Tags": ["Puʻu"],
+   "Lat": 20.89426, 
+   "Lng":-156.58944,
+   "Height": 5,
+   "Status": {"planning":true},
+   "Page": {"url":"./Maui/Data/trails/puukukui.html", "display":true}, 
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUuxxSyHjwROZNnnUNyN394AxTKb_oNpEauEXWh-jN1AqEUCH388GRSFaLMI1MWU8TymQWRz4eG9PvtGta1bItVyN89qhs1HM0sgOTv1tI6vHGVd5s4x4Izcahh9XuRFgxjhfSkWI7GmHX0AkFhMfwtsQ=w1834-h1222-no"},
+   ],
 },
 {
    "Name": " Kahoolewa Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8957 ,
    "Lng": -156.5675 ,
    "Height": 5 ,
@@ -1548,8 +1525,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Makua ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Makua ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6618 ,
    "Lng": -156.3503 ,
    "Height": 5 ,
@@ -1558,7 +1535,7 @@ var AllData =
 },
 {
    "Name": " 5220 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8795 ,
    "Lng": -156.5898 ,
    "Height": 5 ,
@@ -1567,7 +1544,7 @@ var AllData =
 },
 {
    "Name": " Puʻuokākaʻe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7995 ,
    "Lng": -156.2423 ,
    "Height": 4 ,
@@ -1576,7 +1553,7 @@ var AllData =
 },
 {
    "Name": " Kamakou ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9999 ,
    "Lng": -156.9287 ,
    "Height": 4 ,
@@ -1585,7 +1562,7 @@ var AllData =
 },
 {
    "Name": " Uapa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1073 ,
    "Lng": -156.8707 ,
    "Height": 4 ,
@@ -1594,7 +1571,7 @@ var AllData =
 },
 {
    "Name": " Puʻuowahaʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1089 ,
    "Lng": -156.875 ,
    "Height": 4 ,
@@ -1603,7 +1580,7 @@ var AllData =
 },
 {
    "Name": " Kaholoapele ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1052 ,
    "Lng": -156.8641 ,
    "Height": 4 ,
@@ -1612,7 +1589,7 @@ var AllData =
 },
 {
    "Name": " Helu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8668 ,
    "Lng": -156.5978 ,
    "Height": 4 ,
@@ -1620,8 +1597,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Ahulili ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Ahulili ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6861 ,
    "Lng": -156.1147 ,
    "Height": 4 ,
@@ -1630,7 +1607,7 @@ var AllData =
 },
 {
    "Name": " Hanaula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.869 ,
    "Lng": -156.5825 ,
    "Height": 4 ,
@@ -1639,7 +1616,7 @@ var AllData =
 },
 {
    "Name": " Olokuʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1268 ,
    "Lng": -156.8633 ,
    "Height": 4 ,
@@ -1648,7 +1625,7 @@ var AllData =
 },
 {
    "Name": " Kaumakani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7112 ,
    "Lng": -156.0781 ,
    "Height": 4 ,
@@ -1657,7 +1634,7 @@ var AllData =
 },
 {
    "Name": " Kaunuohua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1107 ,
    "Lng": -156.8792 ,
    "Height": 4 ,
@@ -1666,7 +1643,7 @@ var AllData =
 },
 {
    "Name": " 4457 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8554 ,
    "Lng": -156.5669 ,
    "Height": 4 ,
@@ -1675,7 +1652,7 @@ var AllData =
 },
 {
    "Name": " Kapilau Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8623 ,
    "Lng": -156.5576 ,
    "Height": 4 ,
@@ -1684,7 +1661,7 @@ var AllData =
 },
 {
    "Name": " Keonehunehune ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6517 ,
    "Lng": -156.3611 ,
    "Height": 4 ,
@@ -1693,7 +1670,7 @@ var AllData =
 },
 {
    "Name": " Pākuʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1031 ,
    "Lng": -156.8545 ,
    "Height": 4 ,
@@ -1702,7 +1679,7 @@ var AllData =
 },
 {
    "Name": " P&#275;p&#275;ʻōpae ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1178 ,
    "Lng": -156.8951 ,
    "Height": 4 ,
@@ -1711,7 +1688,7 @@ var AllData =
 },
 {
    "Name": " Kalawao County HP ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1285 ,
    "Lng": -156.8977 ,
    "Height": 4 ,
@@ -1720,7 +1697,7 @@ var AllData =
 },
 {
    "Name": " Lihau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8577 ,
    "Lng": -156.5945 ,
    "Height": 4 ,
@@ -1729,7 +1706,7 @@ var AllData =
 },
 {
    "Name": " Kīlau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1028 ,
    "Lng": -156.8467 ,
    "Height": 4 ,
@@ -1738,7 +1715,7 @@ var AllData =
 },
 {
    "Name": " Lehuʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1062 ,
    "Lng": -156.8946 ,
    "Height": 4 ,
@@ -1747,7 +1724,7 @@ var AllData =
 },
 {
    "Name": " Kapuki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1406 ,
    "Lng": -156.8555 ,
    "Height": 4 ,
@@ -1756,7 +1733,7 @@ var AllData =
 },
 {
    "Name": " Puʻupane ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6579 ,
    "Lng": -156.2497 ,
    "Height": 4 ,
@@ -1765,7 +1742,7 @@ var AllData =
 },
 {
    "Name": " 3980 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7363 ,
    "Lng": -156.053 ,
    "Height": 3 ,
@@ -1774,7 +1751,7 @@ var AllData =
 },
 {
    "Name": " Pōhakuʻulaʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1434 ,
    "Lng": -156.8581 ,
    "Height": 3 ,
@@ -1783,7 +1760,7 @@ var AllData =
 },
 {
    "Name": " Hanalilolilo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1251 ,
    "Lng": -156.9089 ,
    "Height": 3 ,
@@ -1792,7 +1769,7 @@ var AllData =
 },
 {
    "Name": " Puʻukolekole ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1044 ,
    "Lng": -156.9008 ,
    "Height": 3 ,
@@ -1801,7 +1778,7 @@ var AllData =
 },
 {
    "Name": " Keonenelu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6524 ,
    "Lng": -156.369 ,
    "Height": 3 ,
@@ -1810,7 +1787,7 @@ var AllData =
 },
 {
    "Name": " Halepohaku ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.85 ,
    "Lng": -156.5764 ,
    "Height": 3 ,
@@ -1819,7 +1796,7 @@ var AllData =
 },
 {
    "Name": " Puʻuokaʻeha ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1164 ,
    "Lng": -156.9144 ,
    "Height": 3 ,
@@ -1827,8 +1804,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kane ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kane ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8946 ,
    "Lng": -156.5488 ,
    "Height": 3 ,
@@ -1837,7 +1814,7 @@ var AllData =
 },
 {
    "Name": " Kaulahuki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1293 ,
    "Lng": -156.9229 ,
    "Height": 3 ,
@@ -1846,7 +1823,7 @@ var AllData =
 },
 {
    "Name": " Kaʻāpahu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0943 ,
    "Lng": -156.8791 ,
    "Height": 3 ,
@@ -1855,7 +1832,7 @@ var AllData =
 },
 {
    "Name": " Puʻukaeʻo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1326 ,
    "Lng": -156.9229 ,
    "Height": 3 ,
@@ -1864,7 +1841,7 @@ var AllData =
 },
 {
    "Name": " 3627 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.106 ,
    "Lng": -156.8202 ,
    "Height": 3 ,
@@ -1873,7 +1850,7 @@ var AllData =
 },
 {
    "Name": " Keahialoa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9081 ,
    "Lng": -156.5537 ,
    "Height": 3 ,
@@ -1882,7 +1859,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻōhelo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1234 ,
    "Lng": -156.8084 ,
    "Height": 3 ,
@@ -1891,7 +1868,7 @@ var AllData =
 },
 {
    "Name": " Puʻukaukanu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7259 ,
    "Lng": -156.0482 ,
    "Height": 3 ,
@@ -1900,7 +1877,7 @@ var AllData =
 },
 {
    "Name": " 3500 ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8623 ,
    "Lng": -156.5716 ,
    "Height": 3 ,
@@ -1909,7 +1886,7 @@ var AllData =
 },
 {
    "Name": " Puʻuhoʻolio ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7059 ,
    "Lng": -156.0526 ,
    "Height": 3 ,
@@ -1918,7 +1895,7 @@ var AllData =
 },
 {
    "Name": " Kaimaloo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6405 ,
    "Lng": -156.3675 ,
    "Height": 3 ,
@@ -1927,7 +1904,7 @@ var AllData =
 },
 {
    "Name": " Lānaʻihale ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.883 ,
    "Lng": -156.765 ,
    "Height": 3 ,
@@ -1936,7 +1913,7 @@ var AllData =
 },
 {
    "Name": " Haalelepaakai ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8101 ,
    "Lng": -156.8699 ,
    "Height": 3 ,
@@ -1945,7 +1922,7 @@ var AllData =
 },
 {
    "Name": " Puʻumakaliʻiliʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1323 ,
    "Lng": -156.939 ,
    "Height": 3 ,
@@ -1954,7 +1931,7 @@ var AllData =
 },
 {
    "Name": " Honukaʻupu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1532 ,
    "Lng": -156.8668 ,
    "Height": 3 ,
@@ -1963,7 +1940,7 @@ var AllData =
 },
 {
    "Name": " Kulanapahu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6435 ,
    "Lng": -156.3757 ,
    "Height": 3 ,
@@ -1972,7 +1949,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻalaea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8119 ,
    "Lng": -156.2902 ,
    "Height": 3 ,
@@ -1981,7 +1958,7 @@ var AllData =
 },
 {
    "Name": " Kaluahauoni ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1515 ,
    "Lng": -156.9379 ,
    "Height": 3 ,
@@ -1990,7 +1967,7 @@ var AllData =
 },
 {
    "Name": " Kawaiuliuli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1126 ,
    "Lng": -156.8075 ,
    "Height": 3 ,
@@ -1999,7 +1976,7 @@ var AllData =
 },
 {
    "Name": " Waiakeekua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8069 ,
    "Lng": -156.8656 ,
    "Height": 3 ,
@@ -2008,7 +1985,7 @@ var AllData =
 },
 {
    "Name": " Pākī ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7628 ,
    "Lng": -156.0642 ,
    "Height": 3 ,
@@ -2017,7 +1994,7 @@ var AllData =
 },
 {
    "Name": " Pōhākaunoho Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1166 ,
    "Lng": -156.8643 ,
    "Height": 3 ,
@@ -2026,7 +2003,7 @@ var AllData =
 },
 {
    "Name": " Puʻulua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1103 ,
    "Lng": -156.8094 ,
    "Height": 3 ,
@@ -2035,7 +2012,7 @@ var AllData =
 },
 {
    "Name": " Mauna Alani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9155 ,
    "Lng": -156.5498 ,
    "Height": 3 ,
@@ -2044,7 +2021,7 @@ var AllData =
 },
 {
    "Name": " Ulaula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8355 ,
    "Lng": -156.5882 ,
    "Height": 3 ,
@@ -2053,7 +2030,7 @@ var AllData =
 },
 {
    "Name": " Keahikauo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.939 ,
    "Lng": -156.5645 ,
    "Height": 3 ,
@@ -2062,7 +2039,7 @@ var AllData =
 },
 {
    "Name": " Koaʻekea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7403 ,
    "Lng": -156.036 ,
    "Height": 2 ,
@@ -2071,7 +2048,7 @@ var AllData =
 },
 {
    "Name": " Kaulalewelewe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9341 ,
    "Lng": -156.6147 ,
    "Height": 2 ,
@@ -2079,8 +2056,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Anu ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Anu ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8222 ,
    "Lng": -156.5489 ,
    "Height": 2 ,
@@ -2089,7 +2066,7 @@ var AllData =
 },
 {
    "Name": " Puʻu Kole ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8078 ,
    "Lng": -156.8721 ,
    "Height": 2 ,
@@ -2098,7 +2075,7 @@ var AllData =
 },
 {
    "Name": " Hanaulaiki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.82 ,
    "Lng": -156.5663 ,
    "Height": 2 ,
@@ -2107,7 +2084,7 @@ var AllData =
 },
 {
    "Name": " Puʻukue ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6987 ,
    "Lng": -156.049 ,
    "Height": 2 ,
@@ -2116,7 +2093,7 @@ var AllData =
 },
 {
    "Name": " Kaluaolohe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1417 ,
    "Lng": -156.9538 ,
    "Height": 2 ,
@@ -2125,7 +2102,7 @@ var AllData =
 },
 {
    "Name": " Luapelani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6364 ,
    "Lng": -156.3772 ,
    "Height": 2 ,
@@ -2133,8 +2110,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kaeo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kaeo ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6494 ,
    "Lng": -156.385 ,
    "Height": 2 ,
@@ -2143,7 +2120,7 @@ var AllData =
 },
 {
    "Name": " Keahiakalio ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1468 ,
    "Lng": -156.8021 ,
    "Height": 2 ,
@@ -2152,7 +2129,7 @@ var AllData =
 },
 {
    "Name": " Puʻupūʻou ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7636 ,
    "Lng": -156.053 ,
    "Height": 2 ,
@@ -2160,8 +2137,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Io ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Io ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6728 ,
    "Lng": -156.3813 ,
    "Height": 2 ,
@@ -2170,7 +2147,7 @@ var AllData =
 },
 {
    "Name": " Puʻualiʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8247 ,
    "Lng": -156.8917 ,
    "Height": 2 ,
@@ -2179,7 +2156,7 @@ var AllData =
 },
 {
    "Name": " Puʻuhoʻolewa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7222 ,
    "Lng": -156.0405 ,
    "Height": 2 ,
@@ -2188,7 +2165,7 @@ var AllData =
 },
 {
    "Name": " Kāleleʻolehuaʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1182 ,
    "Lng": -156.8774 ,
    "Height": 2 ,
@@ -2196,8 +2173,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Mahoe ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Mahoe ",
+   "Tags": ["Puʻu"],
    "Lat": 20.635 ,
    "Lng": -156.3836 ,
    "Height": 2 ,
@@ -2206,7 +2183,7 @@ var AllData =
 },
 {
    "Name": " Puʻuonepohue ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8234 ,
    "Lng": -156.2975 ,
    "Height": 2 ,
@@ -2215,7 +2192,7 @@ var AllData =
 },
 {
    "Name": " Kaonohua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8258 ,
    "Lng": -156.5409 ,
    "Height": 2 ,
@@ -2224,7 +2201,7 @@ var AllData =
 },
 {
    "Name": " Koai ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8288 ,
    "Lng": -156.5883 ,
    "Height": 2 ,
@@ -2233,7 +2210,7 @@ var AllData =
 },
 {
    "Name": " Puʻupane ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.804 ,
    "Lng": -156.3152 ,
    "Height": 2 ,
@@ -2242,7 +2219,7 @@ var AllData =
 },
 {
    "Name": " Lanilili ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9452 ,
    "Lng": -156.5543 ,
    "Height": 2 ,
@@ -2251,7 +2228,7 @@ var AllData =
 },
 {
    "Name": " Paupau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8879 ,
    "Lng": -156.6297 ,
    "Height": 2 ,
@@ -2259,8 +2236,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Kaupo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Kaupo ",
+   "Tags": ["Puʻu"],
    "Lat": 20.9046 ,
    "Lng": -156.5452 ,
    "Height": 2 ,
@@ -2269,7 +2246,7 @@ var AllData =
 },
 {
    "Name": " Hokuula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8423 ,
    "Lng": -156.5686 ,
    "Height": 2 ,
@@ -2278,7 +2255,7 @@ var AllData =
 },
 {
    "Name": " Kaunupahu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1571 ,
    "Lng": -156.7942 ,
    "Height": 2 ,
@@ -2287,7 +2264,7 @@ var AllData =
 },
 {
    "Name": " Kaihuokalā ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7426 ,
    "Lng": -156.025 ,
    "Height": 2 ,
@@ -2295,8 +2272,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Moe ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Moe ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8163 ,
    "Lng": -156.5411 ,
    "Height": 2 ,
@@ -2305,7 +2282,7 @@ var AllData =
 },
 {
    "Name": " Lualaʻilua Hills ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6242 ,
    "Lng": -156.3057 ,
    "Height": 2 ,
@@ -2313,8 +2290,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Luau ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Luau ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8095 ,
    "Lng": -156.5481 ,
    "Height": 2 ,
@@ -2323,7 +2300,7 @@ var AllData =
 },
 {
    "Name": " Kekaalaau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9542 ,
    "Lng": -156.6125 ,
    "Height": 2 ,
@@ -2332,7 +2309,7 @@ var AllData =
 },
 {
    "Name": " Puʻukauā ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1609 ,
    "Lng": -156.9673 ,
    "Height": 2 ,
@@ -2341,7 +2318,7 @@ var AllData =
 },
 {
    "Name": " Lapakohana ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0981 ,
    "Lng": -156.9274 ,
    "Height": 2 ,
@@ -2350,7 +2327,7 @@ var AllData =
 },
 {
    "Name": " Puʻuau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1502 ,
    "Lng": -156.7848 ,
    "Height": 2 ,
@@ -2359,7 +2336,7 @@ var AllData =
 },
 {
    "Name": " Maunaʻoluʻolu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0907 ,
    "Lng": -156.8296 ,
    "Height": 2 ,
@@ -2368,7 +2345,7 @@ var AllData =
 },
 {
    "Name": " Piiholo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8526 ,
    "Lng": -156.2901 ,
    "Height": 2 ,
@@ -2377,7 +2354,7 @@ var AllData =
 },
 {
    "Name": " Pōhakuloa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1607 ,
    "Lng": -156.7904 ,
    "Height": 2 ,
@@ -2386,7 +2363,7 @@ var AllData =
 },
 {
    "Name": " Needle, The ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8853 ,
    "Lng": -156.5517 ,
    "Height": 2 ,
@@ -2395,7 +2372,7 @@ var AllData =
 },
 {
    "Name": " Palikea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6771 ,
    "Lng": -156.0737 ,
    "Height": 2 ,
@@ -2404,7 +2381,7 @@ var AllData =
 },
 {
    "Name": " Nāpuʻukūlua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0822 ,
    "Lng": -156.8998 ,
    "Height": 2 ,
@@ -2413,7 +2390,7 @@ var AllData =
 },
 {
    "Name": " Ulalena ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8637 ,
    "Lng": -156.2511 ,
    "Height": 2 ,
@@ -2422,7 +2399,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻōlelo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1665 ,
    "Lng": -156.9793 ,
    "Height": 2 ,
@@ -2431,7 +2408,7 @@ var AllData =
 },
 {
    "Name": " Puʻumanu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7811 ,
    "Lng": -156.8655 ,
    "Height": 2 ,
@@ -2440,7 +2417,7 @@ var AllData =
 },
 {
    "Name": " Kanupa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1644 ,
    "Lng": -156.7792 ,
    "Height": 2 ,
@@ -2449,7 +2426,7 @@ var AllData =
 },
 {
    "Name": " Puʻualeʻaleʻa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.848 ,
    "Lng": -156.9218 ,
    "Height": 2 ,
@@ -2458,7 +2435,7 @@ var AllData =
 },
 {
    "Name": " Pohoula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8459 ,
    "Lng": -156.9206 ,
    "Height": 2 ,
@@ -2467,7 +2444,7 @@ var AllData =
 },
 {
    "Name": " Keahikano ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9674 ,
    "Lng": -156.6075 ,
    "Height": 2 ,
@@ -2475,8 +2452,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Makina ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Makina ",
+   "Tags": ["Puʻu"],
    "Lat": 20.9568 ,
    "Lng": -156.6227 ,
    "Height": 1 ,
@@ -2485,7 +2462,7 @@ var AllData =
 },
 {
    "Name": " Kealaloloa Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8065 ,
    "Lng": -156.539 ,
    "Height": 1 ,
@@ -2493,8 +2470,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Koa ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Koa ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8295 ,
    "Lng": -156.3223 ,
    "Height": 1 ,
@@ -2502,8 +2479,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Ehu ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Ehu ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8627 ,
    "Lng": -156.2928 ,
    "Height": 1 ,
@@ -2512,7 +2489,7 @@ var AllData =
 },
 {
    "Name": " Makalau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8562 ,
    "Lng": -156.9186 ,
    "Height": 1 ,
@@ -2521,7 +2498,7 @@ var AllData =
 },
 {
    "Name": " Olopawa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7676 ,
    "Lng": -156.0341 ,
    "Height": 1 ,
@@ -2530,7 +2507,7 @@ var AllData =
 },
 {
    "Name": " Nīniniwai Hill ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8307 ,
    "Lng": -156.913 ,
    "Height": 1 ,
@@ -2539,7 +2516,7 @@ var AllData =
 },
 {
    "Name": " Kānepuʻu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8672 ,
    "Lng": -156.9569 ,
    "Height": 1 ,
@@ -2548,7 +2525,7 @@ var AllData =
 },
 {
    "Name": " Pimoe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6133 ,
    "Lng": -156.3688 ,
    "Height": 1 ,
@@ -2556,8 +2533,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kaeo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kaeo ",
+   "Tags": ["Puʻu"],
    "Lat": 20.9685 ,
    "Lng": -156.6182 ,
    "Height": 1 ,
@@ -2566,7 +2543,7 @@ var AllData =
 },
 {
    "Name": " Hahaeule ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1631 ,
    "Lng": -157.0029 ,
    "Height": 1 ,
@@ -2575,7 +2552,7 @@ var AllData =
 },
 {
    "Name": " Puʻuhīnaʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7813 ,
    "Lng": -156.0595 ,
    "Height": 1 ,
@@ -2584,7 +2561,7 @@ var AllData =
 },
 {
    "Name": " Kanoa Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9486 ,
    "Lng": -156.5395 ,
    "Height": 1 ,
@@ -2593,7 +2570,7 @@ var AllData =
 },
 {
    "Name": " Hulupuʻuniu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8246 ,
    "Lng": -156.9344 ,
    "Height": 1 ,
@@ -2602,7 +2579,7 @@ var AllData =
 },
 {
    "Name": " Kaokao Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6576 ,
    "Lng": -156.1258 ,
    "Height": 1 ,
@@ -2611,7 +2588,7 @@ var AllData =
 },
 {
    "Name": " Hoʻopapalani Hill ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8336 ,
    "Lng": -156.9338 ,
    "Height": 1 ,
@@ -2620,7 +2597,7 @@ var AllData =
 },
 {
    "Name": " Puʻu Koa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8171 ,
    "Lng": -156.9433 ,
    "Height": 1 ,
@@ -2629,7 +2606,7 @@ var AllData =
 },
 {
    "Name": " Puʻumakani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7781 ,
    "Lng": -156.8848 ,
    "Height": 1 ,
@@ -2638,7 +2615,7 @@ var AllData =
 },
 {
    "Name": " Kepookoholua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1619 ,
    "Lng": -156.7592 ,
    "Height": 1 ,
@@ -2647,7 +2624,7 @@ var AllData =
 },
 {
    "Name": " Akahi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0901 ,
    "Lng": -156.8064 ,
    "Height": 1 ,
@@ -2656,7 +2633,7 @@ var AllData =
 },
 {
    "Name": " Kauluwai ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1595 ,
    "Lng": -157.0105 ,
    "Height": 1 ,
@@ -2665,7 +2642,7 @@ var AllData =
 },
 {
    "Name": " Puvunānāihawaiʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8095 ,
    "Lng": -156.9369 ,
    "Height": 1 ,
@@ -2674,7 +2651,7 @@ var AllData =
 },
 {
    "Name": " Kauiki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.853 ,
    "Lng": -156.8926 ,
    "Height": 1 ,
@@ -2682,8 +2659,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Malei ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Malei ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8711 ,
    "Lng": -156.3075 ,
    "Height": 1 ,
@@ -2692,7 +2669,7 @@ var AllData =
 },
 {
    "Name": " Puʻu ʻO Moaʻula Nui ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.0757461 ,
    "Lng": -156.5182 ,
    "Height": 1 ,
@@ -2701,7 +2678,7 @@ var AllData =
 },
 {
    "Name": " Kawaikapu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1628 ,
    "Lng": -156.7565 ,
    "Height": 1 ,
@@ -2709,8 +2686,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Kali ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Kali ",
+   "Tags": ["Puʻu"],
    "Lat": 20.7309 ,
    "Lng": -156.3851 ,
    "Height": 1 ,
@@ -2719,7 +2696,7 @@ var AllData =
 },
 {
    "Name": " Hōkūkano ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.608 ,
    "Lng": -156.3295 ,
    "Height": 1 ,
@@ -2728,7 +2705,7 @@ var AllData =
 },
 {
    "Name": " Mahana ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9709 ,
    "Lng": -156.6261 ,
    "Height": 1 ,
@@ -2737,7 +2714,7 @@ var AllData =
 },
 {
    "Name": " Maunakini ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9739 ,
    "Lng": -156.5641 ,
    "Height": 1 ,
@@ -2746,7 +2723,7 @@ var AllData =
 },
 {
    "Name": " Puʻumāhanalua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7699 ,
    "Lng": -156.8865 ,
    "Height": 1 ,
@@ -2755,7 +2732,7 @@ var AllData =
 },
 {
    "Name": " Puʻu ʻO Moaʻula Iki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.563 ,
    "Lng": -156.5829 ,
    "Height": 1 ,
@@ -2764,7 +2741,7 @@ var AllData =
 },
 {
    "Name": " Kukui ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1615 ,
    "Lng": -157.1133 ,
    "Height": 1 ,
@@ -2773,7 +2750,7 @@ var AllData =
 },
 {
    "Name": " Kaukini Ridge ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9692 ,
    "Lng": -156.5568 ,
    "Height": 1 ,
@@ -2781,8 +2758,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Olelo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Olelo ",
+   "Tags": ["Puʻu"],
    "Lat": 20.968 ,
    "Lng": -156.552 ,
    "Height": 1 ,
@@ -2791,7 +2768,7 @@ var AllData =
 },
 {
    "Name": " ʻAmikopala ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1309 ,
    "Lng": -157.1862 ,
    "Height": 1 ,
@@ -2800,7 +2777,7 @@ var AllData =
 },
 {
    "Name": " Puʻunānā ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1419 ,
    "Lng": -157.1608 ,
    "Height": 1 ,
@@ -2808,8 +2785,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Anoano ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Anoano ",
+   "Tags": ["Puʻu"],
    "Lat": 21.1645 ,
    "Lng": -157.0233 ,
    "Height": 1 ,
@@ -2818,7 +2795,7 @@ var AllData =
 },
 {
    "Name": " ʻ&#298;liolono ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7893 ,
    "Lng": -156.9504 ,
    "Height": 1 ,
@@ -2827,7 +2804,7 @@ var AllData =
 },
 {
    "Name": " Papaloa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6655 ,
    "Lng": -156.0738 ,
    "Height": 1 ,
@@ -2836,7 +2813,7 @@ var AllData =
 },
 {
    "Name": " Kāʻana ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1278 ,
    "Lng": -157.1491 ,
    "Height": 1 ,
@@ -2845,7 +2822,7 @@ var AllData =
 },
 {
    "Name": " Kaimumanō ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1042 ,
    "Lng": -156.7805 ,
    "Height": 1 ,
@@ -2854,7 +2831,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻulaʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7686 ,
    "Lng": -156.9652 ,
    "Height": 1 ,
@@ -2863,7 +2840,7 @@ var AllData =
 },
 {
    "Name": " Keakamanu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7273 ,
    "Lng": -156.0099 ,
    "Height": 1 ,
@@ -2872,7 +2849,7 @@ var AllData =
 },
 {
    "Name": " Wāwaekū ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8602 ,
    "Lng": -156.8812 ,
    "Height": 1 ,
@@ -2881,7 +2858,7 @@ var AllData =
 },
 {
    "Name": " Kauhikoa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8903 ,
    "Lng": -156.317 ,
    "Height": 1 ,
@@ -2889,8 +2866,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Luahine ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Luahine ",
+   "Tags": ["Puʻu"],
    "Lat": 21.1322 ,
    "Lng": -157.0062 ,
    "Height": 1 ,
@@ -2899,7 +2876,7 @@ var AllData =
 },
 {
    "Name": " Kākalahale ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1228 ,
    "Lng": -156.9968 ,
    "Height": 1 ,
@@ -2908,7 +2885,7 @@ var AllData =
 },
 {
    "Name": " Haleone ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0859 ,
    "Lng": -156.8101 ,
    "Height": 1 ,
@@ -2917,7 +2894,7 @@ var AllData =
 },
 {
    "Name": " Pohakea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6034 ,
    "Lng": -156.3623 ,
    "Height": 1 ,
@@ -2926,7 +2903,7 @@ var AllData =
 },
 {
    "Name": " Pohakuloa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9748 ,
    "Lng": -156.553 ,
    "Height": 1 ,
@@ -2935,7 +2912,7 @@ var AllData =
 },
 {
    "Name": " Puʻumōiwi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.5431 ,
    "Lng": -156.6052 ,
    "Height": 1 ,
@@ -2944,7 +2921,7 @@ var AllData =
 },
 {
    "Name": " Kapuai o Kamehameha ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9001 ,
    "Lng": -156.2764 ,
    "Height": 1 ,
@@ -2953,7 +2930,7 @@ var AllData =
 },
 {
    "Name": " Eleuweuwe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1704 ,
    "Lng": -157.0331 ,
    "Height": 1 ,
@@ -2961,8 +2938,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Naio ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Naio ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6182 ,
    "Lng": -156.4024 ,
    "Height": 1 ,
@@ -2970,8 +2947,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kahala ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kahala ",
+   "Tags": ["Puʻu"],
    "Lat": 20.771 ,
    "Lng": -156.3817 ,
    "Height": 1 ,
@@ -2980,7 +2957,7 @@ var AllData =
 },
 {
    "Name": " Kāhilikalani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7581 ,
    "Lng": -156.9754 ,
    "Height": 1 ,
@@ -2988,8 +2965,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Kualapuu ",
-   "Tags": ["Puu"],
+   "Name": " KualaPuʻu ",
+   "Tags": ["Puʻu"],
    "Lat": 21.1555 ,
    "Lng": -157.0484 ,
    "Height": 1 ,
@@ -2998,7 +2975,7 @@ var AllData =
 },
 {
    "Name": " Hāʻupu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1655 ,
    "Lng": -156.8893 ,
    "Height": 1 ,
@@ -3007,7 +2984,7 @@ var AllData =
 },
 {
    "Name": " Maunaʻoʻumi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7959 ,
    "Lng": -156.8352 ,
    "Height": 1 ,
@@ -3015,8 +2992,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Hipa ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Hipa ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8435 ,
    "Lng": -156.6249 ,
    "Height": 1 ,
@@ -3024,20 +3001,18 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Olai ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Olai ",
+   "Tags": ["Puʻu"],
    "Lat": 20.976 ,
    "Lng": -156.5352 ,
    "Height": 998 ,
-   "Status": {"visited":true},
- //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Status": {},
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIQAtopYoBaL9LYLri495FaV550o3sH7S_Y3cDIN5dnJZ6E9gptVbA7veStYcA38zG1zhoNhb7QY-UJI4418VTJtJQDKhzklmXeauKee0JrojTRJFUeG8Zj921dxTRBp87KtfnYKE6r84WS_kmVyAP6Q=w2107-h1580-no"},
    ],
 },
 {
    "Name": " Puʻukolo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7372 ,
    "Lng": -156.0032 ,
    "Height": 940 ,
@@ -3045,8 +3020,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Hona ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Hona ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8123 ,
    "Lng": -156.5204 ,
    "Height": 905 ,
@@ -3055,7 +3030,7 @@ var AllData =
 },
 {
    "Name": " Puʻukahua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.5419 ,
    "Lng": -156.6226 ,
    "Height": 902 ,
@@ -3064,7 +3039,7 @@ var AllData =
 },
 {
    "Name": " Puʻumanō ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0984 ,
    "Lng": -156.7777 ,
    "Height": 902 ,
@@ -3073,7 +3048,7 @@ var AllData =
 },
 {
    "Name": " Kāluakanaka ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1158 ,
    "Lng": -157.1532 ,
    "Height": 902 ,
@@ -3082,7 +3057,7 @@ var AllData =
 },
 {
    "Name": " Pahūolonā ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7369 ,
    "Lng": -156.0022 ,
    "Height": 900 ,
@@ -3091,7 +3066,7 @@ var AllData =
 },
 {
    "Name": " Kapalikōī ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1153 ,
    "Lng": -157.2023 ,
    "Height": 892 ,
@@ -3100,7 +3075,7 @@ var AllData =
 },
 {
    "Name": " Puʻupili ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1667 ,
    "Lng": -157.1627 ,
    "Height": 889 ,
@@ -3109,7 +3084,7 @@ var AllData =
 },
 {
    "Name": " Kuloli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9147 ,
    "Lng": -156.2856 ,
    "Height": 858 ,
@@ -3118,7 +3093,7 @@ var AllData =
 },
 {
    "Name": " Kaluakau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1153 ,
    "Lng": -157.1468 ,
    "Height": 836 ,
@@ -3126,8 +3101,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Papai ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Papai ",
+   "Tags": ["Puʻu"],
    "Lat": 21.0667 ,
    "Lng": -156.8989 ,
    "Height": 836 ,
@@ -3136,7 +3111,7 @@ var AllData =
 },
 {
    "Name": " Koaliʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1485 ,
    "Lng": -156.73 ,
    "Height": 820 ,
@@ -3145,7 +3120,7 @@ var AllData =
 },
 {
    "Name": " Pohakuloa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1241 ,
    "Lng": -157.2326 ,
    "Height": 811 ,
@@ -3153,8 +3128,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Mahanalua Nui ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Mahanalua Nui ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8417 ,
    "Lng": -156.6298 ,
    "Height": 809 ,
@@ -3163,7 +3138,7 @@ var AllData =
 },
 {
    "Name": " Makaliʻihānau ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6916 ,
    "Lng": -156.022 ,
    "Height": 780 ,
@@ -3172,7 +3147,7 @@ var AllData =
 },
 {
    "Name": " Kahalelani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1691 ,
    "Lng": -157.1847 ,
    "Height": 770 ,
@@ -3181,7 +3156,7 @@ var AllData =
 },
 {
    "Name": " Kalanikāula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1511 ,
    "Lng": -156.7286 ,
    "Height": 754 ,
@@ -3190,7 +3165,7 @@ var AllData =
 },
 {
    "Name": " Puʻuhoʻolehua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1185 ,
    "Lng": -157.131 ,
    "Height": 754 ,
@@ -3199,7 +3174,7 @@ var AllData =
 },
 {
    "Name": " Waihuna ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1557 ,
    "Lng": -157.1313 ,
    "Height": 738 ,
@@ -3207,8 +3182,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kilea ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kilea ",
+   "Tags": ["Puʻu"],
    "Lat": 21.0027 ,
    "Lng": -156.6165 ,
    "Height": 732 ,
@@ -3217,7 +3192,7 @@ var AllData =
 },
 {
    "Name": " Helani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.761 ,
    "Lng": -156.0071 ,
    "Height": 700 ,
@@ -3226,7 +3201,7 @@ var AllData =
 },
 {
    "Name": " Kuala ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1361 ,
    "Lng": -156.7326 ,
    "Height": 669 ,
@@ -3234,8 +3209,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Laina ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Laina ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8964 ,
    "Lng": -156.6657 ,
    "Height": 650 ,
@@ -3244,7 +3219,7 @@ var AllData =
 },
 {
    "Name": " Puʻu Koaʻe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.999 ,
    "Lng": -156.5453 ,
    "Height": 636 ,
@@ -3252,8 +3227,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Umi ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Umi ",
+   "Tags": ["Puʻu"],
    "Lat": 20.917 ,
    "Lng": -156.3291 ,
    "Height": 634 ,
@@ -3261,8 +3236,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Haunako ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Haunako ",
+   "Tags": ["Puʻu"],
    "Lat": 21.0012 ,
    "Lng": -156.5661 ,
    "Height": 627 ,
@@ -3271,7 +3246,7 @@ var AllData =
 },
 {
    "Name": " Waiʻeli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1069 ,
    "Lng": -157.2425 ,
    "Height": 606 ,
@@ -3280,7 +3255,7 @@ var AllData =
 },
 {
    "Name": " Kaʻa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.2064 ,
    "Lng": -157.2018 ,
    "Height": 606 ,
@@ -3289,7 +3264,7 @@ var AllData =
 },
 {
    "Name": " Puʻukanaio ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.146 ,
    "Lng": -157.0667 ,
    "Height": 600 ,
@@ -3298,7 +3273,7 @@ var AllData =
 },
 {
    "Name": " Kuinihu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1653 ,
    "Lng": -157.2118 ,
    "Height": 587 ,
@@ -3307,7 +3282,7 @@ var AllData =
 },
 {
    "Name": " Kaeo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.214 ,
    "Lng": -157.2247 ,
    "Height": 583 ,
@@ -3316,16 +3291,23 @@ var AllData =
 },
 {
    "Name": " Kalua o Lapa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.6157 ,
    "Lng": -156.4131 ,
    "Height": 580 ,
-   "Status": {},
-   "Pics": [],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUqk25t66jPPXDZgV5V3bubm58G95VnAUSyTaWzVwZJfm_oAz3j79feOVoNilCxNX8lDlO_V2MM2My6NXSEQTNxYwcFXlozfJ1JPCKyPaMZRbsUt3_NEjRBoxtVuRa2Nfp8fHgyTS2OmZsCbmMFTbh2sA=w2107-h1580-no",
+       "note":"About 1.7miles from La Perouse parking lot; if you find the trail it shouldn't take more than 30 minutes. The trail skirts the lava flow, comes around from the northeast, leaving a simple ridge to climb to get to the top."},
+      {"vid":"https://video-downloads.googleusercontent.com/AEwWKPzP0YOEDtURNsoM-6t27MvSGrwofhiSvTjs-NaD5uTLv_oJ6fsEc6IIrN0Tnrh76RLZfEKXFonePDYKwJ7Twj2GIKAASFa_KW9p4ffZe3IXe0zfe_rUPvZtYU37JqeGIjdUnqqqLZUwZqiUk7gbuETTrbHqiXxoO_xPXTWoIe69VJMLck065_LtYb_yKgUWLgUO7vPDpnoEmeDdrdxtLjYCHl6H_QXGVVM9IN1wqX2fsZs378I",},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVhEW_KjAIEvxBH_ttxuLKY8K1yfiOK0fOHN2tbKPbf-jpTQSXv39V-6hKB-AVgB-KTkWU29ylfdmnv_4yyWdUkmu2UjlQmhg4HIgUXbfKeaIT_ZUnoPVWeTykZ7ei432-Ieia1G8dep-vQexFHPQQhuQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIMY4QPIJuCTcfYG4z_BqDBjruUT8t8Ii6fZmejkroiv39JY1hjiDbYZN8Rkh_qDqfaW8bO32amfwNrG43_EtmZeFQGhmo8rtmSkEi9AiVEHoZFsF7rScfDPYVvckeoZu-mfUonuVebv828UuX5WICSA=w2107-h1580-no"},
+
+   ],
 },
 {
    "Name": " Puʻukūkae ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8937 ,
    "Lng": -156.2041 ,
    "Height": 574 ,
@@ -3334,7 +3316,7 @@ var AllData =
 },
 {
    "Name": " Nāpuʻukūlua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1553 ,
    "Lng": -157.2312 ,
    "Height": 574 ,
@@ -3342,8 +3324,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kahulianapa ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kahulianapa ",
+   "Tags": ["Puʻu"],
    "Lat": 20.9953 ,
    "Lng": -156.5445 ,
    "Height": 547 ,
@@ -3352,7 +3334,7 @@ var AllData =
 },
 {
    "Name": " Puʻuokahaula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7533 ,
    "Lng": -155.9981 ,
    "Height": 545 ,
@@ -3361,7 +3343,7 @@ var AllData =
 },
 {
    "Name": " Okoli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1762 ,
    "Lng": -157.2163 ,
    "Height": 541 ,
@@ -3370,7 +3352,7 @@ var AllData =
 },
 {
    "Name": " Keikapalani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0095 ,
    "Lng": -156.5766 ,
    "Height": 540 ,
@@ -3379,7 +3361,7 @@ var AllData =
 },
 {
    "Name": " Puʻulaʻi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.5194 ,
    "Lng": -156.6495 ,
    "Height": 534 ,
@@ -3388,7 +3370,7 @@ var AllData =
 },
 {
    "Name": " Kaʻapahu ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8704 ,
    "Lng": -157.0335 ,
    "Height": 482 ,
@@ -3397,7 +3379,7 @@ var AllData =
 },
 {
    "Name": " Ka Iwi o Pele ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.732 ,
    "Lng": -155.9902 ,
    "Height": 460 ,
@@ -3406,7 +3388,7 @@ var AllData =
 },
 {
    "Name": " Haunaa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0037 ,
    "Lng": -156.5606 ,
    "Height": 460 ,
@@ -3415,7 +3397,7 @@ var AllData =
 },
 {
    "Name": " Umi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9983 ,
    "Lng": -156.5581 ,
    "Height": 460 ,
@@ -3423,8 +3405,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kapele ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kapele ",
+   "Tags": ["Puʻu"],
    "Lat": 21.1925 ,
    "Lng": -157.0892 ,
    "Height": 442 ,
@@ -3432,8 +3414,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Pipika ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Pipika ",
+   "Tags": ["Puʻu"],
    "Lat": 21.149 ,
    "Lng": -157.1136 ,
    "Height": 433 ,
@@ -3442,7 +3424,7 @@ var AllData =
 },
 {
    "Name": " Puʻukoaʻe ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.5135 ,
    "Lng": -156.6089 ,
    "Height": 387 ,
@@ -3451,7 +3433,7 @@ var AllData =
 },
 {
    "Name": " Kaʻuiki Head ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7529 ,
    "Lng": -155.985 ,
    "Height": 386 ,
@@ -3460,7 +3442,7 @@ var AllData =
 },
 {
    "Name": " Puʻuililua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8467 ,
    "Lng": -156.1386 ,
    "Height": 380 ,
@@ -3469,7 +3451,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻula ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1985 ,
    "Lng": -157.224 ,
    "Height": 377 ,
@@ -3478,7 +3460,7 @@ var AllData =
 },
 {
    "Name": " Mōkapu Island ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1793 ,
    "Lng": -156.9241 ,
    "Height": 360 ,
@@ -3486,17 +3468,26 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Olai ",
-   "Tags": ["Puu"],
-   "Lat": 20.6364 ,
-   "Lng": -156.4451 ,
+   "Name": " Puʻu Olai ",
+   "Tags": ["Puʻu"],
+   "Lat": 20.63666 ,
+   "Lng": -156.44975 ,
    "Height": 360 ,
-   "Status": {},
-   "Pics": [],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIQAtopYoBaL9LYLri495FaV550o3sH7S_Y3cDIN5dnJZ6E9gptVbA7veStYcA38zG1zhoNhb7QY-UJI4418VTJtJQDKhzklmXeauKee0JrojTRJFUeG8Zj921dxTRBp87KtfnYKE6r84WS_kmVyAP6Q=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWQ9GXeVxW93P2giPDHoxB1sPqI1tUhZNqgLo5zjTwsOFka18uXG4mV2-CVA2o4kN_wcQ-KDUnDHF_tYpvsBydjGgxN89l_siGvLxxoD-A81etvK5UGDpujl2xakC4fbeI0S0PdXrgg1enGjwJDmOgA7A=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUam7ZKX8l2Dut-_A5tJTB83vImf87Hw7Bpnj50fsChsJrmnaT_hkmQ9h8e2OzH4mRwRdO7yKHjrNerrHFkXsFy58LbHqOPq-q_Lg7JklEFUB-zcsNQST0fun0ZEOUXgzux4bg5hmW-_FojGgrfhb_AtQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXJ8E4pkfgHj0MpZGVpG47EMb8RRqQLEavQxgeybVz64EWvVB5JX5PYYItIwWhChvPhlpUEPzg6S0g3XbE85m4n1naY4fk7GeibvmPIO9uCE7bE8JdHTaFmO_CWp5nk3zvl-oVB89V_zxjswM82ECOwxg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVaBqqjZp7ft0UgnwziRfEmc8iyOafyXqChR4wSbkFTVN1OzedCZfcqVFzwkux4B_ZdWUfsQmu2C3DDkj3VjT49_wVXILKSovTTa4ZviugZx6o3Y4FiGpbjQiLPh3xw_kDHQG7Fw_4EFlxFyW2gYZD3jQ=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXci4DJ349kgIDJx26dOgnCmcOMhRS-fFY6iYO_5Kr4zojF9z6pOgHGi8fN2oOHz9O0LvC5bzn6uzqwH-NhVA5ZjZbDQfrsJcQXsEA0hDJBlNng3PDuKsbvPaUTzHb_I1lZh4nIXJrmy9i8VTkoUO2BAg=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXfeqqeHJR-DSEfsWtJKQHrvwyq51HBFBAw9Ih4uNms2RozsX8occW0YXDtq9w5Pyccv9QqubXY7Joqlc0crEf3Rz9w43dTpvpnC6wQWRf_YNMPF5o0xdvWEzk9r5HBFuvL03gBBQ7adiB9QRUPAIM6kA=w2107-h1580-no",
+       "caption":"Start here, from Oneuli Beach...not up the steep ridge."},
+   ],
 },
 {
-   "Name": " Puu Maneoneo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Maneoneo ",
+   "Tags": ["Puʻu"],
    "Lat": 20.628 ,
    "Lng": -156.1694 ,
    "Height": 356 ,
@@ -3505,7 +3496,7 @@ var AllData =
 },
 {
    "Name": " Kaikaina ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0063 ,
    "Lng": -156.5589 ,
    "Height": 305 ,
@@ -3514,7 +3505,7 @@ var AllData =
 },
 {
    "Name": " ʻAleʻale ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.5145 ,
    "Lng": -156.6052 ,
    "Height": 301 ,
@@ -3523,7 +3514,7 @@ var AllData =
 },
 {
    "Name": " Sand Hills ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8878 ,
    "Lng": -156.4982 ,
    "Height": 300 ,
@@ -3532,7 +3523,7 @@ var AllData =
 },
 {
    "Name": " Kahenawai ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.2172 ,
    "Lng": -157.2422 ,
    "Height": 282 ,
@@ -3541,7 +3532,7 @@ var AllData =
 },
 {
    "Name": " Punākua ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0986 ,
    "Lng": -157.2731 ,
    "Height": 282 ,
@@ -3550,7 +3541,7 @@ var AllData =
 },
 {
    "Name": " Kilea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.8187 ,
    "Lng": -156.6166 ,
    "Height": 264 ,
@@ -3558,17 +3549,25 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Kanaloa ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Kanaloa ",
+   "Tags": ["Puʻu"],
    "Lat": 20.6052 ,
    "Lng": -156.4193 ,
    "Height": 220 ,
-   "Status": {},
-   "Pics": [],
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXNW0NLbENNYBVoFDaKudiXyZq1ZxpANJm0rUTVPcPuZqo1nXC3VC1gB8BWp-UEQr1tVFM6tukfVU9dTyl2izGPioBSAEgjUS1MYzB0t2q1mvaoiczUbmyul0Ks8LfjcnoX9hAYaW1heindK9w78omq7g=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVp06MJb75AfmVGAXIUggXcgo3RwyhZ-4xtWya2KhhS-fQDRuAxeVNuLZtPtkmbIUUU-ThXHRIzcW0Xw0C7P5hBpaCkWr3zNbkF5NxFq0CoY6ti_zJ2UD8BFnlehr78omkSWoLLv5JgcJje7XDhbCJqoQ=w1187-h1580-no",
+       "note":"This is a short hike from La Perouse Bay parking....but you need to skirt the Makena Stables which is private land. So, head out into the lava and fight you way uphill and then North to find the ATV trail that leads up the back of Puʻu o Kanaloa. This trail forks off of that ATV trail for the short hike to the top of this mound."},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXSANIRgCfsYcV3fYpamDZZ9MfRF3PROY3FTrC2abFpto8D_HvLvxIKxh35GG3Ud-sg3E6Cwxpc913xfJ9G1k8HggO88O_a_PTaj7ZImpRJmtpuBKYkeDB93mG_1qO-m574SZ5-rygKVvTKAdkMg0GTmA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXabChf_cZoaPg_LfZTv0maqbRUT2JRWDhhLVCeT2pP_Z-kzrNlD_SqPDU203KJX_eZPevDnXaygNOss2SuSS5JV-ZnjhZbj619_mmKBr_uCMbBPIi0S_TWoV-_Zd12Qhi7NO3r3ghIimsEFjHSEn8CrQ=w2107-h1580-no",
+       "caption":"See the big island in the background? Very clear today."},
+      {"vid":"https://video-downloads.googleusercontent.com/AEwWKPzjZWYk4Z-h5cphIJ_vbfMKOgYxSjpCezZy3UJ7XRlkfxxNIfeP03jtPAbhsYL-4bbQIFfKatnc1GokQHC5LAvCaOda2rrJgV6OKvtYd2TPvccGF0SozlOibsp5rXADmWWcbOb9MA1ox8p8aiArvb60OhoIGJgwXja-R-0xwswxQmAwnxsM9Xv_jBM10keVNuJ4_Ip3n6rxjf-YP-g1Ew3QxxU6YH8XdX9KdI-6sQKMSEnV880"},
+   ],
 },
 {
    "Name": " Akaluanui ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0177 ,
    "Lng": -156.5896 ,
    "Height": 220 ,
@@ -3577,7 +3576,7 @@ var AllData =
 },
 {
    "Name": " Kihaapiʻilani ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.102 ,
    "Lng": -157.2908 ,
    "Height": 209 ,
@@ -3586,7 +3585,7 @@ var AllData =
 },
 {
    "Name": " Mokuhoʻoniki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.134 ,
    "Lng": -156.7066 ,
    "Height": 203 ,
@@ -3594,8 +3593,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Ka Ae ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Ka Ae ",
+   "Tags": ["Puʻu"],
    "Lat": 20.9039 ,
    "Lng": -156.2127 ,
    "Height": 180 ,
@@ -3603,8 +3602,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Nene ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Nene ",
+   "Tags": ["Puʻu"],
    "Lat": 20.8985 ,
    "Lng": -156.3936 ,
    "Height": 180 ,
@@ -3613,7 +3612,7 @@ var AllData =
 },
 {
    "Name": " Akhluaiki ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0165 ,
    "Lng": -156.5862 ,
    "Height": 180 ,
@@ -3621,8 +3620,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Maninikolo ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Maninikolo ",
+   "Tags": ["Puʻu"],
    "Lat": 21.0901 ,
    "Lng": -157.0092 ,
    "Height": 164 ,
@@ -3631,7 +3630,7 @@ var AllData =
 },
 {
    "Name": " Hākaʻaʻano ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1713 ,
    "Lng": -156.7849 ,
    "Height": 164 ,
@@ -3640,7 +3639,7 @@ var AllData =
 },
 {
    "Name": " Pohakupule ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0217 ,
    "Lng": -156.6272 ,
    "Height": 140 ,
@@ -3649,7 +3648,7 @@ var AllData =
 },
 {
    "Name": " Puʻuhele ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7196 ,
    "Lng": -155.9905 ,
    "Height": 140 ,
@@ -3658,7 +3657,7 @@ var AllData =
 },
 {
    "Name": " Kulaokaea ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.0213 ,
    "Lng": -156.6378 ,
    "Height": 136 ,
@@ -3667,7 +3666,7 @@ var AllData =
 },
 {
    "Name": " Pohakumauliuli ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1969 ,
    "Lng": -157.2444 ,
    "Height": 123 ,
@@ -3675,8 +3674,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu o Kaiaka ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu o Kaiaka ",
+   "Tags": ["Puʻu"],
    "Lat": 21.183 ,
    "Lng": -157.2484 ,
    "Height": 114 ,
@@ -3685,7 +3684,7 @@ var AllData =
 },
 {
    "Name": " Manele Cone ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.7406 ,
    "Lng": -156.8915 ,
    "Height": 114 ,
@@ -3694,7 +3693,7 @@ var AllData =
 },
 {
    "Name": " Puʻuʻiloi ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1053 ,
    "Lng": -157.1168 ,
    "Height": 114 ,
@@ -3703,7 +3702,7 @@ var AllData =
 },
 {
    "Name": " Puʻu Kekaʻa ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 20.9275 ,
    "Lng": -156.6936 ,
    "Height": 91 ,
@@ -3711,8 +3710,8 @@ var AllData =
    "Pics": [],
 },
 {
-   "Name": " Puu Kaheu ",
-   "Tags": ["Puu"],
+   "Name": " Puʻu Kaheu ",
+   "Tags": ["Puʻu"],
    "Lat": 21.1298 ,
    "Lng": -157.2914 ,
    "Height": 85 ,
@@ -3721,7 +3720,7 @@ var AllData =
 },
 {
    "Name": " Puʻukaeʻo ",
-   "Tags": ["Puu"],
+   "Tags": ["Puʻu"],
    "Lat": 21.1575 ,
    "Lng": -157.2729 ,
    "Height": 82 ,

@@ -5,6 +5,7 @@ class PicShow {
 		this.div = document.getElementById("PicShow")
 		this.picE = document.getElementById("PicElement")
 		this.picD = document.getElementById("PicDesc"); this.picD.style.display="none";
+		this.vidE = document.getElementById("VidElement"); this.vidE.style.display="none";
 		this.caption = document.getElementById("captionSpot")
 		this.descBut = document.getElementById("descButton")
 		this.notes = document.getElementById("notesSpot")
@@ -58,6 +59,7 @@ class PicShow {
 			       	} 
 			       this.div.style.display    = "none";
 			       this.search.style.display = "block";
+			       this.vidE.innerHTML = "";
 				  }
 
 	move(n)		  {this.PIndex += n;
@@ -66,13 +68,30 @@ class PicShow {
 				   this.setImg();
 				  }
 
-	setImg()	  {console.log("Setting Image")
-				   try {this.picE.src = this.pics[this.PIndex].img;
-						var nms = " "+(this.PIndex+1).toString()+"/"+this.PLength.toString();
-						var tag = ""
-						try {tag = AllData[this.DIndex].Tags[0]} catch {}
+	setImg()	  {console.log("Setting Image or Video")
+				   try {
+					   if ("img" in this.pics[this.PIndex]) 
+					   {
+					   		console.log ("running image code; should shut down video")
+					        this.vidE.style.display = "none";
+					        try {this.vidE.pause();} catch {}
+					        // this.vidE.innerHTML = "";
+					        this.picE.src = this.pics[this.PIndex].img;
+					        this.picE.style.display="block";
+					   } 
+				       else if ("vid" in this.pics[this.PIndex]) 
+				       {
+		   					this.vidE.innerHTML = "<source id=\"VidSrc\" src=\""+this.pics[this.PIndex].vid+"\" type=\"video/mp4\">"
+		   					this.vidE.style.display="block"
+		   					this.picE.style.display = "none"		
+	   				   }
+				       else this.hidePane();
 
-						document.getElementById("selectBox").style.display = "none"
+				       var nms = " "+(this.PIndex+1).toString()+"/"+this.PLength.toString();
+					   var tag = ""
+					   try {tag = AllData[this.DIndex].Tags[0]} catch {}
+
+					   document.getElementById("selectBox").style.display = "none"
 
 						if ("caption" in this.pics[this.PIndex]) 
 							{this.caption.innerHTML = AllData[this.DIndex].Name+" "+tag+": "+this.pics[this.PIndex].caption+" "+nms;}
@@ -92,12 +111,10 @@ class PicShow {
 							document.getElementById("closeNotes").addEventListener("click", () => this.hideNotes());  
 							this.notes.style.display = "block";
 						} else {this.notes.style.display = "none";}
-
-			  			
-					 }
-				   catch {this.hidePane()};
-				  }
-}
+				   } 
+				   catch {console.log("Something wrong"); this.hidePane();} // try
+				}
+			}
 
 const PShow = new PicShow()
 
