@@ -22,7 +22,11 @@ class MauiMap {
           });
 
       // changes on Zoom
-      this.baseScale = 2
+     // var res = window.screen.width * window.devicePixelRatio
+     // console.log("res",res,window.screen.width,window.devicePixelRatio)
+
+      this.baseScale = 1 * window.devicePixelRatio
+
       this.map.addListener("zoom_changed", () => {
         var zz = this.map.getZoom();  // from 4 to 16 or something.  At 10, should be 1
         var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/2; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/2

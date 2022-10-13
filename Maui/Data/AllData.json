@@ -1081,32 +1081,9 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEX_2h5ri6UwzbZOdH9fNrrjkF3LrTQSqzf0MZIRW59C12FrBBMTdqqwhBq5rUF4wuhFS5UJxFgZD5RzI607tE2bPtpnS8Id8rh9XDROymK7qc0ZQ7sz_CoDCf9-Q6_sXtyyudlFuvfaYvm8cuoAFy9KfA=w2107-h1580-no"},
     ]
 },
-// THINGS of Interest
-{
-   "Name":"Hihimanu Ray",
-   "Tags": ["Misc.","Story"],
-   "Lat": 20.69581,
-   "Lng": -156.45,
-   "Status": {},
-   "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
-   "Pics": [
-//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
-   ]
-},
-{
-   "Name":"Sea Glass",
-   "Tags": ["Misc.","Story"],
-   "Lat": 20.8822,
-   "Lng": -156.695,
-   "Status": {},
-   "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
-   "Pics": [
-//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
-   ]
-},
 {
    "Name":"MECO Maalaea",
-   "Tags": ["Misc."],
+   "Tags": ["Place"],
    "Lat": 20.80103,
    "Lng": -156.49548,
    "Status": {},
@@ -1116,6 +1093,30 @@ var AllData =
       "caption":"MECO power generation; worth some research....coming soon."},
    ]
 },
+// THINGS of Interest
+{
+   "Name":"Hihimanu Ray",
+   "Tags": ["Misc.","Story"],
+   "Lat": 20.740,
+   "Lng": -156.610,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+{
+   "Name":"Sea Glass",
+   "Tags": ["Misc.","Story"],
+   "Lat": 20.745,
+   "Lng": -156.610,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+
 // Random....not really related to Maui at all
 /*
 {
@@ -3560,6 +3561,7 @@ var AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVp06MJb75AfmVGAXIUggXcgo3RwyhZ-4xtWya2KhhS-fQDRuAxeVNuLZtPtkmbIUUU-ThXHRIzcW0Xw0C7P5hBpaCkWr3zNbkF5NxFq0CoY6ti_zJ2UD8BFnlehr78omkSWoLLv5JgcJje7XDhbCJqoQ=w1187-h1580-no",
        "note":"This is a short hike from La Perouse Bay parking....but you need to skirt the Makena Stables which is private land. So, head out into the lava and fight you way uphill and then North to find the ATV trail that leads up the back of Puʻu o Kanaloa. This trail forks off of that ATV trail for the short hike to the top of this mound."},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXSANIRgCfsYcV3fYpamDZZ9MfRF3PROY3FTrC2abFpto8D_HvLvxIKxh35GG3Ud-sg3E6Cwxpc913xfJ9G1k8HggO88O_a_PTaj7ZImpRJmtpuBKYkeDB93mG_1qO-m574SZ5-rygKVvTKAdkMg0GTmA=w2107-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/s1vYYVt7ECuU5UET30PNFyKbTdpQfsBT9D2G3Im0Rwywum1qkEwJ5qDr_kFezY9Ee4yk3OH1hsAtuiSCNV3k6X1DO9H6ULuKMre8LI6qI5eK-1G6dQJAhU_OXGa_s_ywNtq4TCLIlljk4teUD9Cca1t5xVdzHna3"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXabChf_cZoaPg_LfZTv0maqbRUT2JRWDhhLVCeT2pP_Z-kzrNlD_SqPDU203KJX_eZPevDnXaygNOss2SuSS5JV-ZnjhZbj619_mmKBr_uCMbBPIi0S_TWoV-_Zd12Qhi7NO3r3ghIimsEFjHSEn8CrQ=w2107-h1580-no",
        "caption":"See the big island in the background? Very clear today."},
       {"vid":"https://video-downloads.googleusercontent.com/AEwWKPzjZWYk4Z-h5cphIJ_vbfMKOgYxSjpCezZy3UJ7XRlkfxxNIfeP03jtPAbhsYL-4bbQIFfKatnc1GokQHC5LAvCaOda2rrJgV6OKvtYd2TPvccGF0SozlOibsp5rXADmWWcbOb9MA1ox8p8aiArvb60OhoIGJgwXja-R-0xwswxQmAwnxsM9Xv_jBM10keVNuJ4_Ip3n6rxjf-YP-g1Ew3QxxU6YH8XdX9KdI-6sQKMSEnV880"},
