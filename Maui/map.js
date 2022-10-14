@@ -40,7 +40,11 @@ class MauiMap {
           ci.scale = this.baseScale*this.markers[i].scaler*zzs
           this.markers[i].setIcon(ci)
 
-          if (zz>12) {this.markers[i].setLabel({"text":this.markers[i].getTitle(),"color":"grey"})} else {this.markers[i].setLabel(null)}
+          if (zz>11) {
+            var fs = (zz-4)+window.devicePixelRatio
+            this.markers[i].setLabel({"text":this.markers[i].getTitle(),"color":"grey","fontSize":fs+"pt"})
+          } 
+          else {this.markers[i].setLabel(null)}
         }
         // if Zoom is high, turn on labels.
 
