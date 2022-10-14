@@ -41,8 +41,8 @@ class MauiMap {
           this.markers[i].setIcon(ci)
 
           if (zz>11) {
-            var fs = (zz-4)+window.devicePixelRatio
-            this.markers[i].setLabel({"text":this.markers[i].getTitle(),"color":"grey","fontSize":fs+"pt"})
+            var fs = (zz-6)+(window.devicePixelRatio*1.5)
+            this.markers[i].setLabel({"text":this.markers[i].getTitle(),"color":this.markers[i].icon.fillColor,"fontSize":fs+"pt"})
           } 
           else {this.markers[i].setLabel(null)}
         }
