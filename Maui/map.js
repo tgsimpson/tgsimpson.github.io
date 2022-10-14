@@ -93,7 +93,7 @@ class MauiMap {
       try { if (AllData[i].Status.visited)  
                if ("Pics" in AllData[i] && AllData[i].Pics.length>0)   
                                                {rs = 1.8; ic.fillOpacity = 0.8; ic.fillColor = "#00F"}   // visited and Pics
-               else                            {rs = 1.3; ic.fillOpacity = 0.8; ic.fillColor = "#44A"}   // visited, but no Pics
+               else                            {rs = 1.3; ic.fillOpacity = 0.8; ic.fillColor = "#CCC"}   // visited, but no Pics
             if ("Page" in AllData[i])          {rs = 1.8; ic.fillOpacity = 0.8; ic.fillColor = "#0F0"}   // has a write up
             if (AllData[i].Status.planning)    {rs = 1.6; ic.fillOpacity = 0.7; ic.fillColor = "#FF0"}   // planning to do more
             else if (!AllData[i].Page.proofed) {          ic.fillOpacity = 0.8; ic.strokeWeight = 0.8; ic.strokeColor = "#F80"} // write up is good to go

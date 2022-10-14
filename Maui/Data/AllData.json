@@ -1093,11 +1093,26 @@ var AllData =
       "caption":"MECO power generation; worth some research....coming soon."},
    ]
 },
-// THINGS of Interest
+// THINGS of Interest. Lat -0.005 is down; Lng -0.005 is right
+//. 740,610 - 740,605 - 740,600...
+//
+//. 735,610 - 735,605 - 735,600...
+// ...
+{
+   "Name":"Log Book",
+   "Tags": ["Misc.","Story"],
+   "Lat": 20.740,
+   "Lng": -156.610,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/random/logbook.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
 {
    "Name":"Hihimanu Ray",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.740,
+   "Lat": 20.735,
    "Lng": -156.610,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
@@ -1108,10 +1123,21 @@ var AllData =
 {
    "Name":"Sea Glass",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.745,
-   "Lng": -156.610,
+   "Lat": 20.740,
+   "Lng": -156.605,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+{
+   "Name":"Clouds",
+   "Tags": ["Misc.","Story"],
+   "Lat": 20.735,
+   "Lng": -156.605,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/clouds.html", "display": true},
    "Pics": [
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]

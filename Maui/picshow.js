@@ -72,9 +72,9 @@ class PicShow {
 				   try {
 					   if ("img" in this.pics[this.PIndex]) 
 					   {
-					   		console.log ("running image code; should shut down video")
 					        this.vidE.style.display = "none";
-					        try {this.vidE.pause();} catch {}
+					        try {this.document.getElementById("ifvid").pause();} catch {}
+					        try {this.vidE.innerHTML = ""} catch{}
 					        // this.vidE.innerHTML = "";
 					        this.picE.src = this.pics[this.PIndex].img;
 					        this.picE.style.display="block";
@@ -82,7 +82,7 @@ class PicShow {
 				       else if ("vid" in this.pics[this.PIndex]) 
 				       {
 //		   					this.vidE.innerHTML = "<source id=\"VidSrc\" src=\""+this.pics[this.PIndex].vid+"\" type=\"video/mp4\">"
-							this.vidE.innerHTML = "<iframe src=\""+this.pics[this.PIndex].vid+"\" width=\"100%\" height=\"100%\" allow=\"autoplay\"></iframe>"
+							this.vidE.innerHTML = "<iframe id=\"ifvid\" src=\""+this.pics[this.PIndex].vid+"\" width=\"100%\" height=\"100%\" allow=\"autoplay\"></iframe>"
 		   					this.vidE.style.display="block"
 		   					this.picE.style.display = "none"		
 	   				   }
