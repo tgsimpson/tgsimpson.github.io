@@ -6,10 +6,11 @@ class MauiMap {
       const HideStuff = [
         "poi",
         "transit",
-      //  "landscape.natural"
+ //       "landscape.labels"
         ]
       var HideList = []
       for (var i=0;i<HideStuff.length;i++) HideList.push({featureType: HideStuff[i],stylers:[{visibility:"off"}]})
+      HideList.push({"featureType": "landscape","elementType": "labels","stylers": [{"visibility": "off"}]}) // landscape.labels doesn't work
 
       this.baseZoom = 10.5
       this.map = new google.maps.Map(document.getElementById("map"), 
@@ -18,7 +19,8 @@ class MauiMap {
             center: {lng: -156.345, lat: 20.8},
             styles: HideList,
             gestureHandling: "greedy",
-            mapTypeId: 'terrain',
+//            mapTypeId: 'terrain',
+            streetViewControl:false,
           });
 
       // changes on Zoom
@@ -30,13 +32,18 @@ class MauiMap {
 
       this.map.addListener("zoom_changed", () => {
         var zz = this.map.getZoom();  // from 4 to 16 or something.  At 10, should be 1
-        var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/2; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/2
 
+        var zzs = 1; if (zz>this.baseZoom) zzs = 1+(zz-this.baseZoom)/2; if (zz<this.baseZoom) zzs = 1-(this.baseZoom-zz)/2
+        // Change marker size
         for (var i=0;i<this.markers.length;i++) {
           var ci = this.markers[i].getIcon()
           ci.scale = this.baseScale*this.markers[i].scaler*zzs
           this.markers[i].setIcon(ci)
+
+          if (zz>12) {this.markers[i].setLabel({"text":this.markers[i].getTitle(),"color":"grey"})} else {this.markers[i].setLabel(null)}
         }
+        // if Zoom is high, turn on labels.
+
       });
       this.markers = []
 
@@ -87,6 +94,7 @@ class MauiMap {
                 fillOpacity: 0.3,
                 strokeWeight: 0.2,
                 anchor: new google.maps.Point(1,1),
+                labelOrigin: new google.maps.Point(0,3)
                }
       try {ic.path = this.icons.find(e=>(e.id===AllData[i].Tags[0])).path} catch{} // if there is a custom icon path based on first tag.
       var rs = 1.0 // size based on type

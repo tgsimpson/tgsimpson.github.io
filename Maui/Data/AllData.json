@@ -1101,8 +1101,8 @@ var AllData =
 {
    "Name":"Log Book",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.740,
-   "Lng": -156.610,
+   "Lat":   20.74,
+   "Lng": -156.61,
    "Status": {},
    "Page": {"url":"./Maui/Data/random/logbook.html", "display": true},
    "Pics": [
@@ -1112,8 +1112,8 @@ var AllData =
 {
    "Name":"Hihimanu Ray",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.735,
-   "Lng": -156.610,
+   "Lat":   20.73,
+   "Lng": -156.61,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/hihimanuray.html", "display": true},
    "Pics": [
@@ -1123,8 +1123,8 @@ var AllData =
 {
    "Name":"Sea Glass",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.740,
-   "Lng": -156.605,
+   "Lat":   20.72,
+   "Lng": -156.61,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/seaglass.html", "display": true},
    "Pics": [
@@ -1134,8 +1134,8 @@ var AllData =
 {
    "Name":"Clouds",
    "Tags": ["Misc.","Story"],
-   "Lat": 20.735,
-   "Lng": -156.605,
+   "Lat":   20.71,
+   "Lng": -156.61,
    "Status": {},
    "Page": {"url":"./Maui/Data/things/clouds.html", "display": true},
    "Pics": [
