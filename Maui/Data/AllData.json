@@ -1007,8 +1007,8 @@ var AllData =
 {
    "Name": "Sliding Sands",
    "Tags": ["Trail"],
-   "Lat": 20.71143, 
-   "Lng":-156.24901,
+   "Lat": 20.71022, 
+   "Lng":-156.23424,
    "Status": {"visited":true},
  //  "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
    "Pics": [
@@ -1035,6 +1035,20 @@ var AllData =
        "caption":"Top, looking north"},
        {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXp0QIhKu5bwZY-94AlHH9VxrzvDC8MSV7d41dc-t3zrIpn0V17TOkodgA9YCQPwiMb160-PHrqxTHlhtDfU3v_kXxDG3fphiKa5wcnQg4zWm2GYAuW4DRopB1qzBGjQZslOlIgm_XvHLbWTl8CjSTXGQ=w2856-h872-no",
        "caption":"Top, looking south"}
+   ],
+},
+{
+   "Name": "Lahaina Pali",
+   "Tags": ["Trail"],
+   "Lat": 20.79933, 
+   "Lng":-156.53841,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/lahainapali.html", "display":true, "proofed":false}, 
+   "Pics": [
+      {"vid":"https://drive.google.com/file/d/1Mk_rDh62b1-eRG19xEWMTZTYVFtDwdHC/preview"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXrPUJY4lq2tyTOe7dBNgfrhO8guC8C2mz5SQgEPDYWeIL4DgiV_gApgbDUSa-p1oUTJTRx0hbW-ijyfecrmkFvqg1y8rNtQYqSNt7MecSqbM5vTJgeyB8daihsNNYhDmfqb-v4rZCbQnlWwWY1cSIw=w2080-h1560-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUH35tcjE-64kgr4111_MqpNMAHMvpcoE2jIpdUiHl0G9vqSwwZnGRxxWbgzrc2y1GDlE7umMFszyMZVOwAg7kmWR8w2Ue633ErcX653y9gcOtpFQuNmMGfa2oKY-QpwLasBol2HDDKv-EPoE3sTXkI3w=w1187-h1580-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW23HPiIfTF4ENqe0v7jSEk3W1d_ULpqkUMA_ag0VjqIzkWo55s8Oo3G4uyM9Kdsn7jANasysrysi4FDLKAQgZDsPhjohKbHU0hyBIjJxIYinYSy2Pkn93W_sIJm__Ww3i-DBi9Js_NLphg9PtdqOFnKQ=w2080-h1560-no"}
    ],
 },
 
@@ -1166,8 +1180,9 @@ var AllData =
    "Lat": 20.70965 ,
    "Lng": -156.25327 ,
    "Height": 10 ,
-   "Status": {},
-   "Pics": [],
+   "Status": {"visited":true},
+   "Pics": [
+   ],
 },
 {
    "Name": " Kolekole ",
