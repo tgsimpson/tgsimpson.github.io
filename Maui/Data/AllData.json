@@ -1156,6 +1156,17 @@ var AllData =
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
 },
+{
+   "Name":"Trail Efficiency",
+   "Tags": ["Misc.","Story"],
+   "Lat":   20.70,
+   "Lng": -156.61,
+   "Status": {},
+   "Page": {"url":"./Maui/Data/things/efficiency.html", "display": true},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
 
 // Random....not really related to Maui at all
 /*

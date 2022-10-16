@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
+</head>
+<body><div class="Story">
+
+
+
+<h1> Trail Walking/Jogging/Running Efficiency </h1>
+
+<h3> Work in progress </h3>
+
+<p> My favorite exercise is trail walking / running, usually on fairly rough terrain. Often I find myself wondering if I'm being efficient, by which I mean using the least amount of energy. I'm sure there is all kinds of science behind this question, and I'll reference what I find here. However, I'm going to start out with pure speculation: </p>
+<p> 
+<em>Regardless of going uphill, flat, or downhill, you want to minimize acceleration of (1) your center of mass **, (2) of your feet and (3) your tendons / muscles.</em>
+</p>
+<p>** You naturally have a 'pendulum' motion (actually a curtate cycloid) from walking which is more effcient than trying to keep your center of mass completely still (thanks evolution). So, for (1) we want to subtract out that natural pendulum bit. </p>
+
+<p> I'm going to look into the science to see if this is supported, but first a bit more detail on the speculation. I'll asssume that you want to travel at a reasonable pace. Obviously, sitting on a rock and taking infinite time to complete a hike uses very little energy; it's also not very productive.</p>
+
+<p>
+Acceleration is a change in speed or direction. So, changes in acceleration include going faster or slower, but also changing your angle of accent or descent, moving left or right, etc. If you could do a hike in a perfectly straight line at a constant incline with no need to raise your foot higher than the next step requires, you would be minimizing your overall acceleration. If, on such a route, your muscles and tendons contract and extend the least possible to move you, that also minimizes acceleration. Simply thinking of acceleration as 'change,' you want to minimize the number of changes you make.
+</p>
+<p>
+Of course the world is not that simple. Each step you choose where to place your foot, and your brain is planning the next few steps ahead. Do you go slightly left to avoid the boulder in front of you, so that you don't have to lift your foot too high, or do you go straight knowing that the next steps beyond this one will benefit from the extra energy expended now?
+</p>
+<p> Going downhill, do you maintain a steady pace and attempt to run a clean arc through the next hairpin, or do you cut the corner sharply using that outcropping to arrest your momentum and give you a kick in the other direction. </p>
+<p>
+  In both of these situations, given your brain expends a lot of energy, are you better to simply let your animal brain (lower energy use) make the decisions...or is the energy used in higher thinking functions (lots of neurons firing) offset by the gains realized from smarter decisions? Let's try to put this one to bed. According to <a href="https://www.brainfacts.org/brain-anatomy-and-function/anatomy/2019/how-much-energy-does-the-brain-use-020119"> this </a>, the brain uses about 20% of your energy, but it's energy use does not change very much based on what you are thinking. Most of that brain energy goes towards maintenance of the brain, not higher or lower processing functions. In fact, with very high concentration tasks (those red areas in an fMRI) your brain energy only goes up by 8%, to 21.6% of total energy use. In the meantime, muscle energy can chhange by a factor of three or four, between sitting still and moving aggresssively. So, it is almost certain that <em>if</em> you can make better decisions about your hiking by concentrating on it, that energy will be more than offset by efficient muscle usage.
+</p>
+<p> <a href="https://pubmed.ncbi.nlm.nih.gov/26382072/">Studies</a> support that changing your walking speed has a metabolic cost. In the referenced study, speed changes can add up to 20% to energy requirements...and that was done on treadmills at low incline. 
+</p>
+<p> Not surprisingly, climbing steeper slopes takes more energy.
+</p>
+
+<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEXcZ0sN51jlCOnOIOxnrQKH3vmfzsXCtseRvEtH_MHR6mi4qRo6mEmKXLzrMGImzRRnDs_vGEzl5VSPO8m7kXTFKv89X6i8VoZHmZiozJ5x6awMR9go9Z6ykbpv88rmZlawEj9yzt7HYb0rc4k76deZCg=w1389-h1580-no">
+<p align="center"><em> Source: https://journals.physiology.org/doi/full/10.1152/japplphysiol.00504.2017 </em></p>
+
+<p>...</p>
+
+<p> Other things to consider: <br>
+  - <a href="https://www.rmiguides.com/blog/2014/07/07/mountaineering_training_moving_air_breathing_for_performance#:~:text=Essentially%20belly%20breathing%20with%20a,pressure%20as%20climbers%20gain%20altitude."> Belly Breathing </a><br>
+  - <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2821187/">Ankle power</a>
+  - <a href="https://openoregon.pressbooks.pub/bodyphysics/chapter/human-metabolism/"> Metabolism </a>
+  - <a href="https://www.trailran.eu/wp-includes/publications/Giovanellietal_2022_Pole-walking-is-faster-but-not-cheaper-during-steep-uphill-walking.pdf">Do Poles Work?</a>
+  - <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5167499/"> Muscle use on incline </a>
+  - <a href="https://www.frontiersin.org/articles/10.3389/fneur.2019.00999/full"> Center of Mass </a>
+  - <a href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00103.2005"> Center of Mass Pendulum </a>
+  - <a href="https://hal.archives-ouvertes.fr/hal-01377361v2/document"> CoM is a curtate cycloid </a>
+  - <a href="https://pubmed.ncbi.nlm.nih.gov/26382072/"> Metabolic cost of changing walking speed </a>
+  - <a href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00504.2017"> Walking economy: speed, grade, load </a>
+</p>
+
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
+</html>
