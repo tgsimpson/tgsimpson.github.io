@@ -54,6 +54,7 @@ class MauiMap {
 
       });
       this.markers = []
+      this.groups = []
 
       // setup for filtering
       this.selectBox = document.getElementById('selectBox')
@@ -126,6 +127,30 @@ class MauiMap {
          ic.anchor = new google.maps.Point(AllData[i].Icon.anchor[0],AllData[i].Icon.anchor[1]);
          ic.labelOrigin = new google.maps.Point(AllData[i].Icon.text[0],AllData[i].Icon.text[1]);
        }} catch {}
+       
+       //  Draw a group for this one?
+       /*
+       try { if ("Group" in AllData[i]) {
+         const xyz = 0.003 // icon height  (should actually index to the icon anchor) 
+                           // Icons are scaled to 2,2, so anchor is at 1,1.... but how does this map to Lat Lng?
+         const coords = [{lat:AllData[i].Lat+xyz/2,                  lng:AllData[i].Lng-AllData[i].Group.width/2-xyz},
+                         {lat:AllData[i].Lat+xyz/2,                  lng:AllData[i].Lng+AllData[i].Group.width/2},
+                         {lat:AllData[i].Lat-AllData[i].Group.length,lng:AllData[i].Lng+AllData[i].Group.width/2},
+                         {lat:AllData[i].Lat-AllData[i].Group.length,lng:AllData[i].Lng-AllData[i].Group.width/2-xyz},
+                        ]
+
+         const group = new google.maps.Polygon({
+              paths: coords,
+              strokeColor: ic.fillColor,
+              strokeOpacity: 0.8,
+              strokeWeight: 0.5,
+              fillColor: ic.fillColor,
+              fillOpacity: 0.1,
+          });
+          group.setMap(this.map);
+          this.Groups.push(group);
+       }} catch {}
+       */
 
       ic.scale = ic.scale*rs
 
