@@ -1054,7 +1054,8 @@ const AllData =
    "Lat": 20.79933, 
    "Lng":-156.53841,
    "Status": {"visited":true},
-   "Page": {"url":"./Maui/Data/trails/lahainapali.html", "display":true, "proofed":false}, 
+   "Page": {"url":"./Maui/Data/trails/lahainapali.html", "display":true, "proofed":false},
+   "Overlay": {"path":"./Maui/Data/trails/LPNorth.json", "load": function(){return TheTrail}, "unload": function(){TheTrail = []}}, 
    "Pics": [
       {"vid":"https://drive.google.com/file/d/1Mk_rDh62b1-eRG19xEWMTZTYVFtDwdHC/preview"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXrPUJY4lq2tyTOe7dBNgfrhO8guC8C2mz5SQgEPDYWeIL4DgiV_gApgbDUSa-p1oUTJTRx0hbW-ijyfecrmkFvqg1y8rNtQYqSNt7MecSqbM5vTJgeyB8daihsNNYhDmfqb-v4rZCbQnlWwWY1cSIw=w2080-h1560-no"},

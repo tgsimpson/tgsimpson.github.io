@@ -90,6 +90,8 @@ class MauiMap {
 //         {"id":"Beach", "path": "M 0.189 1.986 Q -0.3 -0.365 1.995 0.17 Q 1.405 0.518 1.349 1.098 L 1.99 1.653 L 1.733 1.996 L 1.067 1.451 Q 0.578 1.35 0.199 1.986"},
          {"id":"Beach", "path": "M 0.3508 0.4816 l 0.3104 0.1315 c 0.1068 -0.2873 0.2622 -0.5083 0.4226 -0.6114 c -0.2915 -0.0172 -0.574 0.1301 -0.7554 0.3931 C 0.3076 0.4245 0.3198 0.4688 0.3508 0.4816 z M 0.7527 0.6512 l 0.725 0.3058 c 0.1087 -0.4274 0.0566 -0.8152 -0.1296 -0.8938 c -0.0224 -0.0092 -0.046 -0.0143 -0.0703 -0.0143 C 1.1017 0.0488 0.888 0.2926 0.7527 0.6512 z M 1.5854 0.213 c 0.019 0.0572 0.0327 0.1219 0.0399 0.1945 c 0.0175 0.1756 -0.0042 0.3805 -0.0574 0.5875 l 0.3119 0.1316 c 0.0308 0.0132 0.0646 -0.0119 0.0654 -0.0497 C 1.9526 0.7395 1.8179 0.4168 1.5854 0.213 z M 1.6051 1.577 h -0.6293 l 0.1976 -0.6283 l -0.1828 -0.077 l -0.2215 0.7054 H 0.1459 C 0.0654 1.577 0 1.6526 0 1.7459 C 0 1.7769 0.0218 1.8022 0.0486 1.8022 h 1.6538 c 0.0269 0 0.0486 -0.0252 0.0486 -0.0531 C 1.751 1.6526 1.6857 1.577 1.6051 1.577 z"},
        ]
+
+       this.overlay = {"visible":false, "poly":null}
     }
 
     AddAPoint(i) {
@@ -173,7 +175,44 @@ class MauiMap {
         }}
       } catch {}
 
-      p.addListener("click", () => {PShow.setDIndex(p.dataIndex)});
+//      p.addListener("click", () => {PShow.setDIndex(p.dataIndex)});
+      p.addListener("click", () => {this.onClick(p.dataIndex)});
+    }
+
+    showPath(i) {
+       var pathData = AllData[i].Overlay.load();
+       var bounds = new google.maps.LatLngBounds();
+       for (var i=0;i<pathData.length;i++) bounds.extend(pathData[i])
+       this.map.fitBounds(bounds)
+
+       this.overlay.poly = new google.maps.Polyline ({
+                               path: pathData,
+                             })
+       this.overlay.poly.setMap(this.map)
+       this.overlay.visible = true;
+    }
+
+    onClick(i) {
+      try {
+        if ("Overlay" in AllData[i] && !this.overlay.visible) {  // show the overlay
+             console.log("trying overlay")
+             // load the file
+             var script = document.createElement('script');
+             script.src = AllData[i].Overlay.path;
+             script.async = false;
+             console.log("Created script",script)
+             document.body.appendChild(script);
+             script.addEventListener('load', ()=> this.showPath(i))
+             return;
+        }
+        else 
+          if (this.overlay.visible) {  // remove the overlay
+            this.overlay.poly.setMap(null);
+            this.overlay.visible = false;
+            AllData[i].Overlay.unload();
+          }
+      } catch(err) {console.log("ERROR",err)}
+      PShow.setDIndex(i)
     }
 
 
