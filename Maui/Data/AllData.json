@@ -996,6 +996,7 @@ const AllData =
    "Lng":-156.49744,
    "Status": {"visited":true},
    "Page": {"url":"./Maui/Data/trails/7miles.html", "display":true, "proofed":true}, 
+   "Overlay": {"path":"./Maui/Data/trails/SevenMiles.json", "load": function(){return SevenMiles}, "unload": function(){SevenMiles = {}}}, 
    "Pics": [
    ],
 },
@@ -1209,6 +1210,14 @@ const AllData =
    "Pics": [
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
+},
+{
+   "Name":"Slide Show",
+   "Tags": ["Misc."],
+   "Lat":   20.69,
+   "Lng": -156.61,
+   "Status": {"visited":true},
+   "Pics": []
 },
 
 // Random....not really related to Maui at all
@@ -3392,6 +3401,7 @@ const AllData =
    "Lng": -156.4131 ,
    "Height": 580 ,
    "Status": {"visited":true},
+   "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUqk25t66jPPXDZgV5V3bubm58G95VnAUSyTaWzVwZJfm_oAz3j79feOVoNilCxNX8lDlO_V2MM2My6NXSEQTNxYwcFXlozfJ1JPCKyPaMZRbsUt3_NEjRBoxtVuRa2Nfp8fHgyTS2OmZsCbmMFTbh2sA=w2107-h1580-no",
        "note":"About 1.7miles from La Perouse parking lot; if you find the trail it shouldn't take more than 30 minutes. The trail skirts the lava flow, comes around from the northeast, leaving a simple ridge to climb to get to the top."},
@@ -3647,10 +3657,11 @@ const AllData =
 {
    "Name": " Puʻu o Kanaloa ",
    "Tags": ["Puʻu"],
-   "Lat": 20.6052 ,
-   "Lng": -156.4193 ,
+   "Lat": 20.603408347599775 ,
+   "Lng": -156.41844669822603 ,
    "Height": 220 ,
    "Status": {"visited":true},
+   "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXNW0NLbENNYBVoFDaKudiXyZq1ZxpANJm0rUTVPcPuZqo1nXC3VC1gB8BWp-UEQr1tVFM6tukfVU9dTyl2izGPioBSAEgjUS1MYzB0t2q1mvaoiczUbmyul0Ks8LfjcnoX9hAYaW1heindK9w78omq7g=w2107-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVp06MJb75AfmVGAXIUggXcgo3RwyhZ-4xtWya2KhhS-fQDRuAxeVNuLZtPtkmbIUUU-ThXHRIzcW0Xw0C7P5hBpaCkWr3zNbkF5NxFq0CoY6ti_zJ2UD8BFnlehr78omkSWoLLv5JgcJje7XDhbCJqoQ=w1187-h1580-no",

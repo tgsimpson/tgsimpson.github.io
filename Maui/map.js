@@ -172,24 +172,26 @@ class MauiMap {
 
     onClick(marker) {
       var i = marker.dataIndex;
-      try {
-        var overs = this.overlays.findIndex((e)=>e.marker===marker) // see if this marker has an overlay already
-        if ("Overlay" in AllData[i] && overs<0) {  // show the overlay
-            var script = document.createElement('script');      // load overlay data from json file
-             script.src = AllData[i].Overlay.path;
-             script.async = false;
-             document.body.appendChild(script);
-             script.addEventListener('load', ()=> this.showPolyLine(marker,AllData[i].Overlay.load(), true))
-             return;
-        }
-        else { // overlay is already visible; this click should remove it
-            this.overlays[overs].polyline.setMap(null);         // remove overlay from map
-            this.overlays[overs].info.close();
-            this.overlays.splice(overs,1);                      // remove the element from overlays
-            try {AllData[i].Overlay.unload();} 
-            catch(err) {console.log("failed ro unload",err)}         // release the variable
+      if ("Overlay" in AllData[i]) {
+        try {
+          var overs = this.overlays.findIndex((e)=>e.marker===marker) // see if this marker has an overlay already
+          if (overs<0) {  // show the overlay
+              var script = document.createElement('script');      // load overlay data from json file
+               script.src = AllData[i].Overlay.path;
+               script.async = false;
+               document.body.appendChild(script);
+               script.addEventListener('load', ()=> this.showPolyLine(marker,AllData[i].Overlay.load(), true))
+               return;
           }
-      } catch(err) {console.log("Failed to show overlay",err)}
+          else { // overlay is already visible; this click should remove it
+              this.overlays[overs].polyline.setMap(null);         // remove overlay from map
+              this.overlays[overs].info.close();
+              this.overlays.splice(overs,1);                      // remove the element from overlays
+              try {AllData[i].Overlay.unload();} 
+              catch(err) {console.log("failed ro unload",err)}         // release the variable
+            }
+        } catch(err) {console.log("Failed to show overlay",err)}
+      }
       PShow.setDIndex(i)  // if no Overlay in AllData, or second click, show content
     }
 
