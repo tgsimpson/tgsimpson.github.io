@@ -118,10 +118,11 @@ class MauiMap {
        } catch {}
        // custom icon in AllData?
        try { if ("Icon" in AllData[i]) {
-         ic.path = AllData[i].Icon.path;
-         rs = AllData[i].Icon.scale;
-         ic.anchor = new google.maps.Point(AllData[i].Icon.anchor[0],AllData[i].Icon.anchor[1]);
-         ic.labelOrigin = new google.maps.Point(AllData[i].Icon.text[0],AllData[i].Icon.text[1]);
+         if ("path"      in AllData[i].Icon) ic.path = AllData[i].Icon.path;
+         if ("scale"     in AllData[i].Icon) rs = AllData[i].Icon.scale;
+         if ("fillColor" in AllData[i].Icon) ic.fillColor = AllData[i].Icon.fillColor;
+         ic.anchor       = new google.maps.Point(AllData[i].Icon.anchor[0],AllData[i].Icon.anchor[1]);
+         ic.labelOrigin  = new google.maps.Point(AllData[i].Icon.text[0],AllData[i].Icon.text[1]);
        }} catch {}
       // With relative scale finally set, set the icon scale
       ic.scale = ic.scale*rs
@@ -150,13 +151,9 @@ class MauiMap {
            this.map.fitBounds(bounds)
        }
 
-       var pline = new google.maps.Polyline ({
-                               path: poly.points, // pathData.points,
-                               strokeColor: marker.icon.fillColor,
-                             })
+       var pline = new google.maps.Polyline ({path: poly.points, strokeColor: marker.icon.fillColor,})
        pline.setMap(this.map)
 
-       console.log("POLY IS",poly)       
        const infoWindow = new google.maps.InfoWindow({
         content: "<table><tr><td>distance</td><td>"+(poly.distance*0.000621371).toFixed(2)+"</td><td>miles</td></tr>"+
                  "<tr><td>elevation</td><td>"+(poly.elevation.pos*3.28084).toFixed(0)+"</td><td>feet</td></tr>"+
@@ -164,35 +161,30 @@ class MauiMap {
                  "<br><em>Click marker again<br>for content.</em>",
        })
        infoWindow.open({anchor:marker,map: this.map,})
-
-       this.overlays.push({marker:marker,polyline:pline,info:infoWindow})
-
+       this.overlays.push({marker:marker,polyline:pline,info:infoWindow})  // store for future removal
     }
 
+    onOverlay(marker) {
+      var overs = this.overlays.findIndex((e)=>e.marker===marker) // see if this marker has an overlay already
+      if (overs<0) {  // show the overlay
+           var script = document.createElement('script');      // load overlay data from json file
+           script.src = AllData[marker.dataIndex].Overlay.path; script.async = false; document.body.appendChild(script);
+           script.addEventListener('load', ()=> this.showPolyLine(marker,AllData[marker.dataIndex].Overlay.load(), true))
+           return true;
+      }
+      else { // overlay is already visible; this click should remove it
+           this.overlays[overs].polyline.setMap(null);         // remove overlay from map
+           this.overlays[overs].info.close();
+           this.overlays.splice(overs,1);                      // remove the element from overlays
+           try {AllData[marker.dataIndex].Overlay.unload();} catch(err) {console.log("failed to unload",err)}         // release the variable
+           return false
+      }
+    }
 
     onClick(marker) {
-      var i = marker.dataIndex;
-      if ("Overlay" in AllData[i]) {
-        try {
-          var overs = this.overlays.findIndex((e)=>e.marker===marker) // see if this marker has an overlay already
-          if (overs<0) {  // show the overlay
-              var script = document.createElement('script');      // load overlay data from json file
-               script.src = AllData[i].Overlay.path;
-               script.async = false;
-               document.body.appendChild(script);
-               script.addEventListener('load', ()=> this.showPolyLine(marker,AllData[i].Overlay.load(), true))
-               return;
-          }
-          else { // overlay is already visible; this click should remove it
-              this.overlays[overs].polyline.setMap(null);         // remove overlay from map
-              this.overlays[overs].info.close();
-              this.overlays.splice(overs,1);                      // remove the element from overlays
-              try {AllData[i].Overlay.unload();} 
-              catch(err) {console.log("failed ro unload",err)}         // release the variable
-            }
-        } catch(err) {console.log("Failed to show overlay",err)}
-      }
-      PShow.setDIndex(i)  // if no Overlay in AllData, or second click, show content
+      if ("Overlay" in AllData[marker.dataIndex]) 
+         {try {if (this.onOverlay(marker)) return} catch(err) {console.log("Overlay Error",err)}}
+      PShow.setDIndex(marker.dataIndex)  // if no Overlay in AllData, or second click, show content
     }
 
     // ===== Search / Filter ====

@@ -74,41 +74,32 @@ class PicShow {
 
 	nextImg() {
 	   		this.PIndex += 1
-	   		console.log("next",this.PIndex,this.DIndex,AllData[this.DIndex]);
 	   		if (!("Pics" in AllData[this.DIndex]) || this.PIndex > AllData[this.DIndex].Pics.length) {
-	   			this.DIndex++; if (this.DIndex > AllData.length) this.DIndex = 0;
+	   			this.DIndex++; if (this.DIndex >= AllData.length) this.DIndex = 0;
 	   			this.PIndex = 0;
 	   		} 
-	   		console.log("next2",this.PIndex,this.DIndex,AllData[this.DIndex]);
 	   		if (!("Pics" in AllData[this.DIndex]) || AllData[this.DIndex].Pics.length <= this.PIndex) return false
-	   		console.log("next3")
+	   	    this.PLength = AllData[this.DIndex].Pics.length
 	   	    return ("img" in AllData[this.DIndex].Pics[this.PIndex])
 	}
 
 
 	move(n)	  { 
-		   console.log("move")
-
-		   if (!this.slideshow) {
+		   if (!this.slideshow) {	// rotate through existing location
 			   this.PIndex += 1;
 			   if (this.PIndex < 0) this.PIndex = this.PLength-1;
 			   if (this.PIndex >= this.PLength) this.PIndex = 0;
 			   this.setImg();
-		   } else {	// usually slideshow mode; only do images
-		   	   console.log("Calling next????")
+		   } else {					// slideshow mode; citcle through all images, starting at the most recent one viewed
 		   	   while (!this.nextImg()) {console.log(".")}
-		   	   console.log("and back")
 		   	   this.pics = AllData[this.DIndex].Pics
 		   	   this.setImg();
 		   }
 	}
 
 	slideShowStart () {  // starting from last image shown.
-			console.log("Starting slideshow")
 			if (this.DIndex < 0 ) this.DIndex = 0;
-			function tick() {console.log("tick")}
-			this.interval = setInterval(()=>{console.log("tick");this.move(1)},5000)
-			console.log("interval set")
+			this.interval = setInterval(()=>{this.move(1)},5000)
 			this.slideshow = true
 			this.move(1);
 			this.div.style.display = "block"
