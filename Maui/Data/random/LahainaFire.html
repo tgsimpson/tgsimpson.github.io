@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
+</head>
+<body><div class="Story">
+
+	<h1> Bush Fire in Lahaina </h1>
+
+	<p> On November 8, 2022, there was a large bush fire in the hills above Lahaina which burned over 850 acres. </p>
+
+	<p> Our day, in a strange way, followed the progress of the fire. We drove to Lahaina at around noon, just half an hour after the fire started. We saw smoke but very few flames, and the first helicopter dropping water at the site. It seemed, in hindsight naively, that it was small and would be contained quickly.</p>
+	<p> After a nice lunch in Ka'anapali we headed to Baby Beach in Lahaina proper. On a nice day, when the tides are just right, this can be an amazingly relaxing ocean experience. The water is calm, especially at the south end of the beach, and snorkeling can be surprisingly good. Given my wife loves to swim and do water exercise, while I enjoy a good snorkle, we end up here quite often. But, today was going to be special. </p>
+	<p> First, a sad note. My GoPro is broken, and the new one doesn't arrive for a few days, so I completely failed to capture the wonder of the day. I didn't even bring my phone to the beach (when we plan to be in the water the entire time, what's the point), which ended up being a mistake. I've spliced in some web images in an attempt to capture what the day was like. </p>
+
+	<img class="Nimg" src="http://astronomy.com/~/media/B7CAC5DFFE574A36A32CC100BAC0F3F3.jpg">
+
+	<p> The fire, by this time, had grown significantly and with the normal westerly wind the smoke arched above us at high altitude. At sea level there was not a hint of smoke in the air, but at (guessing) five thousand feet or so, the smoke started to obscure the sun. Anyone who has lived through the big fires in California or Western Canada...or anywhere for that matter...knows what I'm speaking of. As the smoke drifts past the sun you can end up with amazing colors and ambience. On this day the sun went blood orange to dark red and back to full spectrum in a lazy rotation. Above water this was stunning, but what surprised me was how impactful the suns color was to my snorkeling experience. As the filtered light lit up the rocks and coral, but most impressively the schools of fish, it was like no other snorkeling experience I've ever had. </p>
+
+  <img class="Nimg" src="https://i0.wp.com/timewearegiven.com/wp-content/uploads/2022/06/IMG_6096-scaled.jpeg?zoom=2&resize=1038%2C576&ssl=1">
+
+	<p> A bit more on baby beach, to set the context. The image above is at relatively low tide and you can see the rock and coral formations poking above the water. At high tide these are all submerged and form a maze to swim through. Even at high tide many of the 'islands' are too shallow to swim over, but there are hundreds of paths through and around the structures that you can navigate. If the water is turbulent this can be challenging; many of the passageways are only a few feet wide and you can get pushed into the rocks quite easily. When it is calm, however, it is almost a game - you pick your way through narrow openings following schools of fish, turtles, and eels. And today was calm times two. And, of course, with calm comes clarity - the visibility was amazing; the water crystal clear.</p>
+
+	<p> For a dose of reality, baby beach coral is not amazing; you aren't going to find a lot of color or variety. But, the fish can be great with large schools of butterfly, damselfishes, moorish idols, surgeonfish (and the odd unicornfish), and other shallow water species. These fish can be quite colorful on their own, but the changing yellow, orange, red lights from the filtered sun added a whole new dimension. </p>
+
+<p> I've done quite a bit of early morning snorkeling, with sunrise colors. This was different - more intense. I haven't done a lot of sunset snorkeling; I've added that to my wish list to see if I can re-create today's experience (perhaps with a camera next time). </p>
+
+<p> To add to our experience, when we'd finished snorkeling the fire had grown significantly. I decided, given the lack of snorkeling pictures, to drive to a good viewpoint and get some pictures of the fire. Lo and behold... </p>
+
+<img class="Wimg" src="https://lh3.googleusercontent.com/pw/AL9nZEUkhpPWk-SG298j6o9L2RWJap6CzKnrpAX8ayRdePBbnZh7qjbiBuD1i2LOBoJ4bM1F2wsQs2dmvOPy1x9pl6YChXZQy_bF9IRnA4-JiSht24vgeXHer35jiBotIxoXKu9r-JprGLy37TBu5QCk7blL5w=w1589-h648-no">
+
+<p> So, where did the rainbow come from? Was their coincidental moisture in the air, at just the right place at the right time. Or, is this some byproduct of the smoke? If you seach "rainbow fire" you come up with something very cool, but not relevant :).  I don't have an answer yet, but I also don't believe in coindidences. I assume the ash created the conditions necessary to generate the rainbow. If you know better, drop us a note at slow.maui.hawaii@gmail.com</p>
+
+
+<p> The fire burned into the night, and approached the bipass highway, but ultimately (and thankfully) didn't reach town.
+
+	<img class="Wimg" src="https://lh3.googleusercontent.com/pw/AL9nZEUVzd4NZA4Dkfsy5CIXse_Frwcm4WXuB3QcfQ8a3hYOnVSOir3K4vIE0YHUZ2KPtsqSSgDUX2wrGIcpuRara6yE0Hmda9Q-8okNYPVSa7CauNhui37q4RrIvR8yLhv4T7clH5ol_yL437ACzF0of2uk4A=w1589-h888-no">
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
+</html>
