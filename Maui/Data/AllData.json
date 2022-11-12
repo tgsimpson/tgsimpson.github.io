@@ -1080,6 +1080,7 @@ const AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU7S6X8SotVPTcAuRDpQSK-T-vzArF6J6IwAs-bJb1TZLovLNaP2mzpCXjvpkiLOBpQELCG_W1FAujMUzvKR6HdejFeCztEmFD40MSPZDMDVyqQuYesQb0hBB1eIurnbzC7XRLrXCnjgFjtA26r6FTVuw=w1186-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUJbzRtdTmwf1uKXipKvGSenCfAaOuIz5GqjabgCFf8ok1FWdUbz1kNrUyNTfDaPwR5ZBy_2Xc9noH-zIuRARv15XyrqJgfKVNB17gMChUBmo3dFM-6JHkOZuNLksf3P_uQPB5Wci8mOV7bF-IidXyUzg=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWGnHmk-rGIJ7lrmQEH98ufBa9XD4V_TmpShH7rKH1MKSDWCqSVL4o8IqKDr9Zg4m5h2GClTIY2Hrj4DDBQEXeJCIjfIWmlvvAiiNSpTTLU6UzsQGrVAboM8ITyRpWk8YD2YrdhbfqoXlZRcGIA2YV5MQ=w2880-h1347-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXb90qKQfn7Hv4wGjLD7nTr65r8a2VthEQlZyKqaAZamiGMOMqtZ1nK3xavg87XCW-hn4Uwugntd4g9efFF7UYp_nBgrksWVjDA-Oj3bFMCI0Pc5kMKzlLAMJmBFObHD_a9xbTQkXnXM0V6V9cL4dWv4g=w1326-h1175-no"},
    ]
 },
 {
@@ -2809,11 +2810,15 @@ const AllData =
 {
    "Name": " Puʻu o Kali ",
    "Tags": ["Puʻu"],
-   "Lat": 20.7309 ,
-   "Lng": -156.3851 ,
+   "Lat": 20.73318 ,
+   "Lng": -156.38744 ,
    "Height": 1 ,
-   "Status": {},
-   "Pics": [],
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/puuokali.html","display":true,"proofed":true},
+//   "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
+   "Pics": [
+    {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU5B2xqVyNJ7t6kaQcwUKxD0SiHsqhylHLvoozXOCruf3u_VQAvPTC4FOeOOj4FFSNLa5GQcWoyjpy-a-CEMiQ4FogbHjaARLBCxJijMnZGwRjYdJarbMKwoYYyYcOgdqNX4ESVVsVNnRcUBz_H4LsDBQ=w1891-h712-no"},
+   ],
 },
 {
    "Name": " Hōkūkano ",
