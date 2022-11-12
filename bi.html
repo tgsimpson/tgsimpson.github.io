@@ -62,14 +62,16 @@ class SShow {
       var scale = Math.min(dst.canvas.width/img.width,dst.canvas.height/img.height)
       var x = (dst.canvas.width/2)-(img.width/2) * scale
       var y = (dst.canvas.height/2)-(img.height/2)*scale
+      // convert image to base64 before doing the drawImage in order to avoid CORS?
       dst.ctx.drawImage(img,x,y,img.width*scale,img.height*scale);
       dst.ready = true
+      console.log("Image is",img)
   }
 
   drawSrc(src,dst) {
       var img = new Image;
       img.src = src;
-      img.crossOrigin = "Anonymous"
+ //     img.crossOrigin = "Anonymous"
       img.onload = function() {this.drawImg(img,dst)}.bind(this)
   }
 
