@@ -3,7 +3,9 @@ class PicShow {
 	// Current point in AddData array is  AllDataIndex
 	constructor(){
 			this.div = document.getElementById("PicShow")
-			this.picE = document.getElementById("PicElement")
+			this.picE1 = document.getElementById("PicElement")
+			this.picE2 = document.getElementById("PicElement2")
+			this.CrossFade = document.getElementById("crossfade")
 			this.picD = document.getElementById("PicDesc"); this.picD.style.display="none";
 			this.vidE = document.getElementById("VidElement"); this.vidE.style.display="none";
 			this.caption = document.getElementById("captionSpot")
@@ -99,7 +101,7 @@ class PicShow {
 
 	slideShowStart () {  // starting from last image shown.
 			if (this.DIndex < 0 ) this.DIndex = 0;
-			this.interval = setInterval(()=>{this.move(1)},5000)
+			this.interval = setInterval(()=>{this.move(1)},7500)
 			this.slideshow = true
 			this.move(1);
 			this.div.style.display = "block"
@@ -112,14 +114,20 @@ class PicShow {
 			        this.vidE.style.display = "none";
 			        try {this.document.getElementById("ifvid").pause();} catch {}
 			        try {this.vidE.innerHTML = ""} catch{}
-			        this.picE.src = this.pics[this.PIndex].img;
-			        this.picE.style.display="block";
+			        console.log("Setting srcs")
+			        if (this.picE1.src=="" || this.picE2.src=="") {this.picE2.src=this.pics[this.PIndex].img}
+			        this.picE1.src = this.picE2.src;
+			        this.picE2.src = this.pics[this.PIndex].img; // new image
+			        console.log("images set");
+			        this.CrossFade.style.display="block";
+			        console.log("blocked");
+			        this.picE1.style.opacity = 0; // trigger transition
 			   } 
 		       else if ("vid" in this.pics[this.PIndex]) 
 		       {
 					this.vidE.innerHTML = "<iframe id=\"ifvid\" src=\""+this.pics[this.PIndex].vid+"\" width=\"100%\" height=\"100%\" allow=\"autoplay\"></iframe>"
 						this.vidE.style.display="block"
-						this.picE.style.display = "none"		
+						this.CrossFade.style.display = "none"		
 				   }
 		       else this.hidePane();
 
@@ -148,7 +156,7 @@ class PicShow {
 					this.notes.style.display = "block";
 				} else {this.notes.style.display = "none";}
 		   }
-		   catch {console.log("Something wrong"); this.hidePane();} // try
+		   catch (err) {console.log("Something wrong",err); this.hidePane();} // try
 	}
 }
 

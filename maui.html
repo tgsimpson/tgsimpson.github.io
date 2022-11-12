@@ -26,7 +26,9 @@ key:  AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC
       caption{align:bottom;}
       .map {position: absolute;height: 100%;width: 100%;}
       .fulls {position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: none;z-index: 1;background-color: black;}
-      .mySlides {justify-content: center; display: flex; width:100%; height: 100%; object-fit: contain; z-index: 2}
+      .mySlides {justify-content: center; display: flex; width:100%; height: 100%; object-fit: contain; z-index: 2;}
+      .top {position: absolute}
+      .bottom {position: absolute}
       .fillImage img {justify-content: center; align-items: center; display: flex; max-height:100%; max-width:100%;  object-fit: contain;}
       .descPage {display:none; height:100%;width:100%;background-color:rgba(255,255,255,0.92);position:absolute;z-index:4;}
       .prev,.next,.hide,.desc,.sele {
@@ -44,6 +46,16 @@ key:  AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC
       .notes {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; left: 10%; bottom: 10%; width: 80%; text-align: center;background-color:rgba(0,0,0,0.7);z-index:2;}
       .searchbox {color: #f2f2f2; font-size: 15px;  padding: 8px 12px; position: absolute; right: 10%; top: 10%; width: 80%; text-align: center;background-color:rgba(0,0,0,0.7);z-index:2;display:none;}
 
+      .crossfade img {
+            position:absolute;
+            left:0;
+            opacity: 1;
+            -webkit-transition: opacity 4s linear;
+            -moz-transition: opacity 4s linear;
+            -o-transition: opacity 4s linear;
+            -ms-transition: opacity 4s linear;    
+            transition: opacity 4s linear;
+        }
   </style>
 
 </head>
@@ -51,7 +63,10 @@ key:  AnBi6QQ1F8_ahfJf1i-W6zsDFzKkfnDWtwK9gB2wMfu1k0EvLopri0H48IKIHHvC
 <body onload="">
   <div id="PicShow" class="fulls">
     <div class="mySlides">
-      <img id="PicElement" src="" class="mySlides">
+      <div id="crossfade" class="crossfade">
+        <img id="PicElement" src="" class="top">
+        <img id="PicElement2" src="" class="bottom">
+      </div>
       <div id="VidElement" class="mySlides" style="display:none" controls>
       </div>
       <div id="PicDesc" class="descPage"></div> 

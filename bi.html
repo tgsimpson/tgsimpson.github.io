@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <style>
+  </style>
+  </head>
+
+  <body>
+    <p> Hi </p>
+    <canvas id="ssCanvas"></canvas>
+  </body>
+
+<script>
+  var imgs = [
+  "https://lh3.googleusercontent.com/pw/AL9nZEU-0TtNqGQ0A9ThBCl8S-BJ39zsu6GM8LnnYl9nYlZVysUTrYdoQS2IWPdHHGj6F94MvCKk5jMYOyPnIy1WkBNPOpmJibj9EZduW_CryDs912hhptSg4ES9I0BQ-xzedEMFBnLHs_fd2DS4S799bc4woA=w2107-h1580-no",
+  "https://lh3.googleusercontent.com/pw/AL9nZEUq-uVy3Nsr4IlX9_z3IVzgZzVPnwOVh4lzT_fFVm5tXAS92CfjGoYL1h3EKVi_SPkHTjB9C4kxn4klRfQX7e1jszmSJ0pUkgINM5xTlO7o_DoouGmpe-nBbDGXCxQnTu7b8n-x2lgOXdoO0w1d6XKp6w=w1387-h674-no",
+  "https://lh3.googleusercontent.com/pw/AL9nZEXXhfQ5arJEzyn4MkYruOrTwduXsDVzj_rYJpL1tfP9jxmQntJu4hTA40LfX-uqfSv9SzkqlghCX6X73kGkALefXnf2pR2UP3W3bkynfO3f6jX5Jplfn3GLw3yJK2e-mU_djTU7gBNKHJ195hoAaypPNQ=w2107-h1580-no",
+  "https://lh3.googleusercontent.com/pw/AL9nZEX_d8HfD98MA5YvqzErnQUoJYynRXC7iQ47-ow9VGNoD6QdnQoElM2UuUT9YeG7zNFI8WRKT1rBI72LaABLhwgVCQRZ-0RIirsMtfd2BLZcAuVLyH3Ck9sXGW3dgzkQKNOMpD2ukwP7dgkG-9MJ1ndwaA=w2107-h1580-no",
+  ]
+
+
+class SShow {
+
+  constructor(cvs) {
+    this.canvas = document.getElementById(cvs)
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this.ctx = this.canvas.getContext('2d')
+    this.images = []
+    this.imageIndex = 0;
+    this.canvas.addEventListener('click',()=>this.next(),false)
+  }
+
+  setImages(il) { 
+      this.images = il
+      this.imageIndex = 0
+    }
+
+  drawImg(img) {
+      var scale = Math.min(this.canvas.width/img.width,this.canvas.height/img.height)
+      var x = (this.canvas.width/2)-(img.width/2) * scale
+      var y = (this.canvas.height/2)-(img.height/2)*scale
+      img.style.opacity = 0.5;
+      this.ctx.drawImage(img,x,y,img.width*scale,img.height*scale);
+  }
+
+  drawSrc(src) {
+      var img = new Image;
+      img.src = src;
+      img.onload = function() {this.drawImg(img)}.bind(this)
+  }
+
+  next() {
+      this.imageIndex++;
+      if (this.imageIndex >= this.images.length) this.imageIndex = 0;
+      console.log("retrieving",this.imageIndex)
+      try {this.drawSrc(this.images[this.imageIndex])} catch(err) {console.log("next",err)}
+  }
+}
+
+var sshow = new SShow("ssCanvas")
+sshow.setImages(imgs)
+sshow.next()
+  
+</script>
+
+</html>
