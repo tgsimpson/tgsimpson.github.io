@@ -2815,7 +2815,7 @@ const AllData =
    "Height": 1 ,
    "Status": {"visited":true},
    "Page": {"url":"./Maui/Data/trails/puuokali.html","display":true,"proofed":true},
-//   "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
+   "Overlay": {"path":"./Maui/Data/trails/puuokali.json", "load": function(){return puuokali}, "unload": function(){puuokali = {}}}, 
    "Pics": [
     {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU5B2xqVyNJ7t6kaQcwUKxD0SiHsqhylHLvoozXOCruf3u_VQAvPTC4FOeOOj4FFSNLa5GQcWoyjpy-a-CEMiQ4FogbHjaARLBCxJijMnZGwRjYdJarbMKwoYYyYcOgdqNX4ESVVsVNnRcUBz_H4LsDBQ=w1891-h712-no"},
    ],
