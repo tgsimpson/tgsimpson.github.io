@@ -8,16 +8,16 @@
   </head>
 
   <body>
-    <p> Hi </p>
+    <p> <button onclick="sshow.next()">Next</button> </p>
     <canvas id="ssCanvas"></canvas>
   </body>
 
 <script>
   var imgs = [
-  "https://lh3.googleusercontent.com/pw/AL9nZEU-0TtNqGQ0A9ThBCl8S-BJ39zsu6GM8LnnYl9nYlZVysUTrYdoQS2IWPdHHGj6F94MvCKk5jMYOyPnIy1WkBNPOpmJibj9EZduW_CryDs912hhptSg4ES9I0BQ-xzedEMFBnLHs_fd2DS4S799bc4woA=w2107-h1580-no",
-  "https://lh3.googleusercontent.com/pw/AL9nZEUq-uVy3Nsr4IlX9_z3IVzgZzVPnwOVh4lzT_fFVm5tXAS92CfjGoYL1h3EKVi_SPkHTjB9C4kxn4klRfQX7e1jszmSJ0pUkgINM5xTlO7o_DoouGmpe-nBbDGXCxQnTu7b8n-x2lgOXdoO0w1d6XKp6w=w1387-h674-no",
-  "https://lh3.googleusercontent.com/pw/AL9nZEXXhfQ5arJEzyn4MkYruOrTwduXsDVzj_rYJpL1tfP9jxmQntJu4hTA40LfX-uqfSv9SzkqlghCX6X73kGkALefXnf2pR2UP3W3bkynfO3f6jX5Jplfn3GLw3yJK2e-mU_djTU7gBNKHJ195hoAaypPNQ=w2107-h1580-no",
-  "https://lh3.googleusercontent.com/pw/AL9nZEX_d8HfD98MA5YvqzErnQUoJYynRXC7iQ47-ow9VGNoD6QdnQoElM2UuUT9YeG7zNFI8WRKT1rBI72LaABLhwgVCQRZ-0RIirsMtfd2BLZcAuVLyH3Ck9sXGW3dgzkQKNOMpD2ukwP7dgkG-9MJ1ndwaA=w2107-h1580-no",
+  {"img":"https://lh3.googleusercontent.com/pw/AL9nZEU-0TtNqGQ0A9ThBCl8S-BJ39zsu6GM8LnnYl9nYlZVysUTrYdoQS2IWPdHHGj6F94MvCKk5jMYOyPnIy1WkBNPOpmJibj9EZduW_CryDs912hhptSg4ES9I0BQ-xzedEMFBnLHs_fd2DS4S799bc4woA=w2107-h1580-no",},
+  {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUq-uVy3Nsr4IlX9_z3IVzgZzVPnwOVh4lzT_fFVm5tXAS92CfjGoYL1h3EKVi_SPkHTjB9C4kxn4klRfQX7e1jszmSJ0pUkgINM5xTlO7o_DoouGmpe-nBbDGXCxQnTu7b8n-x2lgOXdoO0w1d6XKp6w=w1387-h674-no",},
+  {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXXhfQ5arJEzyn4MkYruOrTwduXsDVzj_rYJpL1tfP9jxmQntJu4hTA40LfX-uqfSv9SzkqlghCX6X73kGkALefXnf2pR2UP3W3bkynfO3f6jX5Jplfn3GLw3yJK2e-mU_djTU7gBNKHJ195hoAaypPNQ=w2107-h1580-no",},
+  {"vid":"https://drive.google.com/file/d/1jQui-kUQFrUtCm3rRJair_awoGgAVo_o/preview",},
   ]
 
 
@@ -28,92 +28,96 @@ class SShow {
     // images to show
     this.images = []
     this.imageIndex = 0;
+    this.swap = {
+      one: {img: null, scale:0, x:0, y:0, w:0, h:0},
+      two: {img: null, scale:0, x:0, y:0, w:0, h:0}
+    }
 
     // canvas elements, including b1 and b2 'offscreen'
-    var cv        = document.getElementById(cvs);     cv.width = window.innerWidth; cv.height = window.innerHeight;
-    var b1        = document.createElement('canvas'); b1.width = window.innerWidth; b1.height = window.innerHeight;
-    var b2        = document.createElement('canvas'); b2.width = window.innerWidth; b2.height = window.innerHeight;
-    this.buffers  = [
-      {ready:false, canvas:cv, ctx:cv.getContext('2d'), data:cv.getContext('2d').createImageData(cv.width,cv.height)},
-      {ready:false, canvas:b1, ctx:b1.getContext('2d'), data:b1.getContext('2d').createImageData(b1.width,b1.height)}, 
-      {ready:false, canvas:b2, ctx:b2.getContext('2d'), data:b2.getContext('2d').createImageData(b2.width,cv.height)}
-    ]
-
-    this.buffers[0].canvas.addEventListener('click',()=>this.next(),false)
+    this.cv = document.getElementById(cvs); this.cv.width = window.innerWidth; this.cv.height = window.innerHeight;
+    this.ctx = this.cv.getContext('2d')
     this.transition = {percent:0}
+    this.ctx.fillStyle = 'black'
+    this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
   }
 
-  bufSwap(src) { // old image is in main canvas (buff[0]). (1) move 0 to 1 (2) clear 0 (3) move img to 2
-    if (!this.buffers[0].ready) return; // screen has to be drawn.
-    this.buffers[2].ready = false // 
-    this.drawSrc(src,this.buffers[2]); // put new image in buf2
-    this.buffers[1].ctx.drawImage(this.buffers[0].canvas,0,0);  // copy screen to buff1
-    this.buffers[0].ctx.clearRect(0,0,this.buffers[0].canvas.width,this.buffers[0].canvas.height);  // clear screen
+  setImages(il) {
+    this.images = il
+    this.imageIndex = 0
   }
 
-  setImages(il) { 
-      this.images = il
-      this.imageIndex = 0
-      if (this.images.length <= 0) return;
-      this.drawSrc(this.images[0],this.buffers[0])  // load first images
-  }
-
-  drawImg(img,dst) {
-      var scale = Math.min(dst.canvas.width/img.width,dst.canvas.height/img.height)
-      var x = (dst.canvas.width/2)-(img.width/2) * scale
-      var y = (dst.canvas.height/2)-(img.height/2)*scale
+  loadImg(img,dst) {
+      var scale = Math.min(this.cv.width/img.width,this.cv.height/img.height)
+      var x = (this.cv.width/2)-(img.width/2) * scale
+      var y = (this.cv.height/2)-(img.height/2)*scale
       // convert image to base64 before doing the drawImage in order to avoid CORS?
-      dst.ctx.drawImage(img,x,y,img.width*scale,img.height*scale);
-      dst.ready = true
-      console.log("Image is",img)
+      dst.img = img; dst.x = x; dst.y = y; dst.w = img.width*scale; dst.h = img.height*scale;
   }
 
-  drawSrc(src,dst) {
-      var img = new Image;
-      img.src = src;
- //     img.crossOrigin = "Anonymous"
-      img.onload = function() {this.drawImg(img,dst)}.bind(this)
+  loadSrc(entry,dst,f) {
+      if ("img" in entry) {
+        var img = new Image;
+        img.src = entry.img;
+        img.onload = function() {this.loadImg(img,dst); f()}.bind(this)
+      }
+      else if ("vid" in entry) {
+        var vid = document.createElement('video')
+        vid.src = entry.vid
+        vid.onload = function() {this.loadImg(img,dst); f()}.bind(this)
+      }
+      else console.log("not an image");
   }
 
-  slideLeft() {
+  showImg(ptr) {
+    this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)
+  }
+
+  doSwap() {
+    console.log("Swapping?",this.swap)
+    for (var key in this.swap.one) {this.swap.one[key] = this.swap.two[key]}
+      console.log("and",this.swap)
+  }
+
+  TfadeIn() {
      console.log(".")
-      // only need to copy the latest slice into the screen
-      // but, for now, brute force
-      // total data is width*height*4
-      var s = this.buffers[0].data.data.length;
-      var s1 = s*this.transition.percent/100
-      for(let i =  0; i < s1; i++) this.buffers[0].data.data[i] = this.buffers[1].data.data[i]
-      for(let i = s1; i < s;  i++) this.buffers[0].data.data[i] = this.buffers[2].data.data[i]
-      this.buffers[0].ctx.putImageData(this.buffers[0].data,0,0)
+     this.ctx.fillStyle = 'black'
+     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+     this.ctx.globalAlpha = 1-this.transition.percent/100;
+     this.showImg(this.swap.one);
+     this.ctx.globalAlpha = this.transition.percent/100;
+     this.showImg(this.swap.two);
   }
 
   intervalStep() {
-      console.log("*",this.buffers)
-      if (!this.buffers[2].ready) return; // next image hasn't loaded yet
       this.transition.percent += 1;
-      this.slideLeft();
-      if (this.transition.percent <= 100) requestAnimationFrame(this.intervalStep.bind(this))
+      this.TfadeIn();
+      if (this.transition.percent < 100) requestAnimationFrame(this.intervalStep.bind(this))
+      else this.doSwap()
   }
 
-  nextStart(nextImg) {
-      this.bufSwap()
-      for (var i=0;i<this.buffers.length;i++) // load all the image data
-         this.buffers[i].data = this.buffers[i].ctx.getImageData(0,0,this.buffers[i].canvas.width,this.buffers[i].canvas.height)
+  nextStart() {
+      this.transition.percent=0
       requestAnimationFrame(this.intervalStep.bind(this))
   }
 
   next() {
       this.imageIndex++;
       if (this.imageIndex >= this.images.length) this.imageIndex = 0;
-      console.log("retrieving",this.imageIndex)
-      this.nextStart(this.images[this.imageIndex])
- //     try {this.drawSrc(this.images[this.imageIndex],this.buffers[0])} catch(err) {console.log("next",err)}
+      this.loadSrc(this.images[this.imageIndex], this.swap.two, () => {this.nextStart()})
   }
+
+  first() {
+      if (this.images.length <= 0) return;
+      this.imageIndex = 0;
+      console.log("first")
+      this.loadSrc(this.images[this.imageIndex], this.swap.one, () => {this.showImg(this.swap.one)} );
+  }
+
 }
 
 var sshow = new SShow("ssCanvas")
 sshow.setImages(imgs)
-sshow.next()
+sshow.first()
   
 </script>
 

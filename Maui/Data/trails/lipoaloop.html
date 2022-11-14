@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
+</head>
+<body><div class="Story">
+
+	<h1> Lipoa Loop....and the Barking Deer </h1>
+
+<p> This is my go-to hiking area for short, zero-planning outings. It's close to town, and the main path is very well maintained, but there are endless variations throughout the area. </p>
+	<p> The trail is not open to the public (November 2022), but that wasn't the case until recently. I first learned about the trails when I bumped into a gentleman walking around Maui Brewing early in the morning one day. He seemed like a serious walker, and we had just moved to Maui, so I waved at him and asked "is there any good hiking near hear?"</p>
+	<p>"Yes," he replied, "right there," pointing in the direction of the future Lipoa Loop trail, "but the security guards watch it pretty closely." I'd seen the security guards, who parked in their cars on side streets so that they had a good view of entrances. I nodded my thanks and resolved to get on those trails. </p>
+	<p> For months I played cat-and-mouse with the guards as I explored the area. Several times they chased me (okay, drove around because they'd spotted me) but I managed to avoid them, and ultimately found some paths into the area where the guards had no sight lines (which I no longer need, but which you saw on the trail map on the way to this page). Today is a little bittersweet - with the trail officially open I no longer have to sneak about, but I assume more people will now use the trail and I'll miss that 'sneaking around on my own' feeling. </p>
+	<p> All of that said, this is a great 2-5 mile trail (depending on what route you take) with great landscape and views. The area is covered with scrub brush, much with long thorns which you will encounter if you leave the main trails. It is dry and almost desert-like. But, this manages to frame the views of Haleakala and the West Maui Mountains beautifully, making this the perfect spot for sunrise and sunset vistas. </p>
+
+ <img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEVs8nRaFNOIny6VcoemYz5--1P5O6iY08GgWTLHa7jTP6hchFbMh-pFM7SuWeAS-hEENLFgt6OimOgIeQytVXE9SI4sR0UDnVPLVTgd56lEAdWHiA2qNG5aQLI20qaceOib5i7Cx21pL5UOkvRzIty12g=w1853-h1228-no">
+
+	<p> It's also full of axis deer. This is where I first experienced the "barking deer" phenomenon. There are large herds of axis deer in the area, and they have designated lookouts. When that lookout spots you, it barks loudly, warning the herd of your approach, and they take off murmurating through the rock and bush. (Say what? I figure there should be a better vowel for the general definition of murmuration. A murmuration is how starlings dip and flow as they fly in a group, each taking input from it's nearest neighbors, but the entire flock then forming beautiful patterns. The way the deer move, as a herd, reminds me a bit of that. So, how should I express the act of murmuration? Murmuring is more about whispering or background audio. So, I'm going to user mumurating.) Okay, back to barking deer. It was surprising, the first time, to hear this barking and realize that deer were more intelligent than I'd expected. Growing up in the Rocky Mountains I encountered many deer, elk, moose. But, never in such large herds, and never had I heard, let alone heard of, them using barking as a warning. </p>
+	<p> If you're lucky, you'll experience the barking on the new Lipoa Loop trail. </p>
+
+	<p> And, if you do it in the evening, you can end at Maui Brewing....sit on the patio and watch the sunset over a dark beer and some Mahi Mahi. Oh, paradise. </p>
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
+</html>

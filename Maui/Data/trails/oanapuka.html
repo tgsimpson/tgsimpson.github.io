@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmp</title>
+  <link rel="stylesheet" href="../StoryStyle.css">
+</head>
+<body><div class="Story">
+
+	<h1> Oanapuka </h1>
+
+	<p> Oanapuka is shown as a 'summit' on the USGS Makena topographical map, and therefore is on my hit list. But, on this one I was confused. It's at 20.6481256 (latitude), -156.4219236 (longitude) which terrain maps show as just part of the Haleakala slope...not as a pu'u. So, of course, I figured I had to check it out. </p>
+
+<p>I'm still learning which 'no trespassing' signs are serious, and which aren't. I looked up the region on the large landowners <a href="https://geoportal.hawaii.gov/datasets/HiStateGIS::large-landowners-statewide/explore?location=20.660592%2C-156.387727%2C13.81">map</a> for Makena, and it is owned by ATC Makena. It's bordered by Ulupalakua Ranch to the east, but there is a trail right along the border between the properties which seemed reasonable (on Google maps). Some parts of ATC Makena are marked with 'no trespassing' signs, but many areas aren't. So, it is at best confusing. </p>
+
+<p>I started near the Hotel Wailea, and worked my way up to the old Makena road, thinking I could work my way back down to Oanapuka from above. As always, I left at dusk and tripped my way through the first half hour until it was light enough to see. In hindsight, the path I took back was much easier (minus the couple of backtracks) than the path I took up. </p>
+
+<p>When I was above Oanapuka I started looking for trails that would take me down. To my surprise the first little trail I found didn't go very far, but it ended at a deck with two picnic tables on it; one brown, one blue. The deck hasn't been used for a long time; I had to trample a lot of tall grass to get there, and didn't find the steps (hidden under even longer grass) until I was on the deck looking down. What a wonderful spot with absolutely amazing views. If it wasn't for the niggling doubt that maybe I was trespassing, I'd get the wife up here for a picnic :) </p>
+
+<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEVfrXoutSPv1g92Nt8WFJ01OwQMx8OKRSCMhtuwpYbJ2CR27ieGZUIvJMZ7nBrXvjU0S99ckzjffw29nOCbTdKMQeSr4XqH6nxEFyGi6te4P94hEeTU1mbrsLjRRct_9YNxr1FaL4bUF-0Zwpjv9n8O_w=w1719-h1289-no">
+
+<p>Just past the deck there is a road leading down, but heads to a small homestead(?) and then down to the Makena golf course. I went down far enough that I was only a quarter mile or so from Oanapuka and had a very clear view. Result - there's nothing there, just as the maps implied. Perhaps USGS has a mistake, for there is no pu'u here. So, I've labelled today as a 'trail' versus a pu'u. The trail to marker 30.</p>
+
+<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEXwoK3Ub6Y1r73cEwotPwb7zlKdQAD_RcM71vGslouKsniH_Kut8cTOklR2S2IXYVKQknLIoYyQp-1ayf31NVwTo1_eMv0a_dTLv9vijKMn36RqzuG2dkxHsQHeJlzajf0lmPV2o0-JEEbcL8tmNOEvUg=w1719-h1289-no">
+
+<p>I forgot to mention, between the deck and the trail down mountain I saw my first wild boars. There is what I assume is a watering spot in a large tire, and as I rounded the corner I scared two of the beasts. Luckily, given they can be cantancorous, they headed away from me into the grass...and it is deep grass there - a good four or five feet high, so I lost sight of them quickly. They weren't huge, like mid-size dogs, but they looked as mean as their reputations. </p>
+
+<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEWEVgl9c7R2RztOqmy-teJZPofppVCntVfQoDplGt4bP6jdbClWt4CcBjDx_2mv_O5Q4GB1TDPsC3-uo07vu2rrCv1-KjE4ySJXvHQuBiLr5XnhG6Hyiw_oJqv1qwHc7Ug57zrYv6cMgSh8lnBvGl4PRQ=w1719-h1289-no">
+
+<p>On the way back I also noted a lot of broken egg shells. They were all in the middle of the path, and were about the size of chicken eggs. Either a farmer was making an omlete while driving up here, or something was picking up these eggs, dropping them in a cleared area (the path) and eating the contents. My bet is on the later. Has to be a good size bird laying these - although unlikely, I'll presume they are Nene :)</p>
+
+<img class="Nimg" src="https://lh3.googleusercontent.com/pw/AL9nZEVoNb2RX45zDe2NH0iNJ2YubgXaxgWgFjMuP250hkiW6p8LWY3WCUWJT0yuBPBTZ4Q3FbiqUSl8tMZhZ9YZAT1abJyU2mJJHOiBdnEoW89EZ92g-8sdatUSzgH_Zd9YHa2ayEU6-Y2sCwnfuXcXz-Kvug=w967-h1289-no">
+
+</div></body>
+
+<script> 
+function AllJS() {
+	console.log("Any other Javascript this page executes goes in here",LocalData)
+}
+
+//  =================
+
+// This is all a way to load AllData only once, but allow both localhost and server development without changing CORS
+// If on server, window.parent holds the copy of AllData already loaded.
+// If on localhost, AllData is reloaded  in this page.
+var LocalData = {}; var ThisIndex = parseInt(window.location.search.substring(5));
+try {console.log("SERVER SERVER"); LocalData = window.parent.AllData[ThisIndex]; console.log("SERVER SERVER"); AllJS();}
+catch {console.log("LOCALHOST LOCALHOST")
+	function loadScript () {return new Promise((resolve, reject) => {const script = document.createElement('script');
+      	script.type = 'text/javascript'; script.async = true; script.src = `../AllData.json`; document.head.append(script);
+      	script.addEventListener('load',()=>{resolve(script)});script.addEventListener('error',()=>{console.log("ERROR LOADING");reject()})})}
+    async function doLoad() {const result = await loadScript(); LocalData = AllData[ThisIndex];AllJS()}
+   doLoad();}
+</script>
+</html>

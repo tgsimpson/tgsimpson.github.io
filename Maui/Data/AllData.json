@@ -1067,6 +1067,30 @@ const AllData =
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW23HPiIfTF4ENqe0v7jSEk3W1d_ULpqkUMA_ag0VjqIzkWo55s8Oo3G4uyM9Kdsn7jANasysrysi4FDLKAQgZDsPhjohKbHU0hyBIjJxIYinYSy2Pkn93W_sIJm__Ww3i-DBi9Js_NLphg9PtdqOFnKQ=w2080-h1560-no"}
    ],
 },
+{
+   "Name": "Oanapuka",
+   "Tags": ["Trail"],
+   "Lat": 20.6532, 
+   "Lng":-156.4157,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/oanapuka.html", "display":true, "proofed":false},
+   "Overlay": {"path":"./Maui/Data/trails/oanapuka.json", "load": function(){return oanapuka}, "unload": function(){oanapuka = {}}}, 
+   "Pics": [
+    {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXT6oDvP0ECibM-vtj-yISgvqT4OS0X4vRJKuNpvfF1grId_A36-HBGwblril1DHYfoay9-aNxHC29h0d2AlGfHdIAuvPfZrZV1CUEc0E1u795GfXVVWdpCjgB-_WYUzZoI_Zg3O9gZKtTOERMSYQJcCw=w1961-h687-no"},
+   ],
+},
+{
+   "Name": "Lipoa Loop",
+   "Tags": ["Trail"],
+   "Lat": 20.7538, 
+   "Lng":-156.4370,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/trails/lipoaloop.html", "display":true, "proofed":false},
+   "Overlay": {"path":"./Maui/Data/trails/mauibrewing.json", "load": function(){return mauibrewing}, "unload": function(){mauibrewing = {}}}, 
+   "Pics": [
+//    {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXT6oDvP0ECibM-vtj-yISgvqT4OS0X4vRJKuNpvfF1grId_A36-HBGwblril1DHYfoay9-aNxHC29h0d2AlGfHdIAuvPfZrZV1CUEc0E1u795GfXVVWdpCjgB-_WYUzZoI_Zg3O9gZKtTOERMSYQJcCw=w1961-h687-no"},
+   ],
+},
 
 // ========== PLACES of Interest
 {
