@@ -59,13 +59,9 @@ class SShow {
         var img = new Image;
         img.src = entry.img;
         img.onload = function() {this.loadImg(img,dst); f()}.bind(this)
+        return true
       }
-      else if ("vid" in entry) {
-        var vid = document.createElement('video')
-        vid.src = entry.vid
-        vid.onload = function() {this.loadImg(img,dst); f()}.bind(this)
-      }
-      else console.log("not an image");
+      return false  // only images handled right now
   }
 
   showImg(ptr) {
@@ -103,14 +99,13 @@ class SShow {
   next() {
       this.imageIndex++;
       if (this.imageIndex >= this.images.length) this.imageIndex = 0;
-      this.loadSrc(this.images[this.imageIndex], this.swap.two, () => {this.nextStart()})
+      return this.loadSrc(this.images[this.imageIndex], this.swap.two, () => {this.nextStart()})
   }
 
   first() {
       if (this.images.length <= 0) return;
       this.imageIndex = 0;
-      console.log("first")
-      this.loadSrc(this.images[this.imageIndex], this.swap.one, () => {this.showImg(this.swap.one)} );
+      return this.loadSrc(this.images[this.imageIndex], this.swap.one, () => {this.showImg(this.swap.one)});
   }
 
 }

@@ -1,9 +1,61 @@
+class SShow {
+
+  constructor(cvs) {
+    this.one = {img: null, scale:0, x:0, y:0, w:0, h:0},
+    this.two = {img: null, scale:0, x:0, y:0, w:0, h:0}
+    this.transition = 0
+    this.step = 2
+    this.switch = this.TfadeIn
+
+    // canvas elements, including b1 and b2 'offscreen'
+    this.cv = document.getElementById(cvs); this.cv.width = window.innerWidth; this.cv.height = window.innerHeight;
+    this.ctx = this.cv.getContext('2d')
+    this.clear()
+
+    this.transition = {percent:0}
+  }
+
+  loadImg(img,dst) {
+      var scale = Math.min(this.cv.width/img.width,this.cv.height/img.height)
+      var x = (this.cv.width/2)-(img.width/2) * scale
+      var y = (this.cv.height/2)-(img.height/2)*scale
+      dst.img = img; dst.x = x; dst.y = y; dst.w = img.width*scale; dst.h = img.height*scale;
+  }
+
+  TfadeIn() {
+     this.ctx.fillStyle = 'black'
+     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+     this.ctx.globalAlpha = 1-this.transition/100;
+     this.showImg(this.one);
+     this.ctx.globalAlpha = this.transition/100;
+     this.showImg(this.two);
+  }
+
+  intervalStep() {
+  	  this.transition += this.step; 
+  	  this.switch()
+ //     this.TfadeIn();
+      if (this.transition < 100) requestAnimationFrame(this.intervalStep.bind(this))
+      else this.doSwap()
+  }
+
+  loadSrc(entry,dst,f) 	{ var img = new Image; img.src = entry;  img.onload = function() {this.loadImg(img,dst); f()}.bind(this) }
+  showImg(ptr) 			{this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)}
+  doSwap()     			{for (var key in this.one) {this.one[key] = this.two[key]}}
+  nextStart() 			{this.transition=0; requestAnimationFrame(this.intervalStep.bind(this))}
+  next(src) 			{this.loadSrc(src, this.two, () => {this.nextStart()})}
+  first(src) 			{this.clear(); this.loadSrc(src, this.one, () => {this.showImg(this.one)});}
+  clear()				{this.ctx.fillStyle='black'; this.ctx.fillRect(0,0,this.cv.width,this.cv.height);}
+}
+
+
 
 class PicShow {
 	// Current point in AddData array is  AllDataIndex
 	constructor(){
 			this.div = document.getElementById("PicShow")
-			this.picE = document.getElementById("PicElement")
+//			this.picE = document.getElementById("PicElement")
+			this.picE = document.getElementById("cvs")
 			this.picD = document.getElementById("PicDesc"); this.picD.style.display="none";
 			this.vidE = document.getElementById("VidElement"); this.vidE.style.display="none";
 			this.caption = document.getElementById("captionSpot")
@@ -21,12 +73,13 @@ class PicShow {
 			this.pics = [];
 			this.PLength = 0;
 			this.slideshow = false
+
+			this.sshow = new SShow("cvs")
 	}
 
 	setDIndex(i) {
-		    // is this Slide Show?  Don't change DIndex or PIndex
-		    console.log("Click",i,AllData[i])
-			try {if (AllData[i].Name==="Slide Show") {console.log("SS"); this.slideshow = true; this.slideShowStart();return;}} 
+
+			try {if (AllData[i].Name==="Slide Show") {this.slideshow = true; this.slideShowStart();return;}} 
 			catch(err){console.log("SlideShowErr",err)}
 
 			this.DIndex = -1; this.PIndex = -1; this.pics = []; this.PLength = 0; this.hidePane();
@@ -35,7 +88,7 @@ class PicShow {
 				 this.hasPics = ("Pics" in dd && dd.Pics.length>0);
 				 if (this.hasPics) {
 					 this.pics = dd.Pics; this.PLength = this.pics.length; this.PIndex = 0; 
-				     this.setImg(); this.div.style.display = "block";
+				     this.setImg(true); this.div.style.display = "block";
 				 }
 				 else {this.picD.style.display="none"; try{this.showDesc(true);} catch{}} // If no pics, try for Page, regardless
 				 try {if (dd.Page.display) {this.showDesc(true);}} catch {}				 // If pics, rely on display flag to decide if Page is shown
@@ -89,11 +142,11 @@ class PicShow {
 			   this.PIndex += 1;
 			   if (this.PIndex < 0) this.PIndex = this.PLength-1;
 			   if (this.PIndex >= this.PLength) this.PIndex = 0;
-			   this.setImg();
+			   this.setImg(false);
 		   } else {					// slideshow mode; citcle through all images, starting at the most recent one viewed
 		   	   while (!this.nextImg()) {console.log(".")}
 		   	   this.pics = AllData[this.DIndex].Pics
-		   	   this.setImg();
+		   	   this.setImg(false);
 		   }
 	}
 
@@ -105,14 +158,15 @@ class PicShow {
 			this.div.style.display = "block"
 	}
 
-	setImg() {
+	setImg(first) {
 		   try {
 			   if ("img" in this.pics[this.PIndex]) 
 			   {
 			        this.vidE.style.display = "none";
 			        try {this.document.getElementById("ifvid").pause();} catch {}
 			        try {this.vidE.innerHTML = ""} catch{}
-			        this.picE.src = this.pics[this.PIndex].img;
+			        if (first) {this.sshow.first(this.pics[this.PIndex].img)} else {this.sshow.next(this.pics[this.PIndex].img)}
+//			        this.picE.src = this.pics[this.PIndex].img;
 			        this.picE.style.display="block";
 			   } 
 		       else if ("vid" in this.pics[this.PIndex]) 
