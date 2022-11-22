@@ -1,8 +1,15 @@
 
 // Google maps api key:  AIzaSyDLlibEWsGms7qd_zmrSCZiNa-Ol61r99M
 
-class MauiMap {
-    constructor() {
+class MapObject {
+    constructor(mapStack) {
+      this.mapStack    = mapStack;                  // mapLayer is a tuple [MapLayer, MapLayerControls]
+      this.mapBase     = this.mapStack.get('base')
+      this.mapControls = this.mapStack.get('ctrl')
+      this.element     = this.mapBase.getElement()
+
+      this.bounds = {north: 21.06, south: 20.558, east: -156, west: -156.73}
+
       // Stuff to hide on map
       var StyleList = []; 
       const HideStuff = ["poi","transit",/*"landscape.labels"*/ ]
@@ -11,15 +18,22 @@ class MauiMap {
       StyleList.push({featureType: "water", elementType: "geometry.fill",stylers: [{ color: "#7070ff" }],}) // change water color
 
       this.baseZoom = 10.5
-      this.map = new google.maps.Map(document.getElementById("map"), 
+      this.baseCenter = new google.maps.LatLng(20.8,-156.345)
+      this.map = new google.maps.Map(this.element, 
           {
             zoom: this.baseZoom,
-            center: {lng: -156.345, lat: 20.8},
+            center: this.baseCenter, // {lng: -156.345, lat: 20.8},
             styles: StyleList,
             gestureHandling: "greedy",
             // mapTypeId: 'terrain',
             streetViewControl:false,
           });
+
+      this.map.fitBounds(this.bounds)
+
+      this.storeZoom = this.map.getZoom()
+      this.storeCenter = this.map.getCenter()
+      this.storeZoomActive = false
 
       // Scale markers and fonts basesd on the device pixel ratio
       this.baseScale = 1 * window.devicePixelRatio
@@ -28,12 +42,13 @@ class MauiMap {
       this.map.addListener("rightclick", (event)=>console.log("{\"lat\":",event.latLng.lat(),",\"lng\":",event.latLng.lng(),"},"))
       // Keep a list of things on the map
       this.markers = []
+      this.currentMarker = null
       this.groups = []
       this.overlays = [] // index these by marker, so we know what to remove when
       // setup for filtering
-      this.selectBox = document.getElementById('selectBox')
-      this.selectBox.addEventListener("click", () => {this.filterPoints();});
-      this.searchBox = document.getElementById("searchBox")
+//      this.selectBox = document.getElementById('selectBox')
+//      this.selectBox.addEventListener("click", () => {this.filterPoints();});
+//      this.searchBox = document.getElementById("searchBox")
       // tags
       this.tags = []
       this.tagsonly = []
@@ -47,7 +62,27 @@ class MauiMap {
        ]
     }
 
+    originalZoomCenter() {
+      this.map.fitBounds(this.bounds);
+   //   this.map.setZoom(this.baseZoom)
+    //  this.map.setCenter(this.baseCenter)
+    }
+
+    pushState() {
+      this.storeZoom = this.map.getZoom()
+      this.storeCenter = this.map.getCenter()
+      this.storeZoomActive = true;
+    }
+
+    popState() {
+      if (!this.storeZoomActive) return;
+      this.map.setZoom(this.storeZoom)
+      this.map.setCenter(this.storeCenter)
+      this.storeZoomActive = false;
+    }
+
     // find all the unique tags in AllData and cnt how may there are, and how many we've been to.
+    // *** Belongs in Data class?
     parseTags() {
       for (var i=0;i<AllData.length;i++) {
             try { for (var j=0;j<AllData[i].Tags.length;j++) {
@@ -146,9 +181,11 @@ class MauiMap {
        var i = marker.dataIndex
        // Zoom map to the poly?
        if (autozoom) {
+           this.map.panTo(marker.position)
            var bounds = new google.maps.LatLngBounds();
            for (var i=0;i<poly.points.length;i++) bounds.extend(poly.points[i])
-           this.map.fitBounds(bounds)
+           google.maps.event.addListenerOnce(this.map,'idle',() => {console.log("TRIGGER",this.map,bounds); this.map.fitBounds(bounds)})
+//           this.map.fitBounds(bounds)
 //           this.map.panToBounds(bounds)
        }
 
@@ -182,11 +219,81 @@ class MauiMap {
       }
     }
 
-    onClick(marker) {
-      if ("Overlay" in AllData[marker.dataIndex]) 
-         {try {if (this.onOverlay(marker)) return} catch(err) {console.log("Overlay Error",err)}}
-      PShow.setDIndex(marker.dataIndex)  // if no Overlay in AllData, or second click, show content
+    showOverlay(overlay) {
+        this.pushState()
+        var script = document.createElement('script');      // load overlay data from json file
+        script.src = overlay.path; script.async = false; document.body.appendChild(script);
+        script.addEventListener('load', ()=> this.showPolyLine(this.currentMarker,overlay.load(), true))
     }
+
+    hideOverlays() {
+      for (var i=0; i<this.overlays.length;i++) {
+        this.overlays[i].polyline.setMap(null);
+        this.overlays[i].info.close();
+        // should call the overlay unload function?
+      }
+    }
+
+    removeOverlays() {
+      this.hideOverlays()
+      this.overlays = []
+    }
+
+    clean() {
+      this.removeOverlays()
+      this.popState()
+      // if there was an overlay, zoom out a touch?
+    }
+
+    onClick(marker) {
+      this.currentMarker = marker
+//      if ("Overlay" in AllData[marker.dataIndex]) 
+//         {try {if (this.onOverlay(marker)) return} catch(err) {console.log("Overlay Error",err)}}
+      this.mapBase.playerEvent('marker',{index: marker.dataIndex})
+//      PShow.setDIndex(marker.dataIndex)  // if no Overlay in AllData, or second click, show content
+    }
+
+    animateTo(data,f) {
+      console.log("Map animation here")
+      this.map.panTo(new google.maps.LatLng(data.Lat,data.Lng))
+      google.maps.event.addListenerOnce(this.map,'idle',() => {console.log("Map Idle"); f()})
+    }
+
+/*
+    slowPanTo(dst, n_intervals, T_msec) {
+      var f_timeout, getStep, i, j, lat_array, lat_delta, lat_step, lng_array, lng_delta, lng_step, pan, ref, startPosition;
+      var getStep = function(delta) {
+      var start = map.getCenter();
+
+      var lat_delta = (dst.lat()-start.lat())/n_intervals
+      var lng_delta = (dst.lng()-start.lng())/n_intervals
+      var t_delta = T_msec/n_intervals;
+
+      function doStep(i,lat,lng)
+      lat_array = [];
+      lng_array = [];
+  for (i = j = 1, ref = n_intervals; j <= ref; i = j += +1) {
+    lat_array.push(map.getCenter().lat() + i * lat_step);
+    lng_array.push(map.getCenter().lng() + i * lng_step);
+  }
+  f_timeout = function(i, i_min, i_max) {
+    return parseFloat(T_msec) / n_intervals;
+  };
+  pan = function(i) {
+    if (i < lat_array.length) {
+      return setTimeout(function() {
+        map.panTo(new google.maps.LatLng({
+          lat: lat_array[i],
+          lng: lng_array[i]
+        }));
+        return pan(i + 1);
+      }, f_timeout(i, 0, lat_array.length - 1));
+    }
+  };
+  return pan(0);
+};
+
+*/
 
     // ===== Search / Filter ====
     showSB(b) {this.searchBox.style.display = (b) ? "block" : "none"}
@@ -254,6 +361,7 @@ class MauiMap {
 
     //===== INITIALIZE Map
     init() {
+       console.log("Map initializing...")
        for (var i=0, len = AllData.length; i<len; i++){
          try {this.AddAPoint(i);}
          catch (err) {console.log("issue with element",i,err)}
@@ -262,7 +370,7 @@ class MauiMap {
 
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{const MM = new MauiMap(); MM.init()})
+
 
 
  

@@ -4,12 +4,16 @@
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <style>
+          .fulls {position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: block; z-index: 1;background-color: black;}
   </style>
   </head>
 
   <body>
-    <p> <button onclick="sshow.next()">Next</button> </p>
-    <canvas id="ssCanvas"></canvas>
+    <button style="z-index:2; position:absolute" onclick="sshow.next()">Next</button>
+    <div position = "absolute">
+      <canvas class="fulls" id="ssCanvas"></canvas> 
+      <div id="ssOther" class="fulls"></div>
+    </div>
   </body>
 
 <script>
@@ -35,10 +39,19 @@ class SShow {
 
     // canvas elements, including b1 and b2 'offscreen'
     this.cv = document.getElementById(cvs); this.cv.width = window.innerWidth; this.cv.height = window.innerHeight;
+ //   this.cv.position="absolute"
+//    this.cv.style.display = "none"
     this.ctx = this.cv.getContext('2d')
     this.transition = {percent:0}
+    this.effect = 0
     this.ctx.fillStyle = 'black'
     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+
+    this.ssOther = document.getElementById("ssOther");
+    this.ssOther.innerHTML="<img src="+imgs[1].img+">";
+    this.ssCanvas = document.getElementById('ssCanvas')
+
+
   }
 
   setImages(il) {
@@ -76,19 +89,49 @@ class SShow {
 
   TfadeIn() {
      console.log(".")
-     this.ctx.fillStyle = 'black'
-     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+//     this.ctx.fillStyle = 'black'
+//     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+if (0) {
      this.ctx.globalAlpha = 1-this.transition.percent/100;
+     this.ctx.filter = "blur(50px)"
+     this.ctx.drawImage(this.swap.one.img,0,0,window.innerWidth,window.innerHeight)
+     this.ctx.filter = "blur(0px)"
      this.showImg(this.swap.one);
+
      this.ctx.globalAlpha = this.transition.percent/100;
+     this.ctx.filter = "blur(50px)"
+     this.ctx.drawImage(this.swap.two.img,0,0,window.innerWidth,window.innerHeight)
+     this.ctx.filter = "blur(0px) drop-shadow(-5px 5px 3px #aaa)"
      this.showImg(this.swap.two);
+}
+
+     // also fade in canvas
+     this.ssCanvas.style.opacity = this.transition.percent/100;
+     this.ssOther.style.opacity = 1-this.transition.percent/100
   }
 
   intervalStep() {
       this.transition.percent += 1;
       this.TfadeIn();
       if (this.transition.percent < 100) requestAnimationFrame(this.intervalStep.bind(this))
-      else this.doSwap()
+      else {this.doSwap(); this.effectStart();}
+  }
+
+  effectStep() {
+    this.effect += 1
+    this.swap.one.w *= 1.0027
+    this.swap.one.h *= 1.0027
+    this.swap.one.x -= 1.3
+    this.swap.one.y -= 2
+    this.showImg(this.swap.one)
+    if (this.effect < 100) requestAnimationFrame(this.effectStep.bind(this))
+  }
+
+  effectStart() {
+    this.effect= 0;
+    this.cv.style.display="block"
+    this.ssOther.style.display="block"
+    requestAnimationFrame(this.effectStep.bind(this))
   }
 
   nextStart() {

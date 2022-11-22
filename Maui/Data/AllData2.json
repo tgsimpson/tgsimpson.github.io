@@ -24,9 +24,8 @@ const AllData =
    "Lat": 20.903017,
    "Lng": -156.438845,
    "Note": "The airport beach",
-   "Page": {"url":"./Maui/Data/beaches/kanaha.html",},
    "Pics": [
-      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"},
+      {"page":"./Maui/Data/beaches/kanaha.html", "img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEWmCY-_-ANTThdrZaqRwn4z5haRzQHoItVM1f1ekDN-kYMnhQ5UGkYLZce5rG2es9zXIV1tTuIBTcRzkDVFzL_6yTYBJTJQ1ZHudUXE9XmwgtgP67Rrw171JFRstYkcuE8b4v4GLvd8oGjUoPKgaofbMQ=w2108-h1580-no",},
    ],
 },
@@ -1061,10 +1060,8 @@ const AllData =
    "Status": {"visited":true},
    "Page": {"url":"./Maui/Data/trails/lahainapali.html", "display":true, "proofed":false},
    "Overlay": {"path":"./Maui/Data/trails/LPNorth.json", "load": function(){return LPNorth}, "unload": function(){TheTrail = {}}}, 
-   "Vids": [
-       {"vid":"https://drive.google.com/file/d/1Mk_rDh62b1-eRG19xEWMTZTYVFtDwdHC/preview"},    
-   ],
    "Pics": [
+      {"vid":"https://drive.google.com/file/d/1Mk_rDh62b1-eRG19xEWMTZTYVFtDwdHC/preview"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVoXrPUJY4lq2tyTOe7dBNgfrhO8guC8C2mz5SQgEPDYWeIL4DgiV_gApgbDUSa-p1oUTJTRx0hbW-ijyfecrmkFvqg1y8rNtQYqSNt7MecSqbM5vTJgeyB8daihsNNYhDmfqb-v4rZCbQnlWwWY1cSIw=w2080-h1560-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUH35tcjE-64kgr4111_MqpNMAHMvpcoE2jIpdUiHl0G9vqSwwZnGRxxWbgzrc2y1GDlE7umMFszyMZVOwAg7kmWR8w2Ue633ErcX653y9gcOtpFQuNmMGfa2oKY-QpwLasBol2HDDKv-EPoE3sTXkI3w=w1187-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW23HPiIfTF4ENqe0v7jSEk3W1d_ULpqkUMA_ag0VjqIzkWo55s8Oo3G4uyM9Kdsn7jANasysrysi4FDLKAQgZDsPhjohKbHU0hyBIjJxIYinYSy2Pkn93W_sIJm__Ww3i-DBi9Js_NLphg9PtdqOFnKQ=w2080-h1560-no"}
@@ -3450,12 +3447,10 @@ const AllData =
    "Height": 580 ,
    "Status": {"visited":true},
    "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
-   "Vids": [
-      {"vid":"https://drive.google.com/file/d/1jQui-kUQFrUtCm3rRJair_awoGgAVo_o/preview",},     
-   ],
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUqk25t66jPPXDZgV5V3bubm58G95VnAUSyTaWzVwZJfm_oAz3j79feOVoNilCxNX8lDlO_V2MM2My6NXSEQTNxYwcFXlozfJ1JPCKyPaMZRbsUt3_NEjRBoxtVuRa2Nfp8fHgyTS2OmZsCbmMFTbh2sA=w2107-h1580-no",
        "note":"About 1.7miles from La Perouse parking lot; if you find the trail it shouldn't take more than 30 minutes. The trail skirts the lava flow, comes around from the northeast, leaving a simple ridge to climb to get to the top."},
+      {"vid":"https://drive.google.com/file/d/1jQui-kUQFrUtCm3rRJair_awoGgAVo_o/preview",},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVhEW_KjAIEvxBH_ttxuLKY8K1yfiOK0fOHN2tbKPbf-jpTQSXv39V-6hKB-AVgB-KTkWU29ylfdmnv_4yyWdUkmu2UjlQmhg4HIgUXbfKeaIT_ZUnoPVWeTykZ7ei432-Ieia1G8dep-vQexFHPQQhuQ=w2107-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXIMY4QPIJuCTcfYG4z_BqDBjruUT8t8Ii6fZmejkroiv39JY1hjiDbYZN8Rkh_qDqfaW8bO32amfwNrG43_EtmZeFQGhmo8rtmSkEi9AiVEHoZFsF7rScfDPYVvckeoZu-mfUonuVebv828UuX5WICSA=w2107-h1580-no"},
 
@@ -3712,10 +3707,6 @@ const AllData =
    "Height": 220 ,
    "Status": {"visited":true},
    "Overlay": {"path":"./Maui/Data/trails/kaluaolapa.json", "load": function(){return kaluaolapa}, "unload": function(){kaluaolapa = {}}}, 
-   "Vids": [
-      {"vid":"https://drive.google.com/file/d/1NutFBOHvndmphGJM95OufV4fhcp3iDEX/preview"},
-//      {"vid":"https://www.youtube.com/embed/n_0cEB74gjA?modestbranding=0"},     
-   ],
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXNW0NLbENNYBVoFDaKudiXyZq1ZxpANJm0rUTVPcPuZqo1nXC3VC1gB8BWp-UEQr1tVFM6tukfVU9dTyl2izGPioBSAEgjUS1MYzB0t2q1mvaoiczUbmyul0Ks8LfjcnoX9hAYaW1heindK9w78omq7g=w2107-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVp06MJb75AfmVGAXIUggXcgo3RwyhZ-4xtWya2KhhS-fQDRuAxeVNuLZtPtkmbIUUU-ThXHRIzcW0Xw0C7P5hBpaCkWr3zNbkF5NxFq0CoY6ti_zJ2UD8BFnlehr78omkSWoLLv5JgcJje7XDhbCJqoQ=w1187-h1580-no",
@@ -3724,6 +3715,8 @@ const AllData =
 //      {"img":"https://lh3.googleusercontent.com/s1vYYVt7ECuU5UET30PNFyKbTdpQfsBT9D2G3Im0Rwywum1qkEwJ5qDr_kFezY9Ee4yk3OH1hsAtuiSCNV3k6X1DO9H6ULuKMre8LI6qI5eK-1G6dQJAhU_OXGa_s_ywNtq4TCLIlljk4teUD9Cca1t5xVdzHna3"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXabChf_cZoaPg_LfZTv0maqbRUT2JRWDhhLVCeT2pP_Z-kzrNlD_SqPDU203KJX_eZPevDnXaygNOss2SuSS5JV-ZnjhZbj619_mmKBr_uCMbBPIi0S_TWoV-_Zd12Qhi7NO3r3ghIimsEFjHSEn8CrQ=w2107-h1580-no",
        "caption":"See the big island in the background? Very clear today."},
+      {"vid":"https://drive.google.com/file/d/1NutFBOHvndmphGJM95OufV4fhcp3iDEX/preview"},
+//      {"vid":"https://www.youtube.com/embed/n_0cEB74gjA?modestbranding=0"},
    ],
 },
 {

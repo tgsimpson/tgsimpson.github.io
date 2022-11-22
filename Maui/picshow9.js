@@ -60,7 +60,8 @@ class SShow {
 
 class PicShow {
 	// Current point in AddData array is  AllDataIndex
-	constructor(){
+	constructor(layers){
+		  this.layers = layers
 			this.div = document.getElementById("PicShow")
 //			this.picE = document.getElementById("PicElement")
 			this.picE = document.getElementById("cvs")
@@ -83,9 +84,6 @@ class PicShow {
 			this.slideshow = false
 
 			this.sshow = new SShow("cvs")
-
-//			this.transition = 0
-//			this.isImage = true	// false if video
 	}
 
 	setDIndex(i) {
@@ -187,7 +185,7 @@ class PicShow {
 					this.vidE.style.display="block"
 					this.picE.style.display = "none"		
 
-					//console.log("Iframe is",document.getElementById("ifvid"));
+					console.log("Iframe is",document.getElementById("ifvid"));
 				   }
 		       else this.hidePane();
 
@@ -221,8 +219,8 @@ class PicShow {
 }
 
 
-const PShow = new PicShow()
+//const PShow = new PicShow()
 
-PShow.descOnly("./Maui/Data/welcome.html")
+//PShow.descOnly("./Maui/Data/welcome.html")
 
 
