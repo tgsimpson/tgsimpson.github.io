@@ -144,7 +144,7 @@ class MapLayerControls extends Layer {
 		console.log("Start Map Thing",this.getBase().getMap());
 	//	this.getBase().getMap().animateTo(this.data.getCurrent(),f)
 	//	f();
-		this.textbox.animate(this.data.getCurrent().Name,3000,f)
+		this.textbox.animate(this.data.getCurrent().Name,4000,f)
 		console.log("End Map Thing")
 	}
 }
@@ -221,7 +221,7 @@ class PicLayerControls extends Layer {
 		}
 	}*/
 	pause()  {clearInterval(this.timer); 						this.playControl.setText(">>"); this.playing = false}
-	resume() {this.timer = setInterval(()=>this.move(1),3000); 	this.playControl.setText("||"); this.playing = true }
+	resume() {this.timer = setInterval(()=>this.move(1),5000); 	this.playControl.setText("||"); this.playing = true }
 	move(n) {this.data.findNextPictureIndex(n); this.getBase().canvas.next(this.data.getCurrentPicture().img); this.showInfo();}
 	close() {this.playerEvent('close',{}); if(this.playing) this.play()}
 	setCaption(c) {this.caption.setContent(c,false);}
