@@ -173,8 +173,28 @@ class MapObject {
       p["scaler"] = rs;
       this.markers.push(p)
 
+      AllData[i].marker = p
+
       // event listeners
       p.addListener("click", () => {this.onClick(p)});
+    }
+
+    highlightMarker(marker) {
+       const infoWindow = new google.maps.InfoWindow({content: "<div id='IWID'><strong>&#128308;</strong></div>",})
+       
+       google.maps.event.addListener(infoWindow,'domready',()=>{
+         const iwElement = document.getElementById('IWID')
+         iwElement.parentNode.parentNode.nextSibling.remove()
+         // iwElement.parentNode.parentNode.parentNode.parentNode.style.backgroundColor = "red" 
+       })
+       infoWindow.open({anchor:marker,map: this.map,})
+       // remove close button
+
+       return infoWindow
+    }
+
+    restoreMarker(marker,iW) {
+      iW.close()
     }
 
     showPolyLine(marker,poly,autozoom) {

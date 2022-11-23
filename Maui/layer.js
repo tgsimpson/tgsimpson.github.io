@@ -128,7 +128,7 @@ class MapLayerControls extends Layer {
 		this.element.style.pointerEvents = "none"
 		this.searchControl = new Control("&#128269;","95%","46%",this.search.bind(this),this.element)
 		this.slideShowControl = new Control(">>","95%","54%",this.slideShow.bind(this),this.element)
-		this.textbox = new InfoWindow('mapTxtOvly',"50%",false,this.element)
+		this.textbox = new InfoWindow('mapTxtOvly',"4%",false,this.element)
 		this.textbox.hide()
 	}
 
@@ -144,7 +144,8 @@ class MapLayerControls extends Layer {
 		console.log("Start Map Thing",this.getBase().getMap());
 	//	this.getBase().getMap().animateTo(this.data.getCurrent(),f)
 	//	f();
-		this.textbox.animate(this.data.getCurrent().Name,4000,f)
+		var infoW = this.getBase().getMap().highlightMarker(this.data.getCurrent().marker)
+		this.textbox.animate(this.data.getCurrent().Name,4000,()=>{this.getBase().getMap().restoreMarker(this.data.getCurrent().marker,infoW); f()})
 		console.log("End Map Thing")
 	}
 }
@@ -511,6 +512,7 @@ class TheData {
 		this.player.slideShowMapChange()
 	}  // do map animation
 	findNextPictureIndex(n) {
+		if (!this.ready()) this.index=0  // if SlideShow is called before any marker is clicked.
 		try {this.contentIndex += n
 			if (this.contentIndex < 0) this.contentIndex = this.data[this.index].Pics.length-1; 
 			if (this.contentIndex >= this.data[this.index].Pics.length) {this.contentIndex = 0; if (this.player.isSlideShow()) this.advanceToPics()}
