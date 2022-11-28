@@ -29,7 +29,7 @@ class MapObject {
             streetViewControl:false,
           });
 
-      this.map.fitBounds(this.bounds)
+  //    this.map.fitBounds(this.bounds)
 
       this.storeZoom = this.map.getZoom()
       this.storeCenter = this.map.getCenter()
@@ -49,10 +49,7 @@ class MapObject {
 //      this.selectBox = document.getElementById('selectBox')
 //      this.selectBox.addEventListener("click", () => {this.filterPoints();});
 //      this.searchBox = document.getElementById("searchBox")
-      // tags
-      this.tags = []
-      this.tagsonly = []
-      this.parseTags()
+
        // Specialized Icons based on some tags;  Icon may also be encoded directly in AllData for a given marker
       this.icons = [
          {"id":"Trail", "path":"M 1.3911 0.1288 z z M 1.3 0.3662 c 0.11 0 0.2 -0.0829 0.2 -0.1843 s -0.09 -0.1843 -0.2 -0.1843 s -0.2 0.0829 -0.2 0.1843 S 1.19 0.3662 1.3 0.3662 z M 0.93 0.6795 L 0.65 1.9788 h 0.21 l 0.18 -0.7372 l 0.21 0.1843 v 0.5529 h 0.2 v -0.6911 l -0.21 -0.1843 l 0.06 -0.2765 C 1.43 0.9651 1.63 1.0573 1.85 1.0573 v -0.1843 c -0.19 0 -0.35 -0.0921 -0.43 -0.2212 l -0.1 -0.1474 c -0.056 -0.082 -0.168 -0.1152 -0.265 -0.0774 L 0.55 0.6242 V 1.0573 h 0.2 V 0.744 L 0.93 0.6795 z"},
@@ -62,8 +59,10 @@ class MapObject {
        ]
     }
 
+    getMarkers() {return this.markers}
+
     originalZoomCenter() {
-      this.map.fitBounds(this.bounds);
+    //  this.map.fitBounds(this.bounds);
    //   this.map.setZoom(this.baseZoom)
     //  this.map.setCenter(this.baseCenter)
     }
@@ -79,24 +78,6 @@ class MapObject {
       this.map.setZoom(this.storeZoom)
       this.map.setCenter(this.storeCenter)
       this.storeZoomActive = false;
-    }
-
-    // find all the unique tags in AllData and cnt how may there are, and how many we've been to.
-    // *** Belongs in Data class?
-    parseTags() {
-      for (var i=0;i<AllData.length;i++) {
-            try { for (var j=0;j<AllData[i].Tags.length;j++) {
-                     var yy = this.tagsonly.findIndex(e=>e===AllData[i].Tags[j])
-                     if (yy<0) 
-                       {this.tags.push({"tag":AllData[i].Tags[j], "on":true, "cnt":0, "seen":0})
-                        this.tagsonly.push(AllData[i].Tags[j]) }      
-                     else {
-                       this.tags[yy].cnt = this.tags[yy].cnt + 1
-                       try {if (AllData[i].Status.visited) this.tags[yy].seen = this.tags[yy].seen+1} catch{}}
-                   }
-                 }
-            catch {}
-       }
     }
 
     // Called when Zoom changes; scales markers and fonts based on baseZoom, and turns on labels if Zoom > 12
@@ -316,68 +297,7 @@ class MapObject {
 */
 
     // ===== Search / Filter ====
-    showSB(b) {this.searchBox.style.display = (b) ? "block" : "none"}
-    filterPoints() {
-        var html = "<fieldset align='left'>"+
-                     "<legend>Types:</legend>"
-        for (var i=0;i<this.tags.length;i++) {
-          html = html+
-             "<div>"+
-             "<input type='checkbox' id='"+this.tags[i].tag+"Tag'"+" name='"+this.tags[i].tag+"'>"+
-             "<label for='"+this.tags[i].tag+"Tag'>"+this.tags[i].tag+" ("+this.tags[i].seen+"/"+this.tags[i].cnt+")</label>"+
-             "</div>"
-        }
-        html = html+"</fieldset><br>"
-/*
-        // status
-        html = html+"<fieldset align='left'>"+
-                      "<legend>Status:</legend>"+
-                      "<div><input type='checkbox' id='visitedStatus' name='visitedStatus' checked>"+
-                      "<label for 'visitedStatus'>Visited</label>"+
-                      "<div><input type='checkbox' id='invisitedStatus' name='invisitedStatus' checked>"+
-                      "<label for 'invisitedStatus'>Not Visited</label>"+
-                      "<div><input type='checkbox' id='planningStatus' name='planningStatus' checked>"+
-                      "<label for 'planningStatus'>Planning</label>"+
-                    "</fieldset>"+
-                    "<br>"
 
-        //generic search
-*/
-        html = html+"<br>"
-        html = html+"<input type='submit' id='applySearch' value='Apply'>"
-        html = html+"<input type='submit' id='clearSearch' value='No Filters'>"
-
-        this.searchBox.innerHTML=html+"<div id='closeSearch' class='hide'>&#10540;</div>";
-
-        // set the boxes
-        for (var i=0;i<this.tags.length;i++)  document.getElementById(this.tags[i].tag+"Tag").checked = this.tags[i].on;
-        document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
-        document.getElementById('applySearch').addEventListener("click", function() {this.doSearch()}.bind(this));
-        document.getElementById('clearSearch').addEventListener("click", function() {this.clearSearch()}.bind(this));
-
-        this.showSB(true);
-    }
-    clearSearch() {
-      this.showSB(false)
-      for (var i=0;i<this.markers.length;i++) this.markers[i].setMap(this.map)  // put all markers back on the map
-      for (var i=0;i<this.tags.length;i++) this.tags[i].on = true               // all tags are being shown
-    }
-    doSearch() {
-        this.showSB(false)
-        // Tags
-        var filters = [];
-        for (var i=0;i<this.tags.length;i++) {
-          var box = document.getElementById(this.tags[i].tag+"Tag")
-          if (box.checked) {filters.push(this.tags[i].tag); this.tags[i].on = true;}
-          else this.tags[i].on = false;
-        }
-
-        for (var i=0;i<this.markers.length;i++) {
-          var intersect = filters.filter(x => AllData[this.markers[i].dataIndex].Tags.includes(x))
-          if (intersect.length > 0) {this.markers[i].setMap(this.map)}
-          else {this.markers[i].setMap(null)}
-        }
-    }
 
     //===== INITIALIZE Map
     init() {

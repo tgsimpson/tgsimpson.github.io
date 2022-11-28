@@ -1179,6 +1179,7 @@ const AllData =
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
 },
+/*
 {
    "Name":"Slide Show",
    "Tags": ["Misc."],
@@ -1188,6 +1189,7 @@ const AllData =
    "Icon": {"scale":2.5,"fillColor":"#F3F","path":MarkerIcons.Projector},
    "Pics": []
 },
+*/
 {
    "Name":"Hihimanu Ray",
    "Tags": ["Misc.","Story"],

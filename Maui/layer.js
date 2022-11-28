@@ -130,10 +130,19 @@ class MapLayerControls extends Layer {
 		this.slideShowControl = new Control(">>","95%","54%",this.slideShow.bind(this),this.element)
 		this.textbox = new InfoWindow('mapTxtOvly',"4%",false,this.element)
 		this.textbox.hide()
-	}
+		this.tags = this.data.getTags();
 
+		this.searchBox = new InfoWindow('SearchBox',"50%",false,this.element)
+		this.searchBox.hide()
+		this.markers = null
+		this.map = null
+	}
+	mapReady() {
+		this.map = this.getBase().getMap()
+		this.markers = this.map.getMarkers();
+	}
 	search(evt) {
-		console.log("search")
+		this.filterPoints();
 	}
 	slideShow() {
 		console.log("Start slide show")
@@ -144,10 +153,57 @@ class MapLayerControls extends Layer {
 		console.log("Start Map Thing",this.getBase().getMap());
 	//	this.getBase().getMap().animateTo(this.data.getCurrent(),f)
 	//	f();
-		var infoW = this.getBase().getMap().highlightMarker(this.data.getCurrent().marker)
-		this.textbox.animate(this.data.getCurrent().Name,4000,()=>{this.getBase().getMap().restoreMarker(this.data.getCurrent().marker,infoW); f()})
+		var infoW = this.map.highlightMarker(this.data.getCurrent().marker)
+		this.textbox.animate(this.data.getCurrent().Name,3000,()=>{this.getBase().getMap().restoreMarker(this.data.getCurrent().marker,infoW); f()})
 		console.log("End Map Thing")
 	}
+	showSB(toshow) {if (toshow) {this.searchBox.show()} else {this.searchBox.hide()}}
+  filterPoints() {
+      var html = "<fieldset align='left'>"+
+                   "<legend>Types:</legend>"
+      for (var i=0;i<this.tags.length;i++) {
+        html = html+
+           "<div>"+
+           "<input type='checkbox' id='"+this.tags[i].tag+"Tag'"+" name='"+this.tags[i].tag+"'>"+
+           "<label for='"+this.tags[i].tag+"Tag'>"+this.tags[i].tag+" ("+this.tags[i].seen+"/"+this.tags[i].cnt+")</label>"+
+           "</div>"
+      }
+      html = html+"</fieldset><br>"
+      html = html+"<br>"
+      html = html+"<input type='submit' id='applySearch' value='Apply'>"
+      html = html+"<input type='submit' id='clearSearch' value='No Filters'>"
+
+      this.searchBox.setContent(html+"<div id='closeSearch' class='hide'>&#10540;</div>",true);
+
+      // set the boxes
+      for (var i=0;i<this.tags.length;i++)  document.getElementById(this.tags[i].tag+"Tag").checked = this.tags[i].on;
+      document.getElementById('closeSearch').addEventListener("click", function() {this.showSB(false)}.bind(this));
+      document.getElementById('applySearch').addEventListener("click", function() {this.doSearch()}.bind(this));
+      document.getElementById('clearSearch').addEventListener("click", function() {this.clearSearch()}.bind(this));
+
+      this.showSB(true);
+  }
+  clearSearch() {
+    this.showSB(false)
+    for (var i=0;i<this.markers.length;i++) this.markers[i].setMap(this.map)  // put all markers back on the map
+    for (var i=0;i<this.tags.length;i++) this.tags[i].on = true               // all tags are being shown
+  }
+  doSearch() {
+      this.showSB(false)
+      // Tags
+      var filters = [];
+      for (var i=0;i<this.tags.length;i++) {
+        var box = document.getElementById(this.tags[i].tag+"Tag")
+        if (box.checked) {filters.push(this.tags[i].tag); this.tags[i].on = true;}
+        else this.tags[i].on = false;
+      }
+
+      for (var i=0;i<this.markers.length;i++) {
+        var intersect = filters.filter(x => this.data[this.markers[i].dataIndex].Tags.includes(x))
+        if (intersect.length > 0) {this.markers[i].setMap(this.map)}
+        else {this.markers[i].setMap(null)}
+      }
+  }
 }
 
 
@@ -245,7 +301,7 @@ class CanvasCtrl {
     this.one = {img: null, scale:0, x:0, y:0, w:0, h:0},
     this.two = {img: null, scale:0, x:0, y:0, w:0, h:0}
     this.transition = 0
-    this.step = 2
+    this.step = 3
     this.switch = this.TfadeIn
 
     // canvas elements, including b1 and b2 'offscreen'
@@ -380,7 +436,7 @@ class LayerStackList {
 		this.stacks = {
       		 map :	new LayerStack('map' ,this.element,player,data),
       		 web :  new LayerStack('web' ,this.element,player,data),
-     		 pics:  new LayerStack('pics',this.element,player,data),
+     		   pics:  new LayerStack('pics',this.element,player,data),
       		 vids:  new LayerStack('vids',this.element,player,data),
       		}
 	}
@@ -411,8 +467,9 @@ class Player {
 
 	init(welcome) {
 		var mapObject = new MapObject(this.stacks.getStack('map'))
-		this.stacks.getStackLayer('map','base').setMap(mapObject)
 		mapObject.init()
+		this.stacks.getStackLayer('map','base').setMap(mapObject)
+		this.stacks.getStackLayer('map','ctrl').mapReady()
 		this.stacks.show('map')
 		if(welcome) {this.stacks.getStackLayer('web','base').showPage("./Maui/Data/welcome.html")}
 		this.contentIndex = -1;
@@ -487,6 +544,10 @@ class TheData {
 		this.player = player
 		this.index = -1  // Current data Index
 		this.contentIndex = 0
+
+		this.tags = []
+		this.tagsonly = []
+		this.parseTags()
 	}
 	ready() {return (this.index >= 0)}
 	getCurrent() {return this.data[this.index]}
@@ -520,4 +581,21 @@ class TheData {
 		} catch (err){this.contentIndex = 0; if (this.player.isSlideShow()) this.advanceToPics(); return false}
 	}
 	getCurrentPicture(n) {return this.data[this.index].Pics[this.contentIndex];}
+
+  parseTags() {
+    for (var i=0;i<this.data.length;i++) {
+          try { for (var j=0;j<this.data[i].Tags.length;j++) {
+                   var yy = this.tagsonly.findIndex(e=>e===this.data[i].Tags[j])
+                   if (yy<0) 
+                     {this.tags.push({"tag":this.data[i].Tags[j], "on":true, "cnt":0, "seen":0})
+                      this.tagsonly.push(this.data[i].Tags[j]) }      
+                   else {
+                     this.tags[yy].cnt = this.tags[yy].cnt + 1
+                     try {if (this.data[i].Status.visited) this.tags[yy].seen = this.tags[yy].seen+1} catch{}}
+                 }
+               }
+          catch {}
+     }
+  }
+  getTags() {return this.tags}
 }
