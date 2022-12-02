@@ -59,6 +59,7 @@ class MapObject {
        ]
     }
 
+    getMap() {return this.map}
     getMarkers() {return this.markers}
 
     originalZoomCenter() {

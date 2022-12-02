@@ -126,8 +126,8 @@ class MapLayerControls extends Layer {
 	constructor(name,type,parent,player,data) {
 		super(name,type,parent,player,data)
 		this.element.style.pointerEvents = "none"
-		this.searchControl = new Control("&#128269;","95%","46%",this.search.bind(this),this.element)
-		this.slideShowControl = new Control(">>","95%","54%",this.slideShow.bind(this),this.element)
+		this.searchControl = new Control("&#128269;","95%","46%",this.search.bind(this),this.element)	// magnifying glass
+		this.slideShowControl = new Control(">>","95%","54%",this.slideShow.bind(this),this.element)	// >> slideshow start
 		this.textbox = new InfoWindow('mapTxtOvly',"4%",false,this.element)
 		this.textbox.hide()
 		this.tags = this.data.getTags();
@@ -137,26 +137,16 @@ class MapLayerControls extends Layer {
 		this.markers = null
 		this.map = null
 	}
-	mapReady() {
-		this.map = this.getBase().getMap()
-		this.markers = this.map.getMarkers();
-	}
-	search(evt) {
-		this.filterPoints();
-	}
-	slideShow() {
-		console.log("Start slide show")
-		this.player.slideShow(true);
-		this.getBase().getMap().originalZoomCenter();
-	}
-	runTransition(f) {  // f is the function to call when transition is done
-		console.log("Start Map Thing",this.getBase().getMap());
-	//	this.getBase().getMap().animateTo(this.data.getCurrent(),f)
-	//	f();
+	mapReady() 	{this.map = this.getBase().getMap(); this.markers = this.map.getMarkers(); }
+
+	//=== Slide show
+	slideShow() {this.player.slideShow(true);this.getBase().getMap().originalZoomCenter();}
+	runTransition(f) {  
 		var infoW = this.map.highlightMarker(this.data.getCurrent().marker)
 		this.textbox.animate(this.data.getCurrent().Name,3000,()=>{this.getBase().getMap().restoreMarker(this.data.getCurrent().marker,infoW); f()})
-		console.log("End Map Thing")
 	}
+	//=== Search / Filter
+	search(evt) {this.filterPoints();}
 	showSB(toshow) {if (toshow) {this.searchBox.show()} else {this.searchBox.hide()}}
   filterPoints() {
       var html = "<fieldset align='left'>"+
@@ -185,7 +175,7 @@ class MapLayerControls extends Layer {
   }
   clearSearch() {
     this.showSB(false)
-    for (var i=0;i<this.markers.length;i++) this.markers[i].setMap(this.map)  // put all markers back on the map
+    for (var i=0;i<this.markers.length;i++) this.markers[i].setMap(this.map.getMap())  // put all markers back on the map
     for (var i=0;i<this.tags.length;i++) this.tags[i].on = true               // all tags are being shown
   }
   doSearch() {
@@ -199,9 +189,13 @@ class MapLayerControls extends Layer {
       }
 
       for (var i=0;i<this.markers.length;i++) {
-        var intersect = filters.filter(x => this.data[this.markers[i].dataIndex].Tags.includes(x))
-        if (intersect.length > 0) {this.markers[i].setMap(this.map)}
-        else {this.markers[i].setMap(null)}
+      	try{
+        	var intersect = filters.filter(x => this.data.getN(this.markers[i].dataIndex).Tags.includes(x))
+ //       	console.log("Setting",this.markers[i],this.map.getMap())
+        	if (intersect.length > 0) {this.markers[i].setMap(this.map.getMap())}
+        	else {this.markers[i].setMap(null)}
+      	} 
+      	catch(err) {console.log("tag error",i);this.markers[i].setMap(null)}
       }
   }
 }
@@ -241,7 +235,6 @@ class PicLayer extends Layer {
 	init() {
 		try {this.canvas.first(this.data.getCurrentPicture().img); 
 		     this.getCtrl().showInfo()
-//		     this.showStack()
 		     return true;
 		}
 		catch (err) {console.log("No Pics?",err); this.hideStack(); return false}
@@ -263,27 +256,16 @@ class PicLayerControls extends Layer {
 		this.caption = new InfoWindow("caption","4%",false,this.element)
 		this.notes   = new InfoWindow("notes","8%",true,this.element)
 	}
-	left() {this.move(-1)}
-	right() {this.move(1)}
-	play() {this.playing ? this.pause() : this.resume()}
-/*		if (this.playing) { // should pause
-			clearInterval(this.timer)
-			this.playControl.setText(">>")
-			this.playing = false
-		}
-		else { // start playing
-			this.timer = setInterval(()=>this.move(1),5000)
-			this.playControl.setText("||")
-			this.playing = true
-		}
-	}*/
-	pause()  {clearInterval(this.timer); 						this.playControl.setText(">>"); this.playing = false}
-	resume() {this.timer = setInterval(()=>this.move(1),5000); 	this.playControl.setText("||"); this.playing = true }
-	move(n) {this.data.findNextPictureIndex(n); this.getBase().canvas.next(this.data.getCurrentPicture().img); this.showInfo();}
-	close() {this.playerEvent('close',{}); if(this.playing) this.play()}
+	left() 				{this.move(-1)}
+	right() 			{this.move(1)}
+	play() 				{this.playing ? this.pause() : this.resume()}
+	pause()  			{clearInterval(this.timer); 						this.playControl.setText(">>"); this.playing = false}
+	resume() 			{this.timer = setInterval(()=>this.move(1),5000); 	this.playControl.setText("||"); this.playing = true }
+	move(n) 			{this.data.findNextPictureIndex(n); this.getBase().canvas.next(this.data.getCurrentPicture().img); this.showInfo();}
+	close() 			{this.playerEvent('close',{}); this.playing = false;} //if(this.playing) this.play()}
 	setCaption(c) {this.caption.setContent(c,false);}
-	setNotes(n) {this.notes.setContent(n,true)}
-	closeNotes() {this.notes.close()}
+	setNotes(n) 	{this.notes.setContent(n,true)}
+	closeNotes() 	{this.notes.close()}
 	showInfo() {
 		if ('caption' in this.data.getCurrentPicture())
 			this.setCaption(this.data.getCurrent().Name+": "+this.data.getCurrentPicture().caption)
@@ -296,7 +278,6 @@ class PicLayerControls extends Layer {
 }
 
 class CanvasCtrl {
-
   constructor(cv) {
     this.one = {img: null, scale:0, x:0, y:0, w:0, h:0},
     this.two = {img: null, scale:0, x:0, y:0, w:0, h:0}
@@ -348,12 +329,12 @@ class CanvasCtrl {
   }
 
   loadSrc(entry,dst,f) 	{var img = new Image; img.src = entry;  img.onload = function() {this.loadImg(img,dst); f()}.bind(this) }
-  showImg(ptr) 			{this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)}
-  doSwap()     			{for (var key in this.one) {this.one[key] = this.two[key]}}
-  nextStart() 			{this.transition=0; requestAnimationFrame(this.intervalStep.bind(this))}
-  next(src) 			{this.loadSrc(src, this.two, () => {this.nextStart()})}
-  first(src) 			{this.clear(); this.loadSrc(src, this.two, () => {this.nextStart()});}
-  clear()				{this.ctx.fillStyle='black'; this.ctx.fillRect(0,0,this.cv.width,this.cv.height);}
+  showImg(ptr) 					{this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)}
+  doSwap()     					{for (var key in this.one) {this.one[key] = this.two[key]}}
+  nextStart() 					{this.transition=0; requestAnimationFrame(this.intervalStep.bind(this))}
+  next(src) 						{this.loadSrc(src, this.two, () => {this.nextStart()})}
+  first(src) 						{this.clear(); this.loadSrc(src, this.two, () => {this.nextStart()});}
+  clear()								{this.ctx.fillStyle='black'; this.ctx.fillRect(0,0,this.cv.width,this.cv.height);}
 }
 
 //==== Video Layers
@@ -499,8 +480,9 @@ class Player {
 	}
 
 	event(f,t,d) {	// from, type, data
-		console.log("Event",f,t,d)
+		console.log("Event",f,t,d, "SS:",this.sShow)
 		if (f=='webc' && t=='close' && !this.data.ready()) {this.stacks.showOnly('map'); return;}  // Welcome screen closed
+		if (this.sShow && t=='close') {console.log("END SS"); this.slideShow(false); return;}
 		if (t=='marker') this.data.setCurrent(d.index)	// marker was clicked on map
 		if (!this.dispatchContent()) this.reset()
 	}
@@ -518,18 +500,19 @@ class Player {
 			this.stacks.getStackLayer('pics','ctrl').play()
 			this.stacks.showOnly('pics')
 		}
-		else this.stack.showOnly('map')
-    }
+		else {
+			console.log("In player, stopping slideshow")
+			this.stacks.getStackLayer('pics','ctrl').pause()
+			this.stacks.showOnly('map')
+		}
+  }
 	isSlideShow() {return this.sShow}
-	slideShowMapChange() {	// animate a change to the current lat lng
-		this.stacks.getStackLayer('pics','ctrl').pause()
-		this.stacks.showOnly('map')
-//		this.stacks.hide('pics'); this.stacks.show('map')
+	slideShowMapChange() {	
+		this.stacks.getStackLayer('pics','ctrl').pause()		// pause pictures 
+		this.stacks.showOnly('map')													// switch to the map view  *** should also show slideshow controls??
 		this.stacks.getStackLayer('map','ctrl').runTransition(this.slideShowMapChangeDone.bind(this))
 	}
 	slideShowMapChangeDone() {
-		console.log("back from map animation")
-//		this.stacks.hide('map'); this.stacks.show('pics')
 		this.stacks.getStackLayer('pics','ctrl').resume()
 		this.stacks.showOnly('pics')
 	}
@@ -551,6 +534,7 @@ class TheData {
 	}
 	ready() {return (this.index >= 0)}
 	getCurrent() {return this.data[this.index]}
+	getN(n) {return this.data[n]}
 	setCurrent(c) {this.index = c; if (c >= this.data.length) this.index=0; if (c < 0) this.index = 0;}
 	incIndex() {this.index++; if (this.index >= this.data.length) this.index = 0;}
 	decIndex() {this.index--; if (this.index < 0) this.index = this.data.length-1;}
