@@ -1,6 +1,8 @@
 
 // Google maps api key:  AIzaSyDLlibEWsGms7qd_zmrSCZiNa-Ol61r99M
 
+// New key: AIzaSyDHi1J8hGAHgZz8VScRVkWJOcmHA7XmYxA
+
 class MauiMap {
     constructor() {
       // Stuff to hide on map
@@ -22,7 +24,8 @@ class MauiMap {
           });
 
       // Scale markers and fonts basesd on the device pixel ratio
-      this.baseScale = 1 * window.devicePixelRatio
+      console.log("Base scale is 4")
+      this.baseScale = 4 * window.devicePixelRatio
       // Map event listeners
       this.map.addListener("zoom_changed", ()=>this.ZoomChange());
       this.map.addListener("rightclick", (event)=>console.log("{\"lat\":",event.latLng.lat(),",\"lng\":",event.latLng.lng(),"},"))

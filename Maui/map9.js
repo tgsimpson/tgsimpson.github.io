@@ -17,7 +17,7 @@ class MapObject {
       StyleList.push({"featureType": "landscape","elementType": "labels","stylers": [{"visibility": "off"}]}) // landscape.labels doesn't work
       StyleList.push({featureType: "water", elementType: "geometry.fill",stylers: [{ color: "#7070ff" }],}) // change water color
 
-      this.baseZoom = 10.5
+      this.baseZoom = 11
       this.baseCenter = new google.maps.LatLng(20.8,-156.345)
       this.map = new google.maps.Map(this.element, 
           {
@@ -36,7 +36,7 @@ class MapObject {
       this.storeZoomActive = false
 
       // Scale markers and fonts basesd on the device pixel ratio
-      this.baseScale = 1 * window.devicePixelRatio
+      this.baseScale = 3 * window.devicePixelRatio
       // Map event listeners
       this.map.addListener("zoom_changed", ()=>this.ZoomChange());
       this.map.addListener("rightclick", (event)=>console.log("{\"lat\":",event.latLng.lat(),",\"lng\":",event.latLng.lng(),"},"))
