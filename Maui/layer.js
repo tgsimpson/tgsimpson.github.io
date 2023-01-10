@@ -260,7 +260,7 @@ class PicLayerControls extends Layer {
 	right() 			{this.move(1)}
 	play() 				{this.playing ? this.pause() : this.resume()}
 	pause()  			{clearInterval(this.timer); 						this.playControl.setText(">>"); this.playing = false}
-	resume() 			{this.timer = setInterval(()=>this.move(1),5000); 	this.playControl.setText("||"); this.playing = true }
+	resume() 			{this.timer = setInterval(()=>this.move(1),5000); 	console.log("TIMER IS",this.timer); this.playControl.setText("||"); this.playing = true }
 	move(n) 			{this.data.findNextPictureIndex(n); this.getBase().canvas.next(this.data.getCurrentPicture().img); this.showInfo();}
 	close() 			{this.playerEvent('close',{}); this.playing = false;} //if(this.playing) this.play()}
 	setCaption(c) {this.caption.setContent(c,false);}
@@ -282,15 +282,15 @@ class CanvasCtrl {
     this.one = {img: null, scale:0, x:0, y:0, w:0, h:0},
     this.two = {img: null, scale:0, x:0, y:0, w:0, h:0}
     this.transition = 0
-    this.step = 3
-    this.switch = this.TfadeIn
+    this.switch = this.TfadeIn		// default transition
 
     // canvas elements, including b1 and b2 'offscreen'
     this.cv = cv; this.cv.width = window.innerWidth; this.cv.height = window.innerHeight;
     this.ctx = this.cv.getContext('2d')
     this.clear()
 
-    this.transition = {percent:0}
+    this.transition = {percent:0, step:3}
+    this.animation = {percent:0, step:0.4}
   }
 
   loadImg(img,dst) {
@@ -321,17 +321,34 @@ class CanvasCtrl {
   }
 
   intervalStep() {
-  	  this.transition += this.step; 
+  	  this.transition.percent += this.transition.step; 
   	  this.switch()
  //     this.TfadeIn();
-      if (this.transition < 100) requestAnimationFrame(this.intervalStep.bind(this))
-      else this.doSwap()
+      if (this.transition.percent < 100) requestAnimationFrame(this.intervalStep.bind(this))
+      else {this.doSwap(); 
+    	      this.animation.percent = 0; 
+    	      this.doAnimationStep();
+    	    }
+  }
+
+  doAnimation() {
+  	const zoom = this.animation.percent/750 + 1
+  	const offset = this.animation.percent
+  	const ptr = this.one
+  	//console.log("Animating",zoom,offset,ptr,ptr.h*zoom)
+  	this.ctx.drawImage(ptr.img, ptr.x-offset,ptr.y-offset,ptr.w*zoom,ptr.h*zoom)
+  }
+
+  doAnimationStep() {
+  	  this.animation.percent += this.animation.step 
+  	  this.doAnimation();
+  	  if (this.animation.percent < 100) requestAnimationFrame(this.doAnimationStep.bind(this))
   }
 
   loadSrc(entry,dst,f) 	{var img = new Image; img.src = entry;  img.onload = function() {this.loadImg(img,dst); f()}.bind(this) }
   showImg(ptr) 					{this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)}
   doSwap()     					{for (var key in this.one) {this.one[key] = this.two[key]}}
-  nextStart() 					{this.transition=0; requestAnimationFrame(this.intervalStep.bind(this))}
+  nextStart() 					{this.transition.percent=0; this.animation.percent=101; requestAnimationFrame(this.intervalStep.bind(this))}
   next(src) 						{this.loadSrc(src, this.two, () => {this.nextStart()})}
   first(src) 						{this.clear(); this.loadSrc(src, this.two, () => {this.nextStart()});}
   clear()								{this.ctx.fillStyle='black'; this.ctx.fillRect(0,0,this.cv.width,this.cv.height);}
@@ -444,6 +461,8 @@ class Player {
 		this.contentIndex = -1
 
 		this.sShow = false
+		this.frameRate = 30;
+		this.calcFPS({count: 120, callback: fps => {this.frameRate = fps}});
 	}
 
 	init(welcome) {
@@ -454,6 +473,26 @@ class Player {
 		this.stacks.show('map')
 		if(welcome) {this.stacks.getStackLayer('web','base').showPage("./Maui/Data/welcome.html")}
 		this.contentIndex = -1;
+	}
+
+	calcFPS(opts){
+    var requestFrame = window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame;
+    if (!requestFrame) return true; // Check if "true" is returned; 
+                                    // pick default FPS, show error, etc...
+    function checker(){
+        if (index--) requestFrame(checker);
+        else {
+            // var result = 3*Math.round(count*1000/3/(performance.now()-start));
+            var result = count*1000/(performance.now()- start);
+            if (typeof opts.callback === "function") opts.callback(result);
+            //console.log("Calculated: "+result+" frames per second");
+        }
+    }
+    if (!opts) opts = {};
+    var count = opts.count||60, index = count, start = performance.now();
+    checker();
 	}
 
 	dispatchContent() {
@@ -492,6 +531,7 @@ class Player {
 //	show(n) {this.stacks[n].show()}
 	currentData() {return this.data.getCurrent()}
 	slideShow(b) {
+		console.log("....and the frame rate finally is",this.frameRate)
 		this.sShow = b; 
 		if (b) { // start
 			console.log("In player, starting slideshow")

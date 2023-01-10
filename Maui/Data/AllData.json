@@ -1,3 +1,6 @@
+// https://mauinow.com/2012/08/06/new-guided-hike-offered-through-haleakala-ranch/
+
+
 //console.log("Loading ALLDATA")
 const StoryInNote = "<element onclick=\"document.getElementById('descButton').click();document.getElementById('notesSpot').style.display='none'\">&#128214;</element>"
 
@@ -10,6 +13,9 @@ const MarkerIcons = {
    "Projector": "M 1.9104 1.62 v 0.19 h -0.1824 v -0.19 H 0.2688 v 0.19 H 0.0864 v -0.19 a 0.095 0.0912 90 0 1 -0.0912 -0.095 V 0.385 a 0.095 0.0912 90 0 1 0.0912 -0.095 h 0.8947 a 0.6157 0.5911 90 0 1 0.4277 -0.19 c 0.1681 0 0.3198 0.0729 0.4277 0.19 H 1.9104 a 0.095 0.0912 90 0 1 0.0912 0.095 v 1.14 a 0.095 0.0912 90 0 1 -0.0912 0.095 z m -0.5016 -0.475 a 0.4275 0.4104 90 1 0 0 -0.855 a 0.4275 0.4104 90 0 0 0 0.855 z m 0 -0.19 a 0.2375 0.228 90 1 1 0 -0.475 a 0.2375 0.228 90 0 1 0 0.475 z M 0.2688 1.05 v 0.19 h 0.1824 v -0.19 H 0.2688 z m 0.3648 0 v 0.19 h 0.1824 v -0.19 H 0.6336 z",
   // "Fire":"M 0 2 L 1 0 L 2 2 Z",
    "Fire": "M 1.438 0.3735 A 2.215 1.9935 0 0 0 1.021 0.0639 A 0.08 0.072 0 0 0 0.939 0.0639 A 2.215 1.9935 0 0 0 0.522 0.3735 C 0.246 0.6345 0.1 0.9225 0.1 1.206 A 0.88 0.792 0 0 0 1.86 1.206 C 1.86 0.9225 1.714 0.6345 1.438 0.3735 Z M 0.66 1.566 C 0.66 1.3167 0.885 1.1403 0.98 1.0773 C 1.075 1.1403 1.3 1.3167 1.3 1.566 A 0.32 0.288 0 0 1 0.66 1.566 Z",
+   "Turtle": "M 0.752 0.838 L 0.536 0.542 C 0.476 0.594 0.426 0.656 0.386 0.726 H 0.354 C 0.158 0.726 0 0.884 0 1.08 H 0.29 C 0.29 1.136 0.296 1.19 0.31 1.242 L 0.658 1.13 L 0.752 0.838 Z M 1.152 0.77 V 0.77 L 1.368 0.474 C 1.326 0.448 1.282 0.428 1.236 0.41 V 0.252 C 1.236 0.122 1.13 0.016 1 0.016 C 0.87 0.016 0.764 0.122 0.764 0.252 V 0.41 C 0.718 0.428 0.674 0.448 0.632 0.474 L 0.848 0.77 H 1.152 Z M 0.346 1.354 C 0.372 1.418 0.408 1.478 0.452 1.532 C 0.368 1.682 0.402 1.874 0.542 1.984 L 0.736 1.738 C 0.8 1.764 0.868 1.782 0.94 1.788 V 1.422 L 0.694 1.242 L 0.346 1.354 Z M 1.646 0.726 H 1.614 C 1.574 0.656 1.524 0.594 1.464 0.542 L 1.248 0.838 L 1.342 1.13 L 1.69 1.242 C 1.704 1.19 1.71 1.136 1.71 1.08 H 2 C 2 0.884 1.842 0.726 1.646 0.726 Z M 1.306 1.242 L 1.06 1.422 V 1.788 C 1.132 1.782 1.2 1.764 1.264 1.738 L 1.458 1.984 C 1.598 1.874 1.632 1.682 1.548 1.532 C 1.592 1.478 1.628 1.418 1.654 1.354 L 1.306 1.242 Z M 1.14 0.888 H 0.86 L 0.774 1.154 L 1 1.318 L 1.226 1.154",
+   "Whale": "M 1.842 0.35 C 1.804 0.35 1.726 0.39 1.726 0.428 C 1.726 0.402 1.686 0.374 1.65 0.36 C 1.634 0.354 1.618 0.35 1.608 0.35 C 1.528 0.35 1.45 0.35 1.45 0.35 C 1.45 0.448 1.532 0.546 1.65 0.576 V 0.626 C 1.65 0.722 1.572 0.8 1.476 0.8 C 1.378 0.8 1.3 0.722 1.3 0.626 V 0.256 C 1.3 0.114 1.186 0 1.046 0 H 0.256 C 0.114 0 0 0.114 0 0.256 V 0.746 C 0 0.756 0 0.766 0.002 0.776 H 0.476 C 0.544 0.776 0.6 0.718 0.6 0.65 H 0.7 C 0.7 0.774 0.6 0.876 0.476 0.876 H 0.036 C 0.08 0.95 0.162 1 0.256 1 H 0.7 C 0.7 1.11 0.79 1.2 0.9 1.2 V 1 H 1.546 C 1.686 1 1.8 0.886 1.8 0.746 V 0.576 C 1.918 0.546 2 0.448 2 0.35 C 2 0.35 1.922 0.35 1.842 0.35 Z M 0.65 0.55 C 0.622 0.55 0.6 0.528 0.6 0.5 C 0.6 0.472 0.622 0.45 0.65 0.45 C 0.678 0.45 0.7 0.472 0.7 0.5 C 0.7 0.528 0.678 0.55 0.65 0.55 Z",
+
 }
 
 const AllData = 
@@ -172,6 +178,16 @@ const AllData =
    "Pics": [
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVeWHiq69Df4_5AXzOYGGjtI3wFtZUuV3yA5Zsatp69AYCUXrjgsBEKw4a8GGU79cA2xS38cmmPhKZzOcwrYPoSosDgII9VH7t9HLRa7-Qwa0FiXdOHt9boGN2zeTBN7xWXhBOclIC-EeiI_dytMLaZuw=w2108-h1580-no"},
       {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXjhfVAm84xne7DeQFOIrQho15Y9SRwuqRSavqVE-B3BTtcc0akUXpt7nEBXN2zs7nVRZu88ydZhxaEMqFYQYU_fZMI5g60m86kLf0v6pOgepvzCkJSMN0Dqimed8v-Z9fbogrSSmpYP6WorRRtXWYcYg=w2108-h1580-no"},
+    ]
+},
+{
+   "Name": "Manawainui",
+   "Tags": ["Beach"],
+   "Lat":20.6191556, 
+   "Lng":-156.2230694,
+   "Status": {"visited":true},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEW4dfLrGTtErql7g43eV8eDwicaQfwr9u7DvI2T_NhPTpO6MhWNd8jEdgx6Yas8I0Js_GnAkI5INEDfbJl35iossgDj3T4sMPI9T5PFFdpfkQOFk2A-w8G4wpq4u8ra0l78ZNeyPKCUmXhIfszW9luHOQ=w1001-h1334-no"},
     ]
 },
 {
@@ -892,7 +908,19 @@ const AllData =
 },
 
 // TRAILS
-
+{
+   "Name": "Pipiwai",
+   "Tags": ["Trail"],
+   "Lat": 20.678158998311872,
+   "Lng":-156.0565287897012,
+   "Status": {"visited":true},
+//   "Page": {"url":"./Maui/Data/trails/kaupogap.html",},
+   "Pics": [
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXB9sR0vDuiFS15ae1j77VN-dy7PLd_q9Fvmi3_tw-3r1yI1HfCO98HX6UFphhiV54GYE0z3S0sOaMFR5nnE18_qYAYd-vx29KsLOEFRsfLNMJ9rKTe0TmWhr-cPROyU8jm1-LdMldtX71VUN9X491W3w=w1001-h1334-no",},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEXjQkme3IPcMViY0d6ZFuOtDJc2Mv7ZqAhQa7qa1fx56mBQgtszTSVUFMoO8qepiakmFWG3lAX-BnroIFNki51KIwr0duIt0uLc36hcwhXfLmQTCya9BoGYdcMxhgwd3BlarFaABpAsJ0b9A4XZYcYI1w=w1001-h1334-no"},
+      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEUx4j5J46Kb6KuT8FcALXh2mMXGOS07tgKHSyXVbY6iqN-1s0ic4D72P5KvNjhp1QiatM8FU5e9UPVQkix1T8Uy46cACwXS5W2O7j6xjCZjjMTHdqLTMnX7HQVuI11srHUMOuH_R1E8T-olrqFROc7S1A=w1475-h1166-no"},
+   ],
+},
 {
    "Name": "Kaupo Gap",
    "Tags": ["Trail"],
@@ -1161,6 +1189,16 @@ const AllData =
    "Pics": [
    ]
 },
+{
+   "Name":"Molokaʻi",
+   "Tags": ["Place"],
+   "Lat": 21.11577864889962,
+   "Lng": -156.75542074728133,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/islands/molokai.html", "display": true},
+   "Pics": [
+   ]
+},
 // THINGS of Interest. Lat -0.005 is down; Lng -0.005 is right
 //. 740,610 - 740,605 - 740,600...
 //
@@ -1265,7 +1303,30 @@ const AllData =
 //      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
    ]
 },
-
+{
+   "Name":"Green Sea Turtles",
+   "Tags": ["Misc.","Story"],
+   "Lat":   20.69,
+   "Lng": -156.61,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/things/turtles.html", "display": true, "proofed":true},
+   "Icon": {"scale":2,"anchor":[1.5,1.5],"path":MarkerIcons.Turtle},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
+{
+   "Name":"Humpback Whales",
+   "Tags": ["Misc.","Story"],
+   "Lat":   20.68,
+   "Lng": -156.61,
+   "Status": {"visited":true},
+   "Page": {"url":"./Maui/Data/things/turtles.html", "display": true, "proofed":true},
+   "Icon": {"scale":2,"anchor":[1.5,1.5],"path":MarkerIcons.Whale},
+   "Pics": [
+//      {"img":"https://lh3.googleusercontent.com/pw/AL9nZEVw1WXJxn2J66Jf_sYbfmOsPeXxJlkHe5RZ33OYKgLhqmDlx4_r4mR9hDuwlxnmYe8Jat9NoaTD6Glb2PLbmiFP0Hm-UJYpsNPI6nJuqu5VBcbw7Xgnz55NtvH0Mjd2CKbj5JrGxYWnVQFWU1RXTUd8jA=w2880-h1436-no"},
+   ]
+},
 // Random....not really related to Maui at all
 /*
 {

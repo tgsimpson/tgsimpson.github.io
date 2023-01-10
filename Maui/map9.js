@@ -8,7 +8,7 @@ class MapObject {
       this.mapControls = this.mapStack.get('ctrl')
       this.element     = this.mapBase.getElement()
 
-      this.bounds = {north: 21.06, south: 20.558, east: -156, west: -156.73}
+      this.bounds = {north: 21.3, south: 20.558, east: -156, west: -157.3}
 
       // Stuff to hide on map
       var StyleList = []; 
@@ -107,10 +107,10 @@ class MapObject {
     AddAPoint(i) {
       // Filter out any markers that don't need to be shown
       try {if (AllData[i].Status.hide) return;  
-        if (AllData[i].Lat > 21.04) return;
-        if (AllData[i].Lat < 20.57) return;
-        if (AllData[i].Lng < -156.72) return;
-        if (AllData[i].Lng > -155.95) return;
+        if (AllData[i].Lat > this.bounds.north) return;
+        if (AllData[i].Lat < this.bounds.south) return;
+        if (AllData[i].Lng < this.bounds.west) return;
+        if (AllData[i].Lng > this.bounds.east) return;
       } catch{} 
 
       var ic = {path: google.maps.SymbolPath.CIRCLE,
