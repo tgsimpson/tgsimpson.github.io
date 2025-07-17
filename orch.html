@@ -1,25 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Todd G. Simpson</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchestrate | AI Policy & Sovereignty</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
- <body onload="Init()">
-  <div id="wrapper" style="max-width: 800px; margin:auto">
-    <header id="blog_header"></header>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: url('https://images.unsplash.com/photo-1534751516642-a1af1ef26a98?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-    <div id="content">
-      Orchestrate landing page
-    </div>
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    a.button {
+      background-color: #00c2ff;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #009acc;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Orchestrate</h1>
+    <p>Guiding governments and institutions through the evolving landscape of AI policy, regulation, and digital sovereignty.</p>
+    <a href="#contact" class="button">Get in Touch</a>
   </div>
 </body>
-
-<script type="text/javascript" src="./blog_code.js"></script>
-<script> 
-function Init() {
-  //document.getElementById('blog_header').innerHTML = blog_header; 
-}
-</script>
 </html>
