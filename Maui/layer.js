@@ -488,7 +488,7 @@ class LayerStackList {
 	}
 	getStack(n) {return this.stacks[n]}
 	getStackLayer(n,m) {return this.stacks[n].get(m)}
-	show(n) {console.log("LSL show "); this.stacks[n].show()}
+	show(n) {console.log("LSL show (NEW ONE)"); this.stacks[n].show()}
 	showOnly(layer) {console.log("LSL show only"); for (const [k,v] of Object.entries(this.stacks)) (k==layer)?v.show():v.hide()}
 	hide(n) {console.log("LSL hide"); this.stacks[n].hide()}
 	hideOnly(layer) {console.log("LSL hide only"); for (const [k,v] of Object.entries(this.stacks)) (k==layer)?v.hide():v.show()}
