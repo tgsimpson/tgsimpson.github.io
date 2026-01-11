@@ -279,127 +279,79 @@ class PicLayerControls extends Layer {
 
 class CanvasCtrl {
   constructor(cv) {
-    this.cv = cv;
-    this.ctx = this.cv.getContext("2d");
+    this.one = {img: null, scale:0, x:0, y:0, w:0, h:0},
+    this.two = {img: null, scale:0, x:0, y:0, w:0, h:0}
+    this.transition = 0
+    this.switch = this.TfadeIn		// default transition
 
-    // HiDPI / Retina support
-    this.dpr = window.devicePixelRatio || 1;
-    this.cssW = window.innerWidth;
-    this.cssH = window.innerHeight;
+    // canvas elements, including b1 and b2 'offscreen'
+    this.cv = cv; this.cv.width = window.innerWidth; this.cv.height = window.innerHeight;
+    this.ctx = this.cv.getContext('2d')
+    this.clear()
 
-    this.cv.width  = this.cssW * this.dpr;
-    this.cv.height = this.cssH * this.dpr;
-    this.cv.style.width  = this.cssW + "px";
-    this.cv.style.height = this.cssH + "px";
-    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
-
-    this.one = null;
-    this.two = null;
-
-    this.fadeDuration = 800;   // ms
-    this.zoomDuration = 1200;  // ms
-
-    this.clear();
+    this.transition = {percent:0, step:3}
+    this.animation = {percent:0, step:0.4}
   }
 
-  /* ---------- Utilities ---------- */
-
-  clear() {
-    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
-    this.ctx.clearRect(0, 0, this.cssW, this.cssH);
+  loadImg(img,dst) {
+      var scale = Math.min(this.cv.width/img.width,this.cv.height/img.height)
+      var x = (this.cv.width/2)-(img.width/2) * scale
+      var y = (this.cv.height/2)-(img.height/2)*scale
+      dst.img = img; dst.x = x; dst.y = y; dst.w = img.width*scale; dst.h = img.height*scale;
   }
 
-  easeOut(t) {
-    return 1 - Math.pow(1 - t, 3);
+  TfadeIn() {
+//     this.ctx.fillStyle = 'black'
+//     this.ctx.fillRect(0,0,this.cv.width,this.cv.height);
+     try {
+     	this.ctx.globalAlpha = 1-this.transition/100;
+     	this.ctx.filter = "blur(60px)"
+     	this.ctx.drawImage(this.one.img,0,0,window.innerWidth,window.innerHeight)
+     	this.ctx.filter = "blur(0px)"
+     	this.showImg(this.one);
+     } catch {}
+
+     try {	// second image may not be loaded
+     	this.ctx.globalAlpha = this.transition/100;
+     	this.ctx.filter = "blur(60px)"
+     	this.ctx.drawImage(this.two.img,0,0,window.innerWidth,window.innerHeight)
+     	this.ctx.filter = "blur(0px) drop-shadow(-5px 5px 3px #aaa)"
+     	this.showImg(this.two);
+     } catch {}
   }
 
-  loadImage(src, cb) {
-    const img = new Image();
-    img.onload = () => cb(img);
-    img.src = src;
+  intervalStep() {
+  	  this.transition.percent += this.transition.step; 
+  	  this.switch()
+ //     this.TfadeIn();
+      if (this.transition.percent < 100) requestAnimationFrame(this.intervalStep.bind(this))
+      else {this.doSwap(); 
+    	      this.animation.percent = 0; 
+    	      this.doAnimationStep();
+    	    }
   }
 
-  fit(img) {
-    const scale = Math.min(
-      this.cssW / img.width,
-      this.cssH / img.height
-    );
-
-    return {
-      img,
-      w: img.width * scale,
-      h: img.height * scale,
-      x: (this.cssW - img.width * scale) / 2,
-      y: (this.cssH - img.height * scale) / 2
-    };
+  doAnimation() {
+  	const zoom = this.animation.percent/750 + 1
+  	const offset = this.animation.percent
+  	const ptr = this.one
+  	//console.log("Animating",zoom,offset,ptr,ptr.h*zoom)
+  	this.ctx.drawImage(ptr.img, ptr.x-offset,ptr.y-offset,ptr.w*zoom,ptr.h*zoom)
   }
 
-  draw(ptr, alpha = 1, zoom = 1) {
-    this.ctx.globalAlpha = alpha;
-    this.ctx.drawImage(
-      ptr.img,
-      ptr.x - (ptr.w * (zoom - 1)) / 2,
-      ptr.y - (ptr.h * (zoom - 1)) / 2,
-      ptr.w * zoom,
-      ptr.h * zoom
-    );
+  doAnimationStep() {
+  	  this.animation.percent += this.animation.step 
+  	  this.doAnimation();
+  	  if (this.animation.percent < 100) requestAnimationFrame(this.doAnimationStep.bind(this))
   }
 
-  /* ---------- Public API (unchanged) ---------- */
-
-  first(src) {
-    this.clear();
-    this.loadImage(src, img => {
-      this.one = this.fit(img);
-      this.animateFade(null, this.one);
-    });
-  }
-
-  next(src) {
-    this.loadImage(src, img => {
-      this.two = this.fit(img);
-      this.animateFade(this.one, this.two);
-    });
-  }
-
-  /* ---------- Animation ---------- */
-
-  animateFade(from, to) {
-    const start = performance.now();
-
-    const step = now => {
-      const t = Math.min(1, (now - start) / this.fadeDuration);
-
-      this.clear();
-      if (from) this.draw(from, 1 - t);
-      this.draw(to, t);
-
-      if (t < 1) {
-        requestAnimationFrame(step);
-      } else {
-        this.one = to;
-        this.animateZoom();
-      }
-    };
-
-    requestAnimationFrame(step);
-  }
-
-  animateZoom() {
-    const start = performance.now();
-
-    const step = now => {
-      const t = Math.min(1, (now - start) / this.zoomDuration);
-      const zoom = 1 + 0.05 * this.easeOut(t);
-
-      this.clear();
-      this.draw(this.one, 1, zoom);
-
-      if (t < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  }
+  loadSrc(entry,dst,f) 	{var img = new Image; img.src = entry;  img.onload = function() {this.loadImg(img,dst); f()}.bind(this) }
+  showImg(ptr) 					{this.ctx.drawImage(ptr.img, ptr.x, ptr.y, ptr.w, ptr.h)}
+  doSwap()     					{for (var key in this.one) {this.one[key] = this.two[key]}}
+  nextStart() 					{this.transition.percent=0; this.animation.percent=101; requestAnimationFrame(this.intervalStep.bind(this))}
+  next(src) 						{this.loadSrc(src, this.two, () => {this.nextStart()})}
+  first(src) 						{this.clear(); this.loadSrc(src, this.two, () => {this.nextStart()});}
+  clear()								{this.ctx.fillStyle='black'; this.ctx.fillRect(0,0,this.cv.width,this.cv.height);}
 }
 
 //==== Video Layers
