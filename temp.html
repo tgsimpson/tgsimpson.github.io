@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slow Maui - Coming Soon</title>
+    <meta name="description" content="Slow Maui - Discover what makes South Maui home. Coming soon.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Hero Section with Background Slideshow */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Background Images */
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .hero-bg-image.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Dark overlay for text readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 3;
+        }
+
+        /* Content */
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 200;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            font-style: italic;
+            opacity: 0.95;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 2rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .hero-title {
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-subtitle {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <!-- Background Images - Add more by duplicating these divs -->
+        <div class="hero-bg-image active" style="background-image: url('./Images/landingimage1.jpg');"></div>
+        <div class="hero-bg-image" style="background-image: url('./Images/landingimage2.jpg');"></div>
+        <div class="hero-bg-image" style="background-image: url('./Images/landingimage3.jpg');"></div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Slow Maui</h1>
+            <p class="hero-subtitle">Coming Soon</p>
+            <p class="hero-tagline">Don't change Maui; let Maui change you.</p>
+        </div>
+    </section>
+
+    <script>
+        // Background Image Slideshow
+        const bgImages = document.querySelectorAll('.hero-bg-image');
+        let currentBgIndex = 0;
+
+        function rotateBgImages() {
+            // Remove active class from current image
+            bgImages[currentBgIndex].classList.remove('active');
+            
+            // Move to next image
+            currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+            
+            // Add active class to new image
+            bgImages[currentBgIndex].classList.add('active');
+        }
+
+        // Change background every 4.5 seconds (3s display + 1.5s transition)
+        setInterval(rotateBgImages, 4500);
+    </script>
+</body>
+</html>
